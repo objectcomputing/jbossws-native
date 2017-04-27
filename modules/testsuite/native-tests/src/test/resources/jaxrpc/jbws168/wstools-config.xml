@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Change webservices.xml:
+  <handler>
+    <handler-name>TestHandler</handler-name>
+    <handler-class>org.jboss.test.ws.jaxrpc.jbws168.HelloHandler</handler-class>
+  </handler>
+
+
+Change Schema in WSDL:
+   <sequence>
+     <element name='propC' nillable='true' type='string'/>
+     <element name="propB" type="string" minOccurs="0" maxOccurs="1"/>
+     <element name='propA' nillable='true' type='string'/>
+   </sequence>
+-->
+
+
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="HelloService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws168.Hello"
+              style="document">
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.webservice/jbws168"
+                 type-namespace="http://org.jboss.test.webservice/jbws168/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="Hello"/>
+   </java-wsdl>  
+</configuration>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='MessageService' targetNamespace='http://org.jboss.test.webservice/jbws84' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws84' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws84' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws84' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <element name='Order' type='anyType'/>
+   <element name='Response' type='anyType'/>
+  </schema>
+ </types>
+ <message name='Message_processSOAPElement'>
+  <part element='tns:Order' name='parameters'/>
+ </message>
+ <message name='Message_processSOAPElementResponse'>
+  <part element='tns:Response' name='result'/>
+ </message>
+ <portType name='Message'>
+  <operation name='processSOAPElement'>
+   <input message='tns:Message_processSOAPElement'/>
+   <output message='tns:Message_processSOAPElementResponse'/>
+  </operation>
+ </portType>
+ <binding name='MessageBinding' type='tns:Message'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='processSOAPElement'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='MessageService'>
+  <port binding='tns:MessageBinding' name='MessagePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   jwsdp-1.4
+
+   wscompile -cp ../../output/classes -gen:server -f:rpcliteral -keep -mapping mapping.xml config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <service name="StandardJavaTypesService"
+    targetNamespace="http://org.jboss.ws"
+    typeNamespace="http://org.jboss.ws/types"
+    packageName="org.jboss.test.ws.tools.sei">
+    <interface name="org.jboss.test.ws.tools.sei.StandardJavaTypes"/>
+  </service>
+
+</configuration>
+

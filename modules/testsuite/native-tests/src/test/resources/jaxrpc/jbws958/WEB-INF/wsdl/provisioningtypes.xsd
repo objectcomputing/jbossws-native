@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Last changes 10.09.2005, Frank Speer -->
+<xsd:schema xmlns="http://www.t-systems.com/damona" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.8.0">
+	<xsd:complexType name="SapId">
+		<xsd:sequence>
+			<xsd:element name="VPN_ID" type="VpnId"/>
+			<xsd:element name="SAP_NO" type="SapNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PopType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IPLS-PoP"/>
+			<xsd:enumeration value="TGN-PoP"/>
+			<xsd:enumeration value="ATM-PoP"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SapNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Service">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="VpnCore"/>
+			<xsd:enumeration value="InternetAccess"/>
+			<xsd:enumeration value="RemoteDialIn"/>
+			<xsd:enumeration value="RemoteDialInRouter"/>
+			<xsd:enumeration value="RemoteInternetGateway"/>
+			<xsd:enumeration value="DedicatedFirewall"/>
+			<xsd:enumeration value="ClientEncryption"/>
+			<xsd:enumeration value="SiteEncryption"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ChangeParameter">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="SNMP_READ_ACCESS"/>
+			<xsd:enumeration value="CAR"/>
+			<xsd:enumeration value="ROUTING_PROTOCOL"/>
+			<xsd:enumeration value="COS_PROFILE"/>
+			<xsd:enumeration value="ACTIVATE_IP_ACCOUNTING"/>
+			<xsd:enumeration value="CUSTOMER_IP_ADDRESSING"/>
+			<xsd:enumeration value="CONFIGURE_NAT"/>
+			<xsd:enumeration value="NON_STANDARD"/>
+			<xsd:enumeration value="LOCATION_MOVE"/>
+			<xsd:enumeration value="EXTENDED_LOCATION_MOVE"/>
+			<xsd:enumeration value="SITE_TERMINATION_VCS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Priority">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="major"/>
+			<xsd:enumeration value="minor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Status">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="new"/>
+			<xsd:enumeration value="change"/>
+			<xsd:enumeration value="cancel"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TdnNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}/[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TechnicalNetName">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z0-9\-&#x005F;]{1,14}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TechnicalNetNameNew">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z0-9\-]{1,9}-IPLS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VpnId">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VrfNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9]{3}-[0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

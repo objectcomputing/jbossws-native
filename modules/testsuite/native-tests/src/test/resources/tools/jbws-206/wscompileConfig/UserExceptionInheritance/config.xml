@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   jwsdp-1.5
+
+   wscompile -cp ../../../../output/classes -gen:client -f:rpcliteral -mapping jaxrpc-mapping.xml config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <wsdl location="../../wsdlFixture/UserExceptionInheritance/UserExceptionInheritanceService_RPC_11.wsdl"
+    packageName="org.jboss.test.webservice.userexceptioninheritance">
+  </wsdl>
+
+</configuration>
+

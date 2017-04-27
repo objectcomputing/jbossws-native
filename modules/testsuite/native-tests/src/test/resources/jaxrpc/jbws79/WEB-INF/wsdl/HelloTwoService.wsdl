@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloTwoService' targetNamespace='http://org.jboss.test.webservice/jbws79' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws79' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='HelloTwo_echoQName'>
+  <part name='QName_1' type='xsd:QName'/>
+ </message>
+ <message name='HelloTwo_echoQNameResponse'>
+  <part name='result' type='xsd:QName'/>
+ </message>
+ <portType name='HelloTwo'>
+  <operation name='echoQName' parameterOrder='QName_1'>
+   <input message='tns:HelloTwo_echoQName'/>
+   <output message='tns:HelloTwo_echoQNameResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloTwoBinding' type='tns:HelloTwo'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoQName'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws79' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws79' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+<!-- Remove Service -->
+</definitions>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="TestService" targetNamespace="http://org.jboss.test.webservice/jbws414" xmlns:tns="http://org.jboss.test.webservice/jbws414"
+  xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://org.jboss.test.webservice/jbws414/types"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.test.webservice/jbws414/types" xmlns:tns="http://org.jboss.test.webservice/jbws414/types"
+      xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="St">
+        <sequence>
+          <element name="ref" type="tns:Interface" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="Interface">
+        <sequence>
+          <element name="value" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <message name="TestSEI_doStuff">
+    <part name="St_1" type="ns2:St"/>
+  </message>
+  <message name="TestSEI_doStuffResponse">
+    <part name="result" type="ns2:St"/>
+  </message>
+  <portType name="TestSEI">
+    <operation name="doStuff" parameterOrder="St_1">
+      <input message="tns:TestSEI_doStuff"/>
+      <output message="tns:TestSEI_doStuffResponse"/>
+    </operation>
+  </portType>
+  <binding name="TestSEIBinding" type="tns:TestSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="doStuff">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.test.webservice/jbws414"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.test.webservice/jbws414"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="TestSEIPort" binding="tns:TestSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

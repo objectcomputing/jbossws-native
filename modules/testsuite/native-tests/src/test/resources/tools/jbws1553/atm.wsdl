@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:samples:atm" xmlns:tns="urn:samples:atm" xmlns:atm="urn:samples:atm2" xmlns:acc="urn:samples:account"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plt2="http://schemas.xmlsoap.org/ws/2004/03/partner-link/"
+  xmlns:bpel2="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:tic="urn:samples:ticket" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="urn:samples:account" location="interface/account.wsdl"/>
+  <import namespace="urn:samples:ticket" location="interface/ticket.wsdl"/>
+  <import namespace="urn:samples:atm2" location="interface/frontend.wsdl"/>
+  <bpel2:property name="customerId" type="xsd:string"/>
+  <bpel2:propertyAlias propertyName="tns:customerId" messageType="atm:logOnRequest" part="customerName"/>
+  <bpel2:propertyAlias propertyName="tns:customerId" messageType="atm:balanceChange" part="customerName"/>
+  <bpel2:propertyAlias propertyName="tns:customerId" messageType="acc:customerMessage" part="customerName"/>
+  <bpel2:propertyAlias propertyName="tns:customerId" messageType="acc:accountOperation" part="body">
+    <bpel2:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">/body/customerName</bpel2:query>
+  </bpel2:propertyAlias>
+  <bpel2:property name="ticketId" type="xsd:int"/>
+  <bpel2:propertyAlias propertyName="tns:ticketId" messageType="tic:ticketMessage" part="ticketNo"/>
+  <bpel2:propertyAlias propertyName="tns:ticketId" messageType="atm:logOnRequest" part="ticketNo"/>
+  <plt2:partnerLinkType name="Atm-Front">
+    <plt2:role name="FrontEnd" portType="atm:FrontEnd"/>
+  </plt2:partnerLinkType>
+  <plt2:partnerLinkType name="Front-Ticket">
+    <plt2:role name="TicketIssuer" portType="tic:TicketIssuer"/>
+  </plt2:partnerLinkType>
+  <plt2:partnerLinkType name="Front-Account">
+    <plt2:role name="AccountSystem" portType="acc:AccountSystem"/>
+  </plt2:partnerLinkType>
+</definitions>

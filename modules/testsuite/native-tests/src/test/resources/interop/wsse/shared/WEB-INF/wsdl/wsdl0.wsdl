@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://InteropBaseAddress/interop"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:wsap10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/09/policy/addressing"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:tns="http://InteropBaseAddress/interop"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing">
+
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://InteropBaseAddress/interop/Imports">
+         <xsd:import schemaLocation="xsd0.xsd" namespace="http://xmlsoap.org/Ping"/>
+         <xsd:import schemaLocation="xsd1.xsd" namespace="http://InteropBaseAddress/interop"/>
+         <xsd:import schemaLocation="xsd2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xsd:schema>
+   </wsdl:types>
+
+   <wsdl:message name="PingRequest">
+      <wsdl:part name="Ping" element="q1:Ping" xmlns:q1="http://xmlsoap.org/Ping"/></wsdl:message>
+   <wsdl:message name="PingResponse">
+      <wsdl:part name="PingResponse" element="q2:PingResponse" xmlns:q2="http://xmlsoap.org/Ping"/></wsdl:message>
+   <wsdl:message name="IPingService_echo_InputMessage">
+      <wsdl:part name="parameters" element="tns:echo"/></wsdl:message>
+   <wsdl:message name="IPingService_echo_OutputMessage">
+      <wsdl:part name="parameters" element="tns:echoResponse"/></wsdl:message>
+
+   <wsdl:portType name="IPingService">
+      <wsdl:operation name="Ping">
+         <wsdl:input wsa:Action="http://xmlsoap.org/Ping" name="PingRequest" message="tns:PingRequest"/>
+         <wsdl:output wsa:Action="http://xmlsoap.org/Ping" name="PingResponse" message="tns:PingResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="echo">
+         <wsdl:input wsa:Action="http://InteropBaseAddress/interop/echo" message="tns:IPingService_echo_InputMessage"/>
+         <wsdl:output wsa:Action="http://InteropBaseAddress/interop/echo" message="tns:IPingService_echo_OutputMessage"/>
+      </wsdl:operation>
+   </wsdl:portType>
+
+</wsdl:definitions>

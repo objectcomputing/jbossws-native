@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Edit soapaction in wsdl
+ <soap:operation soapAction="urn:some-soap-action"/>
+-->
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="HelloService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws425.Hello"
+              style="rpc">
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.webservice/jbws425"
+                 type-namespace="http://org.jboss.test.webservice/jbws425/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="Hello"/>
+   </java-wsdl>  
+</configuration>

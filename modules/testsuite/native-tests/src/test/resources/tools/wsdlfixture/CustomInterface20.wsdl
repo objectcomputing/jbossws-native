@@ -1,0 +1,23 @@
+<definitions targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2003/11/wsdl'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:tns='http://org.jboss.ws/types'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+ <types>
+  <xsd:import namespace='http://org.jboss.ws/types' schemaLocation='CustomInterface20.xsd'/>
+ </types>
+ <interface name='CustomInterface'>
+  <fault element='SomeExceptionError' name='SomeExceptionFault'/>
+  <operation name='customMethod'>
+   <input element='tns:Base' messageLabel='IN'/>
+   <outfault ref='SomeExceptionFault'> messageLabel='OUT'</outfault>
+  </operation>
+ </interface>
+ <binding interface='tns:CustomInterface' name='CustomInterfaceBinding'>
+  <operation ref='tns:customMethod'/>
+ </binding>
+ <service interface='tns:CustomInterface' name='CustomInterfaceService'>
+  <endpoint address='REPLACE_WITH_ACTUAL_ADDRESS' binding='tns:CustomInterfaceBinding' name='CustomInterfaceEndpoint'/>
+ </service>
+</definitions>

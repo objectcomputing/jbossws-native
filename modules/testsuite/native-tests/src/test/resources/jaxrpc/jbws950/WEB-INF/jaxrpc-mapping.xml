@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws950</package-type>
+  <namespaceURI>http://org.jboss.test.ws/jbws950/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws950.UserType</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws950/types'>typeNS:UserType</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>qname</java-variable-name>
+   <xml-attribute-name>qname</xml-attribute-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>string</java-variable-name>
+   <xml-element-name>string</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws950.TestService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.ws/jbws950'>serviceNS:TestService</wsdl-service-name>
+  <port-mapping>
+   <port-name>TestEndpointPort</port-name>
+   <java-port-name>TestEndpointPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws950.TestEndpoint</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.ws/jbws950'>portTypeNS:TestEndpoint</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.ws/jbws950'>bindingNS:TestEndpointBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoElement</java-method-name>
+   <wsdl-operation>echoElement</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>javax.xml.namespace.QName</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws950'>wsdlMsgNS:TestEndpoint_echoElement</wsdl-message>
+     <wsdl-message-part-name>QName_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>javax.xml.namespace.QName</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws950'>wsdlMsgNS:TestEndpoint_echoElementResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoUserType</java-method-name>
+   <wsdl-operation>echoUserType</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws950.UserType</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws950'>wsdlMsgNS:TestEndpoint_echoUserType</wsdl-message>
+     <wsdl-message-part-name>UserType_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws950.UserType</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws950'>wsdlMsgNS:TestEndpoint_echoUserTypeResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

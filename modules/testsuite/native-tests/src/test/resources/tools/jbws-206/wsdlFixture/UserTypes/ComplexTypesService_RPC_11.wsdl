@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="ComplexTypesService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws"
+			xmlns:tns="http://org.jboss.ws"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="Base">
+				<sequence>
+					<element name="a" type="int" />
+					<element name="b" type="int" />
+				</sequence>
+			</complexType>
+			<complexType name="Composite">
+				<sequence>
+					<element name="composite" type="tns:Composite"
+						nillable="true" />
+					<element name="dateTime" type="dateTime"
+						nillable="true" />
+					<element name="integer" type="integer"
+						nillable="true" />
+					<element name="qname" type="QName" nillable="true" />
+					<element name="string" type="string"
+						nillable="true" />
+				</sequence>
+			</complexType>
+			<complexType name="Derived">
+				<complexContent>
+					<extension base="tns:Base">
+						<sequence>
+							<element name="x" type="int" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="ComplexTypes_echoBase">
+		<part name="Base_1" type="tns:Base" />
+	</message>
+	<message name="ComplexTypes_echoBaseResponse">
+		<part name="result" type="tns:Base" />
+	</message>
+	<message name="ComplexTypes_echoCompositeType">
+		<part name="Composite_1" type="tns:Composite" />
+	</message>
+	<message name="ComplexTypes_echoCompositeTypeResponse">
+		<part name="result" type="tns:Composite" />
+	</message>
+	<message name="ComplexTypes_echoDerived">
+		<part name="Derived_1" type="tns:Derived" />
+	</message>
+	<message name="ComplexTypes_echoDerivedResponse">
+		<part name="result" type="tns:Derived" />
+	</message>
+	<portType name="ComplexTypes">
+		<operation name="echoBase" parameterOrder="Base_1">
+			<input message="tns:ComplexTypes_echoBase" />
+			<output message="tns:ComplexTypes_echoBaseResponse" />
+		</operation>
+		<operation name="echoCompositeType"
+			parameterOrder="Composite_1">
+			<input message="tns:ComplexTypes_echoCompositeType" />
+			<output
+				message="tns:ComplexTypes_echoCompositeTypeResponse" />
+		</operation>
+		<operation name="echoDerived" parameterOrder="Derived_1">
+			<input message="tns:ComplexTypes_echoDerived" />
+			<output message="tns:ComplexTypes_echoDerivedResponse" />
+		</operation>
+	</portType>
+	<binding name="ComplexTypesBinding" type="tns:ComplexTypes">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="echoBase">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+		<operation name="echoCompositeType">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+		<operation name="echoDerived">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+	</binding>
+	<service name="ComplexTypesService">
+		<port name="ComplexTypesPort"
+			binding="tns:ComplexTypesBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

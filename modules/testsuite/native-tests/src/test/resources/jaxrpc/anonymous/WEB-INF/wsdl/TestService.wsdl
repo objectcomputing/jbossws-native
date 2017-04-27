@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TestService" targetNamespace="http://org.jboss.ws/anonymous" xmlns:tns="http://org.jboss.ws/anonymous" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.ws/anonymous/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/anonymous/types" xmlns:tns="http://org.jboss.ws/anonymous/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <!-- This is manually copied from the JSR-109 spec 7.3.2.2. Mapping anonymous types -->
+      <complexType name="root">
+        <sequence>
+          <element name="data" type="string"/>
+        </sequence>
+      </complexType>
+      <!-- minOccurs/maxOccurs cannot appear on global element -->
+      <!-- element name="root" minOccurs="0" maxOccurs="unbounded" -->
+      <element name="root">
+        <complexType>
+          <sequence>
+            <element name="inside" maxOccurs="10">
+              <complexType>
+                <sequence>
+                  <element name="data2" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element ref="tns:someOtherElement" maxOccurs="20"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="someOtherElement" type="xsd:int"/>
+    </schema>
+  </types>
+  <message name="AnonymousTestService_testElementSomeOtherElement">
+    <part name="int_1" element="ns2:someOtherElement"/>
+  </message>
+  <message name="AnonymousTestService_testElementSomeOtherElementResponse">
+    <part name="result" element="ns2:someOtherElement"/>
+  </message>
+  <message name="AnonymousTestService_testElementTypeRoot">
+    <part name="ElementTypeRoot_1" element="ns2:root"/>
+  </message>
+  <message name="AnonymousTestService_testElementTypeRootResponse">
+    <part name="result" element="ns2:root"/>
+  </message>
+  <portType name="AnonymousTestService">
+    <operation name="testElementSomeOtherElement">
+      <input message="tns:AnonymousTestService_testElementSomeOtherElement"/>
+      <output message="tns:AnonymousTestService_testElementSomeOtherElementResponse"/>
+    </operation>
+    <operation name="testElementTypeRoot">
+      <input message="tns:AnonymousTestService_testElementTypeRoot"/>
+      <output message="tns:AnonymousTestService_testElementTypeRootResponse"/>
+    </operation>
+  </portType>
+  <binding name="AnonymousTestServiceBinding" type="tns:AnonymousTestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="testElementSomeOtherElement">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="testElementTypeRoot">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="AnonymousTestServicePort" binding="tns:AnonymousTestServiceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

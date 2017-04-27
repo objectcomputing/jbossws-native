@@ -1,0 +1,16 @@
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+ <global> 
+   <package-namespace package="org.jboss.test.ws.jbws2018.base" namespace="http://com.other.base"/> 
+   <package-namespace package="org.jboss.test.ws.jbws2018.exception" namespace="http://com.other.exception"/> 
+ </global> 
+
+ <java-wsdl>
+    <service name="TestService" style="rpc" endpoint="org.jboss.test.ws.jbws2018.Test"/>
+    <namespaces target-namespace="http://org.jboss.test.ws.jbws2018" type-namespace="http://org.jboss.test.ws.jbws2018"/>
+    <mapping file="jaxrpc-mapping.xml" />
+    <webservices ejb-link="TestEJB"/>
+ </java-wsdl>
+
+</configuration>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws710' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws710/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws710' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws710/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws710/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='onewayRequest'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+     <element name='String_2' nillable='true' type='string'/>
+     <element name='String_3' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='onewayResponse'>
+    <sequence/>
+   </complexType>
+   <complexType name='onewayResponseResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='onewayRequest' type='tns:onewayRequest'/>
+   <element name='onewayResponse' type='tns:onewayResponse'/>
+   <element name='onewayResponseResponse' type='tns:onewayResponseResponse'/>
+  </schema>
+ </types>
+ <message name='Hello_onewayRequest'>
+  <part element='ns1:onewayRequest' name='parameters'/>
+ </message>
+ <message name='Hello_onewayResponse'>
+  <part element='ns1:onewayResponse' name='parameters'/>
+ </message>
+ <message name='Hello_onewayResponseResponse'>
+  <part element='ns1:onewayResponseResponse' name='result'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='onewayRequest'>
+   <input message='tns:Hello_onewayRequest'/>
+  </operation>
+  <operation name='onewayResponse'>
+   <input message='tns:Hello_onewayResponse'/>
+   <output message='tns:Hello_onewayResponseResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='onewayRequest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+  </operation>
+  <operation name='onewayResponse'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

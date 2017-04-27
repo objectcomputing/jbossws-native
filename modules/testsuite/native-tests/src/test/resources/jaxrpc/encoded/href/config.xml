@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -cp ../../../../output/classes -gen:server -mapping jaxrpc-mapping.xml -keep config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <wsdl location="./WEB-INF/wsdl/MarshallTestService.wsdl"
+    packageName="org.jboss.test.ws.jaxrpc.encoded.href">
+  </wsdl>
+
+</configuration>
+

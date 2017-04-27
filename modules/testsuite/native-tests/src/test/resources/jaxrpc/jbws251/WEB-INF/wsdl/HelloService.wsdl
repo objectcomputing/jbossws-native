@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws251' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws251/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws251' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws251/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws251/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='BaseException'>
+    <sequence>
+     <element name='message' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='UserExceptionOne'>
+    <complexContent>
+     <extension base='tns:BaseException'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='UserExceptionTwo'>
+    <complexContent>
+     <extension base='tns:BaseException'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name='BaseException' type='tns:BaseException'/>
+   <element name='UserExceptionOne' type='tns:UserExceptionOne'/>
+   <element name='UserExceptionTwo' type='tns:UserExceptionTwo'/>
+  </schema>
+ </types>
+ <message name='Hello_hello'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='Hello_helloResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='BaseException'>
+  <part element='ns1:BaseException' name='BaseException'/>
+ </message>
+ <message name='UserExceptionOne'>
+  <part element='ns1:UserExceptionOne' name='UserExceptionOne'/>
+ </message>
+ <message name='UserExceptionTwo'>
+  <part element='ns1:UserExceptionTwo' name='UserExceptionTwo'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='hello' parameterOrder='String_1'>
+   <input message='tns:Hello_hello'/>
+   <output message='tns:Hello_helloResponse'/>
+   <fault message='tns:BaseException' name='BaseException'/>
+   <fault message='tns:UserExceptionOne' name='UserExceptionOne'/>
+   <fault message='tns:UserExceptionTwo' name='UserExceptionTwo'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='hello'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws251' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws251' use='literal'/>
+   </output>
+   <fault name='BaseException'>
+    <soap:fault name='BaseException' use='literal'/>
+   </fault>
+   <fault name='UserExceptionOne'>
+    <soap:fault name='UserExceptionOne' use='literal'/>
+   </fault>
+   <fault name='UserExceptionTwo'>
+    <soap:fault name='UserExceptionTwo' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

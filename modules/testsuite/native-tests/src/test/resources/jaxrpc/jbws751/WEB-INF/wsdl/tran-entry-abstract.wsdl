@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="uri:tranHistory" xmlns:ns1="urn:tranEntryService" targetNamespace="urn:tranEntryService" name="TranHistory">
+	<types>
+		<xs:schema>
+			<xs:import namespace="uri:tranHistory" schemaLocation="TransactionHistoryRq.xsd"/>
+			<xs:import namespace="uri:tranHistory" schemaLocation="TransactionHistoryRs.xsd"/>
+			<xs:import namespace="uri:tranHistory" schemaLocation="StatusRs.xsd"/>
+		</xs:schema>
+	</types>
+	<message name="ITranHistory_getTransactionHistoryRq">
+		<part name="parameters" element="tns:TransactionHistoryRq"/>
+	</message>
+	<message name="ITranHistory_getTransactionHistoryRs">
+		<part name="response" element="tns:TransactionHistoryRs"/>
+	</message>
+	<message name="ITranHistory_getStatusRs">
+		<part name="status" element="tns:StatusRs"/>
+	</message>
+	<portType name="ITranHistory">
+		<operation name="getTransactionHistory">
+			<input message="ns1:ITranHistory_getTransactionHistoryRq"/>
+			<output message="ns1:ITranHistory_getTransactionHistoryRs"/>
+			<fault name="status" message="ns1:ITranHistory_getStatusRs"/>
+		</operation>
+	</portType>
+</definitions>

@@ -1,0 +1,55 @@
+<definitions name='OrganizationJMSEndpointService' targetNamespace='http://org.jboss.ws/samples/jmstransport' xmlns='http://schemas.xmlsoap.org/wsdl/'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/samples/jmstransport' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  
+  <types></types>
+  
+  <message name='OrganizationJMSEndpoint_getContactInfoResponse'>
+    <part name='return' type='xsd:string'></part>
+  </message>
+  <message name='OrganizationJMSEndpoint_getContactInfo'>
+    <part name='arg0' type='xsd:string'></part>
+  </message>
+  
+  <portType name='OrganizationJMSEndpoint'>
+    <operation name='getContactInfo' parameterOrder='arg0'>
+      <input message='tns:OrganizationJMSEndpoint_getContactInfo'></input>
+      <output message='tns:OrganizationJMSEndpoint_getContactInfoResponse'></output>
+    </operation>
+  </portType>
+  
+  <binding name='HTTPBinding' type='tns:OrganizationJMSEndpoint'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='getContactInfo'>
+      <soap:operation soapAction=''/>
+      <input>
+        <soap:body namespace='http://org.jboss.ws/samples/jmstransport' use='literal'/>
+      </input>
+      <output>
+        <soap:body namespace='http://org.jboss.ws/samples/jmstransport' use='literal'/>
+      </output>
+    </operation>
+  </binding>
+  
+  <binding name='JMSBinding' type='tns:OrganizationJMSEndpoint'>
+    <soap:binding style='rpc' transport='http://www.example.org/2006/06/soap/bindings/JMS/'/>
+    <operation name='getContactInfo'>
+      <soap:operation soapAction=''/>
+      <input>
+        <soap:body namespace='http://org.jboss.ws/samples/jmstransport' use='literal'/>
+      </input>
+      <output>
+        <soap:body namespace='http://org.jboss.ws/samples/jmstransport' use='literal'/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name='OrganizationJMSEndpointService'>
+    <port binding='tns:HTTPBinding' name='HTTPEndpointPort'>
+      <soap:address location='http://@jboss.bind.address@:8080/jaxws-samples-jmstransport/OrganizationJMSEndpoint'/>
+    </port>
+    <port binding='tns:JMSBinding' name='JMSEndpointPort'>
+      <soap:address location='jms://queue/RequestQueue?replyToName=queue/ResponseQueue'/>
+    </port>
+  </service>
+  
+</definitions>

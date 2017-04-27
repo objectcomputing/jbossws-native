@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="TestService" targetNamespace="http://org.jboss.ws/jaxws/endpoint"
+		xmlns:tns="http://org.jboss.ws/jaxws/endpoint"
+		xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:fab="http://www.fabrikam123.example.com/stock" 
+		xmlns:rmp="http://schemas.xmlsoap.org/ws/2005/02/rm/policy" 
+		xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy" 
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" >
+  <wsp:Policy wsu:Id="RmPolicy" >
+    <rmp:RMAssertion>
+      <rmp:InactivityTimeout Milliseconds="600000" />
+      <rmp:BaseRetransmissionInterval Milliseconds="3000" />
+      <rmp:ExponentialBackoff />
+      <rmp:AcknowledgementInterval Milliseconds="200" />
+    </rmp:RMAssertion>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="uselessPortTypePolicy" >
+    <fab:useless>nothing</fab:useless>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="uselessPortTypePolicy2" >
+    <fab:useless>nothing and nothing</fab:useless>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="uselessPortPolicy" >
+    <fab:useless>nothing again</fab:useless>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="X509EndpointPolicy" >
+    <sp:AsymmetricBinding>
+      <wsp:Policy>
+        <!-- Details omitted for readability -->
+        <sp:IncludeTimestamp />
+        <sp:OnlySignEntireHeadersAndBody />
+      </wsp:Policy>
+    </sp:AsymmetricBinding>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="SecureMessagePolicy" >
+    <sp:SignedParts>
+      <sp:Body />
+    </sp:SignedParts>
+    <sp:EncryptedParts>
+      <sp:Body />
+    </sp:EncryptedParts>
+  </wsp:Policy>
+  <types/>
+  <message name="EndpointInterface_echo">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="EndpointInterface_echoResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <portType name="EndpointInterface" wsp:PolicyURIs="#uselessPortTypePolicy,#uselessPortTypePolicy2">
+    <operation name="echo" parameterOrder="String_1">
+      <input message="tns:EndpointInterface_echo"/>
+      <output message="tns:EndpointInterface_echoResponse"/>
+    </operation>
+  </portType>
+  <binding name="EndpointInterfaceBinding" type="tns:EndpointInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <wsp:PolicyReference URI="#RmPolicy" wsdl:required="true" />
+    <wsp:PolicyReference URI="#X509EndpointPolicy" wsdl:required="true" />
+    <operation name="echo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws/jaxws/endpoint"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws/jaxws/endpoint"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="EndpointInterfacePort" binding="tns:EndpointInterfaceBinding">
+      <wsp:PolicyReference URI="#uselessPortPolicy" wsdl:required="true" />
+      <soap:address location="http://@jboss.bind.address@:8080/jaxws-endpoint"/>
+    </port>
+  </service>
+</definitions>

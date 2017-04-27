@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1124' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1124' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='TestEndpoint_getResourceString'/>
+ <message name='TestEndpoint_getResourceStringResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='getResourceString'>
+   <input message='tns:TestEndpoint_getResourceString'/>
+   <output message='tns:TestEndpoint_getResourceStringResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getResourceString'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1124' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1124' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

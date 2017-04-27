@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.tools.jbws_161.custom</package-type>
+  <namespaceURI>http://org.jboss/types</namespaceURI>
+ </package-mapping>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.tools.jbws_161.custom</package-type>
+  <namespaceURI>http://org.jboss/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws_161.custom.HelloObj</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss/types'>typeNS:HelloObj</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>msg</java-variable-name>
+   <xml-element-name>msg</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws_161.custom.HelloObj[]</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss/types'>typeNS:HelloObjArray</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.tools.jbws_161.custom.HelloCustomService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss/types'>serviceNS:HelloCustomService</wsdl-service-name>
+  <port-mapping>
+    <port-name>HelloCustomRemotePort</port-name>
+   <java-port-name>HelloCustomRemotePort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.tools.jbws_161.custom.HelloCustomRemote</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss/types'>portTypeNS:HelloCustomRemote</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss/types'>bindingNS:HelloCustomRemoteBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>helloArray</java-method-name>
+   <wsdl-operation>helloArray</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.jbws_161.custom.HelloObj[]</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloArray</wsdl-message>
+     <wsdl-message-part-name>arrayOfHelloObj_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.jbws_161.custom.HelloObj[]</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloArrayResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>helloBean</java-method-name>
+   <wsdl-operation>helloBean</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.jbws_161.custom.HelloObj</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloBean</wsdl-message>
+     <wsdl-message-part-name>HelloObj_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.jbws_161.custom.HelloObj</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloBeanResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>helloString</java-method-name>
+   <wsdl-operation>helloString</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloString</wsdl-message>
+     <wsdl-message-part-name>String_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>java.lang.String</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss/types'>wsdlMsgNS:HelloCustomRemote_helloStringResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

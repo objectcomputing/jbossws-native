@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="PrimitiveTypesService" targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types/>
+  <message name="PrimitiveTypes_echoBoolean">
+    <part name="boolean_1" type="xsd:boolean"/>
+  </message>
+  <message name="PrimitiveTypes_echoBooleanResponse">
+    <part name="result" type="xsd:boolean"/>
+  </message>
+  <message name="PrimitiveTypes_echoByte">
+    <part name="byte_1" type="xsd:byte"/>
+  </message>
+  <message name="PrimitiveTypes_echoByteResponse">
+    <part name="result" type="xsd:byte"/>
+  </message>
+  <message name="PrimitiveTypes_echoDouble">
+    <part name="double_1" type="xsd:double"/>
+  </message>
+  <message name="PrimitiveTypes_echoDoubleResponse">
+    <part name="result" type="xsd:double"/>
+  </message>
+  <message name="PrimitiveTypes_echoFloat">
+    <part name="float_1" type="xsd:float"/>
+  </message>
+  <message name="PrimitiveTypes_echoFloatResponse">
+    <part name="result" type="xsd:float"/>
+  </message>
+  <message name="PrimitiveTypes_echoInt">
+    <part name="int_1" type="xsd:int"/>
+  </message>
+  <message name="PrimitiveTypes_echoIntResponse">
+    <part name="result" type="xsd:int"/>
+  </message>
+  <message name="PrimitiveTypes_echoLong">
+    <part name="long_1" type="xsd:long"/>
+  </message>
+  <message name="PrimitiveTypes_echoLongResponse">
+    <part name="result" type="xsd:long"/>
+  </message>
+  <message name="PrimitiveTypes_echoShort">
+    <part name="short_1" type="xsd:short"/>
+  </message>
+  <message name="PrimitiveTypes_echoShortResponse">
+    <part name="result" type="xsd:short"/>
+  </message>
+  <portType name="PrimitiveTypes">
+    <operation name="echoBoolean" parameterOrder="boolean_1">
+      <input message="tns:PrimitiveTypes_echoBoolean"/>
+      <output message="tns:PrimitiveTypes_echoBooleanResponse"/>
+    </operation>
+    <operation name="echoByte" parameterOrder="byte_1">
+      <input message="tns:PrimitiveTypes_echoByte"/>
+      <output message="tns:PrimitiveTypes_echoByteResponse"/>
+    </operation>
+    <operation name="echoDouble" parameterOrder="double_1">
+      <input message="tns:PrimitiveTypes_echoDouble"/>
+      <output message="tns:PrimitiveTypes_echoDoubleResponse"/>
+    </operation>
+    <operation name="echoFloat" parameterOrder="float_1">
+      <input message="tns:PrimitiveTypes_echoFloat"/>
+      <output message="tns:PrimitiveTypes_echoFloatResponse"/>
+    </operation>
+    <operation name="echoInt" parameterOrder="int_1">
+      <input message="tns:PrimitiveTypes_echoInt"/>
+      <output message="tns:PrimitiveTypes_echoIntResponse"/>
+    </operation>
+    <operation name="echoLong" parameterOrder="long_1">
+      <input message="tns:PrimitiveTypes_echoLong"/>
+      <output message="tns:PrimitiveTypes_echoLongResponse"/>
+    </operation>
+    <operation name="echoShort" parameterOrder="short_1">
+      <input message="tns:PrimitiveTypes_echoShort"/>
+      <output message="tns:PrimitiveTypes_echoShortResponse"/>
+    </operation>
+  </portType>
+  <binding name="PrimitiveTypesBinding" type="tns:PrimitiveTypes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="echoBoolean">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoByte">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoDouble">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoFloat">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoInt">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoLong">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoShort">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="PrimitiveTypesService">
+    <port name="PrimitiveTypesPort" binding="tns:PrimitiveTypesBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,47 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+
+  <xsd:complexType name="Address" >
+  <xsd:sequence>
+    <xsd:element name="name"   type="xsd:string"/>
+    <xsd:element name="street" type="xsd:string"/>
+    <xsd:element name="city"   type="xsd:string"/>
+    <xsd:element name="state"  type="xsd:string"/>
+    <xsd:element name="zip"    type="xsd:decimal"/>
+  </xsd:sequence>
+  <xsd:attribute name="country" type="xsd:NMTOKEN" fixed="US"/>
+</xsd:complexType>
+
+  <xsd:element name="comment" type="xsd:string"/>
+
+  <xsd:complexType name="PurchaseOrderType">
+  <xsd:sequence>
+      <xsd:group   ref="tns:shipAndBill"/>
+      <xsd:element name="singleUSAddress" type="tns:Address"/>
+    <xsd:element ref="tns:comment" minOccurs="0"/> 
+  </xsd:sequence>
+  <xsd:attribute name="orderDate" type="xsd:date"/>
+</xsd:complexType>
+
+<xsd:group name="shipAndBill">
+  <xsd:sequence>
+    <xsd:element name="shipTo" type="tns:Address"/>
+    <xsd:element name="billTo" type="tns:Address"/>
+  </xsd:sequence>
+</xsd:group>
+
+<xsd:attributeGroup name="personattrgroup">
+  <xsd:attribute name="firstname" type="string"/>
+  <xsd:attribute name="lastname" type="string"/>
+  <xsd:attribute name="birthday" type="date"/>
+</xsd:attributeGroup>
+
+<xsd:element name="teacher">
+  <xsd:complexType>
+    <xsd:attributeGroup ref="tns:personattrgroup"/>
+  </xsd:complexType>
+</xsd:element>
+</schema>

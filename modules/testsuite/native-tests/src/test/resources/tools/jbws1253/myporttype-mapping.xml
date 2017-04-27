@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jbws1253</package-type>
+  <namespaceURI>http://test.jboss.org/ws/jbws1253/types</namespaceURI>
+ </package-mapping>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jbws1253</package-type>
+  <namespaceURI>http://test.jboss.org/ws/jbws1253</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jbws1253.ReturnVoidParamInt</java-type>
+  <root-type-qname xmlns:typeNS='http://test.jboss.org/ws/jbws1253/types'>typeNS:returnVoidParamInt</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>int_1</java-variable-name>
+   <xml-element-name>int_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jbws1253.ReturnVoidParamIntResponse</java-type>
+  <root-type-qname xmlns:typeNS='http://test.jboss.org/ws/jbws1253/types'>typeNS:returnVoidParamIntResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jbws1253.TestSEIService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://test.jboss.org/ws/jbws1253'>serviceNS:TestSEIService</wsdl-service-name>
+  <port-mapping>
+   <port-name>MyPortTypePort</port-name>
+   <java-port-name>MyPortTypePort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jbws1253.My</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://test.jboss.org/ws/jbws1253'>portTypeNS:MyPortType</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://test.jboss.org/ws/jbws1253'>bindingNS:MyPortTypeBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>returnVoidParamInt</java-method-name>
+   <wsdl-operation>returnVoidParamInt</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jbws1253.ReturnVoidParamInt</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://test.jboss.org/ws/jbws1253'>wsdlMsgNS:MyPortType_returnVoidParamInt</wsdl-message>
+     <wsdl-message-part-name>parameters</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jbws1253.ReturnVoidParamIntResponse</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://test.jboss.org/ws/jbws1253'>wsdlMsgNS:MyPortType_returnVoidParamIntResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

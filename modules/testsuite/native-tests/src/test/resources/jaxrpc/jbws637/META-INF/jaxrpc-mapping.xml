@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+	<package-mapping>
+		<package-type>org.jboss.test.ws.jaxrpc.jbws637</package-type>
+		<namespaceURI>http://ws.cdyne.com/</namespaceURI>
+	</package-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.Words</java-type>
+		<root-type-qname xmlns:typeNS="http://ws.cdyne.com/">typeNS:Words</root-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>suggestions</java-variable-name>
+			<xml-element-name>Suggestions</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>word</java-variable-name>
+			<xml-element-name>word</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>suggestionCount</java-variable-name>
+			<xml-element-name>SuggestionCount</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.CheckTextBody</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:&gt;CheckTextBody</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>bodyText</java-variable-name>
+			<xml-element-name>BodyText</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>licenseKey</java-variable-name>
+			<xml-element-name>LicenseKey</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.DocumentSummary</java-type>
+		<root-type-qname xmlns:typeNS="http://ws.cdyne.com/">typeNS:DocumentSummary</root-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>misspelledWord</java-variable-name>
+			<xml-element-name>MisspelledWord</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>ver</java-variable-name>
+			<xml-element-name>ver</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>body</java-variable-name>
+			<xml-element-name>body</xml-element-name>
+		</variable-mapping>
+		<variable-mapping>
+			<java-variable-name>misspelledWordCount</java-variable-name>
+			<xml-element-name>MisspelledWordCount</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.CheckTextBodyResponse</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:&gt;CheckTextBodyResponse</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>documentSummary</java-variable-name>
+			<xml-element-name>DocumentSummary</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.SuggestWord</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:&gt;SuggestWord</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>word</java-variable-name>
+			<xml-element-name>word</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.SuggestWordResponse</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:&gt;SuggestWordResponse</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+		<variable-mapping>
+			<java-variable-name>suggestWordResult</java-variable-name>
+			<xml-element-name>SuggestWordResult</xml-element-name>
+		</variable-mapping>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>java.lang.String[]</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:Words&gt;Suggestions[0,unbounded]</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+	</java-xml-type-mapping>
+	<java-xml-type-mapping>
+		<java-type>org.jboss.test.ws.jaxrpc.jbws637.Words[]</java-type>
+		<anonymous-type-qname>http://ws.cdyne.com/:DocumentSummary&gt;MisspelledWord[0,unbounded]</anonymous-type-qname>
+		<qname-scope>complexType</qname-scope>
+	</java-xml-type-mapping>
+	<service-interface-mapping>
+		<service-interface>org.jboss.test.ws.jaxrpc.jbws637.Check</service-interface>
+		<wsdl-service-name xmlns:serviceNS="http://ws.cdyne.com/">serviceNS:check</wsdl-service-name>
+		<port-mapping>
+			<port-name>checkSoap</port-name>
+			<java-port-name>checkSoap</java-port-name>
+		</port-mapping>
+	</service-interface-mapping>
+	<service-endpoint-interface-mapping>
+		<service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws637.CheckSoap</service-endpoint-interface>
+		<wsdl-port-type xmlns:portTypeNS="http://ws.cdyne.com/">portTypeNS:checkSoap</wsdl-port-type>
+		<wsdl-binding xmlns:bindingNS="http://ws.cdyne.com/">bindingNS:checkSoap</wsdl-binding>
+		<service-endpoint-method-mapping>
+			<java-method-name>checkTextBody</java-method-name>
+			<wsdl-operation>CheckTextBody</wsdl-operation>
+			<wrapped-element/>
+			<method-param-parts-mapping>
+				<param-position>0</param-position>
+				<param-type>java.lang.String</param-type>
+				<wsdl-message-mapping>
+					<wsdl-message xmlns:wsdlMsgNS="http://ws.cdyne.com/">wsdlMsgNS:CheckTextBodySoapIn</wsdl-message>
+					<wsdl-message-part-name>BodyText</wsdl-message-part-name>
+					<parameter-mode>IN</parameter-mode>
+				</wsdl-message-mapping>
+			</method-param-parts-mapping>
+			<method-param-parts-mapping>
+				<param-position>1</param-position>
+				<param-type>java.lang.String</param-type>
+				<wsdl-message-mapping>
+					<wsdl-message xmlns:wsdlMsgNS="http://ws.cdyne.com/">wsdlMsgNS:CheckTextBodySoapIn</wsdl-message>
+					<wsdl-message-part-name>LicenseKey</wsdl-message-part-name>
+					<parameter-mode>IN</parameter-mode>
+				</wsdl-message-mapping>
+			</method-param-parts-mapping>
+			<wsdl-return-value-mapping>
+				<method-return-value>org.jboss.test.ws.jaxrpc.jbws637.DocumentSummary</method-return-value>
+				<wsdl-message xmlns:wsdlMsgNS="http://ws.cdyne.com/">wsdlMsgNS:CheckTextBodySoapOut</wsdl-message>
+				<wsdl-message-part-name>DocumentSummary</wsdl-message-part-name>
+			</wsdl-return-value-mapping>
+		</service-endpoint-method-mapping>
+		<service-endpoint-method-mapping>
+			<java-method-name>suggestWord</java-method-name>
+			<wsdl-operation>SuggestWord</wsdl-operation>
+			<wrapped-element/>
+			<method-param-parts-mapping>
+				<param-position>0</param-position>
+				<param-type>java.lang.String</param-type>
+				<wsdl-message-mapping>
+					<wsdl-message xmlns:wsdlMsgNS="http://ws.cdyne.com/">wsdlMsgNS:SuggestWordSoapIn</wsdl-message>
+					<wsdl-message-part-name>word</wsdl-message-part-name>
+					<parameter-mode>IN</parameter-mode>
+				</wsdl-message-mapping>
+			</method-param-parts-mapping>
+			<wsdl-return-value-mapping>
+				<method-return-value>java.lang.String</method-return-value>
+				<wsdl-message xmlns:wsdlMsgNS="http://ws.cdyne.com/">wsdlMsgNS:SuggestWordSoapOut</wsdl-message>
+				<wsdl-message-part-name>SuggestWordResult</wsdl-message-part-name>
+			</wsdl-return-value-mapping>
+		</service-endpoint-method-mapping>
+	</service-endpoint-interface-mapping>
+</java-wsdl-mapping>

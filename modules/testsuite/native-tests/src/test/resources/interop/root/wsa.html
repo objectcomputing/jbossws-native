@@ -1,0 +1,72 @@
+<html>
+<head>
+   <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<table border=0>
+   <tr valign=bottom>
+      <td><a href="http://jboss.org"><img src="logo.gif" border="0"></a></td>
+      <td><a href="/interop"><h2>JBossWS / WCF interop </h2></a></td>
+   </tr>
+   <tr valign=bottom>
+      <td></td>
+      <td>&nbsp;</td>
+   </tr>
+   <tr valign=top>
+      <td>
+         <ul>
+            <li><a href="soapwsdl.html">SOAP/WSDL</a></li>
+            <li><a href="wsa.html">WS-Addressing (2005/08)</a></li>
+            <li><a href="wsse.html">WS-Security 1.0</a></li>
+            <!--li><a href="mtom.html">MTOM/XOP</a></li-->
+         </ul>
+      </td>
+      <td>
+
+         <h3>WS-Addressing (2005/08) endpoints</h3>
+         <table cellpadding=5>
+            <tr>
+               <td>Endpoint</td>
+               <td>WSDL</td>
+            </tr>
+            <tr>
+               <td><a href="/wsa10/echo">/wsa10/echo</a></td>
+               <td><a href="/wsa10/echo?wsdl">here</a></td>
+            </tr>
+             <tr>
+               <td><a href="/wsa10/notify">/wsa10/notify</a></td>
+               <td><a href="/wsa10/notify?wsdl">here</a></td>
+            </tr>
+         </table>
+
+         <p>
+            <b>NOTE:</b> Please make sure to send the test scenario name with each request.
+            I.e:
+<pre>
+
+   &lt;env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+      &lt;env:Header xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+         &lt;wsa:To xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+            http://example.org/node/B
+         &lt;/wsa:To>
+         &lt;wsa:Action xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+            http://example.org/action/notify
+         &lt;/wsa:Action>
+      &lt;/env:Header>
+      &lt;env:Body>
+         &lt;ns1:notify xmlns:ns1='http://example.org/notify'>
+            Message 1100
+         &lt;/ns1:notify>
+      &lt;/env:Body>
+   &lt;/env:Envelope>
+
+</pre>
+
+         </p>
+      </td>
+   </tr>
+
+</table>
+
+</body>
+</html>

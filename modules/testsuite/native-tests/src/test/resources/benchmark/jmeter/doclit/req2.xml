@@ -1,0 +1,12 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+    <env:Header/>
+    <env:Body>
+        <ns1:echoArrayOfSimpleUserType xmlns:ns1='http://org.jboss.ws/benchmark/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+            <arrayOfSimpleUserType_1>
+                <f>1.0</f>
+                <i>1</i>
+                <s>test</s>
+            </arrayOfSimpleUserType_1>
+        </ns1:echoArrayOfSimpleUserType>
+    </env:Body>
+</env:Envelope>

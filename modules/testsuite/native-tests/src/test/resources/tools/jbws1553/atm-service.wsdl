@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:samples:atm" xmlns:tns="urn:samples:atm" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bindingNS2="urn:samples:atm2"
+  xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="urn:samples:atm2" location="atm-binding-1.wsdl"/>
+  <service name="AtmFrontEndService">
+    <port name="FrontEndPort" binding="bindingNS2:FrontEndBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URI"/>
+    </port>
+  </service>
+</definitions>

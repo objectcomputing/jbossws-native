@@ -1,0 +1,29 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+ <xsd:annotation>
+    <xsd:documentation xml:lang="en">Schema for Testing
+    </xsd:documentation>
+  </xsd:annotation>
+<xsd:complexType name="USAddress" >
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">Represents a US Address.
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:sequence>
+    <xsd:element name="name"   type="xsd:string"/>
+    <xsd:element name="street" type="xsd:string"/>
+    <xsd:element name="city"   type="xsd:string"/>
+    <xsd:element name="state"  type="xsd:string"/>
+    <xsd:element name="zip"    type="xsd:decimal"/>
+  </xsd:sequence>
+</xsd:complexType>
+ <xsd:element name="myAddress" type="tns:USAddress">
+   <xsd:annotation>
+    <xsd:documentation xml:lang="en">Sample Element
+    </xsd:documentation>
+   </xsd:annotation>
+ </xsd:element>
+</schema>

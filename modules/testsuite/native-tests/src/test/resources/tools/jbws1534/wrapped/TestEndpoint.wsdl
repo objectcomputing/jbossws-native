@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PhoneBook' targetNamespace='http://test.jboss.org/ws/jbws1534' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://test.jboss.org/ws/jbws1534/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://test.jboss.org/ws/jbws1534' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1534/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://test.jboss.org/ws/jbws1534/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+
+   <complexType name='Person'>
+    <sequence>
+     <element name='abstract' nillable='true' type='string'/>
+     <element name='assert' nillable='true' type='string'/>
+     <element name='boolean' nillable='true' type='string'/>
+     <element name='break' nillable='true' type='string'/>
+     <element name='byte' nillable='true' type='string'/>
+     <element name='case' nillable='true' type='string'/>
+     <element name='catch' nillable='true' type='string'/>
+     <element name='char' nillable='true' type='string'/>
+     <element name='class' nillable='true' type='string'/>
+     <element name='const' nillable='true' type='string'/>
+     <element name='continue' nillable='true' type='string'/>
+     <element name='default' nillable='true' type='string'/>
+     <element name='do' nillable='true' type='string'/>
+     <element name='double' nillable='true' type='string'/>
+     <element name='else' nillable='true' type='string'/>
+     <element name='enum' nillable='true' type='string'/>
+     <element name='extends' nillable='true' type='string'/>
+     <element name='final' nillable='true' type='string'/>
+     <element name='finally' nillable='true' type='string'/>
+     <element name='float' nillable='true' type='string'/>
+     <element name='for' nillable='true' type='string'/>
+     <element name='if' nillable='true' type='string'/>
+     <element name='goto' nillable='true' type='string'/>
+     <element name='implements' nillable='true' type='string'/>
+     <element name='import' nillable='true' type='string'/>
+     <element name='instanceof' nillable='true' type='string'/>
+     <element name='int' nillable='true' type='string'/>
+     <element name='interface' nillable='true' type='string'/>
+     <element name='long' nillable='true' type='string'/>
+     <element name='native' nillable='true' type='string'/>
+     <element name='new' nillable='true' type='string'/>
+     <element name='package' nillable='true' type='string'/>
+     <element name='private' nillable='true' type='string'/>
+     <element name='protected' nillable='true' type='string'/>
+     <element name='public' nillable='true' type='string'/>
+     <element name='return' nillable='true' type='string'/>
+     <element name='short' nillable='true' type='string'/>
+     <element name='static' nillable='true' type='string'/>
+     <element name='strictfp' nillable='true' type='string'/>
+     <element name='super' nillable='true' type='string'/>
+     <element name='switch' nillable='true' type='string'/>
+     <element name='synchronized' nillable='true' type='string'/>
+     <element name='this' nillable='true' type='string'/>
+     <element name='throw' nillable='true' type='string'/>
+     <element name='throws' nillable='true' type='string'/>
+     <element name='transient' nillable='true' type='string'/>
+     <element name='try' nillable='true' type='string'/>
+     <element name='void' nillable='true' type='string'/>
+     <element name='volatile' nillable='true' type='string'/>
+     <element name='while' nillable='true' type='string'/>
+     <element name='true' nillable='true' type='string'/>
+     <element name='false' nillable='true' type='string'/>
+     <element name='null' nillable='true' type='string'/>
+    </sequence>
+   </complexType>     
+
+   <complexType name='TelephoneNumber'>
+    <sequence>
+     <element name='number' nillable='true' type='string'/>
+    </sequence>
+   </complexType>   
+     
+   <element name='lookup' type='tns:Person'/>
+   <element name='lookupResponse' type='tns:TelephoneNumber'/>
+
+  </schema>
+ </types>
+ <message name='PhoneBook_lookup'>
+  <part element='ns1:lookup' name='parameters'/>
+ </message>
+ <message name='PhoneBook_lookupResponse'>
+  <part element='ns1:lookupResponse' name='result'/>
+ </message>
+ <portType name='PhoneBook'>
+  <operation name='lookup'>
+   <input message='tns:PhoneBook_lookup'/>
+   <output message='tns:PhoneBook_lookupResponse'/>
+  </operation>
+ </portType>
+ <binding name='PhoneBookBinding' type='tns:PhoneBook'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='PhoneBook'>
+  <port binding='tns:PhoneBookBinding' name='PhoneBookPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

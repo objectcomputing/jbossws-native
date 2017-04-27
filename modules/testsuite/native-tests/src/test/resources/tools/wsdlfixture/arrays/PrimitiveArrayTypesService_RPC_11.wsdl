@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PrimitiveArrayTypesService' targetNamespace='http://org.jboss.ws' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.ws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.ws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='boolean.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='double.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='float.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='int.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='long.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='short.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='short'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='PrimitiveArrayTypes_echoBoolean'>
+  <part name='arrayOfboolean_1' type='tns:boolean.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoBooleanResponse'>
+  <part name='result' type='tns:boolean.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoByte'>
+  <part name='arrayOfbyte_1' type='xsd:base64Binary'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoByteResponse'>
+  <part name='result' type='xsd:base64Binary'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoDouble'>
+  <part name='arrayOfdouble_1' type='tns:double.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoDoubleResponse'>
+  <part name='result' type='tns:double.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoFloat'>
+  <part name='arrayOffloat_1' type='tns:float.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoFloatResponse'>
+  <part name='result' type='tns:float.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoInt'>
+  <part name='arrayOfint_1' type='tns:int.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoIntResponse'>
+  <part name='result' type='tns:int.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoLong'>
+  <part name='arrayOflong_1' type='tns:long.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoLongResponse'>
+  <part name='result' type='tns:long.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoShort'>
+  <part name='arrayOfshort_1' type='tns:short.Array'/>
+ </message>
+ <message name='PrimitiveArrayTypes_echoShortResponse'>
+  <part name='result' type='tns:short.Array'/>
+ </message>
+ <portType name='PrimitiveArrayTypes'>
+  <operation name='echoBoolean' parameterOrder='arrayOfboolean_1'>
+   <input message='tns:PrimitiveArrayTypes_echoBoolean'/>
+   <output message='tns:PrimitiveArrayTypes_echoBooleanResponse'/>
+  </operation>
+  <operation name='echoByte' parameterOrder='arrayOfbyte_1'>
+   <input message='tns:PrimitiveArrayTypes_echoByte'/>
+   <output message='tns:PrimitiveArrayTypes_echoByteResponse'/>
+  </operation>
+  <operation name='echoDouble' parameterOrder='arrayOfdouble_1'>
+   <input message='tns:PrimitiveArrayTypes_echoDouble'/>
+   <output message='tns:PrimitiveArrayTypes_echoDoubleResponse'/>
+  </operation>
+  <operation name='echoFloat' parameterOrder='arrayOffloat_1'>
+   <input message='tns:PrimitiveArrayTypes_echoFloat'/>
+   <output message='tns:PrimitiveArrayTypes_echoFloatResponse'/>
+  </operation>
+  <operation name='echoInt' parameterOrder='arrayOfint_1'>
+   <input message='tns:PrimitiveArrayTypes_echoInt'/>
+   <output message='tns:PrimitiveArrayTypes_echoIntResponse'/>
+  </operation>
+  <operation name='echoLong' parameterOrder='arrayOflong_1'>
+   <input message='tns:PrimitiveArrayTypes_echoLong'/>
+   <output message='tns:PrimitiveArrayTypes_echoLongResponse'/>
+  </operation>
+  <operation name='echoShort' parameterOrder='arrayOfshort_1'>
+   <input message='tns:PrimitiveArrayTypes_echoShort'/>
+   <output message='tns:PrimitiveArrayTypes_echoShortResponse'/>
+  </operation>
+ </portType>
+ <binding name='PrimitiveArrayTypesBinding' type='tns:PrimitiveArrayTypes'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoBoolean'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoByte'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoDouble'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoFloat'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoInt'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoLong'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoShort'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='PrimitiveArrayTypesService'>
+  <port binding='tns:PrimitiveArrayTypesBinding' name='PrimitiveArrayTypesPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

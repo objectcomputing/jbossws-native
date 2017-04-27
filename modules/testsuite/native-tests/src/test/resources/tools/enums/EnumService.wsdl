@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='EnumService' targetNamespace='http://org.jboss.ws/enum' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.ws/enum/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/enum' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.ws/enum/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.ws/enum/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <simpleType name='EyeColor'>
+    <restriction base='string'>
+     <enumeration value='green'/>
+     <enumeration value='blue'/>
+     <enumeration value='hazel'/>
+     <enumeration value='brown'/>
+    </restriction>
+   </simpleType>
+   <simpleType name='PlanetMass'>
+    <restriction base='double'>
+     <enumeration value='3.303E23'/>
+     <enumeration value='4.869E24'/>
+     <enumeration value='5.976E24'/>
+     <enumeration value='6.421E23'/>
+     <enumeration value='1.9E27'/>
+     <enumeration value='5.688E26'/>
+     <enumeration value='8.686E25'/>
+     <enumeration value='1.0239999999999999E26'/>
+     <enumeration value='1.2700000000000001E22'/>
+    </restriction>
+   </simpleType>
+   <simpleType name='PlanetRadius'>
+    <restriction base='decimal'>
+     <enumeration value='2439700'/>
+     <enumeration value='6051800'/>
+     <enumeration value='6378140'/>
+     <enumeration value='3397200'/>
+     <enumeration value='71492000'/>
+     <enumeration value='60268000'/>
+     <enumeration value='25559000'/>
+     <enumeration value='24746000'/>
+     <enumeration value='1137000'/>
+    </restriction>
+   </simpleType>
+  </schema>
+ </types>
+ <message name='EnumEndpoint_echoEnum' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part name='EyeColor_1' type='ns1:EyeColor'/>
+ </message>
+ <message name='EnumEndpoint_echoEnumResponse'>
+  <part name='result' type='ns1:EyeColor'/>
+ </message>
+ <message name='EnumEndpoint_echoPlanetMass'>
+  <part name='PlanetMass_1' type='ns1:PlanetMass'/>
+ </message>
+ <message name='EnumEndpoint_echoPlanetMassResponse'>
+  <part name='result' type='ns1:PlanetMass'/>
+ </message>
+ <message name='EnumEndpoint_echoPlanetRadius'>
+  <part name='PlanetRadius_1' type='ns1:PlanetRadius'/>
+ </message>
+ <message name='EnumEndpoint_echoPlanetRadiusResponse'>
+  <part name='result' type='ns1:PlanetMass'/>
+ </message>
+ <portType name='EnumEndpoint'>
+  <operation name='echoEnum' parameterOrder='EyeColor_1'>
+   <input message='tns:EnumEndpoint_echoEnum'/>
+   <output message='tns:EnumEndpoint_echoEnumResponse'/>
+  </operation>
+  <operation name='echoPlanetMass' parameterOrder='PlanetMass_1'>
+   <input message='tns:EnumEndpoint_echoPlanetMass'/>
+   <output message='tns:EnumEndpoint_echoPlanetMassResponse'/>
+  </operation>
+  <operation name='echoPlanetRadius' parameterOrder='PlanetRadius_1'>
+   <input message='tns:EnumEndpoint_echoPlanetRadius'/>
+   <output message='tns:EnumEndpoint_echoPlanetRadiusResponse'/>
+  </operation>
+ </portType>
+ <binding name='EnumEndpointBinding' type='tns:EnumEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoEnum'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoPlanetMass'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoPlanetRadius'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/enum' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='EnumService'>
+  <port binding='tns:EnumEndpointBinding' name='EnumEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

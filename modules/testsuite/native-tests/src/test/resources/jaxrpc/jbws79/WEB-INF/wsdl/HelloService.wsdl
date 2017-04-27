@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="HelloService" targetNamespace="http://org.jboss.test.webservice/jbws79" xmlns:tns="http://org.jboss.test.webservice/jbws79" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+  <import namespace="http://org.jboss.test.webservice/jbws79" location="HelloOneService.wsdl"/>
+  <import namespace="http://org.jboss.test.webservice/jbws79" location="HelloTwoService.wsdl"/>
+
+  <service name="HelloOneService">
+    <port name="HelloOnePort" binding="tns:HelloOneBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+
+  <service name="HelloTwoService">
+    <port name="HelloTwoPort" binding="tns:HelloTwoBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

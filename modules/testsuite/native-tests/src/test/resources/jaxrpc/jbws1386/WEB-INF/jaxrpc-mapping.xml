@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws1386</package-type>
+  <namespaceURI>http://org.jboss.test.ws/jbws1386/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws1386.Message</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1386/types'>typeNS:Message</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>data</java-variable-name>
+   <xml-element-name>data</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>name</java-variable-name>
+   <xml-element-name>name</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws1386.TestService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.ws/jbws1386'>serviceNS:TestService</wsdl-service-name>
+  <port-mapping>
+   <port-name>RequestServicePort</port-name>
+   <java-port-name>RequestServicePort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws1386.RequestService</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.ws/jbws1386'>portTypeNS:RequestService</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.ws/jbws1386'>bindingNS:RequestServiceBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>processClaim</java-method-name>
+   <wsdl-operation>processClaim</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws1386.Message</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws1386'>wsdlMsgNS:RequestService_processClaim</wsdl-message>
+     <wsdl-message-part-name>Message_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws1386.Message</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws1386'>wsdlMsgNS:RequestService_processClaimResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

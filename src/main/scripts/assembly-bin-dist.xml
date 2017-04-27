@@ -1,0 +1,117 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.1.0-SNAPSHOT.xsd">
+  
+  <id>binary-distribution</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+    <!-- root -->
+    <fileSet>
+      <directory>src/main/distro</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>build.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/distro</directory>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+      <includes>
+        <include>ant.properties.example</include>
+      </includes>
+    </fileSet>
+    <!-- build -->
+    <fileSet>
+      <directory>src/main/distro</directory>
+      <outputDirectory>build</outputDirectory>
+      <includes>
+        <include>build-deploy.xml</include>
+        <include>build-setup.xml</include>
+        <include>build-project-gen.xml</include>
+        <include>user-project-build.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>modules/resources/src/main/resources/resources</directory>
+      <outputDirectory>build</outputDirectory>
+      <includes>
+        <include>default-deploy.conf</include>
+        <include>jbossws-deploy-macros.xml</include>
+      </includes>
+    </fileSet>
+    <!-- docs -->
+    <fileSet>
+      <directory>src/main/distro</directory>
+      <outputDirectory>docs</outputDirectory>
+      <filtered>true</filtered>
+      <includes>
+        <include>Install.txt</include>
+        <include>ReleaseNotes.txt</include>
+        <include>JBossORG-EULA.txt</include>
+      </includes>
+    </fileSet>
+    <!-- deploy -->
+    <fileSet>
+      <directory>target/deploy-artifacts</directory>
+      <outputDirectory>deploy</outputDirectory>
+    </fileSet>
+    <!-- test etc -->
+    <fileSet>
+      <directory>modules/testsuite/native-tests/src/test</directory>
+      <outputDirectory>tests</outputDirectory>
+      <includes>
+        <include>etc/**</include>
+      </includes>
+    </fileSet>
+    <!-- test excludes -->
+    <fileSet>
+      <directory>modules/testsuite</directory>
+      <outputDirectory>tests/resources</outputDirectory>
+      <includes>
+        <include>test-excludes-*.txt</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  
+  <!-- framework tests -->
+  <moduleSets>
+    <moduleSet>
+      <includes>
+        <include>org.jboss.ws.native:jbossws-native-management</include>
+      </includes>
+      <binaries>
+        <dependencySets>
+          <dependencySet>
+            <outputDirectory>tests</outputDirectory>
+            <useStrictFiltering>true</useStrictFiltering>
+            <scope>provided</scope>
+            <unpack>true</unpack>
+            <includes>
+              <include>*:jbossws-framework:zip:testsuite</include>
+            </includes>
+            <unpackOptions>
+              <includes>
+                <include>ant-import/**</include>
+                <include>java/org/jboss/test/ws/console/**</include>
+                <include>java/org/jboss/test/ws/jaxws/samples/**</include>
+                <include>java/org/jboss/test/ws/jaxws/smoke/**</include>
+                <include>java/org/jboss/test/ws/management/**</include>
+                <include>java/org/jboss/test/ws/projectGenerator/**</include>
+                <include>resources/console/**</include>
+                <include>resources/jaxws/samples/**</include>
+                <include>resources/jaxws/smoke/**</include>
+                <include>resources/management/**</include>
+                <include>resources/projectGenerator/**</include>
+              </includes>
+            </unpackOptions>
+          </dependencySet>
+        </dependencySets>
+      </binaries>
+    </moduleSet>
+  </moduleSets>
+  
+</assembly>

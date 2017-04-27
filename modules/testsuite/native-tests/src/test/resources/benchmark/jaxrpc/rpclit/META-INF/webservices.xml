@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webservices xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:impl="http://org.jboss.ws/benchmark"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd"
+  version="1.1">
+
+  <webservice-description>
+    <webservice-description-name>BenchmarkDocLitEJBWS</webservice-description-name>
+    <wsdl-file>META-INF/wsdl/BenchmarkWebService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>META-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>BenchmarkRpcLitEJBWS</port-component-name>
+      <wsdl-port>impl:BenchmarkServicePort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.ws.benchmark.jaxrpc.BenchmarkService</service-endpoint-interface>
+      <service-impl-bean>
+        <ejb-link>BenchmarkRpcLit</ejb-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+</webservices>

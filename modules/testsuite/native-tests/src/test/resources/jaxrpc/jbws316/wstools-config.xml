@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+Comment out fieldprop:
+    <variable-mapping>
+      <java-variable-name>fieldProp</java-variable-name>
+      <data-member/>
+      <xml-element-name>fieldProp</xml-element-name>
+    </variable-mapping>
+
+    <complexType name="BinDataDTO">
+       <sequence>
+remove ->   <element name="fieldProp" type="base64Binary" nillable="true"/>
+        <element name="methodProp" type="base64Binary" nillable="true"/>
+       </sequence>
+    </complexType>
+-->
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="TestBusinessFacadeBF" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws316.TestBusinessFacadeBF_WS"
+              style="document">
+     </service>
+     <namespaces target-namespace="http://aeb.de/xnsg/testBusinessFacade/bf"
+                 type-namespace="http://aeb.de/xnsg/testBusinessFacade/bf" />
+     <mapping file="TestBusinessFacadeMapping.xml"/>
+     <webservices  servlet-link="TestBusinessFacadeBF"/>
+   </java-wsdl>  
+</configuration>

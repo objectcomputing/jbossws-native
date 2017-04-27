@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='OverloadedTestService' targetNamespace='http://org.jboss.ws/overloaded' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/overloaded' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='Overloaded_echo'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='String_2' type='xsd:string'/>
+  <part name='String_3' type='xsd:string'/>
+ </message>
+ <message name='Overloaded_echoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='Overloaded_echo2'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='int_2' type='xsd:int'/>
+ </message>
+ <message name='Overloaded_echo2Response'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='Overloaded_echo3'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='String_2' type='xsd:string'/>
+ </message>
+ <message name='Overloaded_echo3Response'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='Overloaded'>
+  <operation name='echo' parameterOrder='String_1 String_2 String_3'>
+   <input message='tns:Overloaded_echo'/>
+   <output message='tns:Overloaded_echoResponse'/>
+  </operation>
+  <operation name='echo2' parameterOrder='String_1 int_2'>
+   <input message='tns:Overloaded_echo2'/>
+   <output message='tns:Overloaded_echo2Response'/>
+  </operation>
+  <operation name='echo3' parameterOrder='String_1 String_2'>
+   <input message='tns:Overloaded_echo3'/>
+   <output message='tns:Overloaded_echo3Response'/>
+  </operation>
+ </portType>
+ <binding name='OverloadedBinding' type='tns:Overloaded'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echo2'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echo3'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/overloaded' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='OverloadedTestService'>
+  <port binding='tns:OverloadedBinding' name='OverloadedPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

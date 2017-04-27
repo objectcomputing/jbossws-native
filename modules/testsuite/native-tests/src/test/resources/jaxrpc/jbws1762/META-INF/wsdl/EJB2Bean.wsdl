@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file was generated using wstools -->
+<definitions name='EJB2Bean' targetNamespace='http://org.jboss.test.webservice/jbws1762' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws1762' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='EJB2Iface_echo'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='EJB2Iface_echoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='EJB2Iface'>
+  <operation name='echo' parameterOrder='String_1'>
+   <input message='tns:EJB2Iface_echo'/>
+   <output message='tns:EJB2Iface_echoResponse'/>
+  </operation>
+ </portType>
+ <binding name='EJB2IfaceBinding' type='tns:EJB2Iface'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws1762' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws1762' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='EJB2Bean'>
+  <port binding='tns:EJB2IfaceBinding' name='EJB2IfacePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

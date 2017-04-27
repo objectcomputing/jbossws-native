@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<wsdl:definitions name="logic"
+  targetNamespace="http://org.jboss.test.webservice/jbws706/tns"
+   xmlns:ns1="http://org.jboss.test.webservice/jbws706/ns1"
+   xmlns:ns2="http://org.jboss.test.webservice/jbws706/ns2"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://org.jboss.test.webservice/jbws706/tns">
+
+	<wsdl:types>
+		
+		<!--
+			Inline the schema to avoid the use of jaxrpc-deployment.xml. 
+			With the axis based stack	elementFormDefault is not seen in schema imports.
+			
+		<xsd:schema>
+		<xsd:import namespace="http://org.jboss.test.webservice/jbws706/ns1" schemaLocation="logicxsdschema.xsd"/>
+		<xsd:import namespace="http://org.jboss.test.webservice/jbws706/ns2" schemaLocation="applicationxsdschema.xsd"/>
+		</xsd:schema>
+		-->
+		
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://org.jboss.test.webservice/jbws706/ns1"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://org.jboss.test.webservice/jbws706/ns1">
+			<xsd:complexType name="Descr">
+				<xsd:all>
+					<xsd:element name="description" type="xsd:string"/>
+				</xsd:all>
+			</xsd:complexType>
+			<xsd:element name="processDescrReturn" type="tns:Descr"/>
+		</xsd:schema>
+		
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://org.jboss.test.webservice/jbws706/ns2"
+			xmlns:tns="http://org.jboss.test.webservice/jbws706/ns2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="AlturaPostConditionException" type="tns:AlturaPostConditionException"/>
+			<xsd:element name="AlturaPreConditionException" type="tns:AlturaPreConditionException"/>
+			<xsd:complexType name="AlturaApplicationException">
+				<xsd:complexContent>
+					<xsd:extension base="tns:AlturaException">
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AlturaException" abstract="true">
+				<xsd:sequence>
+					<xsd:element name="key" type="xsd:string"/>
+					<xsd:element name="values" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AlturaPostConditionException">
+				<xsd:complexContent>
+					<xsd:extension base="tns:AlturaApplicationException">
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AlturaPreConditionException">
+				<xsd:complexContent>
+					<xsd:extension base="tns:AlturaApplicationException">
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+		
+	</wsdl:types>
+
+  <wsdl:message name="processDescrMessageRequest">
+    <wsdl:part name="p" type="xsd:string"/>
+  </wsdl:message>
+
+  <wsdl:message name="processDescrMessageResponse">
+    <wsdl:part name="processDescrReturn" type="ns1:Descr"/>
+  </wsdl:message>
+
+  <wsdl:message name="AlturaPostConditionException">
+    <wsdl:part name="faultElement" element="ns2:AlturaPostConditionException"/>
+  </wsdl:message>
+
+  <wsdl:message name="AlturaPreConditionException">
+    <wsdl:part name="faultElement" element="ns2:AlturaPreConditionException"/>
+  </wsdl:message>
+
+  <wsdl:portType name="DemoServicePortType">
+    <wsdl:operation name="processDescr" parameterOrder="p">
+      <wsdl:input name="processDescrRequest" message="tns:processDescrMessageRequest"/>
+      <wsdl:output name="processDescrResponse" message="tns:processDescrMessageResponse"/>
+      <wsdl:fault name="alturaPreConditionException" message="tns:AlturaPreConditionException"/>
+      <wsdl:fault name="alturaPostConditionException" message="tns:AlturaPostConditionException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="DemoServiceOJBinding" type="tns:DemoServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <wsdl:operation name="processDescr">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="processDescrRequest">
+        <soap:body use="literal" namespace="http://org.jboss.test.webservice/jbws706/tns"/>
+      </wsdl:input>
+      <wsdl:output name="processDescrResponse">
+        <soap:body use="literal" namespace="http://org.jboss.test.webservice/jbws706/tns"/>
+      </wsdl:output>
+      <wsdl:fault name="alturaPreConditionException">
+        <soap:fault name="alturaPreConditionException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="alturaPostConditionException">
+        <soap:fault name="alturaPostConditionException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="DemoServiceService">
+    <wsdl:port name="DemoService" binding="tns:DemoServiceOJBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PhoneBook' 
+             targetNamespace='http://test.jboss.org/ws/jbws1698' 
+             xmlns='http://schemas.xmlsoap.org/wsdl/' 
+             xmlns:ns1='http://test.jboss.org/ws/jbws1698/types' 
+             xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+             xmlns:tns='http://test.jboss.org/ws/jbws1698' 
+             xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1698/types' 
+          xmlns='http://www.w3.org/2001/XMLSchema' 
+          xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' 
+          xmlns:tns='http://test.jboss.org/ws/jbws1698/types' 
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='Person'>
+    <sequence>
+     <element name='firstName' nillable='true' type='string'/>
+     <element name='surname' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='PhoneBookError'>
+    <sequence/>
+   </complexType>
+   <complexType name='TelephoneNumber'>
+    <sequence>
+     <element name='areaCode' nillable='true' type='string'/>
+     <element name='number' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='lookup' type='tns:Person'/>
+   <element name='lookupResponse' type='tns:TelephoneNumber'/>
+   <element name='PhoneBookError' type='tns:PhoneBookError'/>
+  </schema>
+ </types>
+ 
+ <message name='PhoneBook_lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part element='ns1:lookup' name='lookup'/>
+ </message>
+ <message name='PhoneBook_lookupResponse'>
+  <part element='ns1:lookupResponse' name='lookupResponse'/>
+ </message>
+ <message name='PhoneBookError'>
+  <part element='ns1:PhoneBookError' name='PhoneBookError'/>
+ </message>
+ 
+ <portType name='PhoneBook'>
+  <operation name='lookup' parameterOrder='lookup'>
+   <input message='tns:PhoneBook_lookup'/>
+   <output message='tns:PhoneBook_lookupResponse'/>
+   <fault message='tns:PhoneBookError' name='PhoneBookError'/>
+  </operation>
+ </portType>
+ <binding name='PhoneBookBinding' type='tns:PhoneBook'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='PhoneBookError'>
+    <soap:fault name='PhoneBookError' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='PhoneBook'>
+  <port binding='tns:PhoneBookBinding' name='PhoneBookPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

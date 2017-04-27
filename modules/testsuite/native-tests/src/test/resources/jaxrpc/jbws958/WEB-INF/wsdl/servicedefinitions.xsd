@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Herr Speer (T-Systems Nova GmbH) -->
+<!--Service Definitions: 
+	VPN Core Service (LanLink) V4.10, 
+	RemoteDialIn V3.02, 
+	RemoteDialIn Router V3.04,
+	Internet Access Service V2.06, 
+	Remote Internet Gateway Service V1.08 
+	Client Encryption Service V1.07, 
+	Dedicated Firewall Service V1.07
+	Site Encryption Service V1.1
+	VPN Encryption Service V1.1
+	IP Voice Integration IAD Service V1.03
+	IP Voice Integration Port Service V1.02-->
+<!-- Last changes 12.09.2005 -->
+<xsd:schema xmlns="http://www.t-systems.com/damona" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.8.0">
+	<xsd:simpleType name="AccessSpeed">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="1024kbps/192kbps"/>
+			<xsd:enumeration value="1024kbps/256kbps "/>
+			<xsd:enumeration value="1024kbps/512kbps"/>
+			<xsd:enumeration value="1130 kbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="128kbps/64kbps"/>
+			<xsd:enumeration value="1200kbps/320kbps"/>
+			<xsd:enumeration value="1280kbps/256kbps"/>
+			<xsd:enumeration value="1280kbps/512kbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="1536kbps/192kbps"/>
+			<xsd:enumeration value="1536kbps/384kbps"/>
+			<xsd:enumeration value="1544 kbps (T1)"/>
+			<xsd:enumeration value="155 Mbps (STM-1/OC3)"/>
+			<xsd:enumeration value="1582 kbps"/>
+			<xsd:enumeration value="1Mbps/250kbps"/>
+			<xsd:enumeration value="2 Mbps (E1)"/>
+			<xsd:enumeration value="2,5 Gbps (STM-16) (non-std)"/>
+			<xsd:enumeration value="2033 kbps"/>
+			<xsd:enumeration value="2048 kbps"/>
+			<xsd:enumeration value="2048kbps/512kbps"/>
+			<xsd:enumeration value="2048kbps/320kbps"/>
+			<xsd:enumeration value="2048kbps/1024kbps "/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="256kbps/64kbps"/>
+			<xsd:enumeration value="256kbps/128kbps"/>
+			<xsd:enumeration value="2Mbps/250kbps"/>
+			<xsd:enumeration value="3 Mbps (2xT1)"/>
+			<xsd:enumeration value="3072kbps/320kbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="384kbps"/>
+			<xsd:enumeration value="384kbps/64kbps"/>
+			<xsd:enumeration value="4 Mbps (2xE1)"/>
+			<xsd:enumeration value="4,5 Mbps (3xT1)"/>
+			<xsd:enumeration value="4096 kbps"/>
+			<xsd:enumeration value="4096kbps/508kbps"/>
+			<xsd:enumeration value="45 Mbps"/>
+			<xsd:enumeration value="500kbps/250kbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="512kbps/128kbps"/>
+			<xsd:enumeration value="512kbps/256kbps"/>
+			<xsd:enumeration value="56 kbps"/>
+			<xsd:enumeration value="565 kbps"/>
+			<xsd:enumeration value="6 Mbps (3xE1)"/>
+			<xsd:enumeration value="6 Mbps (4xT1)"/>
+			<xsd:enumeration value="608kbps/160kbps"/>
+			<xsd:enumeration value="622 Mbps (STM-4) (non-std)"/>
+			<xsd:enumeration value="64 kbps"/>
+			<xsd:enumeration value="640kbps/256kbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="768kbps/128kbps"/>
+			<xsd:enumeration value="8 Mbps (4xE1)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessSpeedIsdn">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="64k"/>
+			<xsd:enumeration value="56k"/>
+			<xsd:enumeration value="128k"/>
+			<xsd:enumeration value="112k"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DSL"/>
+			<xsd:enumeration value="Copper"/>
+			<xsd:enumeration value="Fiber"/>
+			<xsd:enumeration value="Inhouse Cabling"/>
+			<xsd:enumeration value="Satellite Connect"/>
+			<xsd:enumeration value="Ethernet"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessTypeToCe">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="10 Mbps Ethernet"/>
+			<xsd:enumeration value="10/100 Mbps FE"/>
+			<xsd:enumeration value="1000Base-Tx (Copper)"/>
+			<xsd:enumeration value="1000Base-Sx (Fiber)"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BackUp">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="ISDN 1024 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN 128 kbps"/>
+			<xsd:enumeration value="ISDN 192 kbps"/>
+			<xsd:enumeration value="ISDN 2048 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN 256 kbps"/>
+			<xsd:enumeration value="ISDN 384 kbps"/>
+			<xsd:enumeration value="ISDN 512 kbps"/>
+			<xsd:enumeration value="ISDN 64 kbps"/>
+			<xsd:enumeration value="ISDN integrated 1024 kbps (ns)"/>
+			<xsd:enumeration value="ISDN separated 1024 kbps (ns)"/>
+			<xsd:enumeration value="ISDN integrated 1024 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN separated 1024 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN integrated 1024 kbps (non-std)"/>
+			<xsd:enumeration value="ISDN separated 1024 kbps (non-std)"/>
+			<xsd:enumeration value="ISDN integrated 128 kbps"/>
+			<xsd:enumeration value="ISDN separated 128 kbps"/>
+			<xsd:enumeration value="ISDN integrated 192 kbps"/>
+			<xsd:enumeration value="ISDN separated 192 kbps"/>
+			<xsd:enumeration value="ISDN integrated 2048 kbps (ns)"/>
+			<xsd:enumeration value="ISDN separated 2048 kbps (ns)"/>
+			<xsd:enumeration value="ISDN integrated 2048 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN separated 2048 kbps (non-standard)"/>
+			<xsd:enumeration value="ISDN integrated 2048 kbps (non-std)"/>
+			<xsd:enumeration value="ISDN separated 2048 kbps (non-std)"/>
+			<xsd:enumeration value="ISDN integrated 256 kbps"/>
+			<xsd:enumeration value="ISDN separated 256 kbps"/>
+			<xsd:enumeration value="ISDN integrated 384 kbps"/>
+			<xsd:enumeration value="ISDN separated 384 kbps"/>
+			<xsd:enumeration value="ISDN integrated 512 kbps"/>
+			<xsd:enumeration value="ISDN separated 512 kbps"/>
+			<xsd:enumeration value="ISDN integrated 64 kbps"/>
+			<xsd:enumeration value="ISDN separated 64 kbps"/>
+			<xsd:enumeration value="ADSL sep. 1024kbps/512kbps"/>
+			<xsd:enumeration value="ADSL sep. 2048kbps/512kbps"/>
+			<xsd:enumeration value="SDSL sep. 1536kbps-384kbps"/>
+			<xsd:enumeration value="SDSL sep. 2048kbps-512kbps"/>
+			<xsd:enumeration value="ADSL sep. 1280kbps/512kbps"/>
+			<xsd:enumeration value="SDSL sep. 1024kbps-256kbps"/>
+			<xsd:enumeration value="SDSL sep. 2048kbps-512 kbps"/>
+			<xsd:enumeration value="SDSL sep. 2048kbps-1024 kbps"/>
+			<xsd:enumeration value="ADSL sep. 1536kbps/192 kbps"/>
+			<xsd:enumeration value="ADSL sep. 3072kbps/320kbps"/>
+			<xsd:enumeration value="SDSL sep. 1582 kbps-768kbps"/>
+			<xsd:enumeration value="SDSL sep. 2033 kbps-1024kbps"/>
+			<xsd:enumeration value="ADSL sep. 608kbps/160kbps"/>
+			<xsd:enumeration value="ADSL sep. 1200kbps/320kbps"/>
+			<xsd:enumeration value="ADSL sep. 2048kbps/320kbps"/>
+			<xsd:enumeration value="SDSL sep. 2048kbps-384kbps"/>
+			<xsd:enumeration value="SDSL sep. 2048kbps-1664kbps"/>
+			<xsd:enumeration value="SDSL sep. 4096kbps-3328kbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BackUpVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="HA-Light"/>
+			<xsd:enumeration value="HA Active-Passive"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BandwidthDF">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1 Mbps"/>
+			<xsd:enumeration value="10 Mbps"/>
+			<xsd:enumeration value="100 Mbps"/>
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="11 Mbps"/>
+			<xsd:enumeration value="110 Mbps"/>
+			<xsd:enumeration value="12 Mbps"/>
+			<xsd:enumeration value="120 Mbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="13 Mbps"/>
+			<xsd:enumeration value="130 Mbps"/>
+			<xsd:enumeration value="14 Mbps"/>
+			<xsd:enumeration value="140 Mbps"/>
+			<xsd:enumeration value="15 Mbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="155 Mbps"/>
+			<xsd:enumeration value="16 Mbps"/>
+			<xsd:enumeration value="17 Mbps"/>
+			<xsd:enumeration value="18 Mbps"/>
+			<xsd:enumeration value="19 Mbps"/>
+			<xsd:enumeration value="2 Mbps"/>
+			<xsd:enumeration value="20 Mbps"/>
+			<xsd:enumeration value="21 Mbps"/>
+			<xsd:enumeration value="22 Mbps"/>
+			<xsd:enumeration value="23 Mbps"/>
+			<xsd:enumeration value="24 Mbps"/>
+			<xsd:enumeration value="25 Mbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="26 Mbps"/>
+			<xsd:enumeration value="27 Mbps"/>
+			<xsd:enumeration value="28 Mbps"/>
+			<xsd:enumeration value="29 Mbps"/>
+			<xsd:enumeration value="3 Mbps"/>
+			<xsd:enumeration value="30 Mbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="352 kbps"/>
+			<xsd:enumeration value="4 Mbps"/>
+			<xsd:enumeration value="40 Mbps"/>
+			<xsd:enumeration value="5 Mbps"/>
+			<xsd:enumeration value="50 Mbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="6 Mbps"/>
+			<xsd:enumeration value="60 Mbps"/>
+			<xsd:enumeration value="64 kbps"/>
+			<xsd:enumeration value="7 Mbps"/>
+			<xsd:enumeration value="70 Mbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="8 Mbps"/>
+			<xsd:enumeration value="80 Mbps"/>
+			<xsd:enumeration value="9 Mbps"/>
+			<xsd:enumeration value="90 Mbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BandwidthIAS">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="56 kbps"/>
+			<xsd:enumeration value="64 kbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="352 kbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="2 Mbps"/>
+			<xsd:enumeration value="3 Mbps"/>
+			<xsd:enumeration value="4 Mbps"/>
+			<xsd:enumeration value="5 Mbps"/>
+			<xsd:enumeration value="6 Mbps"/>
+			<xsd:enumeration value="7 Mbps"/>
+			<xsd:enumeration value="8 Mbps"/>
+			<xsd:enumeration value="9 Mbps"/>
+			<xsd:enumeration value="10 Mbps"/>
+			<xsd:enumeration value="11 Mbps"/>
+			<xsd:enumeration value="12 Mbps"/>
+			<xsd:enumeration value="13 Mbps"/>
+			<xsd:enumeration value="14 Mbps"/>
+			<xsd:enumeration value="15 Mbps"/>
+			<xsd:enumeration value="16 Mbps"/>
+			<xsd:enumeration value="17 Mbps"/>
+			<xsd:enumeration value="18 Mbps"/>
+			<xsd:enumeration value="19 Mbps"/>
+			<xsd:enumeration value="20 Mbps"/>
+			<xsd:enumeration value="21 Mbps"/>
+			<xsd:enumeration value="22 Mbps"/>
+			<xsd:enumeration value="23 Mbps"/>
+			<xsd:enumeration value="24 Mbps"/>
+			<xsd:enumeration value="25 Mbps"/>
+			<xsd:enumeration value="26 Mbps"/>
+			<xsd:enumeration value="27 Mbps"/>
+			<xsd:enumeration value="28 Mbps"/>
+			<xsd:enumeration value="29 Mbps"/>
+			<xsd:enumeration value="30 Mbps"/>
+			<xsd:enumeration value="32 Mbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="40 Mbps"/>
+			<xsd:enumeration value="45 Mpbs"/>
+			<xsd:enumeration value="50 Mbps"/>
+			<xsd:enumeration value="60 Mbps"/>
+			<xsd:enumeration value="70 Mbps"/>
+			<xsd:enumeration value="80 Mbps"/>
+			<xsd:enumeration value="90 Mbps"/>
+			<xsd:enumeration value="100 Mbps"/>
+			<xsd:enumeration value="110 Mbps"/>
+			<xsd:enumeration value="120 Mbps"/>
+			<xsd:enumeration value="130 Mbps"/>
+			<xsd:enumeration value="140 Mbps"/>
+			<xsd:enumeration value="155 Mbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BandwidthRIGW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="10 Mbps"/>
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="12 Mbps"/>
+			<xsd:enumeration value="14 Mbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="16 Mbps"/>
+			<xsd:enumeration value="18 Mbps"/>
+			<xsd:enumeration value="2 Mbps"/>
+			<xsd:enumeration value="20 Mbpsps"/>
+			<xsd:enumeration value="22 Mbps"/>
+			<xsd:enumeration value="24 Mbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="26 Mbps"/>
+			<xsd:enumeration value="28 Mbps"/>
+			<xsd:enumeration value="30 Mbps"/>
+			<xsd:enumeration value="32 Mbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="4 Mbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="6 Mbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="8 Mbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CacheProxy">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="None"/>
+			<xsd:enumeration value="Proxy IP-Addr. Authentication"/>
+			<xsd:enumeration value="Proxy user authentication"/>
+			<xsd:enumeration value="Proxy Secure IP-Addr. authent."/>
+			<xsd:enumeration value="Proxy Secure user authent."/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Car">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1 Mbps"/>
+			<xsd:enumeration value="10 Mbps"/>
+			<xsd:enumeration value="100 Mbps"/>
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="1024kbps/192kbps"/>
+			<xsd:enumeration value="1024kbps/256kbps"/>
+			<xsd:enumeration value="1024kbps/512kbps"/>
+			<xsd:enumeration value="11 Mbps"/>
+			<xsd:enumeration value="110 Mbps"/>
+			<xsd:enumeration value="1130 kbps"/>
+			<xsd:enumeration value="12 Mbps"/>
+			<xsd:enumeration value="120 Mbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="1280kbps/256kbps"/>
+			<xsd:enumeration value="13 Mbps"/>
+			<xsd:enumeration value="130 Mbps"/>
+			<xsd:enumeration value="14 Mbps"/>
+			<xsd:enumeration value="140 Mbps"/>
+			<xsd:enumeration value="1460 kbps"/>
+			<xsd:enumeration value="1,5 Mbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="1536kbps/192kbps"/>
+			<xsd:enumeration value="1536kbps/384kbps"/>
+			<xsd:enumeration value="155 Mbps"/>
+			<xsd:enumeration value="1582 kbps"/>
+			<xsd:enumeration value="16 Mbps"/>
+			<xsd:enumeration value="1664 kbps"/>
+			<xsd:enumeration value="17 Mbps"/>
+			<xsd:enumeration value="18 Mbps"/>
+			<xsd:enumeration value="19 Mbps"/>
+			<xsd:enumeration value="1Mbps/250kbps"/>
+			<xsd:enumeration value="192 kbps"/>
+			<xsd:enumeration value="1946 kbps"/>
+			<xsd:enumeration value="2 Mbps"/>
+			<xsd:enumeration value="20 Mbps"/>
+			<xsd:enumeration value="2033 kbps"/>
+			<xsd:enumeration value="2048kbps/512kbps"/>
+			<xsd:enumeration value="21 Mbps"/>
+			<xsd:enumeration value="22 Mbps"/>
+			<xsd:enumeration value="23 Mbps"/>
+			<xsd:enumeration value="24 Mbps"/>
+			<xsd:enumeration value="25 Mbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="26 Mbps"/>
+			<xsd:enumeration value="27 Mbps"/>
+			<xsd:enumeration value="28 Mbps"/>
+			<xsd:enumeration value="29 Mbps"/>
+			<xsd:enumeration value="2918 kbps"/>
+			<xsd:enumeration value="2Mbps/250kbps"/>
+			<xsd:enumeration value="3 Mbps"/>
+			<xsd:enumeration value="30 Mbps"/>
+			<xsd:enumeration value="3072kbps/320kbps"/>
+			<xsd:enumeration value="32 Mbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="320 kbps"/>
+			<xsd:enumeration value="3328 kbps"/>
+			<xsd:enumeration value="352 kbps"/>
+			<xsd:enumeration value="384 kbps"/>
+			<xsd:enumeration value="384kbps/64kbps"/>
+			<xsd:enumeration value="3891 kbps"/>
+			<xsd:enumeration value="4096kbps/508kbps"/>
+			<xsd:enumeration value="4378 kbps"/>
+			<xsd:enumeration value="4 Mbps"/>
+			<xsd:enumeration value="4,5 Mbps"/>
+			<xsd:enumeration value="40 Mbps"/>
+			<xsd:enumeration value="45 Mbps"/>
+			<xsd:enumeration value="5 Mbps"/>
+			<xsd:enumeration value="50 Mbps"/>
+			<xsd:enumeration value="500kbps/250kbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="512kbps/256kbps"/>
+			<xsd:enumeration value="56 kbps"/>
+			<xsd:enumeration value="565 kbps"/>
+			<xsd:enumeration value="5837 kbps"/>
+			<xsd:enumeration value="6 Mbps"/>
+			<xsd:enumeration value="60 Mbps"/>
+			<xsd:enumeration value="64 kbps"/>
+			<xsd:enumeration value="640 kbps"/>
+			<xsd:enumeration value="640kbps/128kbps"/>
+			<xsd:enumeration value="7 Mbps"/>
+			<xsd:enumeration value="70 Mbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="768kbps/128kbps"/>
+			<xsd:enumeration value="7782 kbps"/>
+			<xsd:enumeration value="8 Mbps"/>
+			<xsd:enumeration value="80 Mbps"/>
+			<xsd:enumeration value="9 Mbps"/>
+			<xsd:enumeration value="90 Mbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CarVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1 Mbps"/>
+			<xsd:enumeration value="10 Mbps"/>
+			<xsd:enumeration value="100 Mbps"/>
+			<xsd:enumeration value="110 Mbps"/>
+			<xsd:enumeration value="1130 kbps"/>
+			<xsd:enumeration value="12 Mbps"/>
+			<xsd:enumeration value="120 Mbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="130 Mbps"/>
+			<xsd:enumeration value="14 Mbps"/>
+			<xsd:enumeration value="140 Mbps"/>
+			<xsd:enumeration value="1,5 Mbps"/>
+			<xsd:enumeration value="155 Mbps"/>
+			<xsd:enumeration value="16 Mbps"/>
+			<xsd:enumeration value="1664 kbps"/>
+			<xsd:enumeration value="18 Mbps"/>
+			<xsd:enumeration value="192 kbps"/>
+			<xsd:enumeration value="2 Mbps"/>
+			<xsd:enumeration value="20 Mbps"/>
+			<xsd:enumeration value="22 Mbps"/>
+			<xsd:enumeration value="24 Mbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="26 Mbps"/>
+			<xsd:enumeration value="28 Mbps"/>
+			<xsd:enumeration value="3 Mbps"/>
+			<xsd:enumeration value="30 Mbps"/>
+			<xsd:enumeration value="32 Mbps"/>
+			<xsd:enumeration value="320 kbps"/>
+			<xsd:enumeration value="3328 kbps"/>
+			<xsd:enumeration value="34 Mbps"/>
+			<xsd:enumeration value="384 kbps"/>
+			<xsd:enumeration value="4 Mbps"/>
+			<xsd:enumeration value="4,5 Mbps"/>
+			<xsd:enumeration value="40 Mbps"/>
+			<xsd:enumeration value="45 Mbps"/>
+			<xsd:enumeration value="50 Mbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="56 kbps"/>
+			<xsd:enumeration value="6 Mbps"/>
+			<xsd:enumeration value="60 Mbps"/>
+			<xsd:enumeration value="64 kbps"/>
+			<xsd:enumeration value="640 kbps"/>
+			<xsd:enumeration value="70 Mbps"/>
+			<xsd:enumeration value="768 kbps"/>
+			<xsd:enumeration value="8 Mbps"/>
+			<xsd:enumeration value="80 Mbps"/>
+			<xsd:enumeration value="90 Mbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Cos">
+		<xsd:sequence>
+			<xsd:element name="BUSINESS" type="YesNo"/>
+			<xsd:element name="ECONOMY" type="YesNo"/>
+			<xsd:element name="STREAM" type="YesNo"/>
+			<xsd:element name="VOICE" type="YesNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="__CosClasses">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="Economy"/>
+			<xsd:enumeration value="Stream"/>
+			<xsd:enumeration value="Voice"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CosPackage">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standard"/>
+			<xsd:enumeration value="Convergence"/>
+			<xsd:enumeration value="Enterprise"/>
+			<xsd:enumeration value="Interactive"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CosProfile">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standard"/>
+			<xsd:enumeration value="Customized"/>
+			<xsd:enumeration value="Customized no Eco"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CpeManagement">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="Reactive"/>
+			<xsd:enumeration value="Proactive"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CryptoKeys">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IKE-PKI-Netpass CA TeleSec"/>
+			<xsd:enumeration value="IKE-Pre-Shared"/>
+			<xsd:enumeration value="Manual Key only if Key Escrow"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustomerLan">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Ethernet"/>
+			<xsd:enumeration value="Tokenring"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustomerLanVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="10 Mbps Ethernet"/>
+			<xsd:enumeration value="100 Mbps FE"/>
+			<xsd:enumeration value="1000Base-Tx (Copper)"/>
+			<xsd:enumeration value="1000Base-Sx (Fiber)"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustomerPrefix">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DialPlan">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Private Numbering Plan"/>
+			<xsd:enumeration value="Special Bid (non-standard)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Dns">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Covered by Customer"/>
+			<xsd:enumeration value="T-Systems Secondary"/>
+			<xsd:enumeration value="T-Systems Primary + Secondary"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DigitalCertificate">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Internal CA"/>
+			<xsd:enumeration value="Trust Centre DT"/>
+			<xsd:enumeration value="Customer CA (SBR)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EncryptionProtocol">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AES"/>
+			<xsd:enumeration value="DES"/>
+			<xsd:enumeration value="3DES"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EncryptionControl">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="All Clear Text"/>
+			<xsd:enumeration value="All Crypted"/>
+			<xsd:enumeration value="Only Economy Crypted"/>
+			<xsd:enumeration value="Only Business Crypted"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtensionNoLength">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1 Digit"/>
+			<xsd:enumeration value="2 Digits"/>
+			<xsd:enumeration value="3 Digits"/>
+			<xsd:enumeration value="4 Digits"/>
+			<xsd:enumeration value="5 Digits"/>
+			<xsd:enumeration value="more than 5 or mixed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IadType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Integrated Access Device"/>
+			<xsd:enumeration value="Separated Voice Gateway"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Installation">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standard"/>
+			<xsd:enumeration value="Temporary"/>
+			<xsd:enumeration value="Express"/>
+			<xsd:enumeration value="Temp/Express"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InstallationVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standard"/>
+			<xsd:enumeration value="Std. co-incident with VCS CE"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InstallationMaintenanceSE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Customer"/>
+			<xsd:enumeration value="T-Systems"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IpAddressType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PI, Customer owned Addresses"/>
+			<xsd:enumeration value="other"/>
+			<xsd:enumeration value="PA, only T-Systems Addresses"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IpAddressAssigning">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Fix"/>
+			<xsd:enumeration value="Pool"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IspAccess">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Direct LAN Connection"/>
+			<xsd:enumeration value="Cable Modem"/>
+			<xsd:enumeration value="DSL PPTP"/>
+			<xsd:enumeration value="DSL PPPoE Dialer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="KeyManagement">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IKE PKI Netpass T-Systems"/>
+			<xsd:enumeration value="IKE PKI Netpass Customer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationDMZ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Customer Premises"/>
+			<xsd:enumeration value="Hosted (Location : Frankfurt)"/>
+			<xsd:enumeration value="Hosted (Location : New York)"/>
+			<xsd:enumeration value="Hosted (Location : Singapore)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationFW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Customer Premises"/>
+			<xsd:enumeration value="Hosted (Location : Frankfurt)"/>
+			<xsd:enumeration value="Hosted (Location : New York)"/>
+			<xsd:enumeration value="Hosted (Location : Singapore)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationRIGW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Customer Premises"/>
+			<xsd:enumeration value="Hosted (Location : Frankfurt)"/>
+			<xsd:enumeration value="Hosted (Location : New York)"/>
+			<xsd:enumeration value="Hosted (Location : Singapore)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MailRelayConfiguration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Incoming &amp; Outgoing"/>
+			<xsd:enumeration value="None"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MailRelayType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="None"/>
+			<xsd:enumeration value="Mail Relay"/>
+			<xsd:enumeration value="Mail Relay Secure"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MultiVpnVariant">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Default"/>
+			<xsd:enumeration value="Separate Accesses"/>
+			<xsd:enumeration value="Indistinguished Access"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NumberOfRoutes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standard 1000"/>
+			<xsd:enumeration value="Option 2000"/>
+			<xsd:enumeration value="Option 5000"/>
+			<xsd:enumeration value="Option 10000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NumberOfUsersIAS">
+		<xsd:annotation>
+			<xsd:documentation>NumberOfUsersNL=100*n; n=(0..20)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(1?[1-9]|[1-3,5]0)00"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NumberOfUsersRDI">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="up to 50"/>
+			<xsd:enumeration value="up to 100"/>
+			<xsd:enumeration value="up to 150"/>
+			<xsd:enumeration value="up to 250"/>
+			<xsd:enumeration value="up to 500"/>
+			<xsd:enumeration value="up to 750"/>
+			<xsd:enumeration value="up to 1000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NumberOfUsersSE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Site Encryption 16"/>
+			<xsd:enumeration value="Site Encryption 32"/>
+			<xsd:enumeration value="Site Encryption Unlimited"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PaIpAddresses">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="128"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="1x 256"/>
+			<xsd:enumeration value="2x 256"/>
+			<xsd:enumeration value="32"/>
+			<xsd:enumeration value="3x 256"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="4x 256"/>
+			<xsd:enumeration value="64"/>
+			<xsd:enumeration value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RadiusRedundancy">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Redundant"/>
+			<xsd:enumeration value="Single"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RipLan">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EIGRP (non-std)"/>
+			<xsd:enumeration value="OSPF"/>
+			<xsd:enumeration value="RIP2"/>
+			<xsd:enumeration value="Static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RipLanVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BGP-4"/>
+			<xsd:enumeration value="OSPF"/>
+			<xsd:enumeration value="RIP2"/>
+			<xsd:enumeration value="Static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RipWan">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="eBGP"/>
+			<xsd:enumeration value="Static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RipRDR">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="RIP2"/>
+			<xsd:enumeration value="Static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SecurityLevelKey">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Medium Key Strength"/>
+			<xsd:enumeration value="Low Key Strength"/>
+			<xsd:enumeration value="High Key Strength"/>
+			<xsd:enumeration value="Mixed"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SecurityPolicies">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Route based dynamic"/>
+			<xsd:enumeration value="Route based"/>
+			<xsd:enumeration value="Application based"/>
+			<xsd:enumeration value="Mixed"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelCE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Entry (best effort)"/>
+			<xsd:enumeration value="Entry"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelDF">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Compact (6 hours)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelIAS">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Compact (6 hours)"/>
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelLL">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Comfort (4 hours)"/>
+			<xsd:enumeration value="Comfort (8 hours)"/>
+			<xsd:enumeration value="Comfort (24 hours)"/>
+			<xsd:enumeration value="Compact (8 hours)"/>
+			<xsd:enumeration value="Compact (18 hours)"/>
+			<xsd:enumeration value="Compact (24 hours)"/>
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Complete (2 hours)"/>
+			<xsd:enumeration value="Complete (8 hours)"/>
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelRDI">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Compact (6 hours)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelRDR">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Compact (8 hours)"/>
+			<xsd:enumeration value="Compact (18 hours)"/>
+			<xsd:enumeration value="Compact (24 hours)"/>
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelRIGW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Compact (6 hours)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelSE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Comfort (4 hours)"/>
+			<xsd:enumeration value="Comfort (24 hours)"/>
+			<xsd:enumeration value="Compact (8 hours)"/>
+			<xsd:enumeration value="Compact (24 hours)"/>
+			<xsd:enumeration value="Complete (8 hours)"/>
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelVIAD">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Compact (8 hours)"/>
+			<xsd:enumeration value="Compact (18 hours)"/>
+			<xsd:enumeration value="Compact (24 hours)"/>
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Complete (2 hours)"/>
+			<xsd:enumeration value="Complete (8 hours)"/>
+			<xsd:enumeration value="Entry (best effort)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelVPORT">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Complete (1 hour)"/>
+			<xsd:enumeration value="Compact (6 hours)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServicePerformanceReportingVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="Package (to be defined)"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignallingIsdn">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DSS1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignallingSupport">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DSS1"/>
+			<xsd:enumeration value="Q.SIG"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SnmpReadAccess">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelCE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelDF">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelIAS">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelLL">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+			<xsd:enumeration value="Standard (8-17)"/>
+			<xsd:enumeration value="Standard (8-18)"/>
+			<xsd:enumeration value="Extended (7-20)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelRDI">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelRDR">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+			<xsd:enumeration value="Standard (8-17)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelRIGW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelSE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelVIAD">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+			<xsd:enumeration value="Standard (8-17)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupportLevelVPORT">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="7x24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StrongAuthenticationRDI">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="Secure ID by Customer"/>
+			<xsd:enumeration value="OTP"/>
+			<xsd:enumeration value="OTP by Customer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StrongAuthenticationCE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="OTP"/>
+			<xsd:enumeration value="Customer Radius (TSI Proxy)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Tunneling">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Split-tunnelling"/>
+			<xsd:enumeration value="Block-tunnelling"/>
+			<xsd:enumeration value="Central tunnelling"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeDFW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Main VPN standalone"/>
+			<xsd:enumeration value="Main VPN combined RIGS"/>
+			<xsd:enumeration value="Optional VPN"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeSE">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="Site Encryption (16|32|UL)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeOTP">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="None"/>
+			<xsd:enumeration value="Classic"/>
+			<xsd:enumeration value="Exclusive"/>
+			<xsd:enumeration value="Premium"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeRIGW">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Standalone"/>
+			<xsd:enumeration value="Combined FW"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VlanNo">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="VoiceCodec">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="G.711"/>
+			<xsd:enumeration value="G.723.1"/>
+			<xsd:enumeration value="G.726"/>
+			<xsd:enumeration value="G.728"/>
+			<xsd:enumeration value="G.729a"/>
+			<xsd:enumeration value="G.729b"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VoiceInterface">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Ethernet (10/100 BaseTx)"/>
+			<xsd:enumeration value="ISDN (1xPRI) based on E1"/>
+			<xsd:enumeration value="ISDN (2xPRI) based on E1"/>
+			<xsd:enumeration value="ISDN (3xPRI) based on E1"/>
+			<xsd:enumeration value="ISDN (4xPRI) based on E1"/>
+			<xsd:enumeration value="ISDN (1xPRI) based on T1"/>
+			<xsd:enumeration value="ISDN (2xPRI) based on T1"/>
+			<xsd:enumeration value="ISDN (3xPRI) based on T1"/>
+			<xsd:enumeration value="ISDN (4xPRI) based on T1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VHomeGwLocation">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Europe"/>
+			<xsd:enumeration value="USA"/>
+			<xsd:enumeration value="Asia"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VpnConfiguration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Any to any"/>
+			<xsd:enumeration value="Hub"/>
+			<xsd:enumeration value="Spoke"/>
+			<xsd:enumeration value="Spoke - CoI 1"/>
+			<xsd:enumeration value="Spoke - CoI 2"/>
+			<xsd:enumeration value="Spoke - CoI 3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VpnConfigurationRDR">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Any to any"/>
+			<xsd:enumeration value="Spoke"/>
+			<xsd:enumeration value="Spoke - CoI 1"/>
+			<xsd:enumeration value="Spoke - CoI 2"/>
+			<xsd:enumeration value="Spoke - CoI 3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VpnConfigurationVE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Any to any"/>
+			<xsd:enumeration value="Hub"/>
+			<xsd:enumeration value="Spoke"/>
+			<xsd:enumeration value="Special Bid (non-std)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="WanIpAddressAssigning">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Dynamic"/>
+			<xsd:enumeration value="Static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="YesNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

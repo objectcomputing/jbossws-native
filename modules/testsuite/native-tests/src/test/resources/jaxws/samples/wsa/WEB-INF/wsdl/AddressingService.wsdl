@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='AddressingService' targetNamespace='http://www.jboss.org/jbossws/ws-extensions/wsaddressing' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://www.jboss.org/jbossws/ws-extensions/wsaddressing' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://www.jboss.org/jbossws/ws-extensions/wsaddressing' version='1.0' xmlns:tns='http://www.jboss.org/jbossws/ws-extensions/wsaddressing' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='sayHello' type='tns:sayHello'/>
+   <xs:element name='sayHelloResponse' type='tns:sayHelloResponse'/>
+   <xs:complexType name='sayHello'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='sayHelloResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='ServiceIface_sayHello'>
+  <part element='tns:sayHello' name='sayHello'/>
+ </message>
+ <message name='ServiceIface_sayHelloResponse'>
+  <part element='tns:sayHelloResponse' name='sayHelloResponse'/>
+ </message>
+ <portType name='ServiceIface'>
+  <operation name='sayHello' parameterOrder='sayHello'>
+   <input message='tns:ServiceIface_sayHello'/>
+   <output message='tns:ServiceIface_sayHelloResponse'/>
+  </operation>
+ </portType>
+ <binding name='ServiceIfaceBinding' type='tns:ServiceIface'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='sayHello'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='AddressingService'>
+  <port binding='tns:ServiceIfaceBinding' name='AddressingServicePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+   <UsingAddressing xmlns="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </port>
+ </service>
+</definitions>

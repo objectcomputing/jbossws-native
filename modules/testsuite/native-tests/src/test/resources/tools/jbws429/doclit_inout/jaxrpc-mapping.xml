@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+  <package-type xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429</package-type>
+  <namespaceURI xmlns='http://java.sun.com/xml/ns/j2ee'>http://test.jboss.org/ws/jbws429/types</namespaceURI>
+ </package-mapping>
+ <package-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+  <package-type xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429</package-type>
+  <namespaceURI xmlns='http://java.sun.com/xml/ns/j2ee'>http://test.jboss.org/ws/jbws429</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+  <java-type xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429.Person</java-type>
+  <root-type-qname xmlns:typeNS='http://test.jboss.org/ws/jbws429/types' xmlns='http://java.sun.com/xml/ns/j2ee'>typeNS:Person</root-type-qname>
+  <qname-scope xmlns='http://java.sun.com/xml/ns/j2ee'>complexType</qname-scope>
+  <variable-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+   <java-variable-name xmlns='http://java.sun.com/xml/ns/j2ee'>firstName</java-variable-name>
+   <xml-element-name xmlns='http://java.sun.com/xml/ns/j2ee'>firstName</xml-element-name>
+  </variable-mapping>
+  <variable-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+   <java-variable-name xmlns='http://java.sun.com/xml/ns/j2ee'>surname</java-variable-name>
+   <xml-element-name xmlns='http://java.sun.com/xml/ns/j2ee'>surname</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+  <service-interface xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429.PhoneBook_Service</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://test.jboss.org/ws/jbws429' xmlns='http://java.sun.com/xml/ns/j2ee'>serviceNS:PhoneBook</wsdl-service-name>
+  <port-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+   <port-name xmlns='http://java.sun.com/xml/ns/j2ee'>PhoneBookPort</port-name>
+   <java-port-name xmlns='http://java.sun.com/xml/ns/j2ee'>PhoneBookPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+  <service-endpoint-interface xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429.PhoneBook_PortType</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://test.jboss.org/ws/jbws429' xmlns='http://java.sun.com/xml/ns/j2ee'>portTypeNS:PhoneBook</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://test.jboss.org/ws/jbws429' xmlns='http://java.sun.com/xml/ns/j2ee'>bindingNS:PhoneBookBinding</wsdl-binding>
+  <service-endpoint-method-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+   <java-method-name xmlns='http://java.sun.com/xml/ns/j2ee'>lookup</java-method-name>
+   <wsdl-operation xmlns='http://java.sun.com/xml/ns/j2ee'>lookup</wsdl-operation>
+   <method-param-parts-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+    <param-position xmlns='http://java.sun.com/xml/ns/j2ee'>0</param-position>
+    <param-type xmlns='http://java.sun.com/xml/ns/j2ee'>org.jboss.test.ws.jbws429.Person</param-type>
+    <wsdl-message-mapping xmlns='http://java.sun.com/xml/ns/j2ee'>
+     <wsdl-message xmlns:wsdlMsgNS='http://test.jboss.org/ws/jbws429' xmlns='http://java.sun.com/xml/ns/j2ee'>wsdlMsgNS:PhoneBook_lookup</wsdl-message>
+     <wsdl-message-part-name xmlns='http://java.sun.com/xml/ns/j2ee'>lookup</wsdl-message-part-name>
+     <parameter-mode xmlns='http://java.sun.com/xml/ns/j2ee'>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

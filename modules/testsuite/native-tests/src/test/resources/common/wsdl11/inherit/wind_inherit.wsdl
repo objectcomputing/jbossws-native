@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions
+      targetNamespace="http://www.example.org/oceanwatch"
+      xmlns:tns="http://www.example.org/oceanwatch"
+      xmlns:wse='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+      xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+      xmlns:wsa10='http://www.w3.org/2005/08/addressing'
+      xmlns:xs='http://www.w3.org/2001/XMLSchema'
+      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+   <wsdl:import
+         namespace='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+         location='eventing.wsdl' />
+
+   <wsdl:types>
+
+      <xs:schema
+            targetNamespace="http://www.example.org/oceanwatch"
+            elementFormDefault="qualified"
+            blockDefault="#all">
+         <xs:element name="WindReport">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="Date" type="xs:string"/>
+                  <xs:element name="Time" type="xs:string"/>
+                  <xs:element name="Speed" type="xs:string"/>
+                  <xs:element name="Location" type="xs:string"/>
+                  <xs:element name="County" type="xs:string"/>
+                  <xs:element name="State" type="xs:string"/>
+                  <xs:element name="Lat" type="xs:string"/>
+                  <xs:element name="Long" type="xs:string"/>
+                  <xs:element name="Comments" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+
+   </wsdl:types>
+
+   <wsdl:portType name='Warnings' wse:EventSource='true'>
+      <wsdl:operation name='WindOp'>
+         <wsdl:output message='tns:WindMsg'/>
+      </wsdl:operation>
+   </wsdl:portType>
+
+   <wsdl:binding name="WarningsBinding" type="tns:Warnings">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="WindOp">
+         <soap:operation soapAction=""/>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>  
+
+</wsdl:definitions>

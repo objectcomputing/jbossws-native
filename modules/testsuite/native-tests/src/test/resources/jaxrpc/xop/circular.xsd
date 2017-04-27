@@ -1,0 +1,134 @@
+<schema elementFormDefault="qualified" targetNamespace="http://complex.jsr181.jaxws.ws.test.jboss.org/jaws" xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ns2="http://extra.complex.jsr181.jaxws.ws.test.jboss.org/jaws"
+        xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+        xmlns:tns="http://complex.jsr181.jaxws.ws.test.jboss.org/jaws"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <import namespace="http://extra.complex.jsr181.jaxws.ws.test.jboss.org/jaws"/>
+
+   <complexType name="Address">
+      <sequence>
+         <element name="city" nillable="true" type="string"/>
+         <element name="state" nillable="true" type="string"/>
+         <element name="street" nillable="true" type="string"/>
+         <element name="zip" nillable="true" type="string"/>
+      </sequence>
+   </complexType>
+   <complexType name="AlreadyRegisteredException">
+      <complexContent>
+         <extension base="tns:RegistrationException">
+            <sequence>
+               <element name="existingId" type="long"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <complexType name="BulkRegister">
+      <sequence>
+         <element maxOccurs="unbounded" minOccurs="0" name="Customers" nillable="true" type="tns:Customer"/>
+         <element name="When" nillable="true" type="dateTime"/>
+      </sequence>
+   </complexType>
+   <complexType name="BulkRegisterResponse">
+      <sequence>
+         <element maxOccurs="unbounded" minOccurs="0" name="RegisteredIDs" type="long"/>
+      </sequence>
+   </complexType>
+   <complexType name="Customer">
+      <sequence>
+         <element name="address" nillable="true" type="tns:Address"/>
+         <element maxOccurs="unbounded" minOccurs="0" name="contactNumbers" nillable="true" type="tns:PhoneNumber"/>
+         <element name="id" type="long"/>
+         <element name="name" nillable="true" type="tns:Name"/>
+         <element maxOccurs="unbounded" minOccurs="0" name="referredCustomers" nillable="true" type="tns:Customer"/>
+      </sequence>
+   </complexType>
+   <complexType name="GetStatistics">
+      <sequence>
+         <element name="Customer" nillable="true" type="tns:Customer"/>
+      </sequence>
+   </complexType>
+   <complexType name="GetStatisticsResponse">
+      <sequence>
+         <element name="Statistics" nillable="true" type="Statistics"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="Statistics">
+      <sequence>
+         <element name="activationTime" nillable="true" type="dateTime"/>
+         <element name="hits" type="long"/>
+      </sequence>
+   </complexType>
+
+
+   <complexType name="InvoiceCustomer">
+      <complexContent>
+         <extension base="tns:Customer">
+            <sequence>
+               <element name="cycleDay" type="int"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <complexType name="Name">
+      <sequence>
+         <element name="firstName" nillable="true" type="string"/>
+         <element name="lastName" nillable="true" type="string"/>
+         <element name="middleName" nillable="true" type="string"/>
+      </sequence>
+   </complexType>
+   <complexType name="PhoneNumber">
+      <sequence>
+         <element name="areaCode" nillable="true" type="string"/>
+         <element name="exchange" nillable="true" type="string"/>
+         <element name="line" nillable="true" type="string"/>
+      </sequence>
+   </complexType>
+   <complexType name="Register">
+      <sequence>
+         <element name="Customer" nillable="true" type="tns:Customer"/>
+         <element name="When" nillable="true" type="dateTime"/>
+      </sequence>
+   </complexType>
+   <complexType name="RegisterForInvoice">
+      <sequence>
+         <element name="InvoiceCustomer" nillable="true" type="tns:InvoiceCustomer"/>
+      </sequence>
+   </complexType>
+   <complexType name="RegisterForInvoiceResponse">
+      <sequence>
+         <element name="done" type="boolean"/>
+      </sequence>
+   </complexType>
+   <complexType name="RegisterResponse">
+      <sequence>
+         <element name="RegisteredID" type="long"/>
+      </sequence>
+   </complexType>
+   <complexType name="RegistrationException">
+      <sequence>
+         <element name="message" nillable="true" type="string"/>
+      </sequence>
+   </complexType>
+   <complexType name="ValidationException">
+      <complexContent>
+         <extension base="tns:RegistrationException">
+            <sequence>
+               <element maxOccurs="unbounded" minOccurs="0" name="failiedCustomers" type="long"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+   <element name="AlreadyRegisteredException" type="tns:AlreadyRegisteredException"/>
+   <element name="BulkRegister" type="tns:BulkRegister"/>
+   <element name="BulkRegisterResponse" type="tns:BulkRegisterResponse"/>
+   <element name="GetStatistics" type="tns:GetStatistics"/>
+   <element name="GetStatisticsResponse" type="tns:GetStatisticsResponse"/>
+   <element name="Register" type="tns:Register"/>
+   <element name="RegisterForInvoice" type="tns:RegisterForInvoice"/>
+   <element name="RegisterForInvoiceResponse" type="tns:RegisterForInvoiceResponse"/>
+   <element name="RegisterResponse" type="tns:RegisterResponse"/>
+   <element name="RegistrationException" type="tns:RegistrationException"/>
+   <element name="ValidationException" type="tns:ValidationException"/>
+</schema>

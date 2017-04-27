@@ -1,0 +1,23 @@
+<deployment
+ xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+ xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+
+  <typeMapping
+    qname='ns2:UserType' xmlns:ns2='http://org.jboss.test.webservice/jbws168/types'
+    type='java:org.jboss.test.ws.jaxrpc.jbws168.UserType'
+    serializer='org.jboss.webservice.encoding.ser.MetaDataBeanSerializerFactory'
+    deserializer='org.jboss.webservice.encoding.ser.MetaDataBeanDeserializerFactory'
+    encodingStyle=''>
+  <typeDesc>
+    <elementDesc fieldName='propC' xmlName='propC'/>
+    <elementDesc fieldName='propB' xmlName='propB' minOccurs='0'/>
+    <elementDesc fieldName='propA' xmlName='propA'/>
+    <elementOrder>
+      <element name='propC'/>
+      <element name='propB'/>
+      <element name='propA'/>
+    </elementOrder>
+  </typeDesc>
+  </typeMapping>
+
+</deployment>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.jbws414</package-type>
+    <namespaceURI>http://org.jboss.test.webservice/jbws414/types</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.jbws414</package-type>
+    <namespaceURI>http://org.jboss.test.webservice/jbws414</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws414.St</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.test.webservice/jbws414/types">typeNS:St</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>ref</java-variable-name>
+      <xml-element-name>ref</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <!--
+    Explicitly map typeNS:Interface to RefType 
+    <java-type>org.jboss.test.ws.jaxrpc.jbws414.Interface</java-type>
+    -->
+    <java-type>org.jboss.test.ws.jaxrpc.jbws414.RefType</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.test.webservice/jbws414/types">typeNS:Interface</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>value</java-variable-name>
+      <xml-element-name>value</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.jaxrpc.jbws414.TestService</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://org.jboss.test.webservice/jbws414">serviceNS:TestService</wsdl-service-name>
+    <port-mapping>
+      <port-name>TestSEIPort</port-name>
+      <java-port-name>TestSEIPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws414.TestSEI</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.test.webservice/jbws414">portTypeNS:TestSEI</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.test.webservice/jbws414">bindingNS:TestSEIBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>doStuff</java-method-name>
+      <wsdl-operation>doStuff</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.jaxrpc.jbws414.St</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.test.webservice/jbws414">wsdlMsgNS:TestSEI_doStuff</wsdl-message>
+          <wsdl-message-part-name>St_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.jaxrpc.jbws414.St</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.test.webservice/jbws414">wsdlMsgNS:TestSEI_doStuffResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

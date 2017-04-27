@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webservices version="1.1" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/j2ee_web_services_1_1.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee">
+
+  <webservice-description>
+
+    <!-- descriptive name for the service -->
+    <webservice-description-name>Hello World</webservice-description-name>
+    <!-- WSDL service file -->
+    <wsdl-file>WEB-INF/wsdl/hello-service.wsdl</wsdl-file>
+    <!-- Java<->XML mapping file -->
+    <jaxrpc-mapping-file>WEB-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+
+    <port-component>
+
+      <!-- logical name for the port (unique within the module) -->
+      <port-component-name>GreeterPort</port-component-name>
+      <!-- WSDL port element (in service.wsdl) -->
+      <wsdl-port xmlns:portNS="http://jbpm.org/examples/hello">portNS:GreeterPort</wsdl-port>
+      <!-- service endpoint interface class -->
+      <service-endpoint-interface>
+        org.jboss.test.ws.jaxrpc.samples.wsbpel.hello.Greeter
+      </service-endpoint-interface>
+      <!-- associated servlet (in web-app.xml) -->
+      <service-impl-bean>
+        <servlet-link>greeterServlet</servlet-link>
+      </service-impl-bean>
+
+      <handler>
+
+        <!-- logical name for the handler (unique within the module) -->
+        <handler-name>GreeterSoapHandler</handler-name>
+        <!-- handler class (in jbpm-bpel.jar) -->
+        <handler-class>org.jbpm.bpel.integration.server.SoapHandler</handler-class>
+        
+        <init-param>
+          <description>name of the partner link served by this port</description>
+          <param-name>partnerLinkHandle</param-name>
+          <param-value>caller</param-value>
+        </init-param>
+
+      </handler>
+
+    </port-component>
+
+  </webservice-description>
+
+</webservices>

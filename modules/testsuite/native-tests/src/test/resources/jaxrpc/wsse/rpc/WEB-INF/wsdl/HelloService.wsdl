@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.ws/wsse' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/wsse/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/wsse' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/wsse/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/wsse/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='HelloException'>
+    <sequence>
+     <element name='message' nillable='true' type='string'/>
+     <element name='code' type='int'/>
+     <element name='reason' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='UserType'>
+    <sequence>
+     <element name='msg' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='HelloException' type='tns:HelloException'/>
+  </schema>
+ </types>
+ <message name='Hello_echoUserType'>
+  <part name='UserType_1' type='ns1:UserType'/>
+ </message>
+ <message name='Hello_echoUserTypeResponse'>
+  <part name='result' type='ns1:UserType'/>
+ </message>
+ <message name='Hello_triggerException'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='int_2' type='xsd:int'/>
+ </message>
+ <message name='Hello_triggerExceptionResponse'/>
+ <message name='HelloException'>
+  <part element='ns1:HelloException' name='HelloException'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='echoUserType' parameterOrder='UserType_1'>
+   <input message='tns:Hello_echoUserType'/>
+   <output message='tns:Hello_echoUserTypeResponse'/>
+  </operation>
+  <operation name='triggerException' parameterOrder='String_1 int_2'>
+   <input message='tns:Hello_triggerException'/>
+   <output message='tns:Hello_triggerExceptionResponse'/>
+   <fault message='tns:HelloException' name='HelloException'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoUserType'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/wsse' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/wsse' use='literal'/>
+   </output>
+  </operation>
+  <operation name='triggerException'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/wsse' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/wsse' use='literal'/>
+   </output>
+   <fault name='HelloException'>
+    <soap:fault name='HelloException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

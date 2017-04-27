@@ -1,0 +1,19 @@
+<!--This is the config file used by jbossws-->
+<configuration>
+  <javatowsdl>
+     <service name="SomeService" 
+                     interface="org.jboss.myinterfaces.mySEI"
+                     packagename="org.jboss.test" 
+                     wsdlstyle="rpc"
+                     wsdldest="output/resources/tools/config" 
+                     wsdlversion="1.1"
+                     includetypesinwsdl="true"/>
+     <namespaces  targetns="http://org.jboss/types" 
+                              typens="http://org.jboss/types"  /> 
+     <mapping directory="output/resources/tools/config" 
+                       filename="jaxrpc-mapping.xml" />
+  </javatowsdl> 
+  <global nscollide="Array">
+     <package-namespace package="org.jboss.test.ws.tools.sei" namespace="http://org.jboss.ws" />
+  </global>
+</configuration>

@@ -1,0 +1,20 @@
+<schema targetNamespace="http://org.jboss.ws"
+xmlns:tns='http://org.jboss.ws' 
+xmlns='http://www.w3.org/2001/XMLSchema' 
+xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/'>
+	<complexType name="Items">
+		<sequence>
+			<element name="item" type="tns:ItemsItem" nillable="true"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="ItemsItem">
+		<sequence>
+			<element name="USPrice" type="decimal" nillable="true" />
+			<element name="productName" type="string" nillable="true" />
+			<element name="quantity" type="integer" nillable="true" />
+			<element name="shipDate" type="dateTime" nillable="true" />
+		</sequence>
+	</complexType>
+</schema>

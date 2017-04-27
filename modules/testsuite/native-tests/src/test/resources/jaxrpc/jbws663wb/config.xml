@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -cp ../../output/classes -import -f:explicitcontext -mapping jaxrpc-mapping.xml -keep config.xml
+-->
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+  
+  <wsdl 
+    location="./WEB-INF/wsdl/globalsmspro.wsdl" 
+    packageName="org.jboss.test.ws.jaxrpc.jbws663">
+  </wsdl>
+  
+</configuration>
+
+  <!-- BEGIN manual edit - ->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws663.GetSupportedCarriers</java-type>
+    <anonymous-type-qname>http://www.strikeiron.com:&gt;GetSupportedCarriers</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws663.GetCountryCodes</java-type>
+    <anonymous-type-qname>http://www.strikeiron.com:&gt;GetCountryCodes</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws663.GetRemainingHits</java-type>
+    <anonymous-type-qname>http://ws.strikeiron.com:&gt;GetRemainingHits</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws663.GetRemainingHitsResponse</java-type>
+    <anonymous-type-qname>http://ws.strikeiron.com:&gt;GetRemainingHitsResponse</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+  </java-xml-type-mapping>
+  <!- - END manual edit -->

@@ -1,0 +1,16 @@
+<client-scenarios>
+   <scenario name="default" description="Testing local WSA endpoints">
+      <target-endpoint>http://jbossws.demo.jboss.com:8080/wsa10/notify</target-endpoint>
+      <param name="echoPort" value="http://jbossws.demo.jboss.com:8080/wsa10/echo"/>
+   </scenario>
+   <scenario name="debug-local" description="Testing local WSA endpoints">
+      <target-endpoint>http://localhost:8081/wsa10_sep06/notify</target-endpoint>
+      <param name="echoPort" value="http://localhost:8081/wsa10_sep06/echo"/>
+   </scenario>
+   <scenario name="msft-public" decsription="Testing MSFT public interop endpoints">
+      <target-endpoint>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11</target-endpoint>
+   </scenario>
+   <scenario name="msft-public-debug" decsription="Testing MSFT public interop endpoints">
+      <target-endpoint>http://localhost:8081/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11</target-endpoint>
+   </scenario>
+</client-scenarios>

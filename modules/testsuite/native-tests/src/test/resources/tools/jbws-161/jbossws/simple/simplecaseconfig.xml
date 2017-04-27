@@ -1,0 +1,13 @@
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <javaToWSDL>
+      <service name="HelloWsService"
+               endpoint="org.jboss.test.ws.tools.jbws_161.simple.HelloWs"
+               restrictSchemaToTargetNS="true"/>
+        <namespaces  targetNamespace="http://org.jboss/types" 
+                              typeNamespace="http://org.jboss/types"  />        
+        <mapping fileName="jaxrpc-mapping.xml"/>
+        <wsxml  servletLink="HelloWsService"/> 
+    </javaToWSDL>  
+</configuration>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="WsdlImportService"
+	targetNamespace="http://jboss.org/wsdlimport"
+	xmlns:tns="http://jboss.org/wsdlimport"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<message name="HelloWs_sayHello">
+		<part name="String_1" type="xsd:string" />
+	</message>
+	<message name="HelloWs_sayHelloResponse">
+		<part name="result" type="xsd:string" />
+	</message>
+
+	<portType name="HelloWs">
+		<operation name="sayHello" parameterOrder="String_1">
+			<input message="tns:HelloWs_sayHello" />
+			<output message="tns:HelloWs_sayHelloResponse" />
+		</operation>
+	</portType>
+
+	<binding name="WsdlImportServiceBinding" type="tns:HelloWs">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="sayHello">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://test.jboss.org/ws4eesimple" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://test.jboss.org/ws4eesimple" />
+			</output>
+		</operation>
+	</binding> 
+</definitions>

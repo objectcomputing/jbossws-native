@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:tns="http://jboss.org/test/ws/xop"
+    targetNamespace="http://jboss.org/test/ws/xop"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://jboss.org/test/ws/xop"
+                  xmlns:xmime="http://www.w3.org/2005/05/xmlmime" >
+
+         <xsd:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+
+         <xsd:complexType name="PingInType">
+            <xsd:sequence>
+               <xsd:element name="message" minOccurs="0" maxOccurs="1" type="xsd:string" />
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingOutType">
+            <xsd:sequence>
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingImageType">
+            <xsd:sequence>
+               <xsd:element name="message" minOccurs="0" maxOccurs="1" type="xsd:string" />
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingImageOutType">
+            <xsd:sequence>
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingSourceType">
+            <xsd:sequence>
+               <xsd:element name="message" minOccurs="0" maxOccurs="1" type="xsd:string" />
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingSourceOutType">
+            <xsd:sequence>
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingDataHandlerType">
+            <xsd:sequence>
+               <xsd:element name="message" minOccurs="0" maxOccurs="1" type="xsd:string" />
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+
+         <xsd:complexType name="PingDataHandlerOutType">
+            <xsd:sequence>
+               <xsd:element name="xopContent" minOccurs="0" maxOccurs="1" type="xsd:base64Binary"/>
+            </xsd:sequence>
+         </xsd:complexType>
+      </xsd:schema>
+
+   </wsdl:types>
+
+   <wsdl:message name="PingIn">
+      <wsdl:part name="parameters" type="tns:PingInType" />
+   </wsdl:message>
+
+   <wsdl:message name="PingOut">
+      <wsdl:part name="result" type="tns:PingOutType" />
+   </wsdl:message>
+
+   <wsdl:message name="OctetsIn">
+      <wsdl:part name="message" type="xsd:string" />
+      <wsdl:part name="xopContent" type="xsd:base64Binary" />
+   </wsdl:message>
+
+   <wsdl:message name="OctetsOut">
+      <wsdl:part name="result" type="xsd:base64Binary" />
+   </wsdl:message>
+
+   <wsdl:message name="PingImageIn">
+      <wsdl:part name="parameters" type="tns:PingImageType" />
+   </wsdl:message>
+   <wsdl:message name="PingImageOut">
+      <wsdl:part name="result" type="tns:PingImageOutType" />
+   </wsdl:message>
+
+   <wsdl:message name="PingSourceIn">
+      <wsdl:part name="parameters" type="tns:PingSourceType" />
+   </wsdl:message>
+   <wsdl:message name="PingSourceOut">
+      <wsdl:part name="result" type="tns:PingSourceOutType" />
+   </wsdl:message>
+
+   <wsdl:message name="PingDataHandlerIn">
+      <wsdl:part name="parameters" type="tns:PingDataHandlerType" />
+   </wsdl:message>
+   <wsdl:message name="PingDataHandlerOut">
+      <wsdl:part name="result" type="tns:PingDataHandlerOutType" />
+   </wsdl:message>
+
+   <wsdl:portType name="TestService">
+      <wsdl:operation name="ping">
+         <wsdl:input message="tns:PingIn" />
+         <wsdl:output message="tns:PingOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingSimple">
+         <wsdl:input message="tns:OctetsIn" />
+         <wsdl:output message="tns:OctetsOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingImage">
+         <wsdl:input message="tns:PingImageIn" />
+         <wsdl:output message="tns:PingImageOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingSource">
+         <wsdl:input message="tns:PingSourceIn" />
+         <wsdl:output message="tns:PingSourceOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingDataHandler">
+         <wsdl:input message="tns:PingDataHandlerIn" />
+         <wsdl:output message="tns:PingDataHandlerOut" />
+      </wsdl:operation>
+   </wsdl:portType>
+
+
+   <wsdl:binding name="TestServiceBinding" type="tns:TestService">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+      <wsdl:operation name="ping">
+         <soap:operation soapAction="" style="rpc" />
+         <wsdl:input>
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="pingSimple">
+         <soap:operation soapAction="http://jboss.org/test/ws/xop/PingSimple" style="rpc" />
+         <wsdl:input>
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+
+      <wsdl:operation name="pingImage">
+         <soap:operation soapAction="" style="rpc" />
+         <wsdl:input>
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="pingSource">
+         <soap:operation soapAction="" style="rpc" />
+         <wsdl:input>
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="pingDataHandler">
+         <soap:operation soapAction="" style="rpc" />
+         <wsdl:input>
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TestService">
+      <wsdl:port name="TestServicePort" binding="tns:TestServiceBinding">
+         <soap:address location="REPLACE_WITH_ACTUAL_URL" />
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

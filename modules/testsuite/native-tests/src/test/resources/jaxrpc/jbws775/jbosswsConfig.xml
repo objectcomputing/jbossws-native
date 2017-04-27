@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -config jbosswsConfig.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools">
+  
+  <global>
+    <package-namespace package="org.jboss.test.ws.jaxrpc.jbws775" namespace="http://example.com/translator"/>
+  </global>
+  
+  <wsdlToJava wsdlLocation="WEB-INF/wsdl/translator.wsdl">
+    <mapping fileName="jaxrpc-mapping.xml" />
+  </wsdlToJava>
+  
+</configuration>

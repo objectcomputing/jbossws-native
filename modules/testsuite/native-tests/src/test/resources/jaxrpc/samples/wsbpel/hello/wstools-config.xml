@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools">
+  <global>
+    <package-namespace package="org.jboss.test.ws.jaxrpc.samples.wsbpel.hello"
+      namespace="http://jbpm.org/examples/hello" />
+  </global>
+  <wsdl-java location="@test.resources.directory@/../wstools/resources/jaxrpc/samples/wsbpel/hello/WEB-INF/wsdl/hello-service.wsdl">
+    <mapping file="jaxrpc-mapping.xml" />
+  </wsdl-java>
+</configuration>

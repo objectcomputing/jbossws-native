@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../output/classes -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  
+  <java-wsdl>
+    <service name="OrganizationService" style="rpc" endpoint="org.jboss.test.ws.jaxrpc.samples.secureejb.OrganizationService"/>
+    <namespaces target-namespace="http://org.jboss.ws/samples/secureejb" type-namespace="http://org.jboss.ws/samples/secureejb/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+  </java-wsdl>
+  
+</configuration>
+
+<!--
+ <service name="OrganizationService">
+  <port name="BasicSecuredPort" binding="tns:OrganizationServiceBinding">
+   <soap:address location="http://@jboss.bind.address@:8080/jaxrpc-samples-ejb/BasicSecured"/>
+  </port>
+  <port name="RoleSecuredPort" binding="tns:OrganizationServiceBinding">
+   <soap:address location="http://@jboss.bind.address@:8080/jaxrpc-samples-ejb/RoleSecured"/>
+  </port>
+ </service>
+-->

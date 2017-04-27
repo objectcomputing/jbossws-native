@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application-client xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application-client_1_4.xsd"
+  version="1.4">
+
+  <display-name>JAXRPC simple tests</display-name>
+
+  <env-entry>
+   <env-entry-name>jsr109/entry1</env-entry-name>
+   <env-entry-type>java.lang.String</env-entry-type>
+   <env-entry-value>appclient</env-entry-value>
+  </env-entry>
+  
+  <env-entry>
+   <env-entry-name>jsr109/entry2</env-entry-name>
+   <env-entry-type>java.lang.Integer</env-entry-type>
+   <env-entry-value>8</env-entry-value>
+  </env-entry>
+
+  <service-ref>
+    <service-ref-name>service/TestService</service-ref-name>
+    <service-interface>javax.xml.rpc.Service</service-interface>
+    <wsdl-file>META-INF/wsdl/TestService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>META-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.enventry.EnvEntryTestService</service-endpoint-interface>
+    </port-component-ref>
+    <handler>
+      <handler-name>ClientSideHandler</handler-name>
+      <handler-class>org.jboss.test.ws.jaxrpc.enventry.ClientSideHandler</handler-class>
+    </handler>
+  </service-ref>
+
+</application-client>
+

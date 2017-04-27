@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="TestService" targetNamespace="http://org.jboss.ws/jbws434"
+             xmlns:tns="http://org.jboss.ws/jbws434" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.jboss.ws/jbws434/types"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+   <types>
+      <schema targetNamespace="http://org.jboss.ws/jbws434/types" xmlns:tns="http://org.jboss.ws/jbws434/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+
+         <complexType name="ArrayOfAny">
+            <xsd:sequence>
+               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+         </complexType>
+
+         <complexType name="ArrayOfAny2">
+            <xsd:sequence>
+               <xsd:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+         </complexType>
+
+         <complexType name="TypeOfAny3">
+            <xsd:sequence>
+               <xsd:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+         </complexType>
+
+      </schema>
+   </types>
+
+   <message name="TestService_echo">
+      <part name="param1" type="ns1:ArrayOfAny"/>
+   </message>
+   <message name="TestService_echoResponse">
+      <part name="result" type="ns1:ArrayOfAny"/>
+   </message>
+
+   <message name="TestService_echo2">
+      <part name="param1" type="ns1:ArrayOfAny2"/>
+   </message>
+   <message name="TestService_echoResponse2">
+      <part name="result" type="ns1:ArrayOfAny2"/>
+   </message>
+
+   <message name="TestService_echo3">
+      <part name="param1" type="ns1:TypeOfAny3"/>
+   </message>
+   <message name="TestService_echoResponse3">
+      <part name="result" type="ns1:TypeOfAny3"/>
+   </message>
+
+   <portType name="TestService">
+      <operation name="echo">
+         <input message="tns:TestService_echo"/>
+         <output message="tns:TestService_echoResponse"/>
+      </operation>
+      <operation name="echo2">
+         <input message="tns:TestService_echo2"/>
+         <output message="tns:TestService_echoResponse2"/>
+      </operation>
+      <operation name="echo3">
+         <input message="tns:TestService_echo3"/>
+         <output message="tns:TestService_echoResponse3"/>
+      </operation>
+   </portType>
+
+   <binding name="TestServiceBinding" type="tns:TestService">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+
+      <operation name="echo">
+         <soap:operation soapAction=""/>
+         <input>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </input>
+         <output>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </output>
+      </operation>
+
+      <operation name="echo2">
+         <soap:operation soapAction=""/>
+         <input>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </input>
+         <output>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </output>
+      </operation>
+
+       <operation name="echo3">
+         <soap:operation soapAction=""/>
+         <input>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </input>
+         <output>
+            <soap:body use="literal" namespace="http://org.jboss.ws/jbws434"/>
+         </output>
+      </operation>
+
+   </binding>
+
+   <service name="TestService">
+      <port name="TestServicePort" binding="tns:TestServiceBinding">
+         <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+      </port>
+   </service>
+
+</definitions>

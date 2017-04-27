@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.tools.sei</package-type>
+    <namespaceURI>http://org.jboss.ws/types</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.tools.sei</package-type>
+    <namespaceURI>http://org.jboss.ws</namespaceURI>
+  </package-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.tools.sei.PrimitiveTypesService</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://org.jboss.ws">serviceNS:PrimitiveTypesService</wsdl-service-name>
+    <port-mapping>
+      <port-name>PrimitiveTypesPort</port-name>
+      <java-port-name>PrimitiveTypesPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.tools.sei.PrimitiveTypes</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws">portTypeNS:PrimitiveTypes</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.ws">bindingNS:PrimitiveTypesBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoBoolean</java-method-name>
+      <wsdl-operation>echoBoolean</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoBoolean</wsdl-message>
+          <wsdl-message-part-name>boolean_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>boolean</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoBooleanResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoByte</java-method-name>
+      <wsdl-operation>echoByte</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>byte</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoByte</wsdl-message>
+          <wsdl-message-part-name>byte_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>byte</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoByteResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoDouble</java-method-name>
+      <wsdl-operation>echoDouble</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>double</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoDouble</wsdl-message>
+          <wsdl-message-part-name>double_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>double</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoDoubleResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoFloat</java-method-name>
+      <wsdl-operation>echoFloat</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>float</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoFloat</wsdl-message>
+          <wsdl-message-part-name>float_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>float</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoFloatResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoInt</java-method-name>
+      <wsdl-operation>echoInt</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>int</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoInt</wsdl-message>
+          <wsdl-message-part-name>int_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>int</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoIntResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoLong</java-method-name>
+      <wsdl-operation>echoLong</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>long</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoLong</wsdl-message>
+          <wsdl-message-part-name>long_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>long</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoLongResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoShort</java-method-name>
+      <wsdl-operation>echoShort</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>short</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoShort</wsdl-message>
+          <wsdl-message-part-name>short_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>short</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:PrimitiveTypes_echoShortResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

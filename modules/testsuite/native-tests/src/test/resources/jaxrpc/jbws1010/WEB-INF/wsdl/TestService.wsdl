@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1010' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1010' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='InheritenceChildInterface_getA'/>
+ <message name='InheritenceChildInterface_getAResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='InheritenceChildInterface_getB'/>
+ <message name='InheritenceChildInterface_getBResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='InheritenceChildInterface'>
+  <operation name='getA'>
+   <input message='tns:InheritenceChildInterface_getA'/>
+   <output message='tns:InheritenceChildInterface_getAResponse'/>
+  </operation>
+  <operation name='getB'>
+   <input message='tns:InheritenceChildInterface_getB'/>
+   <output message='tns:InheritenceChildInterface_getBResponse'/>
+  </operation>
+ </portType>
+ <binding name='InheritenceChildInterfaceBinding' type='tns:InheritenceChildInterface'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getA'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1010' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1010' use='literal'/>
+   </output>
+  </operation>
+  <operation name='getB'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1010' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1010' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:InheritenceChildInterfaceBinding' name='InheritenceChildInterfacePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

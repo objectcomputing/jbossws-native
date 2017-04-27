@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloOneService' targetNamespace='http://org.jboss.test.webservice/jbws79' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws79' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='HelloOne_echoString'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='HelloOne_echoStringResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='HelloOne'>
+  <operation name='echoString' parameterOrder='String_1'>
+   <input message='tns:HelloOne_echoString'/>
+   <output message='tns:HelloOne_echoStringResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloOneBinding' type='tns:HelloOne'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoString'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws79' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws79' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <!-- Remove Service -->
+</definitions>

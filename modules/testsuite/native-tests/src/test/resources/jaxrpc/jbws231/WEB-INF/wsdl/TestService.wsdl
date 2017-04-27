@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws231' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws231/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws231' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws231/types' xmlns='http://www.w3.org/2001/XMLSchema'
+    xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws231/types'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+    
+    <simpleType name="EyeColorType">
+      <restriction base="xsd:string">
+        <enumeration value="green"/>
+        <enumeration value="blue"/>
+      </restriction>
+    </simpleType>
+    
+  </schema>
+ </types>
+ <message name='TestEndpoint_echoSimple'>
+  <part name='EyeColorType_1' type='ns1:EyeColorType'/>
+ </message>
+ <message name='TestEndpoint_echoSimpleResponse'>
+  <part name='result' type='ns1:EyeColorType'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echoSimple' parameterOrder='EyeColorType_1'>
+   <input message='tns:TestEndpoint_echoSimple'/>
+   <output message='tns:TestEndpoint_echoSimpleResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoSimple'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws231' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws231' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

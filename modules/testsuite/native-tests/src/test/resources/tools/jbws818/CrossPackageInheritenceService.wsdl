@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='CrossPackageInheritenceService' targetNamespace='http://org.jboss.ws/jbws818' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.ws/jbws818/types' xmlns:ns2='http://two.jbws818.tools.ws.test.jboss.org/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/jbws818' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://two.jbws818.tools.ws.test.jboss.org/' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://org.jboss.ws/jbws818/types' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://two.jbws818.tools.ws.test.jboss.org/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://org.jboss.ws/jbws818/types'/>
+   <complexType name='Parent'>
+    <sequence>
+     <element name='one' type='int'/>
+     <element name='two' type='int'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://org.jboss.ws/jbws818/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://two.jbws818.tools.ws.test.jboss.org/' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.ws/jbws818/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://two.jbws818.tools.ws.test.jboss.org/'/>
+   <complexType name='Child'>
+    <complexContent>
+     <extension base='ns1:Parent'>
+      <sequence>
+       <element name='four' type='int'/>
+       <element name='three' type='int'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='GrandChild'>
+    <complexContent>
+     <extension base='tns:Child'>
+      <sequence>
+       <element name='five' type='int'/>
+       <element name='six' type='int'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+ </types>
+ <message name='CrossPackageInheritenceEndpoint_echoGrandChild'>
+  <part name='GrandChild_1' type='ns1:GrandChild'/>
+ </message>
+ <message name='CrossPackageInheritenceEndpoint_echoGrandChildResponse'>
+  <part name='result' type='ns1:GrandChild'/>
+ </message>
+ <portType name='CrossPackageInheritenceEndpoint'>
+  <operation name='echoGrandChild' parameterOrder='GrandChild_1'>
+   <input message='tns:CrossPackageInheritenceEndpoint_echoGrandChild'/>
+   <output message='tns:CrossPackageInheritenceEndpoint_echoGrandChildResponse'/>
+  </operation>
+ </portType>
+ <binding name='CrossPackageInheritenceEndpointBinding' type='tns:CrossPackageInheritenceEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoGrandChild'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/jbws818' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/jbws818' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='CrossPackageInheritenceService'>
+  <port binding='tns:CrossPackageInheritenceEndpointBinding' name='CrossPackageInheritenceEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

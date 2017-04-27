@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Dan Carnell (Fiserv) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="uri:tranHistory" targetNamespace="uri:tranHistory" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="StatusRs" type="tns:StatusRs">
+		<xs:annotation>
+			<xs:documentation>Status</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="StatusRs">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string"/>
+			<xs:element name="Message" type="xs:string" minOccurs="0"/>
+			<xs:element name="Type" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="SessionId" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

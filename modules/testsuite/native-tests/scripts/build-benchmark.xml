@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================ -->
+<!--  JBoss, the OpenSource J2EE webOS                            -->
+<!--  Distributable under LGPL license.                           -->
+<!--  See terms of license at http://www.gnu.org.                 -->
+<!-- ============================================================ -->
+
+<project name="JBossWS Benchamrks">
+  
+  <!-- ================================================================== -->
+  <!-- Building                                                           -->
+  <!-- ================================================================== -->
+  
+  <target name="build-benchmark" depends="main">
+    <ant antfile="src/test/ant/build-benchmark-jars.xml" target="build-benchmark-jars" inheritall="true"/>
+  </target>
+  
+  <!-- ================================================================== -->
+  <!-- Testing                                                            -->
+  <!-- ================================================================== -->
+  
+  <!-- Run benchmark test cases -->
+  <target name="tests-benchmark" depends="init" description="Run benchmark unit tests">
+    <antcall target="tests-main">
+      <param name="include.wildcard" value="org/jboss/test/ws/benchmark/**/*TestCase.class"/>
+    </antcall>
+    <antcall target="tests-report"/>
+  </target>
+  
+</project>

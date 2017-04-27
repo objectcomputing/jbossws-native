@@ -1,0 +1,41 @@
+<definitions name='RpcArrayEndpointService' targetNamespace='http://jbws871.jaxws.ws.test.jboss.org/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://jbws871.jaxws.ws.test.jboss.org/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema elementFormDefault='qualified' targetNamespace='http://jbws871.jaxws.ws.test.jboss.org/' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://jbws871.jaxws.ws.test.jboss.org/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='Integer.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='RpcArrayEndpoint_intArrResponse'>
+  <part name='result' type='tns:Integer.Array'/>
+ </message>
+ <message name='RpcArrayEndpoint_intArr'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='Integer_1' type='tns:Integer.Array'/>
+ </message>
+ <portType name='RpcArrayEndpoint'>
+  <operation name='intArr' parameterOrder='String_1 Integer_1'>
+   <input message='tns:RpcArrayEndpoint_intArr'/>
+   <output message='tns:RpcArrayEndpoint_intArrResponse'/>
+  </operation>
+ </portType>
+ <binding name='RpcArrayEndpointBinding' type='tns:RpcArrayEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='intArr'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://jbws871.jaxws.ws.test.jboss.org/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://jbws871.jaxws.ws.test.jboss.org/' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='RpcArrayEndpointService'>
+  <port binding='tns:RpcArrayEndpointBinding' name='RpcArrayEndpointPort'>
+   <soap:address location='http://@jboss.bind.address@:8080/jaxws-jbws871-rpc/TestEndpoint'/>
+  </port>
+ </service>
+</definitions>

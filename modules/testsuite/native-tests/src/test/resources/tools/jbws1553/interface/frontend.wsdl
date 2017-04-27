@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:samples:atm2" xmlns:tns="urn:samples:atm2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:acc="urn:samples:account"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:typ="urn:samples:atm2" xmlns:tic="urn:samples:ticket" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="urn:samples:account" location="account.wsdl"/>
+  <import namespace="urn:samples:ticket" location="ticket.wsdl"/>
+  <types>
+    <schema targetNamespace="urn:samples:atm2" xmlns="http://www.w3.org/2001/XMLSchema">
+      
+      <complexType name="UnauthorizedAccess">
+        <sequence>
+          <element name="customerName" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      
+      <element name="unauthorizedAccess" type="typ:UnauthorizedAccess"/>
+      
+      <complexType name="InsufficientFunds">
+        <sequence>
+          <element name="customerName" type="xsd:string"/>
+          <element name="amount" type="xsd:double"/>
+        </sequence>
+      </complexType>
+      
+      <element name="insufficientFunds" type="typ:InsufficientFunds"/>
+      
+    </schema>
+  </types>
+  <message name="unauthorizedAccess">
+    <part name="detail" element="tns:unauthorizedAccess"/>
+  </message>
+  <message name="connectRequest">
+  </message>
+  <message name="mymessage">
+    <part name="body" type="xsd:string"/>
+  </message>
+  <message name="statusResponse">
+    <part name="status" type="xsd:string"/>
+  </message>
+  <message name="balanceChange">
+    <part name="customerName" type="xsd:string"/>
+    <part name="amount" type="xsd:double"/>
+  </message>
+  <message name="logOnRequest">
+    <part name="ticketNo" type="xsd:int"/>
+    <part name="customerName" type="xsd:string"/>
+  </message>
+  <message name="insufficientFunds">
+    <part name="detail" element="tns:insufficientFunds"/>
+  </message>
+  <message name="logOnResponse">
+  </message>
+  <portType name="FrontEnd">
+    <operation name="connect">
+      <input message="tns:connectRequest"/>
+      <output message="tic:ticketMessage"/>
+    </operation>
+    <operation name="disconnect">
+      <input message="tic:ticketMessage"/>
+    </operation>
+    <operation name="status">
+      <input message="tic:ticketMessage"/>
+      <output message="tns:statusResponse"/>
+    </operation>
+    <operation name="logOn">
+      <input message="tns:logOnRequest"/>
+      <output message="tns:logOnResponse"/>
+      <fault name="unauthorizedAccess" message="tns:unauthorizedAccess"/>
+    </operation>
+    <operation name="logOff">
+      <input message="acc:customerMessage"/>
+    </operation>
+    <operation name="getBalance">
+      <input message="acc:customerMessage"/>
+      <output message="acc:balanceMessage"/>
+    </operation>
+    <operation name="deposit">
+      <input message="tns:balanceChange"/>
+      <output message="acc:balanceMessage"/>
+    </operation>
+    <operation name="withdraw">
+      <input message="tns:balanceChange"/>
+      <output message="acc:balanceMessage"/>
+      <fault name="insufficientFunds" message="tns:insufficientFunds"/>
+    </operation>
+    <operation name="myop">
+      <input message="tns:mymessage"/>
+    </operation>
+  </portType>
+</definitions>

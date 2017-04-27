@@ -1,0 +1,10 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+
+  <import namespace="http://org.jboss.ws/types2" schemaLocation="./SchemaImport.xsd"/>
+  <element name='MyAddress' type='tns2:USAddress'/>
+
+</schema>

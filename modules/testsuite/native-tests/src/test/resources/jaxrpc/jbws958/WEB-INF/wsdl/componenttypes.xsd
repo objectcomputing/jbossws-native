@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Herr Speer (T-Systems Nova GmbH) -->
+<!-- Last changes 31.08.2005, Frank Speer -->
+<xsd:schema xmlns="http://www.t-systems.com/damona" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.8.0">
+	<xsd:simpleType name="ModemEquipmentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Rack"/>
+			<xsd:enumeration value="Table"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessSpeedBU">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BRA"/>
+			<xsd:enumeration value="PRA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessSpeedDsl">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="608kbps/160kbps"/>
+			<xsd:enumeration value="640kbps/256kbps"/>
+			<xsd:enumeration value="768kbps/128kbps"/>
+			<xsd:enumeration value="1024kbps/192kbps"/>
+			<xsd:enumeration value="1024kbps/512kbps"/>
+			<xsd:enumeration value="1200kbps/320kbps"/>
+			<xsd:enumeration value="1280kbps/512kbps"/>
+			<xsd:enumeration value="1536kbps/192kbps"/>
+			<xsd:enumeration value="2048kbps/320kbps"/>
+			<xsd:enumeration value="2048kbps/512kbps"/>
+			<xsd:enumeration value="3072kbps/320kbps"/>
+			<xsd:enumeration value="4096kbps/508kbps"/>
+			<xsd:enumeration value="128 kbps"/>
+			<xsd:enumeration value="256 kbps"/>
+			<xsd:enumeration value="384 kbps"/>
+			<xsd:enumeration value="512 kbps"/>
+			<xsd:enumeration value="565 kbps"/>
+			<xsd:enumeration value="1024 kbps"/>
+			<xsd:enumeration value="1130 kbps"/>
+			<xsd:enumeration value="1536 kbps"/>
+			<xsd:enumeration value="1582 kbps"/>
+			<xsd:enumeration value="2033 kbps"/>
+			<xsd:enumeration value="2048 kbps"/>
+			<xsd:enumeration value="4096 kbps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccessTypeBU">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ISDN"/>
+			<xsd:enumeration value="DSL"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddInhouseWiring">
+		<xsd:annotation>
+			<xsd:documentation>only DSL France</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="No"/>
+			<xsd:enumeration value="Flat"/>
+			<xsd:enumeration value="Individual"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AtmConnectionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Point to Point Symmetrical"/>
+			<xsd:enumeration value="Point to Point Asymmetrical"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AtmVirtualConnection">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Virtuell Path Connection"/>
+			<xsd:enumeration value="Virtuell Channel Connection"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BackupKind">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DIC"/>
+			<xsd:enumeration value="DAC"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CeName">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([a-z]{2}-[a-z0-9]{3}-[a-z0-9]{1,5}-(ce|mr|vg)-(0[1-9]|[1-9][0-9]))|(fwc-[1|2][a-z0-9]{3}|(s|i|v)gw-[a-z]{2}-[a-z]{3}-[0-9]{2}[a-z0-9]{3})"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CpeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Primary"/>
+			<xsd:enumeration value="Secondary"/>
+			<xsd:enumeration value="RdiRouter"/>
+			<xsd:enumeration value="Primary VG"/>
+			<xsd:enumeration value="Secondary VG"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SwUri">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(cpc|cma)-[1|2][a-z0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitAccessType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Kupfer / elektrisch"/>
+			<xsd:enumeration value="Glasfaser / optisch"/>
+			<xsd:enumeration value="DSL"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitAccessSpeed">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="64 Kbit/s"/>
+			<xsd:enumeration value="128 Kbit/s"/>
+			<xsd:enumeration value="192 Kbit/s"/>
+			<xsd:enumeration value="256 Kbit/s"/>
+			<xsd:enumeration value="384 Kbit/s"/>
+			<xsd:enumeration value="512 Kbit/s"/>
+			<xsd:enumeration value="768 Kbit/s"/>
+			<xsd:enumeration value="1024 Kbit/s"/>
+			<xsd:enumeration value="1920 Kbit/s"/>
+			<xsd:enumeration value="1984 Kbit/s"/>
+			<xsd:enumeration value="E1 = 2 Mbit/s"/>
+			<xsd:enumeration value="T1 = 1,5 Mbit/s"/>
+			<xsd:enumeration value="E3 = 34 Mbit/s"/>
+			<xsd:enumeration value="DS3 = 45 Mbit/s"/>
+			<xsd:enumeration value="STM-1 = 155 Mbit/s"/>
+			<xsd:enumeration value="OC-3 = 155 Mbit/s"/>
+			<xsd:enumeration value="STM-4 = 622 Mbit/s"/>
+			<xsd:enumeration value="STM-16 = 2,5 Gbit/s"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitInterface_OF_15">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="X.21"/>
+			<xsd:enumeration value="JTG703-a"/>
+			<xsd:enumeration value="V.35"/>
+			<xsd:enumeration value="V.36"/>
+			<xsd:enumeration value="G.703/704 elekt.120 Ohm balanc"/>
+			<xsd:enumeration value="G.703 elektr.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.703 elektr.120 Ohm balanced"/>
+			<xsd:enumeration value="G.703 elekt.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.957/707 single-mode optikal"/>
+			<xsd:enumeration value="G.957/707 1300nm sm optisch"/>
+			<xsd:enumeration value="G.957/G.707 optisch"/>
+			<xsd:enumeration value="electrikal 75 Ohm unbalanced"/>
+			<xsd:enumeration value="elekt. 75 Ohm unbal.(4x STM-1)"/>
+			<xsd:enumeration value="Optikal, (1x STM-4c)"/>
+			<xsd:enumeration value="I.430"/>
+			<xsd:enumeration value="G.703/G.704"/>
+			<xsd:enumeration value="G.703/G.704, unstructured"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitInterface">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="X.21"/>
+			<xsd:enumeration value="JTG703-a"/>
+			<xsd:enumeration value="V.35"/>
+			<xsd:enumeration value="V.36"/>
+			<xsd:enumeration value="G.703/704 elekt.120 Ohm balanc"/>
+			<xsd:enumeration value="G.703 elektr.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.703 elektr.120 Ohm balanced"/>
+			<xsd:enumeration value="G.703 elekt.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.957/707 single-mode optikal"/>
+			<xsd:enumeration value="G.957/707 1300nm sm optisch"/>
+			<xsd:enumeration value="G.957/G.707 optisch"/>
+			<xsd:enumeration value="electrikal 75 Ohm unbalanced"/>
+			<xsd:enumeration value="elekt. 75 Ohm unbal.(4x STM-1)"/>
+			<xsd:enumeration value="Optikal, (1x STM-4c)"/>
+			<xsd:enumeration value="I.430"/>
+			<xsd:enumeration value="G.703/G.704"/>
+			<xsd:enumeration value="G.703/G.704, unstructured"/>
+			<xsd:enumeration value="G.703/704 elect.120 Ohm balanc"/>
+			<xsd:enumeration value="G.703 electr.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.703 electr.120 Ohm balanced"/>
+			<xsd:enumeration value="G.703 elect.75 Ohm unbalanced"/>
+			<xsd:enumeration value="G.957/707 single-mode optical"/>
+			<xsd:enumeration value="G.957/707 1300nm sm optical"/>
+			<xsd:enumeration value="G.957/G.707 optical"/>
+			<xsd:enumeration value="electrical 75 Ohm unbalanced"/>
+			<xsd:enumeration value="elect. 75 Ohm unbal.(4x STM-1)"/>
+			<xsd:enumeration value="Optical, (1x STM-4c)"/>
+			<xsd:enumeration value="UR2"/>
+			<xsd:enumeration value="G.SHDSL"/>
+			<xsd:enumeration value="10BaseT"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitPlugtype_OF_15">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="RJ 48C  oder  RJ-45F"/>
+			<xsd:enumeration value="RJ-45"/>
+			<xsd:enumeration value="DB 9"/>
+			<xsd:enumeration value="DB15"/>
+			<xsd:enumeration value="34 pin Winch. (ISO2593)"/>
+			<xsd:enumeration value="WRAP"/>
+			<xsd:enumeration value="LSA"/>
+			<xsd:enumeration value="BNC 1,6/5,6 coax (female)"/>
+			<xsd:enumeration value="BNC 1,6/5,6 coax (male)"/>
+			<xsd:enumeration value="BNC Micro-Coax ST212"/>
+			<xsd:enumeration value="BNC UK-standard (female)"/>
+			<xsd:enumeration value="SC/PC"/>
+			<xsd:enumeration value="FC/PC"/>
+			<xsd:enumeration value="F04 fiber connector"/>
+			<xsd:enumeration value="Verschiedene opt. Stecker"/>
+			<xsd:enumeration value="DB15 (ISO 4903 15-pin female)"/>
+			<xsd:enumeration value="JIS X5102 (15 pin)"/>
+			<xsd:enumeration value="34 pin Winch. female (ISO2593)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CircuitPlugtype">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="RJ 48C  oder  RJ-45F"/>
+			<xsd:enumeration value="RJ-45"/>
+			<xsd:enumeration value="DB 9"/>
+			<xsd:enumeration value="DB15"/>
+			<xsd:enumeration value="34 pin Winch. (ISO2593)"/>
+			<xsd:enumeration value="WRAP"/>
+			<xsd:enumeration value="LSA"/>
+			<xsd:enumeration value="BNC 1,6/5,6 coax (female)"/>
+			<xsd:enumeration value="BNC 1,6/5,6 coax (male)"/>
+			<xsd:enumeration value="BNC Micro-Coax ST212"/>
+			<xsd:enumeration value="BNC UK-standard (female)"/>
+			<xsd:enumeration value="SC/PC"/>
+			<xsd:enumeration value="FC/PC"/>
+			<xsd:enumeration value="F04 fiber connector"/>
+			<xsd:enumeration value="Verschiedene opt. Stecker"/>
+			<xsd:enumeration value="DB15 (ISO 4903 15-pin female)"/>
+			<xsd:enumeration value="JIS X5102 (15 pin)"/>
+			<xsd:enumeration value="34 pin Winch. female (ISO2593)"/>
+			<xsd:enumeration value="RJ 45"/>
+			<xsd:enumeration value="BNC 1,6/ 5,6 Male"/>
+			<xsd:enumeration value="BNC, 1,6/ 5,6 Female"/>
+			<xsd:enumeration value="Varous opt. Connectors"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PvcTrafficClass">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="UBR"/>
+			<xsd:enumeration value="rt-VBR"/>
+			<xsd:enumeration value="nrt-VBR"/>
+			<xsd:enumeration value="VBR.1"/>
+			<xsd:enumeration value="VBR-Plus"/>
+			<xsd:enumeration value="CBR"/>
+			<xsd:enumeration value="L2TP"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ItuOssNo">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LanEthernet">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="auto"/>
+			<xsd:enumeration value="GE-fdx"/>
+			<xsd:enumeration value="GE-hdx"/>
+			<xsd:enumeration value="1000-fdx"/>
+			<xsd:enumeration value="1000-hdx"/>
+			<xsd:enumeration value="100-fdx"/>
+			<xsd:enumeration value="100-hdx"/>
+			<xsd:enumeration value="10-fdx"/>
+			<xsd:enumeration value="10-hdx"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LinkType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="LLMC"/>
+			<xsd:enumeration value="DDV"/>
+			<xsd:enumeration value="SFV"/>
+			<xsd:enumeration value="CFV"/>
+			<xsd:enumeration value="ATM-PVC"/>
+			<xsd:enumeration value="DSL-ASL"/>
+			<xsd:enumeration value="ACCESS-MODUL"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Lsz">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9:]{3,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MepType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Nein"/>
+			<xsd:enumeration value="MEP (Alternative End B)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PeName">
+		<xsd:annotation>
+			<xsd:documentation>
+Type:            String
+Format:          aaa-bbxx-yyyyy-zzzz
+Values / Range:     aaa: IATA 3-letter abbreviation code for the location
+                    bb:  1 or 2-letter Devicecode:
+		            E     - Edge or Edge/Switch, ISDN Backup,Internet Gateway etc.
+		            MR - Out-of-Band Management Router
+		            MS  - Local Switch
+		            RR  - Route-Reflector
+		            SA   - Label Switch Router Side A in a Class 1 PoP
+		            SB   - Label Switch Router Side B in a Class 1 PoP
+		     xx:   2-digit running suffix to uniquely identify each device, starting with 20
+Example:        NYC-E20
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z]{3}-(E|MA|MR|MS|RR|SA|SB|SC|SD)[2-9][0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PowerCord">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="CAB-[1-9A-Z]{2,15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SlaInfo">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Comfort"/>
+			<xsd:enumeration value="Compact"/>
+			<xsd:enumeration value="Complete"/>
+			<xsd:enumeration value="Standard"/>
+			<xsd:enumeration value="Entry"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubInterface">
+		<xsd:restriction base="xsd:integer"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Timeslot">
+		<xsd:annotation>
+			<xsd:documentation>options:
+			1: "unframed" 
+			2: contiguous slots: "x-y" 
+			3: none-contignous slots: "o,p,u-w" </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="unframed|[0-9\-,]{1,20}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="WanInterfaceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]/[0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="XDslType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ADSL"/>
+			<xsd:enumeration value="HDSL"/>
+			<xsd:enumeration value="SDSL"/>
+			<xsd:enumeration value="G HDSL"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ <message name='StandardTypes_byteArrayTest'>
+  <part name='arrayOfbyte_1' type='ns3:byte.Array'/>
+ </message>
+ <message name='StandardTypes_byteArrayTestResponse'>
+  <part name='result' type='ns3:byte.Array'/>
+ </message>
+ 
+<message name='StandardTypes_hexBinaryTest'>
+  <part name='arrayOfbyte_1' type='xsd:hexBinary'/>
+ </message>
+ <message name='StandardTypes_hexBinaryTestResponse'>
+  <part name='result' type='xsd:hexBinary'/>
+ </message>
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="MarshallService" 
+              endpoint="org.jboss.test.ws.jaxrpc.marshall.StandardTypes"
+              style="rpc">
+     </service>
+     <namespaces target-namespace="http://org.jboss.ws/marshall/rpclit"
+                 type-namespace="http://org.jboss.ws/marshall/rpclit/types"/>
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="StandardTypes"/>
+   </java-wsdl>  
+</configuration>

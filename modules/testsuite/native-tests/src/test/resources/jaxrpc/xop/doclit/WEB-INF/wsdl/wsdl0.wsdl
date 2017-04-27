@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+
+<wsdl:definitions
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:tns="http://jboss.org/test/ws/xop"
+    targetNamespace="http://jboss.org/test/ws/xop"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+   <wsdl:message name="PingIn">
+      <wsdl:part name="parameters" element="tns:PingMsg" />
+   </wsdl:message>
+
+   <wsdl:message name="PingOut">
+      <wsdl:part name="parameters" element="tns:PingMsgResponse" />
+   </wsdl:message>
+
+   <wsdl:message name="PingImageIn">
+      <wsdl:part name="parameters" element="tns:PingImage" />
+   </wsdl:message>
+   <wsdl:message name="PingImageOut">
+      <wsdl:part name="parameters" element="tns:PingImageResponse" />
+   </wsdl:message>
+
+   <wsdl:message name="PingSourceIn">
+      <wsdl:part name="parameters" element="tns:PingSource" />
+   </wsdl:message>
+   <wsdl:message name="PingSourceOut">
+      <wsdl:part name="parameters" element="tns:PingSourceResponse" />
+   </wsdl:message>
+
+   <wsdl:message name="PingDataHandlerIn">
+      <wsdl:part name="parameters" element="tns:PingDataHandler" />
+   </wsdl:message>
+   <wsdl:message name="PingDataHandlerOut">
+      <wsdl:part name="parameters" element="tns:PingDataHandlerResponse" />
+   </wsdl:message>
+
+   <wsdl:portType name="TestService">
+      <wsdl:operation name="ping">
+         <wsdl:input message="tns:PingIn" />
+         <wsdl:output message="tns:PingOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingImage">
+         <wsdl:input message="tns:PingImageIn" />
+         <wsdl:output message="tns:PingImageOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingSource">
+         <wsdl:input message="tns:PingSourceIn" />
+         <wsdl:output message="tns:PingSourceOut" />
+      </wsdl:operation>
+      <wsdl:operation name="pingDataHandler">
+         <wsdl:input message="tns:PingDataHandlerIn" />
+         <wsdl:output message="tns:PingDataHandlerOut" />
+      </wsdl:operation>
+   </wsdl:portType>
+
+</wsdl:definitions>

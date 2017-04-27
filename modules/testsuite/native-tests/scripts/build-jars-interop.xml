@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================ -->
+<!--  JBoss, the OpenSource J2EE webOS                            -->
+<!--  Distributable under LGPL license.                           -->
+<!--  See terms of license at http://www.gnu.org.                 -->
+<!-- ============================================================ -->
+
+<project>
+  
+  <description>JBossWS test archive builder</description>
+  
+  <!-- ================================================================== -->
+  <!-- Building                                                           -->
+  <!-- ================================================================== -->
+  
+  <target name="build-jars-interop">
+    
+    <mkdir dir="${tests.output.dir}/test-libs"/>
+    
+    <!-- Root.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-root.war" webxml="${tests.output.dir}/test-resources/interop/root/WEB-INF/web.xml">
+      <webinf dir="${tests.output.dir}/test-resources/interop/root/WEB-INF">
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/root">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    
+    <!-- jbossws-interop-BaseDataTypesDocLitB.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-BaseDataTypesDocLitB.war"
+      webxml="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitB/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/soapwsdl/basedoclitb/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitB/WEB-INF">
+        <include name="wsdl/**.*"/>
+        <include name="jboss-web.xml"/>
+        <include name="scenarios.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitB">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    
+    <!-- jbossws-interop-BaseDataTypesDocLitW.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-BaseDataTypesDocLitW.war"
+      webxml="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitW/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/soapwsdl/basedoclitw/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitW/WEB-INF">
+        <include name="wsdl/**"/>
+        <include name="jboss-web.xml"/>
+        <include name="scenarios.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesDocLitW">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    
+    <!-- jbossws-interop-BaseDataTypesRpcLit.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-BaseDataTypesRpcLit.war"
+      webxml="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesRpcLit/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/soapwsdl/baserpclit/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesRpcLit/WEB-INF">
+        <include name="wsdl/**"/>
+        <include name="jboss-web.xml"/>
+        <include name="scenarios.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/soapwsdl/BaseDataTypesRpcLit">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    
+    <!-- jbossws-interop-wsa10.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-wsa10.war" webxml="${tests.output.dir}/test-resources/interop/wsa/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/wsa/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/wsa/WEB-INF">
+        <include name="wsdl/**"/>
+        <include name="jboss-web.xml"/>
+        <include name="scenarios.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/wsa">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    
+    <!-- jbossws-interop-wsse10Encrypt.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-wsse10Encrypt.war" webxml="${tests.output.dir}/test-resources/interop/wsse/encrypt/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/wsse/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      
+      <webinf dir="${tests.output.dir}/test-resources/interop/wsse/encrypt/WEB-INF">
+        <include name="wsdl/**.*"/>
+        <include name="jboss-wsse-server.xml"/>
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/wsse/shared/META-INF">
+        <include name="alice.jks"/>
+        <include name="wsse10.truststore"/>
+      </webinf>
+      
+      <fileset dir="${tests.output.dir}/test-resources/interop/wsse/">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-wsse10Encrypt-client.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-wsse10Encrypt-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/wsse/encrypt/META-INF"/>
+    </jar>
+    
+    <!-- jbossws-interop-wsse10Sign.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-wsse10Sign.war" webxml="${tests.output.dir}/test-resources/interop/wsse/sign/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/wsse/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      
+      <webinf dir="${tests.output.dir}/test-resources/interop/wsse/sign/WEB-INF">
+        <include name="wsdl/**.*"/>
+        <include name="jboss-wsse-server.xml"/>
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/wsse/shared/META-INF">
+        <include name="alice.jks"/>
+        <include name="wsse10.truststore"/>
+      </webinf>
+      
+      <fileset dir="${tests.output.dir}/test-resources/interop/wsse/">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-wsse10Sign-client.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-wsse10Sign-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/wsse/sign/META-INF"/>
+    </jar>
+    
+    <!-- WCF Interoperability Plug-fest November 2007 -->
+    
+    <!-- jbossws-interop-nov2007-wsaSoap12.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsaSoap12.war"
+      webxml="${tests.output.dir}/test-resources/interop/nov2007/wsaSoap12/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/nov2007/wsaSoap12/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsaSoap12/WEB-INF">
+        <include name="wsdl/**"/>
+        <include name="jboss-web.xml"/>
+        <include name="scenarios.xml"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/nov2007/wsaSoap12">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-nov2007-wsaSoap12-client.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsaSoap12-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/nov2007/wsaSoap12/META-INF"/>
+    </jar>
+    
+    <!-- jbossws-interop-nov2007-wsseEncrypt.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseEncrypt.war"
+      webxml="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/nov2007/wsse/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt/WEB-INF">
+        <include name="jboss-wsse-server.xml"/>
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/shared/WEB-INF">
+        <include name="wsdl/**/*"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/shared/META-INF">
+        <include name="bob-sign_enc.jks"/>
+        <include name="wsse10.truststore"/>
+      </webinf>
+      
+      <fileset dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-nov2007-wsseEncrypt.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseEncrypt-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt/META-INF"/>
+    </jar>
+    
+    <!-- jbossws-interop-nov2007-wsseEncrypt3DES.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseEncrypt3DES.war"
+      webxml="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt3DES/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/nov2007/wsse/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt3DES/WEB-INF">
+        <include name="jboss-wsse-server.xml"/>
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/shared/WEB-INF">
+        <include name="wsdl/**/*"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/shared/META-INF">
+        <include name="bob-sign_enc.jks"/>
+        <include name="wsse10.truststore"/>
+      </webinf>
+      
+      <fileset dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-nov2007-wsseEncrypt3DES.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseEncrypt3DES-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/encrypt3DES/META-INF"/>
+    </jar>
+    
+    <!-- jbossws-interop-nov2007-wsseUsernameTokenHTTPS.war -->
+    <war warfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseUsernameTokenHTTPS.war"
+      webxml="${tests.output.dir}/test-resources/interop/nov2007/wsse/usernameTokenHTTPS/WEB-INF/web.xml">
+      <classes dir="${tests.output.dir}/test-classes">
+        <include name="org/jboss/test/ws/interop/nov2007/wsse/**/*.class"/>
+        <include name="org/jboss/test/ws/interop/*.class"/>
+      </classes>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/usernameTokenHTTPS/WEB-INF">
+        <include name="jboss-wsse-server.xml"/>
+        <include name="jboss-web.xml"/>
+      </webinf>
+      <webinf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/shared/WEB-INF">
+        <include name="wsdl/**/*"/>
+      </webinf>
+      <fileset dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/">
+        <include name="*.*"/>
+      </fileset>
+    </war>
+    <!-- jbossws-interop-nov2007-wsseUsernameTokenHTTPS-client.jar -->
+    <jar destfile="${tests.output.dir}/test-libs/jbossws-interop-nov2007-wsseUsernameTokenHTTPS-client.jar">
+      <metainf dir="${tests.output.dir}/test-resources/interop/nov2007/wsse/usernameTokenHTTPS/META-INF"/>
+    </jar>
+    
+    <!-- wrap up in an *.ear for easier deployment -->
+    <ear destfile="${tests.output.dir}/test-libs/jbossws-interop.ear" appxml="${tests.output.dir}/test-resources/interop/root/META-INF/application.xml">
+      <fileset dir="${tests.output.dir}/test-libs" includes="*interop*.war"/>
+    </ear>
+    
+  </target>
+</project>

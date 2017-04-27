@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="WrappedService" targetNamespace="http://org.jboss.ws/jbws732" xmlns:tns="http://org.jboss.ws/jbws732" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.ws/jbws732/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/jbws732/types" xmlns:tns="http://org.jboss.ws/jbws732/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="StringArray">
+        <sequence>
+          <element name="item" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/></sequence></complexType>
+      <complexType name="echoStringArray">
+        <sequence>
+          <element name="arrayOfString_1" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/></sequence></complexType>
+      <complexType name="echoStringArrayResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/></sequence></complexType>
+      <complexType name="echoStringWrappedArray">
+        <sequence>
+          <element name="arrayOfString_1" type="tns:StringArray" nillable="true"/></sequence></complexType>
+      <complexType name="echoStringWrappedArrayResponse">
+        <sequence>
+          <element name="result" type="tns:StringArray" nillable="true"/></sequence></complexType>
+      <element name="echoStringArray" type="tns:echoStringArray"/>
+      <element name="echoStringArrayResponse" type="tns:echoStringArrayResponse"/>
+      <element name="echoStringWrappedArray" type="tns:echoStringWrappedArray"/>
+      <element name="echoStringWrappedArrayResponse" type="tns:echoStringWrappedArrayResponse"/></schema></types>
+  <message name="WrappedEndpoint_echoStringArray">
+    <part name="parameters" element="ns2:echoStringArray"/></message>
+  <message name="WrappedEndpoint_echoStringArrayResponse">
+    <part name="result" element="ns2:echoStringArrayResponse"/></message>
+  <message name="WrappedEndpoint_echoStringWrappedArray">
+    <part name="parameters" element="ns2:echoStringWrappedArray"/></message>
+  <message name="WrappedEndpoint_echoStringWrappedArrayResponse">
+    <part name="result" element="ns2:echoStringWrappedArrayResponse"/></message>
+  <portType name="WrappedEndpoint">
+    <operation name="echoStringArray">
+      <input message="tns:WrappedEndpoint_echoStringArray"/>
+      <output message="tns:WrappedEndpoint_echoStringArrayResponse"/></operation>
+    <operation name="echoStringWrappedArray">
+      <input message="tns:WrappedEndpoint_echoStringWrappedArray"/>
+      <output message="tns:WrappedEndpoint_echoStringWrappedArrayResponse"/></operation></portType>
+  <binding name="WrappedEndpointBinding" type="tns:WrappedEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="echoStringArray">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/></input>
+      <output>
+        <soap:body use="literal"/></output></operation>
+    <operation name="echoStringWrappedArray">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/></input>
+      <output>
+        <soap:body use="literal"/></output></operation></binding>
+  <service name="WrappedService">
+    <port name="WrappedEndpointPort" binding="tns:WrappedEndpointBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

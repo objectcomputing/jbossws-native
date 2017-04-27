@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1148' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws1148/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1148' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws1148/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws1148/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='TelephoneNumber'>
+    <sequence>
+     <element name='areaCode' nillable='true'>
+       <simpleType>
+         <restriction base='string'>
+           <pattern value='[0-9]{5}'/>
+         </restriction>
+       </simpleType>
+     </element>
+     <element name='number' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='TestEndpoint_lookup'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='TestEndpoint_lookupResponse'>
+  <part name='result' type='ns1:TelephoneNumber'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='lookup' parameterOrder='String_1'>
+   <input message='tns:TestEndpoint_lookup'/>
+   <output message='tns:TestEndpoint_lookupResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1148' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1148' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

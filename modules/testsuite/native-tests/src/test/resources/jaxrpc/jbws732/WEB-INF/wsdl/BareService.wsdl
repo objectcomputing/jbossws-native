@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="BareService" targetNamespace="http://org.jboss.ws/jbws732" xmlns:tns="http://org.jboss.ws/jbws732" xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:ns2="http://org.jboss.ws/jbws732/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/jbws732/types" xmlns:tns="http://org.jboss.ws/jbws732/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="StringArray">
+        <sequence>
+          <element name="item" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+      <complexType name="BareRequest">
+        <sequence>
+          <element name="stringArray" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+      <complexType name="BareResponse">
+        <sequence>
+          <element name="stringArray" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+      <complexType name="BareWrappedArrayRequest">
+        <sequence>
+          <element name="stringArray" type="tns:StringArray" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="BareWrappedArrayResponse">
+        <sequence>
+          <element name="stringArray" type="tns:StringArray" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="BareRequest" type="tns:BareRequest"/>
+      <element name="BareResponse" type="tns:BareResponse"/>
+      <element name="BareWrappedArrayRequest" type="tns:BareWrappedArrayRequest"/>
+      <element name="BareWrappedArrayResponse" type="tns:BareWrappedArrayResponse"/>
+    </schema>
+  </types>
+  <message name="BareEndpoint_echoStringArray">
+    <part name="arr" element="ns2:BareRequest"/>
+  </message>
+  <message name="BareEndpoint_echoStringWrappedArray">
+    <part name="arr" element="ns2:BareWrappedArrayRequest"/>
+  </message>
+  <message name="BareEndpoint_echoStringArrayResponse">
+    <part name="result" element="ns2:BareResponse"/>
+  </message>
+  <message name="BareEndpoint_echoStringWrappedArrayResponse">
+    <part name="arr" element="ns2:BareWrappedArrayResponse"/>
+  </message>
+  <portType name="BareEndpoint">
+    <operation name="echoStringArray">
+      <input message="tns:BareEndpoint_echoStringArray"/>
+      <output message="tns:BareEndpoint_echoStringArrayResponse"/>
+    </operation>
+    <operation name="echoStringWrappedArray">
+      <input message="tns:BareEndpoint_echoStringWrappedArray"/>
+      <output message="tns:BareEndpoint_echoStringWrappedArrayResponse"/>
+    </operation>
+  </portType>
+  <binding name="BareEndpointBinding" type="tns:BareEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="echoStringArray">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoStringWrappedArray">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="BareService">
+    <port name="BareEndpointPort" binding="tns:BareEndpointBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

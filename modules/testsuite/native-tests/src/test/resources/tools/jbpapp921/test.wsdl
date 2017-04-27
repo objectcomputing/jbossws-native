@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="models_ServiceIM_ServiceProxy"
+	targetNamespace="http://org.jboss.test.ws.jbpapp921"
+	xmlns:tns="http://org.jboss.test.ws.jbpapp921"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<types>
+	</types>
+	<message name="ValidationEvent_validateClaim">
+		<part name="lifecycleId" type="xsd:string" />
+		<part name="claim" type="xsd:string" />
+	</message>
+	<message name="ValidationEvent_validateClaimResponse">
+		<part name="result" type="xsd:int" />
+	</message>
+	<portType name="validationEvent-test">
+		<operation name="validateClaim"
+			parameterOrder="lifecycleId claim">
+			<input message="tns:ValidationEvent_validateClaim" />
+			<output message="tns:ValidationEvent_validateClaimResponse" />
+		</operation>
+	</portType>
+	<binding name="validationEventBinding"
+		type="tns:validationEvent-test">
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="validateClaim">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.test.ws.jbpapp921" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.test.ws.jbpapp921" />
+			</output>
+		</operation>
+	</binding>
+	<service name="models_ServiceIM_ServiceProxy">
+		<port name="validationEventPort"
+			binding="tns:validationEventBinding">
+			<soap:address
+				location="http://localhost:8080/BusinessProcessModeling-ejb/BusinessProcessModeling.ServiceIM.ServiceProxyBean" />
+		</port>
+	</service>
+</definitions>

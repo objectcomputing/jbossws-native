@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="UserExceptionService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://org.jboss.ws/types"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws/types"
+			xmlns:tns="http://org.jboss.ws/types"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="CustomException">
+				<sequence>
+					<element name="message" type="string"
+						nillable="true" />
+					<element name="id" type="int" />
+				</sequence>
+			</complexType>
+			<complexType name="MyException">
+				<sequence />
+			</complexType>
+			<element name="CustomException" type="tns:CustomException" />
+			<element name="MyException" type="tns:MyException" />
+		</schema>
+	</types>
+	<message name="UserExceptionSEI_testCustomException" />
+	<message name="UserExceptionSEI_testCustomExceptionResponse" />
+	<message name="CustomException">
+		<part name="CustomException" element="ns2:CustomException" />
+	</message>
+	<message name="UserExceptionSEI_testUserException">
+		<part name="String_1" type="xsd:string" />
+	</message>
+	<message name="UserExceptionSEI_testUserExceptionResponse" />
+	<message name="MyException">
+		<part name="MyException" element="ns2:MyException" />
+	</message>
+	<portType name="UserExceptionSEI">
+		<operation name="testCustomException">
+			<input message="tns:UserExceptionSEI_testCustomException" />
+			<output
+				message="tns:UserExceptionSEI_testCustomExceptionResponse" />
+			<fault name="CustomException" message="tns:CustomException" />
+		</operation>
+		<operation name="testUserException" parameterOrder="String_1">
+			<input message="tns:UserExceptionSEI_testUserException" />
+			<output
+				message="tns:UserExceptionSEI_testUserExceptionResponse" />
+			<fault name="MyException" message="tns:MyException" />
+		</operation>
+	</portType>
+	<binding name="UserExceptionSEIBinding"
+		type="tns:UserExceptionSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="testCustomException">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+			<fault name="CustomException">
+				<soap:fault name="CustomException" use="literal" />
+			</fault>
+		</operation>
+		<operation name="testUserException">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+			<fault name="MyException">
+				<soap:fault name="MyException" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+	<service name="UserExceptionService">
+		<port name="UserExceptionSEIPort"
+			binding="tns:UserExceptionSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

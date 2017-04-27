@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws316</package-type>
+  <namespaceURI>http://aeb.de/xnsg/testBusinessFacade/bf</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws316.BinDataDTO</java-type>
+  <root-type-qname xmlns:typeNS='http://aeb.de/xnsg/testBusinessFacade/bf'>typeNS:BinDataDTO</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+<!--
+  <variable-mapping>
+   <java-variable-name>fieldProp</java-variable-name>
+   <data-member/>
+   <xml-element-name>fieldProp</xml-element-name>
+  </variable-mapping>
+-->
+  <variable-mapping>
+   <java-variable-name>methodProp</java-variable-name>
+   <xml-element-name>methodProp</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws316.TestBusinessFacadeBF_WS_getTestBinData_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://aeb.de/xnsg/testBusinessFacade/bf'>typeNS:getTestBinData</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>binDataDTO_1</java-variable-name>
+   <xml-element-name>BinDataDTO_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws316.TestBusinessFacadeBF_WS_getTestBinData_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://aeb.de/xnsg/testBusinessFacade/bf'>typeNS:getTestBinDataResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws316.TestBusinessFacadeBF</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://aeb.de/xnsg/testBusinessFacade/bf'>serviceNS:TestBusinessFacadeBF</wsdl-service-name>
+  <port-mapping>
+   <port-name>TestBusinessFacadeBF_WSPort</port-name>
+   <java-port-name>TestBusinessFacadeBF_WSPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws316.TestBusinessFacadeBF_WS</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://aeb.de/xnsg/testBusinessFacade/bf'>portTypeNS:TestBusinessFacadeBF_WS</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://aeb.de/xnsg/testBusinessFacade/bf'>bindingNS:TestBusinessFacadeBF_WSBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>getTestBinData</java-method-name>
+   <wsdl-operation>getTestBinData</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws316.BinDataDTO</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://aeb.de/xnsg/testBusinessFacade/bf'>wsdlMsgNS:TestBusinessFacadeBF_WS_getTestBinData</wsdl-message>
+     <wsdl-message-part-name>BinDataDTO_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws316.BinDataDTO</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://aeb.de/xnsg/testBusinessFacade/bf'>wsdlMsgNS:TestBusinessFacadeBF_WS_getTestBinDataResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bpelDefinition location="hello.bpel" xmlns="http://jbpm.org/bpel"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://jbpm.org/bpel
+                      http://jbpm.org/bpel/bpel_definition_1_0.xsd">
+
+  <!-- makes WSDL interface elements available to the process -->
+  <imports>
+    <wsdl location="hello.wsdl" />
+  </imports>
+
+</bpelDefinition>

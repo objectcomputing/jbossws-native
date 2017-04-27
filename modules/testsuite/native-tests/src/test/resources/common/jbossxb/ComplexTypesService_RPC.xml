@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.common.jbossxb</package-type>
+    <namespaceURI>http://org.jboss.ws/types</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.common.jbossxb</package-type>
+    <namespaceURI>http://org.jboss.ws</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.common.jbossxb.complex.Derived</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:Derived</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>a</java-variable-name>
+      <data-member/>
+      <xml-element-name>a</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>b</java-variable-name>
+      <xml-element-name>b</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>x</java-variable-name>
+      <data-member/>
+      <xml-element-name>x</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.common.jbossxb.complex.Composite</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:Composite</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>composite</java-variable-name>
+      <data-member/>
+      <xml-element-name>composite</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>dateTime</java-variable-name>
+      <data-member/>
+      <xml-element-name>dateTime</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>integer</java-variable-name>
+      <data-member/>
+      <xml-element-name>integer</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>qname</java-variable-name>
+      <data-member/>
+      <xml-element-name>qname</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>string</java-variable-name>
+      <data-member/>
+      <xml-element-name>string</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.common.jbossxb.complex.Base</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:Base</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>a</java-variable-name>
+      <data-member/>
+      <xml-element-name>a</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>b</java-variable-name>
+      <xml-element-name>b</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.common.jbossxb.complex.ComplexTypesService</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://org.jboss.ws">serviceNS:ComplexTypesService</wsdl-service-name>
+    <port-mapping>
+      <port-name>ComplexTypesPort</port-name>
+      <java-port-name>ComplexTypesPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.common.jbossxb.complex.ComplexTypes</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws">portTypeNS:ComplexTypes</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.ws">bindingNS:ComplexTypesBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoBase</java-method-name>
+      <wsdl-operation>echoBase</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.common.jbossxb.complex.Base</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoBase</wsdl-message>
+          <wsdl-message-part-name>Base_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.common.jbossxb.complex.Base</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoBaseResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoCompositeType</java-method-name>
+      <wsdl-operation>echoCompositeType</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.common.jbossxb.complex.Composite</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoCompositeType</wsdl-message>
+          <wsdl-message-part-name>Composite_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.common.jbossxb.complex.Composite</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoCompositeTypeResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoDerived</java-method-name>
+      <wsdl-operation>echoDerived</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.common.jbossxb.complex.Derived</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoDerived</wsdl-message>
+          <wsdl-message-part-name>Derived_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.common.jbossxb.complex.Derived</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:ComplexTypes_echoDerivedResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

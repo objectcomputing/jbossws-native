@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this file was generated using wstools -->
+<definitions name='POJOBean' targetNamespace='http://org.jboss.test.ws/jbws1762' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1762' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='POJOIface_echo'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='POJOIface_echoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='POJOIface'>
+  <operation name='echo' parameterOrder='String_1'>
+   <input message='tns:POJOIface_echo'/>
+   <output message='tns:POJOIface_echoResponse'/>
+  </operation>
+ </portType>
+ <binding name='POJOIfaceBinding' type='tns:POJOIface'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1762' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1762' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='POJOBean'>
+  <port binding='tns:POJOIfaceBinding' name='POJOIfacePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../output/classes -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" style="rpc" endpoint="org.jboss.test.ws.jaxrpc.samples.mtom.EmployeeRecords">
+      <operation>
+        <name>sendMimeImageGIF</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>image/gif</mime-type>
+        </parameter>
+      </operation>
+      <operation>
+        <name>sendMimeImageJPEG</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>image/jpeg</mime-type>
+        </parameter>
+      </operation>
+      <operation>
+        <name>sendMimeTextPlain</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>text/plain</mime-type>
+        </parameter>
+      </operation>
+      <operation>
+        <name>sendMimeMultipart</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>multipart</mime-type>
+        </parameter>
+      </operation>
+      <operation>
+        <name>sendMimeTextXML</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>text/xml</mime-type>
+        </parameter>
+      </operation>
+      <operation>
+        <name>sendMimeApplicationXML</name>
+        <parameter>
+          <java-type>java.lang.String</java-type>
+        </parameter>
+        <parameter>
+          <java-type>java.lang.Object</java-type>
+          <xml-name>mimepart</xml-name>
+          <mime-type>application/xml</mime-type>
+        </parameter>
+      </operation>
+    </service>
+    <namespaces target-namespace="http://org.jboss.ws/samples/mtom" type-namespace="http://org.jboss.ws/samples/mtom/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestService"/>
+  </java-wsdl>
+</configuration>

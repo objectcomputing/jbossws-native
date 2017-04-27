@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws956' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws956/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws956' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws956/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws956/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='StringArray'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='StringArrayArray'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='tns:StringArray'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echo'>
+  <part name='StringArray_1' type='ns1:StringArray'/>
+  <part name='StringArrayArray_2' type='ns1:StringArrayArray'/>
+ </message>
+ <message name='TestEndpoint_echoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echo' parameterOrder='StringArray_1 StringArrayArray_2'>
+   <input message='tns:TestEndpoint_echo'/>
+   <output message='tns:TestEndpoint_echoResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws956' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws956' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='http://@jboss.bind.address@:8080/jaxrpc-jbws956/TestEndpoint'/>
+  </port>
+ </service>
+</definitions>

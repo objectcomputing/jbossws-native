@@ -1,0 +1,17 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               soap:encodingStyle="http://schemas.xmlsoap.org/soap/
+                                  encoding/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:MustUnderstand</faultcode>
+         <faultstring>Mandatory Header error.</faultstring>
+         <faultactor>http://www.wrox.com/heroes/endpoint.asp</faultactor>
+         <detail>
+            <w:source xmlns:w="http://www.wrox.com/">
+               <module>endpoint.asp</module>
+               <line>203</line>
+            </w:source>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>

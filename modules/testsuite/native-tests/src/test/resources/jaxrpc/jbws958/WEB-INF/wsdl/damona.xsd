@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Herr Speer (T-Systems Nova GmbH) -->
+<!-- Last changes 13.03.2006 -->
+<xsd:schema targetNamespace="http://www.t-systems.com/damona" xmlns="http://www.t-systems.com/damona" xmlns:core="http://www.t-systems.com/core" xmlns:sapR3="http://www.t-systems.com/sapR3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.9.12">
+	<xsd:import namespace="http://www.t-systems.com/core" schemaLocation="core.xsd"/>
+	<xsd:import namespace="http://www.t-systems.com/sapR3" schemaLocation="sapR3.xsd"/>
+	<xsd:include schemaLocation="servicedefinitions.xsd"/>
+	<xsd:include schemaLocation="provisioningtypes.xsd"/>
+	<xsd:include schemaLocation="componenttypes.xsd"/>
+	<xsd:element name="DAMONA_INFO">
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="CONFIGURATION_MESSAGE" type="ConfigurationMessage" minOccurs="0"/>
+				<xsd:element name="CONFIG_USER_MESSAGE" type="ConfigUserMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_CONFIGURATION_MESSAGE" type="ReturnConfigurationMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_CONFIG_USER_MESSAGE" type="ReturnConfigUserMessage" minOccurs="0"/>
+				<xsd:element name="SAP_CANCELLATION_MESSAGE" type="SapCancellationMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_SAP_CANCELLATION_MESSAGE" type="ReturnSapCancellationMsg" minOccurs="0"/>
+				<xsd:element name="BU_CANCELLATION_MESSAGE" type="BackupCancellationMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_BU_CANCELLATION_MESSAGE" type="ReturnBackupCancellationMsg" minOccurs="0"/>
+				<xsd:element name="GET_DSL_ACCOUNT_MESSAGE" type="GetDslAccountMessage" minOccurs="0"/>
+				<xsd:element name="PUT_DSL_ACCOUNT_MESSAGE" type="PutDslAccountMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_ESA_EVENT_MESSAGE" type="ReturnEsaEventMessage" minOccurs="0"/>
+				<xsd:element name="SET_ACCOUNT_VALID_TO_MESSAGE" type="SetAccountValidToMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_SET_VALID_TO_MESSAGE" type="ReturnSetValidToMessage" minOccurs="0"/>
+				<xsd:element name="GET_LIST_DSL_ACCOUNT_MESSAGE" type="GetListDslAccountMessage" minOccurs="0"/>
+				<xsd:element name="PUT_LIST_DSL_ACCOUNT_MESSAGE" type="PutListDslAccountMessage" minOccurs="0"/>
+				<xsd:element name="NEW_DSL_PROVIDER_REALM_MESSAGE" type="NewDslProviderRealmMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_NEW_PROVIDER_REALM_MESSAGE" type="ReturnNewProviderRealmMessage" minOccurs="0"/>
+				<xsd:element name="SET_DISABLE_ACCOUNT_MESSAGE" type="SetDisableAccountMessage" minOccurs="0"/>
+				<xsd:element name="RETURN_SET_DISABLE_MESSAGE" type="ReturnSetDisableMessage" minOccurs="0"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="Project">
+		<xsd:sequence>
+			<xsd:element name="CUSTOMER" type="sapR3:Organisation"/>
+			<xsd:element name="CUSTOMER_CONTACT" type="core:Person" nillable="true"/>
+			<xsd:element name="TECHNICAL_NET_NAME" type="TechnicalNetName"/>
+			<xsd:element name="TDN_NO" type="TdnNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConfigUserMessage">
+		<xsd:sequence>
+			<xsd:element name="STATUS" type="Status"/>
+			<xsd:element name="PROJECT" type="Project"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConfigurationMessage">
+		<xsd:sequence>
+			<xsd:element name="SAP_INFO" type="SapInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SapInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="CUSTOMER_IDENT" type="sapR3:Ident"/>
+			<xsd:element name="TECHNICAL_NET_NAME" type="TechnicalNetName"/>
+			
+				<xsd:element name="INTERNET_ACCESS_ATTRIBUTES" type="InternetAccessAttributes" minOccurs="0"/>
+				<xsd:element name="REMOTE_DIALIN_ROUTER_ATTRIBUTES" type="RemoteDialInRouterAttributes" minOccurs="0"/>
+				<xsd:element name="REMOTE_DIALIN_ATTRIBUTES" type="RemoteDialInAttributes" minOccurs="0"/>
+				<xsd:element name="ADDITIONAL_REALM_RDI" type="AdditionalRealmRdi" minOccurs="0"/>
+				<xsd:element name="VPN_CORE_ATTRIBUTES" type="VpnCoreAttributes" minOccurs="0"/>
+				<xsd:element name="CLIENT_ENCRYPTION_ATTRIBUTES" type="ClientEncryptionAttributes" minOccurs="0"/>
+				<xsd:element name="REMOTE_INTERNET_GW_ATTRIBUTES" type="RemoteInternetGWAttributes" minOccurs="0"/>
+				<xsd:element name="DEDICATED_FIREWALL_ATTRIBUTES" type="DedicatedFirewallAttributes" minOccurs="0"/>
+				<xsd:element name="VPN_CORE_DSL_L2TP_ATTRIBUTES" type="VpnCoreDslL2tpAttributes" minOccurs="0"/>
+			
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VpnCoreAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="USER_NAME" type="xsd:string"/>
+			<xsd:element name="REALM_NAME" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VpnCoreDslL2tpAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="LAN_INTERFACE" type="LanInterface" maxOccurs="unbounded"/>
+			<xsd:element name="CPE_LOOPBACK_IP" type="core:IpAddress"/>
+			<xsd:element name="WAN_IP_ADDRESS" type="core:IpAddress"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LanInterface">
+		<xsd:sequence>
+			<xsd:element name="CPE_LAN_IP_ADDRESS" type="core:IpAddress"/>
+			<xsd:element name="CPE_LAN_NETMASK" type="core:IpAddress"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="InternetAccessAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="IP_ADDRESS_RANGE" type="core:IpAddressRange" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DNS_PRIMARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="DNS_SECONDARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="MAIL_SERVER_PRIMARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="MAIL_SERVER_SECONDARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="MAIL_RELAY_CONFIGURATION" type="MailRelayConfiguration"/>
+			<xsd:element name="MAIL_RELAY_TYPE" type="MailRelayType"/>
+			<xsd:element name="MAIL_DOMAIN" type="xsd:string"/>
+			<xsd:element name="DNS_TYPE" type="Dns"/>
+			<xsd:element name="NUMBER_OF_USERS" type="NumberOfUsersIAS" nillable="true"/>
+			<xsd:element name="CACHE_PROXY" type="CacheProxy"/>
+			<xsd:element name="CSA" type="core:YesNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RemoteLinkAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="TSI_HOSTED_RADIUS_SERVER" type="core:YesNo"/>
+			<xsd:element name="RADIUS_SERVER_1" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="RADIUS_SERVER_2" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="RADIUS_REDUNDANCY" type="RadiusRedundancy" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RemoteDialInRouterAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="USER_NAME" type="xsd:string"/>
+			<xsd:element name="VPN_CONFIGURATION" type="VpnConfigurationRDR" nillable="true"/>
+			<xsd:element name="DIAL_OUT" type="core:YesNo"/>
+			<xsd:element name="IP_PRIMARY_LNS" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="IP_SECONDARY_LNS" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="ISDN_NUMBER" type="core:NonEmptyString" nillable="true"/>
+			<xsd:element name="LAN_IP_RANGE" type="core:IpAddressRange" nillable="true"/>
+			<xsd:element name="ROUTING_PROTOCOL" type="RipRDR" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RemoteDialInAttributes">
+		<xsd:complexContent>
+			<xsd:extension base="RemoteLinkAttributes">
+				<xsd:sequence>
+					<xsd:element name="NO_OF_USERS" type="NumberOfUsersRDI"/>
+					<xsd:element name="REALM" type="RealmRDI" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AdditionalRealmRdi">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="REALM" type="RealmRDI" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RemoteInternetGWAttributes">
+		<xsd:complexContent>
+			<xsd:extension base="RemoteLinkAttributes">
+				<xsd:sequence>
+					<xsd:element name="POOL_IP_RANGE_EUROPE" type="core:IpAddressRange" nillable="true"/>
+					<xsd:element name="POOL_IP_RANGE_USA" type="core:IpAddressRange" nillable="true"/>
+					<xsd:element name="POOL_IP_RANGE_ASIA" type="core:IpAddressRange" nillable="true"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ClientEncryptionAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+			<xsd:element name="NO_OF_USERS" type="xsd:integer"/>
+			<xsd:element name="RADIUS_RIGW" type="RemoteLinkAttributes"/>
+			<xsd:element name="REALM" type="RealmCE" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DedicatedFirewallAttributes">
+		<xsd:sequence>
+			<xsd:element name="VRF_NO" type="VrfNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RadiusParameters">
+		<xsd:sequence>
+			<xsd:element name="FRAMED_PROTOCOL" type="xsd:string"/>
+			<xsd:element name="SERVICE_TYPE" type="xsd:string"/>
+			<xsd:element name="TUNNEL_CLIENT_AUTH_ID_1" type="xsd:string"/>
+			<xsd:element name="TUNNEL_CLIENT_AUTH_ID_1" type="xsd:string"/>
+			<xsd:element name="TUNNEL_PASSWORD_1" type="xsd:string"/>
+			<xsd:element name="TUNNEL_PASSWORD_2" type="xsd:string"/>
+			<xsd:element name="TUNNEL_SRV_ENDPOINT_1" type="xsd:string"/>
+			<xsd:element name="TUNNEL_SRV_ENDPOINT_2" type="xsd:string"/>
+			<xsd:element name="VRF_NAME" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Realm">
+		<xsd:sequence>
+			<xsd:element name="REALM_NAME" type="xsd:string"/>
+			<xsd:element name="IP_ADDRESS_ASSIGNING" type="IpAddressAssigning" nillable="true"/>
+			<xsd:element name="DNS_PRIMARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="DNS_SECONDARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="WINS_PRIMARY" type="core:IpAddress" nillable="true"/>
+			<xsd:element name="WINS_SECONDARY" type="core:IpAddress" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RealmRDI">
+		<xsd:complexContent>
+			<xsd:extension base="Realm">
+				<xsd:sequence>
+					<xsd:element name="STRONG_AUTHENTICATION" type="StrongAuthenticationRDI"/>
+					<xsd:element name="TOLL_FREE_NUMBERS_ALLOWED" type="core:YesNo"/>
+					<xsd:element name="GPRS_UMTS_ALLOWED" type="core:YesNo"/>
+					<xsd:element name="WIFI_ALLOWED" type="core:YesNo"/>
+					<xsd:element name="IP_SEC" type="core:YesNo"/>
+					<xsd:element name="DIAL_ROUTER" type="core:YesNo"/>
+					<xsd:element name="POOL_IP_RANGE_EUROPE" type="core:IpAddressRange" nillable="true"/>
+					<xsd:element name="POOL_IP_RANGE_USA" type="core:IpAddressRange" nillable="true"/>
+					<xsd:element name="POOL_IP_RANGE_ASIA" type="core:IpAddressRange" nillable="true"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RealmCE">
+		<xsd:complexContent>
+			<xsd:extension base="Realm">
+				<xsd:sequence>
+					<xsd:element name="GLOBAL_INTERNET_ACCESS_CONFIG" type="core:YesNo" nillable="true"/>
+					<xsd:element name="STRONG_AUTHENTICATION_CONFIG" type="StrongAuthenticationCE" nillable="true"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnProjectInfo">
+		<xsd:sequence>
+			<xsd:element name="PROJECT" type="Project"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+			<xsd:element name="ESA_PREFIX" type="core:NonEmptyString"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnConfigUserMessage">
+		<xsd:sequence>
+			<xsd:element name="RETURN_PROJECT_INFO" type="ReturnProjectInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnConfigurationMessage">
+		<xsd:sequence>
+			<xsd:element name="RETURN_CONFIGURATION_INFO" type="ReturnConfigurationInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnConfigurationInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+			<xsd:element name="USER_NAME_RDIR" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PASSWORD_RDIR" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ACCESS_LIST_NAME_RDIR" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="REALM_RDI" type="ReturnRealmRdi" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnRealmRdi">
+		<xsd:sequence>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="IP_ADDRESS_POOL_NAME" type="core:NonEmptyString" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SapCancellationMessage">
+		<xsd:sequence>
+			<xsd:element name="SAP_CANCELLATION_INFO" type="SapCancellationInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ServiceCancellationMessage">
+		<xsd:sequence>
+			<xsd:element name="PROJECT" type="Project"/>
+			<xsd:element name="SERVICE" type="Service"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SapCancellationInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="CUSTOMER_IDENT" type="sapR3:Ident"/>
+			<xsd:element name="TECHNICAL_NET_NAME" type="TechnicalNetName"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnSapCancellationMsg">
+		<xsd:sequence>
+			<xsd:element name="RETURN_SAP_CANCELLATION_INFO" type="ReturnSapCancellationInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnSapCancellationInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnServiceCancellationMsg">
+		<xsd:sequence>
+			<xsd:element name="PROJECT" type="Project"/>
+			<xsd:element name="SERVICE" type="Service"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BackupCancellationMessage">
+		<xsd:sequence>
+			<xsd:element name="BACKUP_CANCELLATION_INFO" type="BackupCancellationInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BackupCancellationInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="BACKUP_CANCELLATION" type="core:YesNo" fixed="yes"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnBackupCancellationMsg">
+		<xsd:sequence>
+			<xsd:element name="RETURN_BACKUP_CANCELLATION_INFO" type="ReturnBackupCancellationInfo" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnBackupCancellationInfo">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetDslAccountMessage">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="VALID_TO" type="xsd:dateTime" nillable="true"/>
+			<xsd:element name="INITIAL_ACCOUNT" type="core:YesNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PutDslAccountMessage">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+			<xsd:element name="ERROR" type="core:Error" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>only IF this is the anser by GetDslAccountMessage</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DSL_ACCOUNT" type="DslAccount" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnEsaEventMessage">
+		<xsd:sequence>
+			<xsd:element name="SAP_ID" type="SapId"/>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DslAccount">
+		<xsd:sequence>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="PASSWORD" type="core:NonEmptyString"/>
+			<xsd:element name="VALID_FROM" type="xsd:dateTime" nillable="true"/>
+			<xsd:element name="VALID_TO" type="xsd:dateTime" nillable="true"/>
+			<xsd:element name="DISABLED" type="core:YesNo"/>
+			<xsd:element name="INITIAL_ACCOUNT" type="core:YesNo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NewDslProviderRealmMessage">
+		<xsd:sequence>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="DSL_PROVIDER" type="core:NonEmptyString"/>
+			<xsd:element name="COUNTRY_CODE" type="core:CountryCode"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnNewProviderRealmMessage">
+		<xsd:sequence>
+			<xsd:element name="REALM_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SetAccountValidToMessage">
+		<xsd:sequence>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="VALID_TO" type="xsd:dateTime"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnSetValidToMessage">
+		<xsd:sequence>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SetDisableAccountMessage">
+		<xsd:sequence>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReturnSetDisableMessage">
+		<xsd:sequence>
+			<xsd:element name="USER_NAME" type="core:NonEmptyString"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetListDslAccountMessage">
+		<xsd:sequence>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PutListDslAccountMessage">
+		<xsd:sequence>
+			<xsd:element name="ROUTER_NAME" type="CeName"/>
+			<xsd:element name="ERROR" type="core:Error"/>
+			<xsd:element name="DSL_ACCOUNT" type="DslAccount" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

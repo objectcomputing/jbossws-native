@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws2234' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws2234/types' xmlns:soap12='http://schemas.xmlsoap.org/wsdl/soap12/' xmlns:tns='http://org.jboss.test.ws/jbws2234' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws2234/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws2234/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='TestException'>
+    <sequence/>
+   </complexType>
+   <element name='TestException' type='tns:TestException'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echo' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='TestEndpoint_echoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='TestException'>
+  <part element='ns1:TestException' name='TestException'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echo' parameterOrder='String_1'>
+   <input message='tns:TestEndpoint_echo'/>
+   <output message='tns:TestEndpoint_echoResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap12:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap12:operation soapAction=''/>
+   <input>
+    <soap12:body namespace='http://org.jboss.test.ws/jbws2234' use='literal'/>
+   </input>
+   <output>
+    <soap12:body namespace='http://org.jboss.test.ws/jbws2234' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap12:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap12:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

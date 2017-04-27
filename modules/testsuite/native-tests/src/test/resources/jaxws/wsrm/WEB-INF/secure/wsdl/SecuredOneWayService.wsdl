@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+  name="SecuredOneWayService"
+  targetNamespace="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+  xmlns:ns1="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy/>
+  <wsp:Policy
+    wsu:Id="wsrm11policy"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:All>
+      <wsp:ExactlyOne>
+         <wsp:All>
+            <ns1:RMAssertion xmlns:ns1="http://docs.oasis-open.org/ws-rx/wsrmp/200702"/>
+            <ns2:UsingAddressing xmlns:ns2="http://www.w3.org/2006/05/addressing/wsdl"/>
+         </wsp:All>
+      </wsp:ExactlyOne>
+    </wsp:All>
+  </wsp:Policy>
+  <types>
+    <xs:schema
+      version="1.0"
+      targetNamespace="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+      xmlns:tns="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="method1" type="tns:method1"/>
+      <xs:element name="method2" type="tns:method2"/>
+      <xs:element name="method3" type="tns:method3"/>
+      <xs:complexType name="method1">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="method2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="method3">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="SecuredOneWayServiceIface_method2">
+    <part name="method2" element="ns1:method2">
+    </part>
+  </message>
+  <message name="SecuredOneWayServiceIface_method1">
+    <part name="method1" element="ns1:method1">
+    </part>
+  </message>
+  <message name="SecuredOneWayServiceIface_method3">
+    <part name="method3" element="ns1:method3">
+    </part>
+  </message>
+  <portType name="SecuredOneWayServiceIface">
+    <operation name="method1">
+      <input message="ns1:SecuredOneWayServiceIface_method1">
+    </input>
+    </operation>
+    <operation name="method2">
+      <input message="ns1:SecuredOneWayServiceIface_method2">
+    </input>
+    </operation>
+    <operation name="method3">
+      <input message="ns1:SecuredOneWayServiceIface_method3">
+    </input>
+    </operation>
+  </portType>
+  <binding name="SecuredOneWayServiceIfaceBinding" type="ns1:SecuredOneWayServiceIface">
+    <wsp:PolicyReference URI="#wsrm11policy"/>
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="method1">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="method2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="method3">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+  </binding>
+  <service name="SecuredOneWayService">
+    <port name="SecuredOneWayPort" binding="ns1:SecuredOneWayServiceIfaceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

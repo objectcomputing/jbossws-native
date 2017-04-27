@@ -1,0 +1,16 @@
+<wsdl:definitions targetNamespace='http://example.org/notify' xmlns:msc='http://schemas.microsoft.com/ws/2005/12/wsdl/contract' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:soap12='http://schemas.xmlsoap.org/wsdl/soap12/' xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://example.org/notify' xmlns:wsa='http://schemas.xmlsoap.org/ws/2004/08/addressing' xmlns:wsa10='http://www.w3.org/2005/08/addressing' xmlns:wsap='http://schemas.xmlsoap.org/ws/2004/08/addressing/policy' xmlns:wsaw='http://www.w3.org/2006/05/addressing/wsdl' xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/' xmlns:wsp='http://schemas.xmlsoap.org/ws/2004/09/policy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd' xmlns:wsx='http://schemas.xmlsoap.org/ws/2004/09/mex' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <wsdl:types>
+  <xsd:schema targetNamespace='http://example.org/notify/Imports'>
+   <xsd:import namespace='http://example.org/notify' schemaLocation='xsd0.xsd'/>
+   <xsd:import namespace='http://schemas.microsoft.com/2003/10/Serialization/' schemaLocation='xsd1.xsd'/>
+  </xsd:schema>
+ </wsdl:types>
+ <wsdl:message name='NotifyMessage'>
+  <wsdl:part element='tns:NotifyMessage' name='parameters'/>
+ </wsdl:message>
+ <wsdl:portType name='Notify'>
+  <wsdl:operation name='Notify'>
+   <wsdl:input message='tns:NotifyMessage' name='NotifyMessage' wsaw:Action='http://example.org/action/notify'/>
+  </wsdl:operation>
+ </wsdl:portType>
+</wsdl:definitions>

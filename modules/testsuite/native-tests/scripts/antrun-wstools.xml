@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================ -->
+<!--  JBoss, the OpenSource J2EE webOS                            -->
+<!--  Distributable under LGPL license.                           -->
+<!--  See terms of license at http://www.gnu.org.                 -->
+<!-- ============================================================ -->
+
+<project>
+  
+  <!-- ================================================================== -->
+  <!-- Generating sources                                                 -->
+  <!-- ================================================================== -->
+  
+  <target name="wstools" depends="generate-sources,compile-sources,copy-resources" description="Generate the JAX-RPC artifacts.">
+  </target>
+  
+  <!-- Generate JAX-RPC artifacts -->
+  <target name="generate-sources">
+    
+    <taskdef name="wstools" classname="org.jboss.ws.tools.ant.wstools">
+      <classpath>
+        <pathelement path="${maven.test.classpath}"/>
+      </classpath>
+    </taskdef>
+    
+    <macro-wstools dest="jaxrpc/samples/docstyle/wrapped/WEB-INF" config="jaxrpc/samples/docstyle/wrapped/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/docstyle/bare/WEB-INF" config="jaxrpc/samples/docstyle/bare/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/dynamichandler/WEB-INF" config="jaxrpc/samples/dynamichandler/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/exception/WEB-INF" config="jaxrpc/samples/exception/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/handler/WEB-INF" config="jaxrpc/samples/handler/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/holder/WEB-INF" config="jaxrpc/samples/holder/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/jmstransport/META-INF" config="jaxrpc/samples/jmstransport/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/jsr109ejb/doclit/META-INF" config="jaxrpc/samples/jsr109ejb/doclit/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/jsr109ejb/rpclit/META-INF" config="jaxrpc/samples/jsr109ejb/rpclit/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/jsr109pojo/doclit/WEB-INF" config="jaxrpc/samples/jsr109pojo/doclit/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/jsr109pojo/rpclit/WEB-INF" config="jaxrpc/samples/jsr109pojo/rpclit/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/message/WEB-INF" config="jaxrpc/samples/message/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/oneway/WEB-INF" config="jaxrpc/samples/oneway/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/rpcstyle/WEB-INF" config="jaxrpc/samples/rpcstyle/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/secureejb/META-INF" config="jaxrpc/samples/secureejb/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/wsaddr/hello/WEB-INF" config="jaxrpc/samples/wsaddr/hello/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/wsaddr/replyto/WEB-INF" config="jaxrpc/samples/wsaddr/replyto/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/wsbpel/hello/WEB-INF" config="jaxrpc/samples/wsbpel/hello/wstools-config.xml"/>
+    <macro-wstools dest="jaxrpc/samples/wssecurity/WEB-INF" config="jaxrpc/samples/wssecurity/wstools-config.xml"/>
+    
+  </target>
+  
+  <!-- Copy generated resources -->
+  <target name="compile-sources">
+    
+    <mkdir dir="${tests.output.dir}/wstools/java"/>
+    <move todir="${tests.output.dir}/wstools/java">
+      <fileset dir="${tests.output.dir}/wstools/resources/jaxrpc/samples/docstyle/wrapped/WEB-INF" includes="org/**"/>
+    </move>
+    <move todir="${tests.output.dir}/wstools/java">
+      <fileset dir="${tests.output.dir}/wstools/resources/jaxrpc/samples/wsaddr/hello/WEB-INF" includes="org/**"/>
+    </move>
+    <move todir="${tests.output.dir}/wstools/java">
+      <fileset dir="${tests.output.dir}/wstools/resources/jaxrpc/samples/wsaddr/replyto/WEB-INF" includes="org/**"/>
+    </move>
+    
+    <!--
+      Cannot run javac from tasks
+      http://jira.codehaus.org/browse/MANTRUN-91
+    -->
+    <javac destdir="${tests.output.dir}/test-classes" debug="true" encoding="utf-8" deprecation="true" fork="true"
+      executable="${java.jdk15.home}/bin/javac" compiler="javac1.5">
+      <src path="${tests.output.dir}/wstools/java"/>
+      <classpath>
+        <pathelement path="${maven.test.classpath}"/>
+      </classpath>
+    </javac>
+  </target>
+  
+  <!-- Copy generated resources -->
+  <target name="copy-resources">
+    
+    <copy todir="${tests.output.dir}/test-resources">
+      <fileset dir="${tests.output.dir}/wstools/resources">
+        <include name="**/*.wsdl"/>
+        <include name="**/*.xml"/>
+      </fileset>
+    </copy>
+    
+    <copy todir="${tests.output.dir}/test-resources/jaxrpc/samples" overwrite="true">
+      <fileset dir="${tests.resources.dir}/jaxrpc/samples-override"/>
+      <filterset>
+        <filter token="jboss.bind.address" value="${jboss.bind.address}"/>
+      </filterset>
+    </copy>
+  </target>
+  
+  <!-- macro-wstools -->      
+  <macrodef name="macro-wstools">
+    <attribute name="dest"/>
+    <attribute name="config"/>
+    <sequential>
+      <wstools dest="${tests.output.dir}/wstools/resources/@{dest}" config="${tests.resources.dir}/@{config}">
+        <sysproperty key="log4j.output.dir" value="${tests.output.dir}"/>
+      </wstools>
+    </sequential>
+  </macrodef>
+  
+</project>

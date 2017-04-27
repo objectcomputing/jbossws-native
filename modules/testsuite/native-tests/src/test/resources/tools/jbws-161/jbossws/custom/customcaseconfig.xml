@@ -1,0 +1,21 @@
+<!--This is the config file used by jbossws-->
+<configuration>
+  <javatowsdl>
+     <service name="HelloCustomService" 
+                     interface="org.jboss.test.ws.tools.jbws_161.custom.HelloCustomRemote"
+                     packagename="org.jboss.test.ws.tools.jbws_161.custom" 
+                     wsdlstyle="rpc"
+                     wsdldest="output/resources/tools/jbws-161/jbossws/custom/wsdl"
+                     wsdlversion="1.1"
+                     includetypesinwsdl="true"/>
+     <namespaces  targetns="http://org.jboss/types" 
+                              typens="http://org.jboss/types"  /> 
+     <mapping directory="output/resources/tools/jbws-161/jbossws/custom/mapping" 
+                       filename="jaxrpc-mapping.xml" />
+      <wsxml directory="output/resources/tools/jbws-161/jbossws/custom"  
+                     isJSE="true" />
+  </javatowsdl>
+   <!-- <global nscollide="Array">
+     <package-namespace package="org.jboss.test.ws.tools.jbws_161.custom" namespace="http://org.jboss/types" />
+  </global> -->
+</configuration>

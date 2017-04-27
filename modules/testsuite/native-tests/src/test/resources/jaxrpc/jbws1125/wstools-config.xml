@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../../../output/classes -dest ./WEB-INF -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" endpoint="org.jboss.test.ws.jaxrpc.jbws1125.TestEndpoint" style="document" parameter-style="bare">
+    </service>
+    <namespaces target-namespace="http://jbws1125.jaxrpc.ws.test.jboss.org/jaws" type-namespace="http://jbws1125.jaxrpc.ws.test.jboss.org/jaws/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint"/>
+  </java-wsdl>
+</configuration>
+

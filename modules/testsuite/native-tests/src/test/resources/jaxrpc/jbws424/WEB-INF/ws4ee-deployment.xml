@@ -1,0 +1,24 @@
+<deployment xmlns='http://xml.apache.org/axis/wsdd/'
+  xmlns:java='http://xml.apache.org/axis/wsdd/providers/java'
+  xmlns:soap='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  
+  <service>
+    
+    <typeMapping qname='ns2:St'
+      xmlns:ns2='http://org.jboss.test.webservice/jbws424/types'
+      type='java:org.jboss.test.ws.jaxrpc.jbws424.St'
+      serializer='org.jboss.webservice.encoding.ser.MetaDataBeanSerializerFactory'
+      deserializer='org.jboss.webservice.encoding.ser.MetaDataBeanDeserializerFactory'
+      encodingStyle=''>
+      <typeDesc>
+        <elementDesc fieldName='ref' xmlName='ref' xmlType='ns2:Interface'/>
+        <elementOrder>
+          <element name='ref'/>
+        </elementOrder>
+      </typeDesc>
+    </typeMapping>
+    
+  </service>
+</deployment>

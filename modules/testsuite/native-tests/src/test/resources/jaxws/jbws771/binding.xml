@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxws:bindings
+  wsdlLocation="http://localhost:8080/jaxws-jbws771/IWebsvcImpl?wsdl"
+  xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+>
+
+  <jaxws:package name="foo.bar.com"/>
+  <jaxws:bindings node="wsdl:definitions/wsdl:portType[@name='IWebsvc']/wsdl:operation[@name='cancel']">
+    <jaxws:parameter
+      part="wsdl:definitions/wsdl:message[@name='IWebsvc_cancel']/wsdl:part[@name='parameters']"
+      element="tns:cancel" 
+      name="cancelMessage"
+    />
+  </jaxws:bindings>
+
+</jaxws:bindings>

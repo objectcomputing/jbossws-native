@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.webservice/jbws413' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws413/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws413' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws413/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws413/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='JavaType'>
+    <sequence>
+     <!-- Manual modification -->
+     <element maxOccurs='unbounded' minOccurs='0' name='collectionElements' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='TestSEI_doStuff'>
+  <part name='JavaType_1' type='ns1:JavaType'/>
+ </message>
+ <message name='TestSEI_doStuffResponse'>
+  <part name='result' type='ns1:JavaType'/>
+ </message>
+ <portType name='TestSEI'>
+  <operation name='doStuff' parameterOrder='JavaType_1'>
+   <input message='tns:TestSEI_doStuff'/>
+   <output message='tns:TestSEI_doStuffResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestSEIBinding' type='tns:TestSEI'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='doStuff'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws413' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws413' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestSEIBinding' name='TestSEIPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

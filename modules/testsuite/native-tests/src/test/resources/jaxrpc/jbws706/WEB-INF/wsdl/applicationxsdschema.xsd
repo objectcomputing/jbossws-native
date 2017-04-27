@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--GEN-GUARD:XSDEXPORT$pid109640ec52d1279ad1$pid109640ec8d01b02b42-->
+<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+  targetNamespace="http://org.jboss.test.webservice/jbws706/ns2"
+   xmlns:tns="http://org.jboss.test.webservice/jbws706/ns2"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="AlturaPostConditionException" type="tns:AlturaPostConditionException"/>
+  <xsd:element name="AlturaPreConditionException" type="tns:AlturaPreConditionException"/>
+  <xsd:complexType name="AlturaApplicationException">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AlturaException">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlturaException" abstract="true">
+    <xsd:sequence>
+      <xsd:element name="key" type="xsd:string"/>
+      <xsd:element name="values" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AlturaPostConditionException">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AlturaApplicationException">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlturaPreConditionException">
+    <xsd:complexContent>
+      <xsd:extension base="tns:AlturaApplicationException">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

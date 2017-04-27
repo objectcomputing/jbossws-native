@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws70</package-type>
+  <namespaceURI>http://org.jboss.test.webservice/jbws70/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws70.Hello_getVersion_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws70/types'>typeNS:getVersion</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws70.Hello_getVersion_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws70/types'>typeNS:getVersionResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws70.Hello_setVersion_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws70/types'>typeNS:setVersion</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>string_1</java-variable-name>
+   <xml-element-name>String_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws70.Hello_setVersion_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws70/types'>typeNS:setVersionResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws70.HelloService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.webservice/jbws70'>serviceNS:HelloService</wsdl-service-name>
+  <port-mapping>
+   <port-name>HelloPort</port-name>
+   <java-port-name>HelloPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws70.Hello</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.webservice/jbws70'>portTypeNS:Hello</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.webservice/jbws70'>bindingNS:HelloBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>getVersion</java-method-name>
+   <wsdl-operation>getVersion</wsdl-operation>
+   <wrapped-element/>
+   <wsdl-return-value-mapping>
+    <method-return-value>java.lang.String</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws70'>wsdlMsgNS:Hello_getVersionResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>setVersion</java-method-name>
+   <wsdl-operation>setVersion</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws70'>wsdlMsgNS:Hello_setVersion</wsdl-message>
+     <wsdl-message-part-name>String_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws381</package-type>
+  <namespaceURI>http://www.webservicex.net</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByZipCode</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:&gt;GetWeatherByZipCode</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>zipCode</java-variable-name>
+   <xml-element-name>ZipCode</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByZipCodeResponse</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:&gt;GetWeatherByZipCodeResponse</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>getWeatherByZipCodeResult</java-variable-name>
+   <xml-element-name>GetWeatherByZipCodeResult</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.WeatherForecasts</java-type>
+  <root-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:WeatherForecasts</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>latitude</java-variable-name>
+   <xml-element-name>Latitude</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>longitude</java-variable-name>
+   <xml-element-name>Longitude</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>allocationFactor</java-variable-name>
+   <xml-element-name>AllocationFactor</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fipsCode</java-variable-name>
+   <xml-element-name>FipsCode</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>placeName</java-variable-name>
+   <xml-element-name>PlaceName</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>stateCode</java-variable-name>
+   <xml-element-name>StateCode</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>status</java-variable-name>
+   <xml-element-name>Status</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>details</java-variable-name>
+   <xml-element-name>Details</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.WeatherData</java-type>
+  <root-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:WeatherData</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>day</java-variable-name>
+   <xml-element-name>Day</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>weatherImage</java-variable-name>
+   <xml-element-name>WeatherImage</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>maxTemperatureF</java-variable-name>
+   <xml-element-name>MaxTemperatureF</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>minTemperatureF</java-variable-name>
+   <xml-element-name>MinTemperatureF</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>maxTemperatureC</java-variable-name>
+   <xml-element-name>MaxTemperatureC</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>minTemperatureC</java-variable-name>
+   <xml-element-name>MinTemperatureC</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByPlaceName</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:&gt;GetWeatherByPlaceName</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>placeName</java-variable-name>
+   <xml-element-name>PlaceName</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByPlaceNameResponse</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://www.webservicex.net'>typeNS:&gt;GetWeatherByPlaceNameResponse</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>getWeatherByPlaceNameResult</java-variable-name>
+   <xml-element-name>GetWeatherByPlaceNameResult</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws381.WeatherForecast</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://www.webservicex.net'>serviceNS:WeatherForecast</wsdl-service-name>
+  <port-mapping>
+   <port-name>WeatherForecastSoap</port-name>
+   <java-port-name>WeatherForecastSoap</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws381.WeatherForecastSoap</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://www.webservicex.net'>portTypeNS:WeatherForecastSoap</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://www.webservicex.net'>bindingNS:WeatherForecastSoap</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>getWeatherByZipCode</java-method-name>
+   <wsdl-operation>GetWeatherByZipCode</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByZipCode</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://www.webservicex.net'>wsdlMsgNS:GetWeatherByZipCodeSoapIn</wsdl-message>
+     <wsdl-message-part-name>parameters</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByZipCodeResponse</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://www.webservicex.net'>wsdlMsgNS:GetWeatherByZipCodeSoapOut</wsdl-message>
+    <wsdl-message-part-name>parameters</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>getWeatherByPlaceName</java-method-name>
+   <wsdl-operation>GetWeatherByPlaceName</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByPlaceName</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://www.webservicex.net'>wsdlMsgNS:GetWeatherByPlaceNameSoapIn</wsdl-message>
+     <wsdl-message-part-name>parameters</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws381.GetWeatherByPlaceNameResponse</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://www.webservicex.net'>wsdlMsgNS:GetWeatherByPlaceNameSoapOut</wsdl-message>
+    <wsdl-message-part-name>parameters</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

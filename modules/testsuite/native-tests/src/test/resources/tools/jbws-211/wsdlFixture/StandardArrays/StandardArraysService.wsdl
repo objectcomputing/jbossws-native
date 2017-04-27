@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="StandardArraysService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns2="http://org.jboss.ws/types/arrays/"
+	xmlns:ns3="http://org.jboss.ws/types/arrays/java/lang"
+	xmlns:ns4="http://org.jboss.ws/types/arrays/java/math"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws/types/arrays/"
+			xmlns:tns="http://org.jboss.ws/types/arrays/"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://org.jboss.ws/types/arrays/java/math" />
+			<import
+				namespace="http://org.jboss.ws/types/arrays/java/lang" />
+			<complexType name="float.Array">
+				<sequence>
+					<element name="value" type="float" minOccurs="0"
+						maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+			<complexType name="int.Array">
+				<sequence>
+					<element name="value" type="int" minOccurs="0"
+						maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+		</schema>
+		<schema
+			targetNamespace="http://org.jboss.ws/types/arrays/java/lang"
+			xmlns:tns="http://org.jboss.ws/types/arrays/java/lang"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://org.jboss.ws/types/arrays/java/math" />
+			<import namespace="http://org.jboss.ws/types/arrays/" />
+			<complexType name="Float.Array">
+				<sequence>
+					<element name="value" type="float" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+			<complexType name="Integer.Array">
+				<sequence>
+					<element name="value" type="int" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+		</schema>
+		<schema
+			targetNamespace="http://org.jboss.ws/types/arrays/java/math"
+			xmlns:tns="http://org.jboss.ws/types/arrays/java/math"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<import
+				namespace="http://org.jboss.ws/types/arrays/java/lang" />
+			<import namespace="http://org.jboss.ws/types/arrays/" />
+			<complexType name="BigDecimal.Array">
+				<sequence>
+					<element name="value" type="decimal" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="StandardArraysSEI_testBigDecimalArray">
+		<part name="arrayOfBigDecimal_1" type="ns4:BigDecimal.Array" />
+	</message>
+	<message name="StandardArraysSEI_testBigDecimalArrayResponse" />
+	<message name="StandardArraysSEI_testFloatArray">
+		<part name="arrayOffloat_1" type="ns2:float.Array" />
+		<part name="arrayOfFloat_2" type="ns3:Float.Array" />
+	</message>
+	<message name="StandardArraysSEI_testFloatArrayResponse" />
+	<message name="StandardArraysSEI_testIntArray">
+		<part name="arrayOfint_1" type="ns2:int.Array" />
+		<part name="arrayOfInteger_2" type="ns3:Integer.Array" />
+	</message>
+	<message name="StandardArraysSEI_testIntArrayResponse" />
+	<portType name="StandardArraysSEI">
+		<operation name="testBigDecimalArray"
+			parameterOrder="arrayOfBigDecimal_1">
+			<input message="tns:StandardArraysSEI_testBigDecimalArray" />
+			<output
+				message="tns:StandardArraysSEI_testBigDecimalArrayResponse" />
+		</operation>
+		<operation name="testFloatArray"
+			parameterOrder="arrayOffloat_1 arrayOfFloat_2">
+			<input message="tns:StandardArraysSEI_testFloatArray" />
+			<output
+				message="tns:StandardArraysSEI_testFloatArrayResponse" />
+		</operation>
+		<operation name="testIntArray"
+			parameterOrder="arrayOfint_1 arrayOfInteger_2">
+			<input message="tns:StandardArraysSEI_testIntArray" />
+			<output
+				message="tns:StandardArraysSEI_testIntArrayResponse" />
+		</operation>
+	</portType>
+	<binding name="StandardArraysSEIBinding"
+		type="tns:StandardArraysSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="testBigDecimalArray">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+		<operation name="testFloatArray">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+		<operation name="testIntArray">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+	</binding>
+	<service name="StandardArraysService">
+		<port name="StandardArraysSEIPort"
+			binding="tns:StandardArraysSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

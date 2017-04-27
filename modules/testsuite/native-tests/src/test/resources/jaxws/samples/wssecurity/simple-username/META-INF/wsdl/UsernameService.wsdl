@@ -1,0 +1,30 @@
+<definitions name='UsernameService' targetNamespace='http://org.jboss.ws/samples/wssecurity' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/samples/wssecurity' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='UsernameEndpoint_getUsernameToken'></message>
+ <message name='UsernameEndpoint_getUsernameTokenResponse'>
+  <part name='return' type='xsd:string'/>
+ </message>
+ <portType name='UsernameEndpoint'>
+  <operation name='getUsernameToken'>
+   <input message='tns:UsernameEndpoint_getUsernameToken'/>   
+   <output message='tns:UsernameEndpoint_getUsernameTokenResponse'/>
+  </operation>
+ </portType>
+ <binding name='UsernameEndpointBinding' type='tns:UsernameEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getUsernameToken'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/samples/wssecurity' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/samples/wssecurity' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='UsernameService'>
+  <port binding='tns:UsernameEndpointBinding' name='UsernameEndpointPort'>
+   <soap:address location='http://@jboss.bind.address@:8080/jaxws-samples-wssecurity-username'/>
+  </port>
+ </service>
+</definitions>

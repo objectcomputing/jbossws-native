@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Remove service entries from generated WSDL
+Merge webservices.xml
+
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <javaToWSDL>
+     <service name="HelloOneService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws79.HelloOne"
+              wsdlStyle="rpc">
+     </service>
+     <namespaces targetNamespace="http://org.jboss.test.webservice/jbws79"
+                 typeNamespace="http://org.jboss.test.webservice/jbws79/types" />
+     <mapping fileName="jaxrpc-mapping-one.xml"/>
+     <wsxml  servletLink="HelloOne"/>
+   </javaToWSDL>  
+</configuration>

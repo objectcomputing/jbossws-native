@@ -1,0 +1,5 @@
+<configuration>
+  <wsdl-java location="${test.resources.directory}/tools/jbws1184/scenario_A/TestEndpoint.wsdl" parameter-style="bare">
+    <mapping file="jaxrpc-mapping.xml"/>
+  </wsdl-java>
+</configuration>

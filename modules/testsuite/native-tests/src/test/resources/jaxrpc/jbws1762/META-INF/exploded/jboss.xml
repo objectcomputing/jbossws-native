@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_0.dtd">
+<jboss>
+   <webservices>
+      <context-root>/jaxrpc-jbws1762-exploded-jar</context-root>
+   </webservices>
+</jboss>

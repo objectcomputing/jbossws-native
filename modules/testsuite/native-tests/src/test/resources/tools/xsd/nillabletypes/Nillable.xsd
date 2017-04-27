@@ -1,0 +1,25 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+
+  <xsd:complexType name="NillableType" >
+  <xsd:sequence>
+    <xsd:element name="myByte"   type="xsd:byte" nillable="true"/>
+    <xsd:element name="myByte2"   type="xsd:byte"/>
+    <xsd:element name="myBool" type="xsd:boolean" nillable="true"/>
+    <xsd:element name="myBool2" type="xsd:boolean"/>
+    <xsd:element name="myShort" type="xsd:short" nillable="true"/>
+    <xsd:element name="myShort2" type="xsd:short"/>
+    <xsd:element name="myInt" type="xsd:int" nillable="true"/>
+    <xsd:element name="myInt2" type="xsd:int"/>
+    <xsd:element name="myLong" type="xsd:long" nillable="true"/>
+    <xsd:element name="myLong2" type="xsd:long"/>
+    <xsd:element name="myFloat" type="xsd:float" nillable="true"/>
+    <xsd:element name="myFloat2" type="xsd:float"/>
+    <xsd:element name="myDouble" type="xsd:double" nillable="true"/>
+    <xsd:element name="myDouble2" type="xsd:double"/>
+  </xsd:sequence>
+</xsd:complexType>
+</schema>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1455</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1455</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1455</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1455/types</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1455.MyException</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1455/types">typeNS:MyException</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>comment</java-variable-name>
+      <xml-element-name>comment</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <exception-mapping>
+    <exception-type>org.jboss.test.ws.jbws1455.MyException</exception-type>
+    <wsdl-message xmlns:exMsgNS="http://test.jboss.org/ws/jbws1455">exMsgNS:MyException</wsdl-message>
+    <constructor-parameter-order>
+      <element-name>comment</element-name>
+    </constructor-parameter-order>
+  </exception-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.jbws1455.TestEndpoint_Service</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://test.jboss.org/ws/jbws1455">serviceNS:TestEndpoint</wsdl-service-name>
+    <port-mapping>
+      <port-name>TestEndpointPort</port-name>
+      <java-port-name>TestEndpointPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jbws1455.TestEndpoint_PortType</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://test.jboss.org/ws/jbws1455">portTypeNS:TestEndpoint</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://test.jboss.org/ws/jbws1455">bindingNS:TestEndpointBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>methodOne</java-method-name>
+      <wsdl-operation>methodOne</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1455">wsdlMsgNS:TestEndpoint_methodOne</wsdl-message>
+          <wsdl-message-part-name>parameters</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.String</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1455">wsdlMsgNS:TestEndpoint_methodOneResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>methodTwo</java-method-name>
+      <wsdl-operation>methodTwo</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1455">wsdlMsgNS:TestEndpoint_methodTwo</wsdl-message>
+          <wsdl-message-part-name>parameters</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.String</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1455">wsdlMsgNS:TestEndpoint_methodTwoResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

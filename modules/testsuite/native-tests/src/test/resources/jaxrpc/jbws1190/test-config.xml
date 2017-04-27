@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../../../output/classes -dest ./WEB-INF -config test-config.xml
+-->
+
+<!-- Run wstools for test config first, then follow with confidential-config -->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" endpoint="org.jboss.test.ws.jaxrpc.jbws1190.TestEndpoint" style="rpc">
+    </service>
+    <namespaces target-namespace="http://org.jboss.test.ws/jbws1190" type-namespace="http://org.jboss.test.ws/jbws1190/types"/>
+    <mapping file="test-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint"/>
+  </java-wsdl>
+</configuration>

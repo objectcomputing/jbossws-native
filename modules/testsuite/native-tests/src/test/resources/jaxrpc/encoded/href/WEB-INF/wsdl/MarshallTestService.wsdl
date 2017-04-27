@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="MarshallTestService" targetNamespace="http://marshalltestservice.org/wsdl" xmlns:tns="http://marshalltestservice.org/wsdl"
+  xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://marshalltestservice.org/types">
+  
+  <message name="MarshallTest_base64BinaryTest">
+    <part name="arrayOfbyte_1" type="xsd:base64Binary"/>
+  </message>
+  <message name="MarshallTest_base64BinaryTestResponse">
+    <part name="result" type="xsd:base64Binary"/>
+  </message>
+  
+  <portType name="MarshallTest">
+    <operation name="base64BinaryTest" parameterOrder="arrayOfbyte_1">
+      <input message="tns:MarshallTest_base64BinaryTest"/>
+      <output message="tns:MarshallTest_base64BinaryTestResponse"/>
+    </operation>
+  </portType>
+  
+  <binding name="MarshallTestBinding" type="tns:MarshallTest">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="base64BinaryTest">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://marshalltestservice.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://marshalltestservice.org/wsdl"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="MarshallTestService">
+    <port name="MarshallTestPort" binding="tns:MarshallTestBinding">
+      <soap:address location="http://@jboss.bind.address@:8080/J2WMT/jaxrpc/MarshallTest"/>
+    </port>
+  </service>
+  
+</definitions>

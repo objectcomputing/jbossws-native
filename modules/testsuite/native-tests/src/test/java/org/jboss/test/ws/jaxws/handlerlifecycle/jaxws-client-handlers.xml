@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ns1="http://org.jboss.ws/jaxws/handlerscope"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee javaee_web_services_1_2.xsd">
+
+	<handler-chain>
+		<handler>
+			<handler-name> ClientHandler1 </handler-name>
+			<handler-class> org.jboss.test.ws.jaxws.handlerlifecycle.ClientHandler1 </handler-class>
+		</handler>
+		<handler>
+			<handler-name> ClientHandler2 </handler-name>
+			<handler-class> org.jboss.test.ws.jaxws.handlerlifecycle.ClientHandler2 </handler-class>
+		</handler>
+		<handler>
+			<handler-name> ClientHandler3 </handler-name>
+			<handler-class> org.jboss.test.ws.jaxws.handlerlifecycle.ClientHandler3 </handler-class>
+		</handler>
+	</handler-chain>
+  
+</handler-chains>

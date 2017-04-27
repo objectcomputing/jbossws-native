@@ -1,0 +1,7 @@
+<jbossesb-deployment>
+    <depends>jboss.esb:deployment=soap.esb</depends>
+    <depends>jboss.esb.quickstart.destination:service=Queue,name=ws_benchmark_gw</depends>
+    <depends>jboss.esb.quickstart.destination:service=Queue,name=ws_benchmark_esb</depends>
+    <depends>jboss.esb.quickstart.destination:service=Queue,name=ws_benchmark_esb_reply
+    </depends>
+</jbossesb-deployment>

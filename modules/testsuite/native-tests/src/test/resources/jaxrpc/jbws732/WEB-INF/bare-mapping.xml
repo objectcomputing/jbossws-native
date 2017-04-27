@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+<package-mapping>
+<package-type>org.jboss.test.ws.jaxrpc.jbws732</package-type>
+<namespaceURI>http://org.jboss.ws/jbws732</namespaceURI>
+</package-mapping>
+<package-mapping>
+<package-type>org.jboss.test.ws.jaxrpc.jbws732</package-type>
+<namespaceURI>http://org.jboss.ws/jbws732/types</namespaceURI>
+</package-mapping>
+<java-xml-type-mapping>
+<java-type>org.jboss.test.ws.jaxrpc.jbws732.BareResponse</java-type>
+<root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws732/types">typeNS:BareResponse</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>stringArray</java-variable-name>
+<xml-element-name>stringArray</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>org.jboss.test.ws.jaxrpc.jbws732.BareWrappedArrayResponse</java-type>
+<root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws732/types">typeNS:BareWrappedArrayResponse</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>stringArray</java-variable-name>
+<xml-element-name>stringArray</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>org.jboss.test.ws.jaxrpc.jbws732.BareWrappedArrayRequest</java-type>
+<root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws732/types">typeNS:BareWrappedArrayRequest</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>stringArray</java-variable-name>
+<xml-element-name>stringArray</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>org.jboss.test.ws.jaxrpc.jbws732.BareRequest</java-type>
+<root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws732/types">typeNS:BareRequest</root-type-qname>
+<qname-scope>complexType</qname-scope>
+<variable-mapping>
+<java-variable-name>stringArray</java-variable-name>
+<xml-element-name>stringArray</xml-element-name>
+</variable-mapping>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>java.lang.String[]</java-type>
+<anonymous-type-qname>http://org.jboss.ws/jbws732/types:BareResponse&gt;stringArray[0,unbounded]</anonymous-type-qname>
+<qname-scope>complexType</qname-scope>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>java.lang.String[]</java-type>
+<anonymous-type-qname>http://org.jboss.ws/jbws732/types:StringArray&gt;item[0,unbounded]</anonymous-type-qname>
+<qname-scope>complexType</qname-scope>
+</java-xml-type-mapping>
+<java-xml-type-mapping>
+<java-type>java.lang.String[]</java-type>
+<anonymous-type-qname>http://org.jboss.ws/jbws732/types:BareRequest&gt;stringArray[0,unbounded]</anonymous-type-qname>
+<qname-scope>complexType</qname-scope>
+</java-xml-type-mapping>
+<service-interface-mapping>
+<service-interface>org.jboss.test.ws.jaxrpc.jbws732.BareService</service-interface>
+<wsdl-service-name xmlns:serviceNS="http://org.jboss.ws/jbws732">serviceNS:BareService</wsdl-service-name>
+<port-mapping>
+<port-name>BareEndpointPort</port-name>
+<java-port-name>BareEndpointPort</java-port-name>
+</port-mapping>
+</service-interface-mapping>
+<service-endpoint-interface-mapping>
+<service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.BareEndpoint</service-endpoint-interface>
+<wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws/jbws732">portTypeNS:BareEndpoint</wsdl-port-type>
+<wsdl-binding xmlns:bindingNS="http://org.jboss.ws/jbws732">bindingNS:BareEndpointBinding</wsdl-binding>
+<service-endpoint-method-mapping>
+<java-method-name>echoStringArray</java-method-name>
+<wsdl-operation>echoStringArray</wsdl-operation>
+<method-param-parts-mapping>
+<param-position>0</param-position>
+<param-type>org.jboss.test.ws.jaxrpc.jbws732.BareRequest</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws732">wsdlMsgNS:BareEndpoint_echoStringArray</wsdl-message>
+<wsdl-message-part-name>arr</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<wsdl-return-value-mapping>
+<method-return-value>org.jboss.test.ws.jaxrpc.jbws732.BareResponse</method-return-value>
+<wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws732">wsdlMsgNS:BareEndpoint_echoStringArrayResponse</wsdl-message>
+<wsdl-message-part-name>result</wsdl-message-part-name>
+</wsdl-return-value-mapping>
+</service-endpoint-method-mapping>
+<service-endpoint-method-mapping>
+<java-method-name>echoStringWrappedArray</java-method-name>
+<wsdl-operation>echoStringWrappedArray</wsdl-operation>
+<method-param-parts-mapping>
+<param-position>0</param-position>
+<param-type>org.jboss.test.ws.jaxrpc.jbws732.BareWrappedArrayRequest</param-type>
+<wsdl-message-mapping>
+<wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws732">wsdlMsgNS:BareEndpoint_echoStringWrappedArray</wsdl-message>
+<wsdl-message-part-name>arr</wsdl-message-part-name>
+<parameter-mode>IN</parameter-mode>
+</wsdl-message-mapping>
+</method-param-parts-mapping>
+<wsdl-return-value-mapping>
+<method-return-value>org.jboss.test.ws.jaxrpc.jbws732.BareWrappedArrayResponse</method-return-value>
+<wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws732">wsdlMsgNS:BareEndpoint_echoStringWrappedArrayResponse</wsdl-message>
+<wsdl-message-part-name>arr</wsdl-message-part-name>
+</wsdl-return-value-mapping>
+</service-endpoint-method-mapping>
+</service-endpoint-interface-mapping>
+</java-wsdl-mapping>

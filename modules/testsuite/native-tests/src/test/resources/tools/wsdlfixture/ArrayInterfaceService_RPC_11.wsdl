@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="ArrayInterfaceService" targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://arrays/java/lang">
+  <types>
+    <schema targetNamespace="http://arrays/java/lang" xmlns:tns="http://arrays/java/lang" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://org.jboss.ws"/>
+      <complexType name="IntegerArray">
+        <sequence>
+          <element name="value" type="int" nillable="true" minOccurs="0" maxOccurs="unbounded"/></sequence></complexType></schema>
+    <schema targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://arrays/java/lang"/>
+      <complexType name="Base">
+        <sequence>
+          <element name="a" type="int"/>
+          <element name="b" type="int"/></sequence></complexType>
+      <complexType name="SomeException">
+        <sequence/></complexType>
+      <element name="SomeException" type="tns:SomeException"/></schema></types>
+  <message name="ArrayInterface_customMethod">
+    <part name="Base_1" type="tns:Base"/>
+    <part name="arrayOfInteger_2" type="ns2:IntegerArray"/></message>
+  <message name="ArrayInterface_customMethodResponse"/>
+  <message name="SomeException">
+    <part name="SomeException" element="tns:SomeException"/></message>
+  <portType name="ArrayInterface">
+    <operation name="customMethod" parameterOrder="Base_1 arrayOfInteger_2">
+      <input message="tns:ArrayInterface_customMethod"/>
+      <output message="tns:ArrayInterface_customMethodResponse"/>
+      <fault name="SomeException" message="tns:SomeException"/></operation></portType>
+  <binding name="ArrayInterfaceBinding" type="tns:ArrayInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="customMethod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/></input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/></output>
+      <fault name="SomeException">
+        <soap:fault name="SomeException" use="literal"/></fault></operation></binding>
+  <service name="ArrayInterfaceService">
+    <port name="ArrayInterfacePort" binding="tns:ArrayInterfaceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

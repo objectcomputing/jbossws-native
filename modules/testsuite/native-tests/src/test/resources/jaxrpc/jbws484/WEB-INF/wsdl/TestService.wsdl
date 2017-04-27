@@ -1,0 +1,38 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://idm.vignette.com/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://idm.vignette.com/">
+  <types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+      <xs:import namespace="http://idm.vignette.com/" schemaLocation="TestServiceMessages.xsd"/>
+    </xs:schema>
+  </types>
+  <message name="testMethodRequest">
+    <part name="parameters" element="tns:testMethod"/>
+  </message>
+  <message name="testMethodResponse">
+    <part name="result" element="tns:testMethodResponse"/>
+  </message>
+  <portType name="TestService">
+    <operation name="testMethod">
+      <input message="tns:testMethodRequest"/>
+      <output message="tns:testMethodResponse"/>
+    </operation>
+  </portType>
+  <binding name="TestServiceBinding" type="tns:TestService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="testMethod">
+      <soap:operation soapAction="http://idm.vignette.com/testMethod"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="TestServicePort" binding="tns:TestServiceBinding">
+      <soap:address location="http://NoTargetAdress"/>
+    </port>
+  </service>
+</definitions>

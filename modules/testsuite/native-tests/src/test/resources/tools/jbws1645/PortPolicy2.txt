@@ -1,0 +1,3 @@
+<wsp:Policy wsu:Id="uselessPortPolicy2" xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd' xmlns:wsp='http://schemas.xmlsoap.org/ws/2004/09/policy' xmlns:fab='http://www.fabrikam123.example.com/stock'>
+ <fab:useless>nothing on this port...</fab:useless>
+</wsp:Policy>

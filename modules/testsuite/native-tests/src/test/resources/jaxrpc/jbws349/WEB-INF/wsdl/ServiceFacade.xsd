@@ -1,0 +1,60 @@
+    <schema targetNamespace="http://siterefresh.refreshsoftware.com/types" xmlns="http://www.w3.org/2001/XMLSchema"
+      xmlns:srt="http://siterefresh.refreshsoftware.com/types">
+      
+      <element name="event" type="srt:Event"/>
+      <element name="eventException" type="srt:EventException"/>
+      <element name="result" type="srt:Result"/>
+      
+      <complexType name="Event" abstract="true">
+        <sequence>
+          <element name="id" type="string" minOccurs="0"/>
+        </sequence>
+      </complexType>
+      
+      <complexType name="AssetRead">
+        <complexContent>
+          <extension base="srt:Event"/>
+        </complexContent>
+      </complexType>
+      
+      <complexType name="AssetCreate">
+        <complexContent>
+          <extension base="srt:Event">
+            <sequence>
+              <element name="nextStep" type="int"/>
+              <element name="template" type="string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      
+      <complexType name="Result" abstract="true"></complexType>
+      
+      <complexType name="AssetCreateResult">
+        <complexContent>
+          <extension base="srt:Result">
+            <sequence>
+              <element name="id" type="string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      
+      <complexType name="AssetReadResult">
+        <complexContent>
+          <extension base="srt:Result">
+            <sequence>
+              <element name="id" type="string"/>
+              <element name="body" type="string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      
+      <complexType name="EventException">
+        <sequence>
+          <element name="message" type="string"/>
+        </sequence>
+      </complexType>
+      
+    </schema>

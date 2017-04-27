@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://example.org/notify" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.org/notify"><xs:element name="notify" nillable="true" type="xs:string"/></xs:schema>

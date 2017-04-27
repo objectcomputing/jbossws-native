@@ -1,0 +1,65 @@
+<definitions name="Gasherbrum" targetNamespace="http://org.jboss.test.webservice/samples2" xmlns:tns="http://org.jboss.test.webservice/samples2"
+  xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.test.webservice/samples2/types" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.test.webservice/samples2/types" xmlns:tns="http://org.jboss.test.webservice/samples2/types"
+      xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="invokeAttachType">
+        <sequence>
+          <element name="username" type="string" nillable="true"/>
+          <element name="password" type="string" nillable="true"/>
+          <element name="operationName" type="string" nillable="true"/>
+          <element name="inputXML" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="responseType">
+        <sequence>
+          <element name="result" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="invokeAttach" type="tns:invokeAttachType"/>
+      <element name="responseXML" type="tns:responseType"/>
+    </schema>
+  </types>
+  <message name="attachRequest">
+    <part name="parameters" element="ns2:invokeAttach"/>
+    <part name="attachmentContents" type="xsd:string"/>
+  </message>
+  <message name="attachResponse">
+    <part name="result" element="ns2:responseXML"/>
+  </message>
+  <portType name="TransmulatorInterface">
+    <operation name="invokeAttach">
+      <input message="tns:attachRequest"/>
+      <output message="tns:attachResponse"/>
+    </operation>
+  </portType>
+  <binding name="TransmulatorInterfaceBinding" type="tns:TransmulatorInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="invokeAttach">
+      <input>
+        <mime:multipartRelated>
+          <mime:part>
+            <soap:body use="literal"/>
+          </mime:part>
+          <mime:part>
+            <mime:content part="attachmentContents" type="text/plain"/>
+          </mime:part>
+        </mime:multipartRelated>
+      </input>
+      <output>
+        <mime:multipartRelated>
+          <mime:part>
+            <soap:body use="literal"/>
+          </mime:part>
+        </mime:multipartRelated>
+      </output>
+    </operation>
+  </binding>
+  <service name="Gasherbrum">
+    <port name="TransmulatorInterfacePort" binding="tns:TransmulatorInterfaceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.ws/enventry' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/enventry' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='EnvEntryTestService_helloEnvEntry'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='EnvEntryTestService_helloEnvEntryResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='EnvEntryTestService'>
+  <operation name='helloEnvEntry' parameterOrder='String_1'>
+   <input message='tns:EnvEntryTestService_helloEnvEntry'/>
+   <output message='tns:EnvEntryTestService_helloEnvEntryResponse'/>
+  </operation>
+ </portType>
+ <binding name='EnvEntryTestServiceBinding' type='tns:EnvEntryTestService'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='helloEnvEntry'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/enventry' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/enventry' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:EnvEntryTestServiceBinding' name='EnvEntryTestServicePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

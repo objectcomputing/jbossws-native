@@ -1,0 +1,16 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+    <env:Header/>
+    <env:Body>
+        <ns1:echoSynthetic xmlns:ns1='http://org.jboss.ws/benchmark'>
+            <Synthetic_1 xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+                <b>dGVzdA==</b>
+                <s>test</s>
+                <sut>
+                    <f>1.0</f>
+                    <i>1</i>
+                    <s>test</s>
+                </sut>
+            </Synthetic_1>
+        </ns1:echoSynthetic>
+    </env:Body>
+</env:Envelope>

@@ -1,0 +1,33 @@
+ <schema targetNamespace="http://org.jboss/types"
+   xmlns:tns="http://org.jboss/types"
+   xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Employee">
+     <sequence>
+       <element name="name" type="string"/>
+       <element name="role" type="string"/>
+       <element name="boss" type="string"/>
+     </sequence>
+   </complexType>
+   <complexType name="CEO">
+     <complexContent>
+       <restriction base="tns:Employee">
+         <sequence>
+           <element name="name" type="string"/>
+           <element name="role" type="string"/>
+         </sequence>
+       </restriction>
+     </complexContent>
+   </complexType>
+   <complexType name="AwardEmployee">
+     <complexContent>
+       <extension base="tns:Employee">
+         <sequence>
+           <element name="awardWon" type="string"/>
+         </sequence>
+       </extension>
+     </complexContent>
+   </complexType>
+ </schema>

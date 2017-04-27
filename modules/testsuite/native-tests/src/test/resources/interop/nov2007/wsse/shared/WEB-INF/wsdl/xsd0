@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://InteropBaseAddress/interop" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://InteropBaseAddress/interop">
+<xs:import schemaLocation="xsd1" namespace="http://xmlsoap.org/Ping"/>
+<xs:element name="PingRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="1" ref="q1:Ping" xmlns:q1="http://xmlsoap.org/Ping"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PingResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="1" ref="q2:PingResponse" xmlns:q2="http://xmlsoap.org/Ping"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echo">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echoResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="echoResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echoXml">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true">
+<xs:complexType>
+<xs:sequence>
+<xs:any minOccurs="0" processContents="lax"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echoXmlResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="echoXmlResult" nillable="true">
+<xs:complexType>
+<xs:sequence>
+<xs:any minOccurs="0" processContents="lax"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echoDataSet">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true">
+<xs:complexType>
+<xs:annotation>
+<xs:appinfo>
+<ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+</xs:appinfo>
+</xs:annotation>
+<xs:sequence>
+<!-- <xs:element ref="xs:schema"/> -->
+<xs:any/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="echoDataSetResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="echoDataSetResult" nillable="true">
+<xs:complexType>
+<xs:annotation>
+<xs:appinfo>
+<ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+</xs:appinfo>
+</xs:annotation>
+<xs:sequence>
+<!-- <xs:element ref="xs:schema"/> -->
+<xs:any/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="header">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="1" name="request" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="CustomHeader" type="tns:CustomHeader"/>
+<xs:complexType name="CustomHeader">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="1" name="data" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="headerResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="1" name="headerResult" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="fault">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="faultResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="faultResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

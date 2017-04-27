@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='ConfidentialService' targetNamespace='http://org.jboss.test.ws/jbws1190' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1190' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='ConfidentialEndpoint_helloWorld'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='ConfidentialEndpoint_helloWorldResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='ConfidentialEndpoint'>
+  <operation name='helloWorld' parameterOrder='String_1'>
+   <input message='tns:ConfidentialEndpoint_helloWorld'/>
+   <output message='tns:ConfidentialEndpoint_helloWorldResponse'/>
+  </operation>
+ </portType>
+ <binding name='ConfidentialEndpointBinding' type='tns:ConfidentialEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='helloWorld'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1190' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1190' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='ConfidentialService'>
+  <port binding='tns:ConfidentialEndpointBinding' name='ConfidentialEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

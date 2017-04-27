@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="processClaim" targetNamespace="http://za.co.testws.interfaces" xmlns:tns="http://za.co.testws.interfaces" xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://za.co.testws.interfaces/types">
+  <types>
+    <schema targetNamespace="http://za.co.testws.interfaces/types" xmlns:tns="http://za.co.testws.interfaces/types"
+      xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="Message">
+        <sequence>
+          <element name="name" type="string"/>
+          <element name="status" type="soap11-enc:int"/>
+        </sequence>
+      </complexType>
+      <!-- Add these element definitions -->
+      <element name="message" type="tns:Message"/>
+      <element name="result" type="tns:Message"/>
+    </schema>
+  </types>
+  <message name="RequestService_processClaim">
+    <!--part name="Message_1" type="ns2:Message"/-->
+    <part name="Message_1" element="ns2:message"/>
+  </message>
+  <message name="RequestService_processClaimResponse">
+    <!--part name="result" type="ns2:Message"/-->
+    <part name="result" element="ns2:result"/>
+  </message>
+  <portType name="RequestServicePort">
+    <operation name="processClaim" parameterOrder="Message_1">
+      <input message="tns:RequestService_processClaim"/>
+      <output message="tns:RequestService_processClaimResponse"/>
+    </operation>
+  </portType>
+  <!-- Original wsdl contained this invalid port type reference
+  <binding name="RequestServiceBinding" type="tns:RequestService">
+  -->
+  <binding name="RequestServiceBinding" type="tns:RequestServicePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <operation name="processClaim">
+      <soap:operation soapAction="http://za.co.testws.interfaces/processClaim" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input>
+        <soap:body use="literal" namespace="http://za.co.testws.interfaces"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://za.co.testws.interfaces"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcessClaim">
+    <port name="RequestServicePort" binding="tns:RequestServiceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

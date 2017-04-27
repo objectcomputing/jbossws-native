@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="HelloCustomService"
+  targetNamespace="http://org.jboss/types"
+  xmlns:tns="http://org.jboss/types"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:ns2="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"
+      xmlns:tns="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"
+      xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ns2="http://org.jboss/types"
+      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://org.jboss/types"/>
+      <complexType name="HelloObjArray">
+        <sequence>
+          <element name="value" type="ns2:HelloObj" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema targetNamespace="http://org.jboss/types"
+      xmlns:tns="http://org.jboss/types"
+      xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+
+      <import namespace="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"/>
+      <complexType name="HelloObj">
+        <sequence>
+          <element name="msg" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <message name="HelloCustomRemote_helloArray">
+    <part name="arrayOfHelloObj_1" type="ns2:HelloObjArray"/>
+  </message>
+  <message name="HelloCustomRemote_helloArrayResponse">
+    <part name="result" type="ns2:HelloObjArray"/>
+  </message>
+  <message name="HelloCustomRemote_helloBean">
+    <part name="HelloObj_1" type="tns:HelloObj"/>
+  </message>
+  <message name="HelloCustomRemote_helloBeanResponse">
+    <part name="result" type="tns:HelloObj"/>
+  </message>
+  <message name="HelloCustomRemote_helloString">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="HelloCustomRemote_helloStringResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <portType name="HelloCustomRemote">
+    <operation name="helloArray" parameterOrder="arrayOfHelloObj_1">
+      <input message="tns:HelloCustomRemote_helloArray"/>
+      <output message="tns:HelloCustomRemote_helloArrayResponse"/>
+    </operation>
+    <operation name="helloBean" parameterOrder="HelloObj_1">
+      <input message="tns:HelloCustomRemote_helloBean"/>
+      <output message="tns:HelloCustomRemote_helloBeanResponse"/>
+    </operation>
+    <operation name="helloString" parameterOrder="String_1">
+      <input message="tns:HelloCustomRemote_helloString"/>
+      <output message="tns:HelloCustomRemote_helloStringResponse"/>
+    </operation>
+  </portType>
+  <binding name="HelloCustomRemoteBinding" type="tns:HelloCustomRemote">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="helloArray">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </output>
+    </operation>
+    <operation name="helloBean">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </output>
+    </operation>
+    <operation name="helloString">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss/types"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloCustomService">
+    <port name="HelloCustomRemotePort" binding="tns:HelloCustomRemoteBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

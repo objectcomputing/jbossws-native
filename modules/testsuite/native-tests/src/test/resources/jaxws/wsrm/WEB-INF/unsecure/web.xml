@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <servlet>
+    <servlet-name>OneWayService</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxws.wsrm.services.OneWayServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>OneWayService</servlet-name>
+    <url-pattern>/OneWayService</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReqResService</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxws.wsrm.services.ReqResServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ReqResService</servlet-name>
+    <url-pattern>/ReqResService</url-pattern>
+  </servlet-mapping>
+
+</web-app>

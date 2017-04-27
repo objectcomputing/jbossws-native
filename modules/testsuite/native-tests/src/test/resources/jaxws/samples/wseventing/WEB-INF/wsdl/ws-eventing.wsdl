@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions
+      targetNamespace='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+      xmlns:wse='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+      xmlns:wsa10='http://www.w3.org/2005/08/addressing'
+      xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+      xmlns:xs='http://www.w3.org/2001/XMLSchema'
+      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+   <wsdl:types>
+      <xs:import namespace="http://schemas.xmlsoap.org/ws/2004/08/eventing"
+                 schemaLocation="http://schemas.xmlsoap.org/ws/2004/08/eventing/eventing.xsd"/>
+   </wsdl:types>
+
+   <wsdl:message name='SubscribeMsg'>
+      <wsdl:part name='body' element='wse:Subscribe'/>
+   </wsdl:message>
+   <wsdl:message name='SubscribeResponseMsg'>
+      <wsdl:part name='body' element='wse:SubscribeResponse'/>
+   </wsdl:message>
+
+   <wsdl:message name='RenewMsg'>
+      <wsdl:part name='body' element='wse:Renew'/>
+   </wsdl:message>
+   <wsdl:message name='RenewResponseMsg'>
+      <wsdl:part name='body' element='wse:RenewResponse'/>
+   </wsdl:message>
+
+   <wsdl:message name='GetStatusMsg'>
+      <wsdl:part name='body' element='wse:GetStatus'/>
+   </wsdl:message>
+   <wsdl:message name='GetStatusResponseMsg'>
+      <wsdl:part name='body' element='wse:GetStatusResponse'/>
+   </wsdl:message>
+
+   <wsdl:message name='UnsubscribeMsg'>
+      <wsdl:part name='body' element='wse:Unsubscribe'/>
+   </wsdl:message>
+   <wsdl:message name='UnsubscribeResponseMsg'/>
+
+   <wsdl:message name='SubscriptionEnd'>
+      <wsdl:part name='body' element='wse:SubscriptionEnd'/>
+   </wsdl:message>
+
+   <wsdl:portType name='EventSource'>
+      <wsdl:operation name='SubscribeOp'>
+         <wsdl:input message='wse:SubscribeMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/Subscribe'/>
+         <wsdl:output message='wse:SubscribeResponseMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/SubscribeResponse'/>
+      </wsdl:operation>
+      <wsdl:operation name='SubscriptionEnd'>
+         <wsdl:output message='wse:SubscriptionEnd'/>
+      </wsdl:operation>
+   </wsdl:portType>
+
+   <wsdl:portType name='SubscriptionManager'>
+      <wsdl:operation name='RenewOp'>
+         <wsdl:input message='wse:RenewMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/Renew'/>
+         <wsdl:output message='wse:RenewResponseMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/RenewResponse'/>
+      </wsdl:operation>
+      <wsdl:operation name='GetStatusOp'>
+         <wsdl:input message='wse:GetStatusMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/GetStatus'/>
+         <wsdl:output message='wse:GetStatusResponseMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/GetStatusResponse'/>
+      </wsdl:operation>
+      <wsdl:operation name='UnsubscribeOp'>
+         <wsdl:input message='wse:UnsubscribeMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/Unsubscribe'/>
+         <wsdl:output message='wse:UnsubscribeResponseMsg' wsa10:Action='http://schemas.xmlsoap.org/ws/2004/08/eventing/UnsubscribeResponse'/>
+      </wsdl:operation>
+   </wsdl:portType>
+
+   <wsdl:binding name="EventSourceBinding" type="wse:EventSource">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="SubscribeOp">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="SubscriptionEnd">
+         <soap:operation soapAction=""/>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+
+   <wsdl:binding name="SubscriptionManagerBinding" type="wse:SubscriptionManager">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="GetStatusOp">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+
+      <wsdl:operation name="RenewOp">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+
+      <wsdl:operation name="UnsubscribeOp">
+         <soap:operation soapAction=""/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+
+   <wsdl:service name="EventingService">
+      <wsdl:port name="EventSourcePort" binding="wse:EventSourceBinding">
+         <soap:address location="http://@jboss.bind.address@:8080/jaxws-samples-wseventing/subscribe"/>
+      </wsdl:port>
+      <wsdl:port name="SubscriptionManagerPort" binding="wse:SubscriptionManagerBinding">
+         <soap:address location="http://@jboss.bind.address@:8080/jaxws-samples-wseventing/manage"/>
+      </wsdl:port>
+   </wsdl:service>
+
+
+</wsdl:definitions>

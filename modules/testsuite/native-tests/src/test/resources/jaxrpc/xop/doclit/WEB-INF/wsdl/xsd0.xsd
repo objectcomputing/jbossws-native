@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<s:schema xmlns:s="http://www.w3.org/2001/XMLSchema"
+          targetNamespace="http://jboss.org/test/ws/xop"
+          xmlns:xmime="http://www.w3.org/2005/05/xmlmime" >
+
+   <s:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+
+   <!--
+      the xmime:expectedContentType is missing.
+      this maps to byte[]
+   -->
+   <s:element name="PingMsg">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="message" minOccurs="0" maxOccurs="1" type="s:string" />
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1" type="s:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <!--
+      a known media type maps to specific java type.
+      in this case a byte[] as well
+   -->
+   <s:element name="PingMsgResponse">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="application/octet-stream"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <!--
+      a known media type that maps to java.awt.Image
+   -->
+   <s:element name="PingImage">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="message" minOccurs="0" maxOccurs="1" type="s:string" />
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="image/jpeg"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <s:element name="PingImageResponse">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="image/jpeg"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <!--
+      a preferred media type specified through xmime:contentType.
+      this would map to javax.transform.Source
+   -->
+   <s:element name="PingSource">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="message" minOccurs="0" maxOccurs="1" type="s:string" />
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="image/jpeg,text/xml"
+                       xmime:contentType="text/xml"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <s:element name="PingSourceResponse">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="text/xml"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <!--
+     the preferred media type is not declared
+     binaries will be mapped to javax.activation.DataHandler
+   -->
+   <s:element name="PingDataHandler">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="message" minOccurs="0" maxOccurs="1" type="s:string" />
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1"
+                       xmime:expectedContentTypes="image/jpeg,text/xml"
+                       type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <s:element name="PingDataHandlerResponse">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="xopContent" minOccurs="0" maxOccurs="1" type="s:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+</s:schema>

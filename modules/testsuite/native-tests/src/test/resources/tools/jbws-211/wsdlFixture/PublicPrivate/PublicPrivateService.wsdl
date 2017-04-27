@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="PublicPrivateService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://org.jboss.ws/types"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws/types"
+			xmlns:tns="http://org.jboss.ws/types"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="PublicPrivateObject">
+				<sequence>
+					<element name="a" type="int" />
+					<element name="b" type="int" />
+					<element name="c" type="string" nillable="true" />
+					<element name="d" type="float" />
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="PublicPrivateSEI_customObjectOperation">
+		<part name="PublicPrivateObject_1"
+			type="ns2:PublicPrivateObject" />
+	</message>
+	<message name="PublicPrivateSEI_customObjectOperationResponse" />
+	<portType name="PublicPrivateSEI">
+		<operation name="customObjectOperation"
+			parameterOrder="PublicPrivateObject_1">
+			<input message="tns:PublicPrivateSEI_customObjectOperation" />
+			<output
+				message="tns:PublicPrivateSEI_customObjectOperationResponse" />
+		</operation>
+	</portType>
+	<binding name="PublicPrivateSEIBinding"
+		type="tns:PublicPrivateSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="customObjectOperation">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+	</binding>
+	<service name="PublicPrivateService">
+		<port name="PublicPrivateSEIPort"
+			binding="tns:PublicPrivateSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

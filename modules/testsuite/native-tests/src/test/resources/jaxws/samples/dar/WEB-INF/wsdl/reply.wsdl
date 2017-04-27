@@ -1,0 +1,55 @@
+<definitions name="DarReplyService" targetNamespace="http://org.jboss.ws/samples/dar" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://org.jboss.ws/samples/dar" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://org.jboss.ws/samples/dar" version="1.0" xmlns:tns="http://org.jboss.ws/samples/dar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="serviceRequest">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="from" type="tns:stop"/>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element name="people" type="xs:int"/>
+     <xs:element minOccurs="0" name="to" type="tns:stop"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stop">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="node" type="xs:int"/>
+     <xs:element minOccurs="0" name="time" type="xs:dateTime"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="darResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="routes" nillable="true" type="tns:route"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="unservedRequests" nillable="true" type="tns:serviceRequest"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="route">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="busId" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="stops" nillable="true" type="tns:stop"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name="DarReplyEndpoint_receive">
+  <part name="arg0" type="tns:darResponse"/>
+ </message>
+ <portType name="DarReplyEndpoint">
+  <operation name="receive">
+   <input message="tns:DarReplyEndpoint_receive"/>
+  </operation>
+ </portType>
+ <binding name="DarReplyEndpointBinding" type="tns:DarReplyEndpoint">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="receive">
+   <soap:operation soapAction="http://org.jboss.test.ws.jaxws.samples.dar/action/receiveIn"/>
+   <input>
+    <soap:body namespace="http://org.jboss.ws/samples/dar" use="literal"/>
+   </input>
+  </operation>
+ </binding>
+ <service name="DarReplyService">
+  <port binding="tns:DarReplyEndpointBinding" name="DarReplyEndpointPort">
+   <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+   <!-- <soap:address location="http://localhost.localdomain:8080/dar-client/replyService"/> -->
+  </port>
+ </service>
+</definitions>

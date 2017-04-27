@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jbpapp921</package-type>
+  <namespaceURI>http://org.jboss.test.ws.jbpapp921</namespaceURI>
+ </package-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jbpapp921.Models_ServiceIM_ServiceProxy</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.ws.jbpapp921'>serviceNS:models_ServiceIM_ServiceProxy</wsdl-service-name>
+  <port-mapping>
+   <port-name>validationEventPort</port-name>
+   <java-port-name>validationEventPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jbpapp921.ValidationEvent_test</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.ws.jbpapp921'>portTypeNS:validationEvent-test</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.ws.jbpapp921'>bindingNS:validationEventBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>validateClaim</java-method-name>
+   <wsdl-operation>validateClaim</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws.jbpapp921'>wsdlMsgNS:ValidationEvent_validateClaim</wsdl-message>
+     <wsdl-message-part-name>lifecycleId</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws.jbpapp921'>wsdlMsgNS:ValidationEvent_validateClaim</wsdl-message>
+     <wsdl-message-part-name>claim</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>int</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws.jbpapp921'>wsdlMsgNS:ValidationEvent_validateClaimResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Header: /local/damona/repository/IPLSProvisioning/src/com/tsi/iplsprovisioning/services/meta-inf/wsdl/Abstract.wsdl,v 1.2 2005/03/08 14:58:37 werner Exp $ -->
+
+<!-- <a href="mailto:werner.jaeger@t-systems.com">Werner Jaeger</a> on Sep 10, 2004, 11:22 AM -->
+
+<definitions
+   xmlns:rotns="http://www.t-systems.com/damona"
+   xmlns:tns="http://services.iplsprovisioning.tsi.com"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   targetNamespace="http://services.iplsprovisioning.tsi.com">
+
+   <types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.t-systems.com/damona">
+         <import schemaLocation="damona.xsd" namespace="http://www.t-systems.com/damona"/>
+      </schema>
+   </types>
+
+   <message name="Message">
+      <part name="message" element="rotns:DAMONA_INFO"/>
+   </message>
+
+   <message name="ReturnMessage">
+      <part name="result" element="rotns:DAMONA_INFO"/>
+   </message>
+
+   <portType name="IServiceActivationRemote">
+      <operation name="processMessage">
+         <input message="tns:Message"/>
+         <output message="tns:ReturnMessage"/>
+      </operation>
+   </portType>
+</definitions>

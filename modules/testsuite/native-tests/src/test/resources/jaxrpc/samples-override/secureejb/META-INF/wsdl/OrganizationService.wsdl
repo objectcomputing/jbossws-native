@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='OrganizationService' targetNamespace='http://org.jboss.ws/samples/secureejb' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/samples/secureejb' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='OrganizationService_getContactInfo'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='OrganizationService_getContactInfoResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='OrganizationService'>
+  <operation name='getContactInfo' parameterOrder='String_1'>
+   <input message='tns:OrganizationService_getContactInfo'/>
+   <output message='tns:OrganizationService_getContactInfoResponse'/>
+  </operation>
+ </portType>
+ <binding name='OrganizationServiceBinding' type='tns:OrganizationService'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getContactInfo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/samples/secureejb' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/samples/secureejb' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name="OrganizationService">
+  <port name="BasicSecuredPort" binding="tns:OrganizationServiceBinding">
+   <soap:address location="http://@jboss.bind.address@:8080/jaxrpc-samples-ejb/BasicSecured"/>
+  </port>
+  <port name="RoleSecuredPort" binding="tns:OrganizationServiceBinding">
+   <soap:address location="http://@jboss.bind.address@:8080/jaxrpc-samples-ejb/RoleSecured"/>
+  </port>
+  <port name="ConfidentialPort" binding="tns:OrganizationServiceBinding">
+   <soap:address location="https://@jboss.bind.address@:8443/jaxrpc-samples-ejb/ConfidentialSecured"/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/wsdlpublish' xmlns='http://schemas.xmlsoap.org/wsdl/'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/wsdlpublish' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  
+  <import namespace="http://org.jboss.test.ws/wsdlpublish" location="../../foo/TestServicePortType.wsdl"/>
+  
+  <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='echoSimple'>
+      <soap:operation soapAction=''/>
+      <input>
+        <soap:body namespace='http://org.jboss.test.ws/wsdlpublish' use='literal'/>
+      </input>
+      <output>
+        <soap:body namespace='http://org.jboss.test.ws/wsdlpublish' use='literal'/>
+      </output>
+    </operation>
+  </binding>
+  <service name='TestService'>
+    <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+      <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -cp ../../../../../output/classes -gen:server -f:rpcliteral -keep -mapping mapping.xml config.xml
+--> 
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <service name="UserExceptionService"
+    targetNamespace="http://org.jboss.ws"
+    typeNamespace="http://org.jboss.ws/types"
+    packageName="org.jboss.test.ws.tools.jbws_211.sei.UserException">
+    <interface name="org.jboss.test.ws.tools.jbws_211.sei.UserException.UserExceptionSEI"/>
+  </service>
+
+</configuration>
+

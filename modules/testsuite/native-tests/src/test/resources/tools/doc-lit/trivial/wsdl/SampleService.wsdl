@@ -1,0 +1,48 @@
+<definitions name="SampleService" targetNamespace="http://org.jboss.ws/samples" xmlns:tns="http://org.jboss.ws/samples" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.ws/samples/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/samples/types" xmlns:tns="http://org.jboss.ws/samples/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="purchase">
+        <sequence>
+          <element name="String_1" type="string" nillable="true"/>
+          <element name="String_2" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="purchaseResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="purchase" type="tns:purchase"/>
+      <element name="purchaseResponse" type="tns:purchaseResponse"/>
+    </schema>
+  </types>
+  <message name="TrivialService_purchase">
+    <part name="parameters" element="ns2:purchase"/>
+  </message>
+  <message name="TrivialService_purchaseResponse">
+    <part name="result" element="ns2:purchaseResponse"/>
+  </message>
+  <portType name="TrivialService">
+    <operation name="purchase">
+      <input message="tns:TrivialService_purchase"/>
+      <output message="tns:TrivialService_purchaseResponse"/>
+    </operation>
+  </portType>
+  <binding name="TrivialServiceBinding" type="tns:TrivialService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="purchase">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body namespace="http://org.jboss.ws/samples" use="literal"/>
+      </input>
+      <output>
+        <soap:body namespace="http://org.jboss.ws/samples" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SampleService">
+    <port name="TrivialServicePort" binding="tns:TrivialServiceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestSEIService' targetNamespace='http://test.jboss.org/ws/jbws1253' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://test.jboss.org/ws/jbws1253/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://test.jboss.org/ws/jbws1253' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1253/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://test.jboss.org/ws/jbws1253/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='returnVoidParamInt'>
+    <sequence>
+     <element name='int_1' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='returnVoidParamIntResponse'>
+    <sequence>
+     <element name='result' type='int'/>
+    </sequence>
+   </complexType>
+   <element name='returnVoidParamInt' type='tns:returnVoidParamInt'/>
+   <element name='returnVoidParamIntResponse' type='tns:returnVoidParamIntResponse'/>
+  </schema>
+ </types>
+ <message name='MyPortType_returnVoidParamInt'>
+  <part element='ns1:returnVoidParamInt' name='parameters'/>
+ </message>
+ <message name='MyPortType_returnVoidParamIntResponse'>
+  <part element='ns1:returnVoidParamIntResponse' name='result'/>
+ </message>
+ <portType name='MyPortType'>
+  <operation name='returnVoidParamInt'>
+   <input message='tns:MyPortType_returnVoidParamInt'/>
+   <output message='tns:MyPortType_returnVoidParamIntResponse'/>
+  </operation>
+ </portType>
+ <binding name='MyPortTypeBinding' type='tns:MyPortType'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='returnVoidParamInt'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestSEIService'>
+  <port binding='tns:MyPortTypeBinding' name='MyPortTypePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

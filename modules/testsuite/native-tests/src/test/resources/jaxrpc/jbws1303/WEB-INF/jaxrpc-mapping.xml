@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws1303</package-type>
+  <namespaceURI>http://netid.msu.edu:8080/lastmod.pl</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws1303.Lastmod</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://netid.msu.edu:8080/lastmod.pl'>typeNS:&gt;lastmod</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>lastmodRequest</java-variable-name>
+   <xml-element-name>lastmodRequest</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws1303.LastmodResponse</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://netid.msu.edu:8080/lastmod.pl'>typeNS:&gt;lastmodResponse</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>timeChanged</java-variable-name>
+   <xml-element-name>TimeChanged</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws1303.LastMod</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://netid.msu.edu:8080/lastmod.pl'>serviceNS:LastMod</wsdl-service-name>
+  <port-mapping>
+   <port-name>LastModPort</port-name>
+   <java-port-name>LastModPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws1303.LastMod_PortType</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://netid.msu.edu:8080/lastmod.pl'>portTypeNS:LastModPortType</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://netid.msu.edu:8080/lastmod.pl'>bindingNS:LastModBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>lastmod</java-method-name>
+   <wsdl-operation>lastmod</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws1303.Lastmod</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://netid.msu.edu:8080/lastmod.pl'>wsdlMsgNS:lastmodInput</wsdl-message>
+     <wsdl-message-part-name>parameters</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws1303.LastmodResponse</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://netid.msu.edu:8080/lastmod.pl'>wsdlMsgNS:lastmodOutput</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

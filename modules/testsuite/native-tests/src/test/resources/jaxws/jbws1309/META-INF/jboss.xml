@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_2.dtd">
+
+<jboss>
+  <webservices>
+    <context-root>/jaxws-jbws1309</context-root>
+    <webservice-description>
+      <webservice-description-name>jbws1309-ws-description</webservice-description-name>
+      <config-name>Standard WSSecurity Endpoint</config-name>
+    </webservice-description>
+  </webservices>
+  <enterprise-beans>
+    <session>
+      <ejb-name>HelloBean</ejb-name>
+      <jndi-name>ejb/HelloBean</jndi-name>
+      <port-component>
+        <port-component-name>TestPortComponent</port-component-name>
+        <port-component-uri>/*</port-component-uri>
+      </port-component>
+    </session>
+  </enterprise-beans>
+</jboss>

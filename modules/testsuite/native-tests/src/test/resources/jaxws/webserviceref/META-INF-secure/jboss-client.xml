@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss-client PUBLIC "-//JBoss//DTD Application Client 5.0//EN" "http://www.jboss.org/j2ee/dtd/jboss-client_5_0.dtd">
+
+<jboss-client>
+  <jndi-name>jbossws-client</jndi-name>
+  
+  <service-ref>
+    <service-ref-name>SecureService1</service-ref-name>
+    <service-impl-class>org.jboss.test.ws.jaxws.webserviceref.SecureEndpointService</service-impl-class>
+    <service-qname>{http://org.jboss.ws/wsref}SecureEndpointService</service-qname>
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxws.webserviceref.SecureEndpoint</service-endpoint-interface>
+      <port-qname>{http://org.jboss.ws/wsref}SecureEndpointPort</port-qname>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.username</prop-name>
+        <prop-value>kermit</prop-value>
+      </stub-property>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.password</prop-name>
+        <prop-value>thefrog</prop-value>
+      </stub-property>
+    </port-component-ref>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxws-webserviceref-secure/SecureEndpointImpl?wsdl</wsdl-override>
+  </service-ref>
+  
+  <service-ref>
+    <service-ref-name>SecureService2</service-ref-name>
+    <service-qname>{http://org.jboss.ws/wsref}SecureEndpointService</service-qname>
+    <port-component-ref>
+      <port-qname>{http://org.jboss.ws/wsref}SecureEndpointPort</port-qname>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.username</prop-name>
+        <prop-value>kermit</prop-value>
+      </stub-property>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.password</prop-name>
+        <prop-value>thefrog</prop-value>
+      </stub-property>
+    </port-component-ref>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxws-webserviceref-secure/SecureEndpointImpl?wsdl</wsdl-override>
+  </service-ref>
+  
+  <service-ref>
+    <service-ref-name>SecurePort1</service-ref-name>
+    <service-qname>{http://org.jboss.ws/wsref}SecureEndpointService</service-qname>
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxws.webserviceref.SecureEndpoint</service-endpoint-interface>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.username</prop-name>
+        <prop-value>kermit</prop-value>
+      </stub-property>
+      <stub-property>
+        <prop-name>javax.xml.ws.security.auth.password</prop-name>
+        <prop-value>thefrog</prop-value>
+      </stub-property>
+    </port-component-ref>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxws-webserviceref-secure/SecureEndpointImpl?wsdl</wsdl-override>
+  </service-ref>
+  
+</jboss-client>

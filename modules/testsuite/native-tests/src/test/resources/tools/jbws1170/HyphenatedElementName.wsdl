@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<definitions name="ServiceNameConsumer" targetNamespace="http://id.company.com/servicename-consumer/1.0" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://id.company.com/servicename-consumer/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <schema targetNamespace="http://id.company.com/servicename-consumer/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://id.company.com/servicename-consumer/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <complexType name="append">
+        <sequence>
+          <element name="ConsumerInput_1" nillable="true" type="tns:ConsumerInput"/></sequence></complexType>
+      <complexType name="ConsumerInput">
+        <sequence>
+          <element name="currentAddress" nillable="true" type="tns:UnparsedAddress"/>
+          <element name="name" nillable="true" type="tns:Name"/>
+          <element name="previousAddress1" nillable="true" type="tns:UnparsedAddress"/>
+          <element name="previousAddress2" nillable="true" type="tns:UnparsedAddress"/>
+          <element name="returnDerivedLinks" type="boolean"/></sequence></complexType>
+      <complexType name="UnparsedAddress">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="addressLines" nillable="true" type="string"/>
+          <element name="city" nillable="true" type="string"/>
+          <element name="postal-Code-Value" nillable="true" type="string"/>
+          <element name="state" nillable="true" type="string"/>
+          <element name="urbanization" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="Name">
+        <sequence>
+          <element name="first" nillable="true" type="string"/>
+          <element name="last" nillable="true" type="string"/>
+          <element name="middle" nillable="true" type="string"/>
+          <element name="suffix" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="appendResponse">
+        <sequence>
+          <element name="result" nillable="true" type="tns:ConsumerOutput"/></sequence></complexType>
+      <complexType name="ConsumerOutput">
+        <sequence>
+          <element name="addressAbility" nillable="true" type="tns:AddressAbility"/>
+          <element name="addressLink" nillable="true" type="string"/>
+          <element name="addressMatch" nillable="true" type="string"/>
+          <element name="consumerLink" nillable="true" type="string"/>
+          <element name="deliveryPointValidation" nillable="true" type="tns:DeliveryPointValidation"/>
+          <element name="errorCode" nillable="true" type="string"/>
+          <element name="lineOfTravel" nillable="true" type="string"/>
+          <element name="matchLevel" nillable="true" type="tns:MatchLevel"/>
+          <element name="parsedAddress" nillable="true" type="tns:ParsedAddress"/></sequence></complexType>
+      <complexType name="AddressAbility">
+        <sequence>
+          <element name="addressNotFound" type="boolean"/>
+          <element name="aliasMatch" type="boolean"/>
+          <element name="alternateAddress" nillable="true" type="string"/>
+          <element name="alternateAddressMatch" type="boolean"/>
+          <element name="carrierRouteId" nillable="true" type="string"/>
+          <element name="cityAbbreviation" nillable="true" type="string"/>
+          <element name="correctedCityAndOrState" type="boolean"/>
+          <element name="correctedPrimaryAddress" type="boolean"/>
+          <element name="correctedSecondaryAddress" type="boolean"/>
+          <element name="countyCode" nillable="true" type="string"/>
+          <element name="deliveryPointBarCode" nillable="true" type="string"/>
+          <element name="earlyWarningSystemMatch" type="boolean"/>
+          <element name="failureToMatchLastAddressLine" type="boolean"/>
+          <element name="financeNumber" nillable="true" type="string"/>
+          <element name="mainCity" nillable="true" type="string"/>
+          <element name="mainState" nillable="true" type="string"/>
+          <element name="match" type="boolean"/>
+          <element name="missingPoBoxNumber" type="boolean"/>
+          <element name="missingRuralRouteHcBoxNumber" type="boolean"/>
+          <element name="missingSecondaryNumberInHighrise" type="boolean"/>
+          <element name="missingStreetNumber" type="boolean"/>
+          <element name="multipleMatchMissingIncorrectDirection" type="boolean"/>
+          <element name="multipleMatchMissingIncorrectSuffix" type="boolean"/>
+          <element name="multipleMatchPrimaryAddressField" type="boolean"/>
+          <element name="multipleMatchSecondaryAddressField" type="boolean"/>
+          <element name="noSuchPrimaryNumber" type="boolean"/>
+          <element name="poBoxNumberNotOnFile" type="boolean"/>
+          <element name="recordTypeCode" nillable="true" type="string"/>
+          <element name="returnCode" nillable="true" type="string"/>
+          <element name="ruralRouteHcBoxNotOnFile" type="boolean"/>
+          <element name="secondaryNumberNotFound" type="boolean"/>
+          <element name="zipCodeChanged" type="boolean"/></sequence></complexType>
+      <complexType name="DeliveryPointValidation">
+        <sequence>
+          <element name="accurateSource" nillable="true" type="string"/>
+          <element name="addressNotFound" type="boolean"/>
+          <element name="aliasMatch" type="boolean"/>
+          <element name="alternateAddressMatch" type="boolean"/>
+          <element name="commercialMailReceivingAgency" type="boolean"/>
+          <element name="correctedCityAndOrState" type="boolean"/>
+          <element name="correctedPrimaryAddress" type="boolean"/>
+          <element name="correctedSecondaryAddress" type="boolean"/>
+          <element name="deliverability" nillable="true" type="string"/>
+          <element name="earlyWarningSystemMatch" type="boolean"/>
+          <element name="failureToMatchLastAddressLine" type="boolean"/>
+          <element name="match" type="boolean"/>
+          <element name="missingPoBoxNumber" type="boolean"/>
+          <element name="missingRuralRouteHcBoxNumber" type="boolean"/>
+          <element name="missingSecondaryNumber" type="boolean"/>
+          <element name="missingStreetNumber" type="boolean"/>
+          <element name="multipleMatchMissingIncorrectDirection" type="boolean"/>
+          <element name="multipleMatchMissingIncorrectSuffix" type="boolean"/>
+          <element name="multipleMatchPrimaryAddressField" type="boolean"/>
+          <element name="multipleMatchSecondaryAddressField" type="boolean"/>
+          <element name="noSuchPrimaryNumber" type="boolean"/>
+          <element name="poBoxNumberNotOnFile" type="boolean"/>
+          <element name="ruralRouteHcBoxNotOnFile" type="boolean"/>
+          <element name="secondaryNumberNotFound" type="boolean"/>
+          <element name="streetFrontMatch" type="boolean"/>
+          <element name="zipCodeChanged" type="boolean"/></sequence></complexType>
+      <complexType name="MatchLevel">
+        <sequence>
+          <element name="address" type="boolean"/>
+          <element name="household" type="boolean"/>
+          <element name="nameAndAddress" type="boolean"/></sequence></complexType>
+      <complexType name="ParsedAddress">
+        <sequence>
+          <element name="city" nillable="true" type="string"/>
+          <element name="locality" nillable="true" type="string"/>
+          <element name="postOfficeBox" nillable="true" type="string"/>
+          <element name="postal-Code-Value" nillable="true" type="string"/>
+          <element name="state" nillable="true" type="string"/>
+          <element name="streetInfo" nillable="true" type="tns:StreetInfo"/>
+          <element name="unit" nillable="true" type="string"/>
+          <element name="unitDescription" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="StreetInfo">
+        <sequence>
+          <element name="name" nillable="true" type="string"/>
+          <element name="number" nillable="true" type="string"/>
+          <element name="postDirection" nillable="true" type="string"/>
+          <element name="preDirection" nillable="true" type="string"/>
+          <element name="suffix" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="InputValidationException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="SystemUnavailableException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <element name="append" type="tns:append"/>
+      <element name="appendResponse" type="tns:appendResponse"/>
+      <element name="SystemUnavailableException" type="tns:SystemUnavailableException"/>
+      <element name="InputValidationException" type="tns:InputValidationException"/></schema>
+  </types>
+  <message name="ServiceNameConsumerEndpoint_appendResponse">
+    <part element="tns:appendResponse" name="result"/>
+  </message>
+  <message name="InputValidationException">
+    <part element="tns:InputValidationException" name="InputValidationException"/>
+  </message>
+  <message name="ServiceNameConsumerEndpoint_append">
+    <part element="tns:append" name="parameters"/>
+  </message>
+  <message name="SystemUnavailableException">
+    <part element="tns:SystemUnavailableException" name="SystemUnavailableException"/>
+  </message>
+  <portType name="ServiceNameConsumerEndpoint">
+    <operation name="append">
+      <input message="tns:ServiceNameConsumerEndpoint_append"/>
+      <output message="tns:ServiceNameConsumerEndpoint_appendResponse"/>
+      <fault message="tns:InputValidationException" name="InputValidationException"/>
+      <fault message="tns:SystemUnavailableException" name="SystemUnavailableException"/>
+    </operation>
+  </portType>
+  <binding name="ServiceNameConsumerEndpointBinding" type="tns:ServiceNameConsumerEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="append">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InputValidationException">
+        <soap:fault name="InputValidationException" use="literal"/>
+      </fault>
+      <fault name="SystemUnavailableException">
+        <soap:fault name="SystemUnavailableException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="ServiceNameConsumer">
+    <port binding="tns:ServiceNameConsumerEndpointBinding" name="ServiceNameConsumerEndpointPort">
+      <soap:address location="http://internal.corp.company.net:8080/servicename-consumer/1.0"/>
+    </port>
+  </service>
+</definitions>

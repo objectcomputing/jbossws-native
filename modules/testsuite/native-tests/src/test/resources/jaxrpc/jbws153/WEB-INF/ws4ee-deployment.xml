@@ -1,0 +1,24 @@
+<deployment
+ xmlns='http://xml.apache.org/axis/wsdd/'
+ xmlns:java='http://xml.apache.org/axis/wsdd/providers/java'
+ xmlns:soap='http://schemas.xmlsoap.org/soap/encoding/'
+ xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+ xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+
+  <typeMapping
+    qname='ns2:GetOrder' xmlns:ns2='http://www.dis-corp.com/xml/2005/ebiz'
+    type='java:java.lang.String'
+    serializer='org.jboss.axis.encoding.ser.SimpleSerializerFactory'
+    deserializer='org.jboss.axis.encoding.ser.SimpleDeserializerFactory'
+    encodingStyle=''>
+  </typeMapping>
+
+  <typeMapping
+    qname='ns2:ShowOrder' xmlns:ns2='http://www.dis-corp.com/xml/2005/ebiz'
+    type='java:java.lang.String'
+    serializer='org.jboss.axis.encoding.ser.SimpleSerializerFactory'
+    deserializer='org.jboss.axis.encoding.ser.SimpleDeserializerFactory'
+    encodingStyle=''>
+  </typeMapping>
+
+</deployment>

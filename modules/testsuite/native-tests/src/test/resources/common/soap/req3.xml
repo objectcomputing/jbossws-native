@@ -1,0 +1,18 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+   <env:Header xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+      <wsa:To>uri:jbossws-addressing-initial/InitialService</wsa:To>
+      <wsa:ReplyTo>
+         <wsa:Address>http://localhost:8080/jbossws-addressing-replyto/ReplyToService</wsa:Address>
+      </wsa:ReplyTo>
+      <wsa:FaultTo>
+         <wsa:Address>http://localhost:8080/jbossws-addressing-faultto/FaultToService</wsa:Address>
+      </wsa:FaultTo>
+      <wsa:Action>http://org.jboss.ws/addressing/replyto/action</wsa:Action>
+      <wsa:MessageID>urn:uuid:fd82cb27-e79-4d44-8e88-e57398058132</wsa:MessageID>
+   </env:Header>
+   <env:Body>
+      <ns1:addItem xmlns:ns1='http://org.jboss.ws/addressing/replyto' xmlns:xsi='http://www..org/2001/XMLSchema-instance'>
+         <ns1:String_1>Ice Cream</ns1:String_1>
+      </ns1:addItem>
+   </env:Body>
+</env:Envelope>

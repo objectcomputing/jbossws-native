@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- In the generated WSDL change this manually
+<element name="collectionElements" type="double" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+
+Change the corresponding variable mapping in jaxrpc mapping:
+      <java-variable-name>typedElements</java-variable-name>
+      <xml-element-name>collectionElements</xml-element-name>
+
+
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="TestService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws413.TestSEI"
+              style="rpc">
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.webservice/jbws413"
+                 type-namespace="http://org.jboss.test.webservice/jbws413/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="Test"/>
+   </java-wsdl>  
+</configuration>

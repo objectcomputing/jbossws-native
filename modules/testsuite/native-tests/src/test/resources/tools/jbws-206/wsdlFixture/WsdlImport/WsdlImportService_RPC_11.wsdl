@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="WsdlImportService"
+	targetNamespace="http://jboss.org/wsdlimport"
+	xmlns:tns="http://jboss.org/wsdlimport"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<import namespace="http://jboss.org/wsdlimport"
+		location="./import.wsdl" />
+
+	<service name="WsdlImportService">
+		<port name="HelloWsPort"
+			binding="tns:WsdlImportServiceBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+
+</definitions>

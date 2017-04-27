@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.jbws720</package-type>
+    <namespaceURI>http://org.jboss.test.ws/jbws720</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.jbws720</package-type>
+    <namespaceURI>http://org.jboss.test.ws/jbws720/types</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws720.GetProperty</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.test.ws/jbws720/types">typeNS:getProperty</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>strAttr</java-variable-name>
+      <xml-attribute-name>strAttr</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>lang</java-variable-name>
+      <xml-attribute-name>lang</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>strElement</java-variable-name>
+      <xml-element-name>strElement</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>_any</java-variable-name>
+      <xml-wildcard/>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws720.GetPropertyResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.test.ws/jbws720/types">typeNS:getPropertyResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.jaxrpc.jbws720.TestService</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://org.jboss.test.ws/jbws720">serviceNS:TestService</wsdl-service-name>
+    <port-mapping>
+      <port-name>TestPort</port-name>
+      <java-port-name>TestPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws720.TestEndpoint</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.test.ws/jbws720">portTypeNS:TestEndpoint</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.test.ws/jbws720">bindingNS:TestBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>getProperty</java-method-name>
+      <wsdl-operation>getProperty</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.jaxrpc.jbws720.GetProperty</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.test.ws/jbws720">wsdlMsgNS:TestEndpoint_getProperty</wsdl-message>
+          <wsdl-message-part-name>parameters</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.jaxrpc.jbws720.GetPropertyResponse</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.test.ws/jbws720">wsdlMsgNS:TestEndpoint_getPropertyResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

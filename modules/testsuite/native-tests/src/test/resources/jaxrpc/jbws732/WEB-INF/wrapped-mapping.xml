@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws732</package-type>
+  <namespaceURI>http://org.jboss.ws/jbws732/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint_echoStringArray_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/jbws732/types'>typeNS:echoStringArray</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>arrayOfString_1</java-variable-name>
+   <xml-element-name>arrayOfString_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint_echoStringArray_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/jbws732/types'>typeNS:echoStringArrayResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint_echoStringWrappedArray_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/jbws732/types'>typeNS:echoStringWrappedArray</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>arrayOfString_1</java-variable-name>
+   <xml-element-name>arrayOfString_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint_echoStringWrappedArray_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/jbws732/types'>typeNS:echoStringWrappedArrayResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws732.WrappedService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.ws/jbws732'>serviceNS:WrappedService</wsdl-service-name>
+  <port-mapping>
+   <port-name>WrappedEndpointPort</port-name>
+   <java-port-name>WrappedEndpointPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.ws/jbws732'>portTypeNS:WrappedEndpoint</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.ws/jbws732'>bindingNS:WrappedEndpointBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoStringArray</java-method-name>
+   <wsdl-operation>echoStringArray</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String[]</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/jbws732'>wsdlMsgNS:WrappedEndpoint_echoStringArray</wsdl-message>
+     <wsdl-message-part-name>arrayOfString_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>java.lang.String[]</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/jbws732'>wsdlMsgNS:WrappedEndpoint_echoStringArrayResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoStringWrappedArray</java-method-name>
+   <wsdl-operation>echoStringWrappedArray</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String[]</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/jbws732'>wsdlMsgNS:WrappedEndpoint_echoStringWrappedArray</wsdl-message>
+     <wsdl-message-part-name>arrayOfString_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>java.lang.String[]</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/jbws732'>wsdlMsgNS:WrappedEndpoint_echoStringWrappedArrayResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

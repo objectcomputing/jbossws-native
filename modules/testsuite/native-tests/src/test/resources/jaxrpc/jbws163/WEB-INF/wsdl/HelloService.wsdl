@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws163' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws163' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+<!-- Manual Modification -->
+<message name="Hello_negativeInteger">
+  <part name="BigInteger_1" type="xsd:negativeInteger"/>
+  <part name="BigInteger_2" type="xsd:negativeInteger"/>
+</message>
+<message name="Hello_negativeIntegerResponse">
+  <part name="BigInteger_2" type="xsd:negativeInteger"/>
+  <part name="BigInteger_3" type="xsd:negativeInteger"/>
+</message>
+<message name="Hello_nonNegativeInteger">
+  <part name="BigInteger_1" type="xsd:nonNegativeInteger"/>
+  <part name="BigInteger_2" type="xsd:nonNegativeInteger"/>
+</message>
+<message name="Hello_nonNegativeIntegerResponse">
+  <part name="BigInteger_2" type="xsd:nonNegativeInteger"/>
+  <part name="BigInteger_3" type="xsd:nonNegativeInteger"/>
+</message>
+<message name="Hello_nonPositiveInteger">
+  <part name="BigInteger_1" type="xsd:nonPositiveInteger"/>
+  <part name="BigInteger_2" type="xsd:nonPositiveInteger"/>
+</message>
+<message name="Hello_nonPositiveIntegerResponse">
+  <part name="BigInteger_2" type="xsd:nonPositiveInteger"/>
+  <part name="BigInteger_3" type="xsd:nonPositiveInteger"/>
+</message>
+<message name="Hello_positiveInteger">
+  <part name="BigInteger_1" type="xsd:positiveInteger"/>
+  <part name="BigInteger_2" type="xsd:positiveInteger"/>
+</message>
+<message name="Hello_positiveIntegerResponse">
+  <part name="BigInteger_2" type="xsd:positiveInteger"/>
+  <part name="BigInteger_3" type="xsd:positiveInteger"/>
+</message>
+<message name="Hello_unsignedByte">
+  <part name="short_1" type="xsd:unsignedByte"/>
+  <part name="short_2" type="xsd:unsignedByte"/>
+</message>
+<message name="Hello_unsignedByteResponse">
+  <part name="short_2" type="xsd:unsignedByte"/>
+  <part name="short_3" type="xsd:unsignedByte"/>
+</message>
+<message name="Hello_unsignedInt">
+  <part name="long_1" type="xsd:unsignedInt"/>
+  <part name="long_2" type="xsd:unsignedInt"/>
+</message>
+<message name="Hello_unsignedIntResponse">
+  <part name="long_2" type="xsd:unsignedInt"/>
+  <part name="long_3" type="xsd:unsignedInt"/>
+</message>
+<message name="Hello_unsignedLong">
+  <part name="BigInteger_1" type="xsd:unsignedLong"/>
+  <part name="BigInteger_2" type="xsd:unsignedLong"/>
+</message>
+<message name="Hello_unsignedLongResponse">
+  <part name="BigInteger_2" type="xsd:unsignedLong"/>
+  <part name="BigInteger_3" type="xsd:unsignedLong"/>
+</message>
+<message name="Hello_unsignedShort">
+  <part name="int_1" type="xsd:unsignedShort"/>
+  <part name="int_2" type="xsd:unsignedShort"/>
+</message>
+<message name="Hello_unsignedShortResponse">
+  <part name="int_2" type="xsd:unsignedShort"/>
+  <part name="int_3" type="xsd:unsignedShort"/>
+</message>
+<!-- end manual modification -->
+ <portType name='Hello'>
+  <operation name='negativeInteger' parameterOrder='BigInteger_1 BigInteger_2 BigInteger_3'>
+   <input message='tns:Hello_negativeInteger'/>
+   <output message='tns:Hello_negativeIntegerResponse'/>
+  </operation>
+  <operation name='nonNegativeInteger' parameterOrder='BigInteger_1 BigInteger_2 BigInteger_3'>
+   <input message='tns:Hello_nonNegativeInteger'/>
+   <output message='tns:Hello_nonNegativeIntegerResponse'/>
+  </operation>
+  <operation name='nonPositiveInteger' parameterOrder='BigInteger_1 BigInteger_2 BigInteger_3'>
+   <input message='tns:Hello_nonPositiveInteger'/>
+   <output message='tns:Hello_nonPositiveIntegerResponse'/>
+  </operation>
+  <operation name='positiveInteger' parameterOrder='BigInteger_1 BigInteger_2 BigInteger_3'>
+   <input message='tns:Hello_positiveInteger'/>
+   <output message='tns:Hello_positiveIntegerResponse'/>
+  </operation>
+  <operation name='unsignedByte' parameterOrder='short_1 short_2 short_3'>
+   <input message='tns:Hello_unsignedByte'/>
+   <output message='tns:Hello_unsignedByteResponse'/>
+  </operation>
+  <operation name='unsignedInt' parameterOrder='long_1 long_2 long_3'>
+   <input message='tns:Hello_unsignedInt'/>
+   <output message='tns:Hello_unsignedIntResponse'/>
+  </operation>
+  <operation name='unsignedLong' parameterOrder='BigInteger_1 BigInteger_2 BigInteger_3'>
+   <input message='tns:Hello_unsignedLong'/>
+   <output message='tns:Hello_unsignedLongResponse'/>
+  </operation>
+  <operation name='unsignedShort' parameterOrder='int_1 int_2 int_3'>
+   <input message='tns:Hello_unsignedShort'/>
+   <output message='tns:Hello_unsignedShortResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='negativeInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='nonNegativeInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='nonPositiveInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='positiveInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='unsignedByte'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='unsignedInt'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='unsignedLong'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+  <operation name='unsignedShort'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws163' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

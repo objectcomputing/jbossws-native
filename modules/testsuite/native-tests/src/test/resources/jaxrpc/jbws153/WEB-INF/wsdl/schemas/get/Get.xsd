@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.dis-corp.com/xml/2005/ebiz" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebiz="http://www.dis-corp.com/xml/2005/ebiz" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:include schemaLocation="../show/Show.xsd" />
+	<xs:element name="GetOrder" type="xs:string"/>
+</xs:schema>
+

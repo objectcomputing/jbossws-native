@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <servlet>
+    <servlet-name>UsernameService</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxws.samples.wssecurity.UsernameBean</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UsernameService</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <security-constraint>
+     <web-resource-collection>
+       <web-resource-name>UsernameService</web-resource-name>
+       <url-pattern>/*</url-pattern>
+       <http-method>GET</http-method>
+       <http-method>POST</http-method>
+     </web-resource-collection>
+     <auth-constraint>
+       <role-name>friend</role-name>
+     </auth-constraint>
+   </security-constraint>
+
+   <login-config>
+      <auth-method>BASIC</auth-method>
+      <realm-name>JBossWS</realm-name>
+   </login-config>
+
+   <security-role>
+      <role-name>friend</role-name>
+   </security-role>
+
+</web-app>
+

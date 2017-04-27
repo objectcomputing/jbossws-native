@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-ws-security xmlns="http://www.jboss.com/ws-security/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.com/ws-security/config http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+    <port name="AccountSignupPort">
+        <operation name="{http://org.jboss.test.ws/wsse}signup">
+            <config>
+                <sign type="x509v3" alias="wsse">
+                    <targets>
+                        <target type="qname">{http://org.jboss.test.ws/wsse/types}creditCardInfo</target>
+                    </targets>
+                </sign>
+                <encrypt type="x509v3" alias="wsse">
+                    <targets>
+                        <target type="qname" contentOnly="true">{http://org.jboss.test.ws/wsse/types}creditCardInfo</target>
+                    </targets>
+                </encrypt> 
+                <requires>
+                    <signature>
+                        <targets>
+                            <target type="qname">{http://org.jboss.test.ws/wsse/types}signupResponse</target>
+                        </targets>
+                    </signature>
+                    <encryption>
+                        <targets>
+                            <target type="qname">{http://org.jboss.test.ws/wsse/types}signupResponse</target>
+                        </targets>
+                    </encryption> 
+                </requires>
+            </config>
+        </operation>
+    </port>
+</jboss-ws-security>

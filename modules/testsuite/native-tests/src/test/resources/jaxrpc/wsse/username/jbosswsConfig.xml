@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../../output/classes -config jbosswsConfig.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools">
+  <javaToWSDL>
+    <service name="TestService" wsdlStyle="document" endpoint="org.jboss.test.ws.jaxrpc.samples.jsr109ejb.JaxRpcTestService"/>
+    <namespaces targetNamespace="http://org.jboss.ws/samples/jsr109ejb" typeNamespace="http://org.jboss.ws/samples/jsr109ejb/types"/>
+    <mapping fileName="jaxrpc-mapping.xml"/>
+    <wsxml ejbLink="TestService"/>
+  </javaToWSDL>
+</configuration>

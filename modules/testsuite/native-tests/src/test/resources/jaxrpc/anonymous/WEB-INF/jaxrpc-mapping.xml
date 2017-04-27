@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.anonymous</package-type>
+    <namespaceURI>http://org.jboss.ws/anonymous/types</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jaxrpc.anonymous</package-type>
+    <namespaceURI>http://org.jboss.ws/anonymous</namespaceURI>
+  </package-mapping>
+  
+  <!-- CASE 1 RULE 1A -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ComplexTypeRoot</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:root</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>data</java-variable-name>
+      <xml-element-name>data</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+
+  <!-- CASE 2 RULE 2A -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeRoot</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:root</root-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <!-- CASE 3 RULE 3A -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeRoot[]</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:root[0,unbounded]</anonymous-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <!-- CASE 4 RULE 1b -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeRoot</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:&gt;root</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>inside</java-variable-name>
+      <xml-element-name>inside</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>someOtherElement</java-variable-name>
+      <xml-element-name>someOtherElement</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+
+  <!-- CASE 5 RULE 2B -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeInside</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:&gt;root&gt;inside</anonymous-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <!-- CASE 6 RULE 3A -->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeInside[]</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:&gt;root&gt;inside[,10]</anonymous-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <!-- CASE 7 RULE 1B-->
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeInside</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:&gt;&gt;root&gt;inside</anonymous-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>data2</java-variable-name>
+      <xml-element-name>data2</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+
+  <!-- CASE 8 RULE 3B -->
+  <java-xml-type-mapping>
+    <java-type>int[]</java-type>
+    <anonymous-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:someOtherElement[,20]</anonymous-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <!-- CASE 9 RULE 2A -->
+  <java-xml-type-mapping>
+    <java-type>int</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/anonymous/types">typeNS:someOtherElement</root-type-qname>
+    <qname-scope>element</qname-scope>
+  </java-xml-type-mapping>
+
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jaxrpc.anonymous.AnonymousTypesTestService</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws/anonymous">portTypeNS:AnonymousTestService</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.ws/anonymous">bindingNS:AnonymousTestServiceBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>testElementSomeOtherElement</java-method-name>
+      <wsdl-operation>testElementSomeOtherElement</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>int</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/anonymous">wsdlMsgNS:AnonymousTestService_testElementSomeOtherElement</wsdl-message>
+          <wsdl-message-part-name>int_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>int</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/anonymous">wsdlMsgNS:AnonymousTestService_testElementSomeOtherElementResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testElementTypeRoot</java-method-name>
+      <wsdl-operation>testElementTypeRoot</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeRoot</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/anonymous">wsdlMsgNS:AnonymousTestService_testElementTypeRoot</wsdl-message>
+          <wsdl-message-part-name>ElementTypeRoot_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.jaxrpc.anonymous.ElementTypeRoot</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/anonymous">wsdlMsgNS:AnonymousTestService_testElementTypeRootResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

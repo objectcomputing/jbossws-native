@@ -1,0 +1,2122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='MarshallService' targetNamespace='http://org.jboss.ws/marshall/doclit' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/marshall/doclit' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://www.jboss.org/jbossws/primitives' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://www.jboss.org/jbossws/primitives' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://math.java/jaws'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='boolean.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='byte.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='double.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='float.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='int.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='long.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='short.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' type='short'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://math.java/jaws'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='JavaBean'>
+    <sequence>
+     <element name='myBigDecimal' nillable='true' type='decimal'/>
+     <element name='myBigInteger' nillable='true' type='integer'/>
+     <element name='myBoolean' type='boolean'/>
+     <element name='myByte' type='byte'/>
+     <element name='myCalendar' nillable='true' type='dateTime'/>
+     <element name='myDouble' type='double'/>
+     <element name='myFloat' type='float'/>
+     <element name='myInt' type='int'/>
+     <element name='myJavaBean' nillable='true' type='tns:JavaBean2'/>
+     <element name='myLong' type='long'/>
+     <element name='myShort' type='short'/>
+     <element name='myString' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='JavaBean2'>
+    <sequence>
+     <element name='myBigDecimal' nillable='true' type='decimal'/>
+     <element name='myBigInteger' nillable='true' type='integer'/>
+     <element name='myBoolean' type='boolean'/>
+     <element name='myByte' type='byte'/>
+     <element name='myCalendar' nillable='true' type='dateTime'/>
+     <element name='myDouble' type='double'/>
+     <element name='myFloat' type='float'/>
+     <element name='myInt' type='int'/>
+     <element name='myLong' type='long'/>
+     <element name='myShort' type='short'/>
+     <element name='myString' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://namespace.xml.javax/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://namespace.xml.javax/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://math.java/jaws'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='QName.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://lang.java/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://lang.java/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://math.java/jaws'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='Boolean.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='Byte.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='Double.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='Float.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='Integer.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='Long.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='Short.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='String.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://org.jboss.ws/marshall/doclit/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.ws/marshall/doclit/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://math.java/jaws'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='base64BinaryTest'>
+    <sequence>
+     <element name='arrayOfbyte_1' nillable='true' type='base64Binary'/>
+    </sequence>
+   </complexType>
+   <complexType name='base64BinaryTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='base64Binary'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBigDecimal_1' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBigDecimal_1' nillable='true' type='ns2:BigDecimal.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns2:BigDecimal.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalTest'>
+    <sequence>
+     <element name='BigDecimal_1' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigDecimalTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBigInteger_1' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBigInteger_1' nillable='true' type='ns2:BigInteger.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns2:BigInteger.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerTest'>
+    <sequence>
+     <element name='BigInteger_1' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='bigIntegerTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfboolean_1' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfboolean_1' nillable='true' type='ns3:boolean.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:boolean.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanTest'>
+    <sequence>
+     <element name='boolean_1' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanTestResponse'>
+    <sequence>
+     <element name='result' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBoolean_1' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfBoolean_1' nillable='true' type='ns4:Boolean.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Boolean.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperTest'>
+    <sequence>
+     <element name='Boolean_1' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='booleanWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfbyte_1' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfbyte_1' nillable='true' type='ns3:byte.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:byte.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteTest'>
+    <sequence>
+     <element name='byte_1' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteTestResponse'>
+    <sequence>
+     <element name='result' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfByte_1' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfByte_1' nillable='true' type='ns4:Byte.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Byte.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperTest'>
+    <sequence>
+     <element name='Byte_1' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfCalendar_1' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfCalendar_1' nillable='true' type='ns7:Calendar.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns7:Calendar.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarTest'>
+    <sequence>
+     <element name='Calendar_1' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='calendarTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfdouble_1' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfdouble_1' nillable='true' type='ns3:double.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:double.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleTest'>
+    <sequence>
+     <element name='double_1' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleTestResponse'>
+    <sequence>
+     <element name='result' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfDouble_1' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfDouble_1' nillable='true' type='ns4:Double.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Double.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperTest'>
+    <sequence>
+     <element name='Double_1' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='doubleWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='double'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOffloat_1' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOffloat_1' nillable='true' type='ns3:float.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:float.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatTest'>
+    <sequence>
+     <element name='float_1' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatTestResponse'>
+    <sequence>
+     <element name='result' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfFloat_1' nillable='true' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfFloat_1' nillable='true' type='ns4:Float.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Float.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperTest'>
+    <sequence>
+     <element name='Float_1' nillable='true' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='floatWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='hexBinaryTest'>
+    <sequence>
+     <element name='arrayOfbyte_1' nillable='true' type='hexBinary'/>
+    </sequence>
+   </complexType>
+   <complexType name='hexBinaryTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='hexBinary'/>
+    </sequence>
+   </complexType>
+   <complexType name='intArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfint_1' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfint_1' nillable='true' type='ns3:int.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='intMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:int.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='intTest'>
+    <sequence>
+     <element name='int_1' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intTestResponse'>
+    <sequence>
+     <element name='result' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfInteger_1' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfInteger_1' nillable='true' type='ns4:Integer.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Integer.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperTest'>
+    <sequence>
+     <element name='Integer_1' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='intWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='javaBeanArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfJavaBean_1' nillable='true' type='ns8:JavaBean'/>
+    </sequence>
+   </complexType>
+   <complexType name='javaBeanArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns8:JavaBean'/>
+    </sequence>
+   </complexType>
+   <complexType name='javaBeanTest'>
+    <sequence>
+     <element name='JavaBean_1' nillable='true' type='ns8:JavaBean'/>
+    </sequence>
+   </complexType>
+   <complexType name='javaBeanTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns8:JavaBean'/>
+    </sequence>
+   </complexType>
+   <complexType name='longArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOflong_1' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOflong_1' nillable='true' type='ns3:long.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='longMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:long.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='longTest'>
+    <sequence>
+     <element name='long_1' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longTestResponse'>
+    <sequence>
+     <element name='result' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfLong_1' nillable='true' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfLong_1' nillable='true' type='ns4:Long.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Long.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperTest'>
+    <sequence>
+     <element name='Long_1' nillable='true' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='longWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfQName_1' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfQName_1' nillable='true' type='ns6:QName.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns6:QName.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameTest'>
+    <sequence>
+     <element name='QName_1' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='qnameTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfshort_1' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfshort_1' nillable='true' type='ns3:short.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns3:short.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortTest'>
+    <sequence>
+     <element name='short_1' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortTestResponse'>
+    <sequence>
+     <element name='result' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfShort_1' nillable='true' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfShort_1' nillable='true' type='ns4:Short.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:Short.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperTest'>
+    <sequence>
+     <element name='Short_1' nillable='true' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='shortWrapperTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfString_1' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringMultiArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfString_1' nillable='true' type='ns4:String.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringMultiArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='ns4:String.Array'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringTest'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='stringTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='voidTest'>
+    <sequence/>
+   </complexType>
+   <complexType name='voidTestResponse'>
+    <sequence/>
+   </complexType>
+   <element name='base64BinaryTest' type='tns:base64BinaryTest'/>
+   <element name='base64BinaryTestResponse' type='tns:base64BinaryTestResponse'/>
+   <element name='bigDecimalArrayTest' type='tns:bigDecimalArrayTest'/>
+   <element name='bigDecimalArrayTestResponse' type='tns:bigDecimalArrayTestResponse'/>
+   <element name='bigDecimalMultiArrayTest' type='tns:bigDecimalMultiArrayTest'/>
+   <element name='bigDecimalMultiArrayTestResponse' type='tns:bigDecimalMultiArrayTestResponse'/>
+   <element name='bigDecimalTest' type='tns:bigDecimalTest'/>
+   <element name='bigDecimalTestResponse' type='tns:bigDecimalTestResponse'/>
+   <element name='bigIntegerArrayTest' type='tns:bigIntegerArrayTest'/>
+   <element name='bigIntegerArrayTestResponse' type='tns:bigIntegerArrayTestResponse'/>
+   <element name='bigIntegerMultiArrayTest' type='tns:bigIntegerMultiArrayTest'/>
+   <element name='bigIntegerMultiArrayTestResponse' type='tns:bigIntegerMultiArrayTestResponse'/>
+   <element name='bigIntegerTest' type='tns:bigIntegerTest'/>
+   <element name='bigIntegerTestResponse' type='tns:bigIntegerTestResponse'/>
+   <element name='booleanArrayTest' type='tns:booleanArrayTest'/>
+   <element name='booleanArrayTestResponse' type='tns:booleanArrayTestResponse'/>
+   <element name='booleanMultiArrayTest' type='tns:booleanMultiArrayTest'/>
+   <element name='booleanMultiArrayTestResponse' type='tns:booleanMultiArrayTestResponse'/>
+   <element name='booleanTest' type='tns:booleanTest'/>
+   <element name='booleanTestResponse' type='tns:booleanTestResponse'/>
+   <element name='booleanWrapperArrayTest' type='tns:booleanWrapperArrayTest'/>
+   <element name='booleanWrapperArrayTestResponse' type='tns:booleanWrapperArrayTestResponse'/>
+   <element name='booleanWrapperMultiArrayTest' type='tns:booleanWrapperMultiArrayTest'/>
+   <element name='booleanWrapperMultiArrayTestResponse' type='tns:booleanWrapperMultiArrayTestResponse'/>
+   <element name='booleanWrapperTest' type='tns:booleanWrapperTest'/>
+   <element name='booleanWrapperTestResponse' type='tns:booleanWrapperTestResponse'/>
+   <element name='byteArrayTest' type='tns:byteArrayTest'/>
+   <element name='byteArrayTestResponse' type='tns:byteArrayTestResponse'/>
+   <element name='byteMultiArrayTest' type='tns:byteMultiArrayTest'/>
+   <element name='byteMultiArrayTestResponse' type='tns:byteMultiArrayTestResponse'/>
+   <element name='byteTest' type='tns:byteTest'/>
+   <element name='byteTestResponse' type='tns:byteTestResponse'/>
+   <element name='byteWrapperArrayTest' type='tns:byteWrapperArrayTest'/>
+   <element name='byteWrapperArrayTestResponse' type='tns:byteWrapperArrayTestResponse'/>
+   <element name='byteWrapperMultiArrayTest' type='tns:byteWrapperMultiArrayTest'/>
+   <element name='byteWrapperMultiArrayTestResponse' type='tns:byteWrapperMultiArrayTestResponse'/>
+   <element name='byteWrapperTest' type='tns:byteWrapperTest'/>
+   <element name='byteWrapperTestResponse' type='tns:byteWrapperTestResponse'/>
+   <element name='calendarArrayTest' type='tns:calendarArrayTest'/>
+   <element name='calendarArrayTestResponse' type='tns:calendarArrayTestResponse'/>
+   <element name='calendarMultiArrayTest' type='tns:calendarMultiArrayTest'/>
+   <element name='calendarMultiArrayTestResponse' type='tns:calendarMultiArrayTestResponse'/>
+   <element name='calendarTest' type='tns:calendarTest'/>
+   <element name='calendarTestResponse' type='tns:calendarTestResponse'/>
+   <element name='doubleArrayTest' type='tns:doubleArrayTest'/>
+   <element name='doubleArrayTestResponse' type='tns:doubleArrayTestResponse'/>
+   <element name='doubleMultiArrayTest' type='tns:doubleMultiArrayTest'/>
+   <element name='doubleMultiArrayTestResponse' type='tns:doubleMultiArrayTestResponse'/>
+   <element name='doubleTest' type='tns:doubleTest'/>
+   <element name='doubleTestResponse' type='tns:doubleTestResponse'/>
+   <element name='doubleWrapperArrayTest' type='tns:doubleWrapperArrayTest'/>
+   <element name='doubleWrapperArrayTestResponse' type='tns:doubleWrapperArrayTestResponse'/>
+   <element name='doubleWrapperMultiArrayTest' type='tns:doubleWrapperMultiArrayTest'/>
+   <element name='doubleWrapperMultiArrayTestResponse' type='tns:doubleWrapperMultiArrayTestResponse'/>
+   <element name='doubleWrapperTest' type='tns:doubleWrapperTest'/>
+   <element name='doubleWrapperTestResponse' type='tns:doubleWrapperTestResponse'/>
+   <element name='floatArrayTest' type='tns:floatArrayTest'/>
+   <element name='floatArrayTestResponse' type='tns:floatArrayTestResponse'/>
+   <element name='floatMultiArrayTest' type='tns:floatMultiArrayTest'/>
+   <element name='floatMultiArrayTestResponse' type='tns:floatMultiArrayTestResponse'/>
+   <element name='floatTest' type='tns:floatTest'/>
+   <element name='floatTestResponse' type='tns:floatTestResponse'/>
+   <element name='floatWrapperArrayTest' type='tns:floatWrapperArrayTest'/>
+   <element name='floatWrapperArrayTestResponse' type='tns:floatWrapperArrayTestResponse'/>
+   <element name='floatWrapperMultiArrayTest' type='tns:floatWrapperMultiArrayTest'/>
+   <element name='floatWrapperMultiArrayTestResponse' type='tns:floatWrapperMultiArrayTestResponse'/>
+   <element name='floatWrapperTest' type='tns:floatWrapperTest'/>
+   <element name='floatWrapperTestResponse' type='tns:floatWrapperTestResponse'/>
+   <element name='hexBinaryTest' type='tns:hexBinaryTest'/>
+   <element name='hexBinaryTestResponse' type='tns:hexBinaryTestResponse'/>
+   <element name='intArrayTest' type='tns:intArrayTest'/>
+   <element name='intArrayTestResponse' type='tns:intArrayTestResponse'/>
+   <element name='intMultiArrayTest' type='tns:intMultiArrayTest'/>
+   <element name='intMultiArrayTestResponse' type='tns:intMultiArrayTestResponse'/>
+   <element name='intTest' type='tns:intTest'/>
+   <element name='intTestResponse' type='tns:intTestResponse'/>
+   <element name='intWrapperArrayTest' type='tns:intWrapperArrayTest'/>
+   <element name='intWrapperArrayTestResponse' type='tns:intWrapperArrayTestResponse'/>
+   <element name='intWrapperMultiArrayTest' type='tns:intWrapperMultiArrayTest'/>
+   <element name='intWrapperMultiArrayTestResponse' type='tns:intWrapperMultiArrayTestResponse'/>
+   <element name='intWrapperTest' type='tns:intWrapperTest'/>
+   <element name='intWrapperTestResponse' type='tns:intWrapperTestResponse'/>
+   <element name='javaBeanArrayTest' type='tns:javaBeanArrayTest'/>
+   <element name='javaBeanArrayTestResponse' type='tns:javaBeanArrayTestResponse'/>
+   <element name='javaBeanTest' type='tns:javaBeanTest'/>
+   <element name='javaBeanTestResponse' type='tns:javaBeanTestResponse'/>
+   <element name='longArrayTest' type='tns:longArrayTest'/>
+   <element name='longArrayTestResponse' type='tns:longArrayTestResponse'/>
+   <element name='longMultiArrayTest' type='tns:longMultiArrayTest'/>
+   <element name='longMultiArrayTestResponse' type='tns:longMultiArrayTestResponse'/>
+   <element name='longTest' type='tns:longTest'/>
+   <element name='longTestResponse' type='tns:longTestResponse'/>
+   <element name='longWrapperArrayTest' type='tns:longWrapperArrayTest'/>
+   <element name='longWrapperArrayTestResponse' type='tns:longWrapperArrayTestResponse'/>
+   <element name='longWrapperMultiArrayTest' type='tns:longWrapperMultiArrayTest'/>
+   <element name='longWrapperMultiArrayTestResponse' type='tns:longWrapperMultiArrayTestResponse'/>
+   <element name='longWrapperTest' type='tns:longWrapperTest'/>
+   <element name='longWrapperTestResponse' type='tns:longWrapperTestResponse'/>
+   <element name='qnameArrayTest' type='tns:qnameArrayTest'/>
+   <element name='qnameArrayTestResponse' type='tns:qnameArrayTestResponse'/>
+   <element name='qnameMultiArrayTest' type='tns:qnameMultiArrayTest'/>
+   <element name='qnameMultiArrayTestResponse' type='tns:qnameMultiArrayTestResponse'/>
+   <element name='qnameTest' type='tns:qnameTest'/>
+   <element name='qnameTestResponse' type='tns:qnameTestResponse'/>
+   <element name='shortArrayTest' type='tns:shortArrayTest'/>
+   <element name='shortArrayTestResponse' type='tns:shortArrayTestResponse'/>
+   <element name='shortMultiArrayTest' type='tns:shortMultiArrayTest'/>
+   <element name='shortMultiArrayTestResponse' type='tns:shortMultiArrayTestResponse'/>
+   <element name='shortTest' type='tns:shortTest'/>
+   <element name='shortTestResponse' type='tns:shortTestResponse'/>
+   <element name='shortWrapperArrayTest' type='tns:shortWrapperArrayTest'/>
+   <element name='shortWrapperArrayTestResponse' type='tns:shortWrapperArrayTestResponse'/>
+   <element name='shortWrapperMultiArrayTest' type='tns:shortWrapperMultiArrayTest'/>
+   <element name='shortWrapperMultiArrayTestResponse' type='tns:shortWrapperMultiArrayTestResponse'/>
+   <element name='shortWrapperTest' type='tns:shortWrapperTest'/>
+   <element name='shortWrapperTestResponse' type='tns:shortWrapperTestResponse'/>
+   <element name='stringArrayTest' type='tns:stringArrayTest'/>
+   <element name='stringArrayTestResponse' type='tns:stringArrayTestResponse'/>
+   <element name='stringMultiArrayTest' type='tns:stringMultiArrayTest'/>
+   <element name='stringMultiArrayTestResponse' type='tns:stringMultiArrayTestResponse'/>
+   <element name='stringTest' type='tns:stringTest'/>
+   <element name='stringTestResponse' type='tns:stringTestResponse'/>
+   <element name='voidTest' type='tns:voidTest'/>
+   <element name='voidTestResponse' type='tns:voidTestResponse'/>
+  </schema>
+  <schema targetNamespace='http://math.java/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns7='http://util.java/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://math.java/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://util.java/jaws'/>
+   <complexType name='BigDecimal.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='BigInteger.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='http://util.java/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:ns2='http://math.java/jaws' xmlns:ns3='http://www.jboss.org/jbossws/primitives' xmlns:ns4='http://lang.java/jaws' xmlns:ns5='http://www.w3.org/2001/XMLSchema' xmlns:ns6='http://namespace.xml.javax/jaws' xmlns:ns8='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://util.java/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.jboss.org/jbossws/primitives'/>
+   <import namespace='http://types.marshall.jaxrpc.ws.test.jboss.org/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <import namespace='http://namespace.xml.javax/jaws'/>
+   <import namespace='http://lang.java/jaws'/>
+   <import namespace='http://org.jboss.ws/marshall/doclit/types'/>
+   <import namespace='http://math.java/jaws'/>
+   <complexType name='Calendar.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='StandardTypes_base64BinaryTest'>
+  <part element='ns1:base64BinaryTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_base64BinaryTestResponse'>
+  <part element='ns1:base64BinaryTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigDecimalArrayTest'>
+  <part element='ns1:bigDecimalArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigDecimalArrayTestResponse'>
+  <part element='ns1:bigDecimalArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigDecimalMultiArrayTest'>
+  <part element='ns1:bigDecimalMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigDecimalMultiArrayTestResponse'>
+  <part element='ns1:bigDecimalMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigDecimalTest'>
+  <part element='ns1:bigDecimalTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigDecimalTestResponse'>
+  <part element='ns1:bigDecimalTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigIntegerArrayTest'>
+  <part element='ns1:bigIntegerArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigIntegerArrayTestResponse'>
+  <part element='ns1:bigIntegerArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigIntegerMultiArrayTest'>
+  <part element='ns1:bigIntegerMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigIntegerMultiArrayTestResponse'>
+  <part element='ns1:bigIntegerMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_bigIntegerTest'>
+  <part element='ns1:bigIntegerTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_bigIntegerTestResponse'>
+  <part element='ns1:bigIntegerTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanArrayTest'>
+  <part element='ns1:booleanArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanArrayTestResponse'>
+  <part element='ns1:booleanArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanMultiArrayTest'>
+  <part element='ns1:booleanMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanMultiArrayTestResponse'>
+  <part element='ns1:booleanMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanTest'>
+  <part element='ns1:booleanTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanTestResponse'>
+  <part element='ns1:booleanTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperArrayTest'>
+  <part element='ns1:booleanWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperArrayTestResponse'>
+  <part element='ns1:booleanWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperMultiArrayTest'>
+  <part element='ns1:booleanWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperMultiArrayTestResponse'>
+  <part element='ns1:booleanWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperTest'>
+  <part element='ns1:booleanWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_booleanWrapperTestResponse'>
+  <part element='ns1:booleanWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteArrayTest'>
+  <part element='ns1:byteArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteArrayTestResponse'>
+  <part element='ns1:byteArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteMultiArrayTest'>
+  <part element='ns1:byteMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteMultiArrayTestResponse'>
+  <part element='ns1:byteMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteTest'>
+  <part element='ns1:byteTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteTestResponse'>
+  <part element='ns1:byteTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteWrapperArrayTest'>
+  <part element='ns1:byteWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteWrapperArrayTestResponse'>
+  <part element='ns1:byteWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteWrapperMultiArrayTest'>
+  <part element='ns1:byteWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteWrapperMultiArrayTestResponse'>
+  <part element='ns1:byteWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_byteWrapperTest'>
+  <part element='ns1:byteWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_byteWrapperTestResponse'>
+  <part element='ns1:byteWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_calendarArrayTest'>
+  <part element='ns1:calendarArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_calendarArrayTestResponse'>
+  <part element='ns1:calendarArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_calendarMultiArrayTest'>
+  <part element='ns1:calendarMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_calendarMultiArrayTestResponse'>
+  <part element='ns1:calendarMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_calendarTest'>
+  <part element='ns1:calendarTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_calendarTestResponse'>
+  <part element='ns1:calendarTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleArrayTest'>
+  <part element='ns1:doubleArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleArrayTestResponse'>
+  <part element='ns1:doubleArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleMultiArrayTest'>
+  <part element='ns1:doubleMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleMultiArrayTestResponse'>
+  <part element='ns1:doubleMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleTest'>
+  <part element='ns1:doubleTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleTestResponse'>
+  <part element='ns1:doubleTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperArrayTest'>
+  <part element='ns1:doubleWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperArrayTestResponse'>
+  <part element='ns1:doubleWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperMultiArrayTest'>
+  <part element='ns1:doubleWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperMultiArrayTestResponse'>
+  <part element='ns1:doubleWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperTest'>
+  <part element='ns1:doubleWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_doubleWrapperTestResponse'>
+  <part element='ns1:doubleWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatArrayTest'>
+  <part element='ns1:floatArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatArrayTestResponse'>
+  <part element='ns1:floatArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatMultiArrayTest'>
+  <part element='ns1:floatMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatMultiArrayTestResponse'>
+  <part element='ns1:floatMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatTest'>
+  <part element='ns1:floatTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatTestResponse'>
+  <part element='ns1:floatTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatWrapperArrayTest'>
+  <part element='ns1:floatWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatWrapperArrayTestResponse'>
+  <part element='ns1:floatWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatWrapperMultiArrayTest'>
+  <part element='ns1:floatWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatWrapperMultiArrayTestResponse'>
+  <part element='ns1:floatWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_floatWrapperTest'>
+  <part element='ns1:floatWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_floatWrapperTestResponse'>
+  <part element='ns1:floatWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_hexBinaryTest'>
+  <part element='ns1:hexBinaryTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_hexBinaryTestResponse'>
+  <part element='ns1:hexBinaryTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intArrayTest'>
+  <part element='ns1:intArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intArrayTestResponse'>
+  <part element='ns1:intArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intMultiArrayTest'>
+  <part element='ns1:intMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intMultiArrayTestResponse'>
+  <part element='ns1:intMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intTest'>
+  <part element='ns1:intTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intTestResponse'>
+  <part element='ns1:intTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intWrapperArrayTest'>
+  <part element='ns1:intWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intWrapperArrayTestResponse'>
+  <part element='ns1:intWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intWrapperMultiArrayTest'>
+  <part element='ns1:intWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intWrapperMultiArrayTestResponse'>
+  <part element='ns1:intWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_intWrapperTest'>
+  <part element='ns1:intWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_intWrapperTestResponse'>
+  <part element='ns1:intWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_javaBeanArrayTest'>
+  <part element='ns1:javaBeanArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_javaBeanArrayTestResponse'>
+  <part element='ns1:javaBeanArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_javaBeanTest'>
+  <part element='ns1:javaBeanTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_javaBeanTestResponse'>
+  <part element='ns1:javaBeanTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longArrayTest'>
+  <part element='ns1:longArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longArrayTestResponse'>
+  <part element='ns1:longArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longMultiArrayTest'>
+  <part element='ns1:longMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longMultiArrayTestResponse'>
+  <part element='ns1:longMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longTest'>
+  <part element='ns1:longTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longTestResponse'>
+  <part element='ns1:longTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longWrapperArrayTest'>
+  <part element='ns1:longWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longWrapperArrayTestResponse'>
+  <part element='ns1:longWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longWrapperMultiArrayTest'>
+  <part element='ns1:longWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longWrapperMultiArrayTestResponse'>
+  <part element='ns1:longWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_longWrapperTest'>
+  <part element='ns1:longWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_longWrapperTestResponse'>
+  <part element='ns1:longWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_qnameArrayTest'>
+  <part element='ns1:qnameArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_qnameArrayTestResponse'>
+  <part element='ns1:qnameArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_qnameMultiArrayTest'>
+  <part element='ns1:qnameMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_qnameMultiArrayTestResponse'>
+  <part element='ns1:qnameMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_qnameTest'>
+  <part element='ns1:qnameTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_qnameTestResponse'>
+  <part element='ns1:qnameTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortArrayTest'>
+  <part element='ns1:shortArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortArrayTestResponse'>
+  <part element='ns1:shortArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortMultiArrayTest'>
+  <part element='ns1:shortMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortMultiArrayTestResponse'>
+  <part element='ns1:shortMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortTest'>
+  <part element='ns1:shortTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortTestResponse'>
+  <part element='ns1:shortTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortWrapperArrayTest'>
+  <part element='ns1:shortWrapperArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortWrapperArrayTestResponse'>
+  <part element='ns1:shortWrapperArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortWrapperMultiArrayTest'>
+  <part element='ns1:shortWrapperMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortWrapperMultiArrayTestResponse'>
+  <part element='ns1:shortWrapperMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_shortWrapperTest'>
+  <part element='ns1:shortWrapperTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_shortWrapperTestResponse'>
+  <part element='ns1:shortWrapperTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_stringArrayTest'>
+  <part element='ns1:stringArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_stringArrayTestResponse'>
+  <part element='ns1:stringArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_stringMultiArrayTest'>
+  <part element='ns1:stringMultiArrayTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_stringMultiArrayTestResponse'>
+  <part element='ns1:stringMultiArrayTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_stringTest'>
+  <part element='ns1:stringTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_stringTestResponse'>
+  <part element='ns1:stringTestResponse' name='result'/>
+ </message>
+ <message name='StandardTypes_voidTest'>
+  <part element='ns1:voidTest' name='parameters'/>
+ </message>
+ <message name='StandardTypes_voidTestResponse'>
+  <part element='ns1:voidTestResponse' name='result'/>
+ </message>
+ <portType name='StandardTypes'>
+  <operation name='base64BinaryTest'>
+   <input message='tns:StandardTypes_base64BinaryTest'/>
+   <output message='tns:StandardTypes_base64BinaryTestResponse'/>
+  </operation>
+  <operation name='bigDecimalArrayTest'>
+   <input message='tns:StandardTypes_bigDecimalArrayTest'/>
+   <output message='tns:StandardTypes_bigDecimalArrayTestResponse'/>
+  </operation>
+  <operation name='bigDecimalMultiArrayTest'>
+   <input message='tns:StandardTypes_bigDecimalMultiArrayTest'/>
+   <output message='tns:StandardTypes_bigDecimalMultiArrayTestResponse'/>
+  </operation>
+  <operation name='bigDecimalTest'>
+   <input message='tns:StandardTypes_bigDecimalTest'/>
+   <output message='tns:StandardTypes_bigDecimalTestResponse'/>
+  </operation>
+  <operation name='bigIntegerArrayTest'>
+   <input message='tns:StandardTypes_bigIntegerArrayTest'/>
+   <output message='tns:StandardTypes_bigIntegerArrayTestResponse'/>
+  </operation>
+  <operation name='bigIntegerMultiArrayTest'>
+   <input message='tns:StandardTypes_bigIntegerMultiArrayTest'/>
+   <output message='tns:StandardTypes_bigIntegerMultiArrayTestResponse'/>
+  </operation>
+  <operation name='bigIntegerTest'>
+   <input message='tns:StandardTypes_bigIntegerTest'/>
+   <output message='tns:StandardTypes_bigIntegerTestResponse'/>
+  </operation>
+  <operation name='booleanArrayTest'>
+   <input message='tns:StandardTypes_booleanArrayTest'/>
+   <output message='tns:StandardTypes_booleanArrayTestResponse'/>
+  </operation>
+  <operation name='booleanMultiArrayTest'>
+   <input message='tns:StandardTypes_booleanMultiArrayTest'/>
+   <output message='tns:StandardTypes_booleanMultiArrayTestResponse'/>
+  </operation>
+  <operation name='booleanTest'>
+   <input message='tns:StandardTypes_booleanTest'/>
+   <output message='tns:StandardTypes_booleanTestResponse'/>
+  </operation>
+  <operation name='booleanWrapperArrayTest'>
+   <input message='tns:StandardTypes_booleanWrapperArrayTest'/>
+   <output message='tns:StandardTypes_booleanWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='booleanWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_booleanWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_booleanWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='booleanWrapperTest'>
+   <input message='tns:StandardTypes_booleanWrapperTest'/>
+   <output message='tns:StandardTypes_booleanWrapperTestResponse'/>
+  </operation>
+  <operation name='byteArrayTest'>
+   <input message='tns:StandardTypes_byteArrayTest'/>
+   <output message='tns:StandardTypes_byteArrayTestResponse'/>
+  </operation>
+  <operation name='byteMultiArrayTest'>
+   <input message='tns:StandardTypes_byteMultiArrayTest'/>
+   <output message='tns:StandardTypes_byteMultiArrayTestResponse'/>
+  </operation>
+  <operation name='byteTest'>
+   <input message='tns:StandardTypes_byteTest'/>
+   <output message='tns:StandardTypes_byteTestResponse'/>
+  </operation>
+  <operation name='byteWrapperArrayTest'>
+   <input message='tns:StandardTypes_byteWrapperArrayTest'/>
+   <output message='tns:StandardTypes_byteWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='byteWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_byteWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_byteWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='byteWrapperTest'>
+   <input message='tns:StandardTypes_byteWrapperTest'/>
+   <output message='tns:StandardTypes_byteWrapperTestResponse'/>
+  </operation>
+  <operation name='calendarArrayTest'>
+   <input message='tns:StandardTypes_calendarArrayTest'/>
+   <output message='tns:StandardTypes_calendarArrayTestResponse'/>
+  </operation>
+  <operation name='calendarMultiArrayTest'>
+   <input message='tns:StandardTypes_calendarMultiArrayTest'/>
+   <output message='tns:StandardTypes_calendarMultiArrayTestResponse'/>
+  </operation>
+  <operation name='calendarTest'>
+   <input message='tns:StandardTypes_calendarTest'/>
+   <output message='tns:StandardTypes_calendarTestResponse'/>
+  </operation>
+  <operation name='doubleArrayTest'>
+   <input message='tns:StandardTypes_doubleArrayTest'/>
+   <output message='tns:StandardTypes_doubleArrayTestResponse'/>
+  </operation>
+  <operation name='doubleMultiArrayTest'>
+   <input message='tns:StandardTypes_doubleMultiArrayTest'/>
+   <output message='tns:StandardTypes_doubleMultiArrayTestResponse'/>
+  </operation>
+  <operation name='doubleTest'>
+   <input message='tns:StandardTypes_doubleTest'/>
+   <output message='tns:StandardTypes_doubleTestResponse'/>
+  </operation>
+  <operation name='doubleWrapperArrayTest'>
+   <input message='tns:StandardTypes_doubleWrapperArrayTest'/>
+   <output message='tns:StandardTypes_doubleWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='doubleWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_doubleWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_doubleWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='doubleWrapperTest'>
+   <input message='tns:StandardTypes_doubleWrapperTest'/>
+   <output message='tns:StandardTypes_doubleWrapperTestResponse'/>
+  </operation>
+  <operation name='floatArrayTest'>
+   <input message='tns:StandardTypes_floatArrayTest'/>
+   <output message='tns:StandardTypes_floatArrayTestResponse'/>
+  </operation>
+  <operation name='floatMultiArrayTest'>
+   <input message='tns:StandardTypes_floatMultiArrayTest'/>
+   <output message='tns:StandardTypes_floatMultiArrayTestResponse'/>
+  </operation>
+  <operation name='floatTest'>
+   <input message='tns:StandardTypes_floatTest'/>
+   <output message='tns:StandardTypes_floatTestResponse'/>
+  </operation>
+  <operation name='floatWrapperArrayTest'>
+   <input message='tns:StandardTypes_floatWrapperArrayTest'/>
+   <output message='tns:StandardTypes_floatWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='floatWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_floatWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_floatWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='floatWrapperTest'>
+   <input message='tns:StandardTypes_floatWrapperTest'/>
+   <output message='tns:StandardTypes_floatWrapperTestResponse'/>
+  </operation>
+  <operation name='hexBinaryTest'>
+   <input message='tns:StandardTypes_hexBinaryTest'/>
+   <output message='tns:StandardTypes_hexBinaryTestResponse'/>
+  </operation>
+  <operation name='intArrayTest'>
+   <input message='tns:StandardTypes_intArrayTest'/>
+   <output message='tns:StandardTypes_intArrayTestResponse'/>
+  </operation>
+  <operation name='intMultiArrayTest'>
+   <input message='tns:StandardTypes_intMultiArrayTest'/>
+   <output message='tns:StandardTypes_intMultiArrayTestResponse'/>
+  </operation>
+  <operation name='intTest'>
+   <input message='tns:StandardTypes_intTest'/>
+   <output message='tns:StandardTypes_intTestResponse'/>
+  </operation>
+  <operation name='intWrapperArrayTest'>
+   <input message='tns:StandardTypes_intWrapperArrayTest'/>
+   <output message='tns:StandardTypes_intWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='intWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_intWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_intWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='intWrapperTest'>
+   <input message='tns:StandardTypes_intWrapperTest'/>
+   <output message='tns:StandardTypes_intWrapperTestResponse'/>
+  </operation>
+  <operation name='javaBeanArrayTest'>
+   <input message='tns:StandardTypes_javaBeanArrayTest'/>
+   <output message='tns:StandardTypes_javaBeanArrayTestResponse'/>
+  </operation>
+  <operation name='javaBeanTest'>
+   <input message='tns:StandardTypes_javaBeanTest'/>
+   <output message='tns:StandardTypes_javaBeanTestResponse'/>
+  </operation>
+  <operation name='longArrayTest'>
+   <input message='tns:StandardTypes_longArrayTest'/>
+   <output message='tns:StandardTypes_longArrayTestResponse'/>
+  </operation>
+  <operation name='longMultiArrayTest'>
+   <input message='tns:StandardTypes_longMultiArrayTest'/>
+   <output message='tns:StandardTypes_longMultiArrayTestResponse'/>
+  </operation>
+  <operation name='longTest'>
+   <input message='tns:StandardTypes_longTest'/>
+   <output message='tns:StandardTypes_longTestResponse'/>
+  </operation>
+  <operation name='longWrapperArrayTest'>
+   <input message='tns:StandardTypes_longWrapperArrayTest'/>
+   <output message='tns:StandardTypes_longWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='longWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_longWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_longWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='longWrapperTest'>
+   <input message='tns:StandardTypes_longWrapperTest'/>
+   <output message='tns:StandardTypes_longWrapperTestResponse'/>
+  </operation>
+  <operation name='qnameArrayTest'>
+   <input message='tns:StandardTypes_qnameArrayTest'/>
+   <output message='tns:StandardTypes_qnameArrayTestResponse'/>
+  </operation>
+  <operation name='qnameMultiArrayTest'>
+   <input message='tns:StandardTypes_qnameMultiArrayTest'/>
+   <output message='tns:StandardTypes_qnameMultiArrayTestResponse'/>
+  </operation>
+  <operation name='qnameTest'>
+   <input message='tns:StandardTypes_qnameTest'/>
+   <output message='tns:StandardTypes_qnameTestResponse'/>
+  </operation>
+  <operation name='shortArrayTest'>
+   <input message='tns:StandardTypes_shortArrayTest'/>
+   <output message='tns:StandardTypes_shortArrayTestResponse'/>
+  </operation>
+  <operation name='shortMultiArrayTest'>
+   <input message='tns:StandardTypes_shortMultiArrayTest'/>
+   <output message='tns:StandardTypes_shortMultiArrayTestResponse'/>
+  </operation>
+  <operation name='shortTest'>
+   <input message='tns:StandardTypes_shortTest'/>
+   <output message='tns:StandardTypes_shortTestResponse'/>
+  </operation>
+  <operation name='shortWrapperArrayTest'>
+   <input message='tns:StandardTypes_shortWrapperArrayTest'/>
+   <output message='tns:StandardTypes_shortWrapperArrayTestResponse'/>
+  </operation>
+  <operation name='shortWrapperMultiArrayTest'>
+   <input message='tns:StandardTypes_shortWrapperMultiArrayTest'/>
+   <output message='tns:StandardTypes_shortWrapperMultiArrayTestResponse'/>
+  </operation>
+  <operation name='shortWrapperTest'>
+   <input message='tns:StandardTypes_shortWrapperTest'/>
+   <output message='tns:StandardTypes_shortWrapperTestResponse'/>
+  </operation>
+  <operation name='stringArrayTest'>
+   <input message='tns:StandardTypes_stringArrayTest'/>
+   <output message='tns:StandardTypes_stringArrayTestResponse'/>
+  </operation>
+  <operation name='stringMultiArrayTest'>
+   <input message='tns:StandardTypes_stringMultiArrayTest'/>
+   <output message='tns:StandardTypes_stringMultiArrayTestResponse'/>
+  </operation>
+  <operation name='stringTest'>
+   <input message='tns:StandardTypes_stringTest'/>
+   <output message='tns:StandardTypes_stringTestResponse'/>
+  </operation>
+  <operation name='voidTest'>
+   <input message='tns:StandardTypes_voidTest'/>
+   <output message='tns:StandardTypes_voidTestResponse'/>
+  </operation>
+ </portType>
+ <binding name='StandardTypesBinding' type='tns:StandardTypes'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='base64BinaryTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigDecimalArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigDecimalMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigDecimalTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigIntegerArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigIntegerMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='bigIntegerTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='booleanWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='byteWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='calendarArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='calendarMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='calendarTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='doubleWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='floatWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='hexBinaryTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='intWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='javaBeanArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='javaBeanTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='longWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='qnameArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='qnameMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='qnameTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortWrapperArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortWrapperMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='shortWrapperTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='stringArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='stringMultiArrayTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='stringTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='voidTest'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='MarshallService'>
+  <port binding='tns:StandardTypesBinding' name='StandardTypesPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

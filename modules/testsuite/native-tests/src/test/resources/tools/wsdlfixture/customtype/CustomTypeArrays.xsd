@@ -1,0 +1,14 @@
+<schema targetNamespace="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"
+  xmlns:tns="http://org.jboss/types/arrays/org/jboss/test/ws/tools/jbws_161/custom"
+  xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ns2="http://org.jboss/types"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://org.jboss/types"/>
+  <complexType name="HelloObjArray">
+    <sequence>
+      <element name="value" type="ns2:HelloObj" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</schema>

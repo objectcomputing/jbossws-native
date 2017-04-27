@@ -1,0 +1,10 @@
+<configuration xmlns="http://www.jboss.org/jbossws-tools"> 
+  <global> 
+    <package-namespace package="org.jboss.test.ws.jbws1217.exception" namespace="http://com.other.exception"/> 
+    <package-namespace package="org.jboss.test.ws.jbws1217.base" namespace="http://com.other.base"/> 
+    <package-namespace package="org.jboss.test.ws.jbws1217" namespace="http://org.jboss.test.ws.jbws1217"/> 
+  </global> 
+  <wsdl-java location="${test.resources.directory}/tools/jbws1217/MultiplePackageNamespace.wsdl">
+    <mapping file="jaxrpc-mapping.xml" /> 
+  </wsdl-java> 
+</configuration>

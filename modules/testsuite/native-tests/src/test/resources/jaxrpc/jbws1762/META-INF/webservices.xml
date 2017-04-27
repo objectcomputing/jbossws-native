@@ -1,0 +1,16 @@
+<!-- this file was generated using wstools -->
+<webservices version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd'>
+ <webservice-description>
+  <webservice-description-name>EJB2Bean</webservice-description-name>
+  <wsdl-file>META-INF/wsdl/EJB2Bean.wsdl</wsdl-file>
+  <jaxrpc-mapping-file>META-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+  <port-component>
+   <port-component-name>EJB2IfacePort</port-component-name>
+   <wsdl-port xmlns:portNS='http://org.jboss.test.webservice/jbws1762'>portNS:EJB2IfacePort</wsdl-port>
+   <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws1762.services.EJB2Iface</service-endpoint-interface>
+   <service-impl-bean>
+    <ejb-link>EJB2Bean</ejb-link>
+   </service-impl-bean>
+  </port-component>
+ </webservice-description>
+</webservices>

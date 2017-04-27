@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+    <endpoint
+        name='endpoint'
+        implementation='org.jboss.test.ws.benchmark.jaxws.BenchmarkJSEEndpoint'
+        url-pattern='/jse'/>
+  <endpoint
+        name='endpointHandler'
+        implementation='org.jboss.test.ws.benchmark.jaxws.BenchmarkJSEEndpoint'
+        url-pattern='/jseHandler'>
+    <handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+      <handler-chain>
+        <protocol-bindings>##SOAP11_HTTP</protocol-bindings>
+        <handler>
+          <handler-name>SOAP11ServerHandler</handler-name>
+          <handler-class>org.jboss.test.ws.benchmark.jaxws.ProtocolHandler</handler-class>
+        </handler>
+      </handler-chain>
+    </handler-chains>
+  </endpoint>
+</endpoints>

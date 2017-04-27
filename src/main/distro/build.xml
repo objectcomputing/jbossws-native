@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--  JBoss, the OpenSource J2EE webOS                                      -->
+<!--                                                                        -->
+<!--  Distributable under LGPL license.                                     -->
+<!--  See terms of license at http://www.gnu.org.                           -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+
+<project basedir="." name="JBossWS-Native">
+
+  <!-- ================================================================== -->
+  <!-- Setup                                                              -->
+  <!-- ================================================================== -->
+
+  <property name="build.dir" value="${basedir}/build"/>
+  <property name="docs.dir" value="${basedir}/docs"/>
+  <property name="output.dir" value="${basedir}/output"/>
+  <property name="thirdparty.dir" value="${basedir}/deploy/lib"/>
+  <property name="tests.dir" value="${basedir}/tests"/>
+  <property name="tests.output.dir" value="${output.dir}"/>
+  <property name="deploy.artifacts.dir" value="${basedir}/deploy"/>
+  <property name="jbossws.default.deploy.conf" value="${build.dir}/default-deploy.conf"/>
+  <property name="target.properties.file" value="${basedir}/target.properties"/>
+
+  <!-- Check if ant.properties is available -->
+  <available property="ant.properties.available" file="${basedir}/ant.properties"/>
+  <fail message="Cannot find ant.properties. Did you copy/edit ant.properties.example?" unless="ant.properties.available"/>
+  <property file="${basedir}/ant.properties"/>
+
+  <import file="${build.dir}/build-setup.xml"/>
+  <import file="${build.dir}/build-deploy.xml"/>
+  <import file="${build.dir}/jbossws-deploy-macros.xml"/>
+  <import file="${tests.dir}/ant-import/build-testsuite.xml"/>
+  <import file="${build.dir}/build-project-gen.xml"/>
+
+  <!-- ================================================================== -->
+  <!-- Initialization                                                     -->
+  <!-- ================================================================== -->
+
+  <target name="init" depends="prepare">
+
+    <fail message="jbossws.integration.target not set" unless="jbossws.integration.target"/>
+    <echo message="integration.target=${jbossws.integration.target}"/>
+
+    <condition property="jbossws.integration.jboss50" value="true">
+      <or>
+        <equals arg1="${jbossws.integration.target}" arg2="jboss500"/>
+        <equals arg1="${jbossws.integration.target}" arg2="jboss501"/>
+      </or>
+    </condition>
+    <condition property="jbossws.integration.jboss51" value="true">
+      <or>
+        <equals arg1="${jbossws.integration.target}" arg2="jboss510"/>
+      </or>
+    </condition>
+    <condition property="jbossws.integration.jboss60" value="true">
+      <or>
+        <equals arg1="${jbossws.integration.target}" arg2="jboss600"/>
+      </or>
+    </condition>
+
+    <property name="deploy.structure" value="${output.dir}/deploy-${jbossws.integration.target}"/>
+    <property name="excludesfile" value="${tests.dir}/resources/test-excludes-${jbossws.integration.target}.txt"/>
+  </target>
+
+  <target name="tests-init" depends="init,tests-classpath">
+
+    <path id="ws.stack.classpath">
+      <!-- Move the native API to the front of the classpath -->
+      <pathelement location="${thirdparty.dir}/jbossws-native-jaxws-ext.jar"/>
+      <pathelement location="${thirdparty.dir}/jbossws-native-jaxws.jar"/>
+      <pathelement location="${thirdparty.dir}/jbossws-native-jaxrpc.jar"/>
+      <pathelement location="${thirdparty.dir}/jbossws-native-saaj.jar"/>
+      <fileset dir="${thirdparty.dir}"/>
+    </path>
+
+    <path id="tests.extra.classpath">
+    </path>
+
+    <property name="jbossws.test.log" value="${tests.output.dir}"/>
+  </target>
+
+  <!-- ================================================================== -->
+  <!-- Compile                                                            -->
+  <!-- ================================================================== -->
+
+  <target name="tests-compile" depends="tests-init" description="Compile sources">
+    <macro-compile-classes srcdir="${tests.dir}/java" excludesfile="${excludesfile}"/>
+  </target>
+
+  <!-- ================================================================== -->
+  <!-- Building                                                           -->
+  <!-- ================================================================== -->
+
+  <!-- Copy resources -->
+  <target name="tests-copy-resources" depends="tests-init">
+    <macro-copy-resources srcdir="${tests.dir}"/>
+  </target>
+
+  <target name="tests-jars" depends="tests-compile,tests-copy-resources">
+    <ant antfile="${tests.dir}/ant-import/build-samples-jaxws.xml" target="build-samples-jaxws" inheritall="true"/>
+  </target>
+
+  <target name="tests-main" depends="tests-jars" description="Build the test deployments."/>
+
+  <!-- dummy targets -->
+  <target name="prepare-deploy" depends="init"/>
+
+  <!-- ================================================================== -->
+  <!-- Miscellaneous                                                       -->
+  <!-- ================================================================== -->
+
+  <target name="clean" depends="prepare" description="Cleans up most generated files.">
+    <delete dir="${tests.output.dir}"/>
+  </target>
+
+</project>

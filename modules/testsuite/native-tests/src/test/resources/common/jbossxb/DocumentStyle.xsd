@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema targetNamespace="http://org.jboss.ws/jaxrpc/types" xmlns:tns="http://org.jboss.ws/jaxrpc/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="echoSimpleUserType">
+    <sequence>
+      <element name="String_1" type="string" nillable="true"/>
+      <element name="SimpleUserType_2" type="tns:SimpleUserType" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="SimpleUserType">
+    <sequence>
+      <element name="a" type="int"/>
+      <element name="b" type="int"/>
+    </sequence>
+  </complexType>
+  <complexType name="echoSimpleUserTypeResponse">
+    <sequence>
+      <element name="result" type="tns:SimpleUserType" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="echoString">
+    <sequence>
+      <element name="String_1" type="string" nillable="true"/>
+      <element name="String_2" type="string" nillable="true"/>
+    </sequence>
+  </complexType>
+  <complexType name="echoStringResponse">
+    <sequence>
+      <element name="result" type="string" nillable="true"/>
+    </sequence>
+  </complexType>
+  <element name="echoSimpleUserType" type="tns:echoSimpleUserType"/>
+  <element name="echoSimpleUserTypeResponse" type="tns:echoSimpleUserTypeResponse"/>
+  <element name="echoString" type="tns:echoString"/>
+  <element name="echoStringResponse" type="tns:echoStringResponse"/>
+</schema>

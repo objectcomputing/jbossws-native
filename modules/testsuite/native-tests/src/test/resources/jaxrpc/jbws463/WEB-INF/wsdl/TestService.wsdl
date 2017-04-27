@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.webservice/jbws463' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws463' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='TestSEI_doStuff'>
+  <part name='Double_1' type='xsd:double'/>
+ </message>
+ <message name='TestSEI_doStuffResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='TestSEI_doStuff2'>
+  <part name='Integer_1' type='xsd:int'/>
+ </message>
+ <message name='TestSEI_doStuff2Response'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='TestSEI_doStuff3'>
+  <part name='Double_1' type='xsd:double'/>
+  <part name='Boolean_1' type='xsd:boolean'/>  
+ </message>
+ <message name='TestSEI_doStuff3Response'>
+  <part name='result' type='xsd:string'/>
+ </message> 
+ <portType name='TestSEI'>
+  <operation name='doStuff' parameterOrder='Double_1'>
+   <input message='tns:TestSEI_doStuff'/>
+   <output message='tns:TestSEI_doStuffResponse'/>
+  </operation>
+  <operation name='doStuff2' parameterOrder='Integer_1'>
+   <input message='tns:TestSEI_doStuff2'/>
+   <output message='tns:TestSEI_doStuff2Response'/>
+  </operation>
+  <operation name='doStuff3' parameterOrder='Double_1 Boolean_1'>
+   <input message='tns:TestSEI_doStuff3'/>
+   <output message='tns:TestSEI_doStuff3Response'/>
+  </operation>  
+ </portType>
+ <binding name='TestSEIBinding' type='tns:TestSEI'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='doStuff'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </output>
+  </operation>
+  <operation name='doStuff2'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </output>
+  </operation>
+  <operation name='doStuff3'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws463' use='literal'/>
+   </output>
+  </operation>  
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestSEIBinding' name='TestSEIPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

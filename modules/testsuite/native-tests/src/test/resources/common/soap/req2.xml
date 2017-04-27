@@ -1,0 +1,18 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+ <env:Header/>
+ <env:Body>
+  <ns1:stringMultiArrayTest xmlns:ns1='http://marshalltestservice.org/wsdl'>
+   <soap11-enc:Array
+     soap11-enc:arrayType='xsd:string[2,3]'
+     xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/'
+     xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+    <arrayOfarrayOfString_1>String1</arrayOfarrayOfString_1>
+    <arrayOfarrayOfString_1>String2</arrayOfarrayOfString_1>
+    <arrayOfarrayOfString_1/>
+    <arrayOfarrayOfString_1>String1</arrayOfarrayOfString_1>
+    <arrayOfarrayOfString_1>String2</arrayOfarrayOfString_1>
+    <arrayOfarrayOfString_1/>
+   </soap11-enc:Array>
+  </ns1:stringMultiArrayTest>
+ </env:Body>
+</env:Envelope>

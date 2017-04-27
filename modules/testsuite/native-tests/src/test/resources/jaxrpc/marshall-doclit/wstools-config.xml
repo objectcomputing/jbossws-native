@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  <complexType name='byteArrayTest'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='arrayOfbyte_1' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='byteArrayTestResponse'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='result' nillable='true' type='byte'/>
+    </sequence>
+   </complexType>
+
+   <complexType name='hexBinaryTest'>
+    <sequence>
+     <element name='arrayOfbyte_1' nillable='true' type='hexBinary'/>
+    </sequence>
+   </complexType>
+   <complexType name='hexBinaryTestResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='hexBinary'/>
+    </sequence>
+   </complexType>
+
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="MarshallService" 
+              endpoint="org.jboss.test.ws.jaxrpc.marshall.StandardTypes"
+              style="document">
+     </service>
+     <namespaces target-namespace="http://org.jboss.ws/marshall/doclit"
+                 type-namespace="http://org.jboss.ws/marshall/doclit/types"/>
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="StandardTypes"/>
+   </java-wsdl>  
+</configuration>

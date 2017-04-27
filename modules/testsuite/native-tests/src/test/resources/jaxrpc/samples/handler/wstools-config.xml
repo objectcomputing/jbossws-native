@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../output/classes -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" style="rpc" endpoint="org.jboss.test.ws.jaxrpc.samples.handler.HeaderTestService">
+      <operation name="testInHeader">
+        <parameter type="java.lang.String"/>
+        <parameter type="java.lang.String" xml-name="headerMsg" header="true"/>
+      </operation>
+      <operation name="testInOutHeader">
+        <parameter type="java.lang.String"/>
+        <parameter type="javax.xml.rpc.holders.StringHolder" xml-name="headerMsg" header="true" mode="INOUT"/>
+      </operation>
+      <operation name="testOutHeader">
+        <parameter type="java.lang.String"/>
+        <parameter type="javax.xml.rpc.holders.StringHolder" xml-name="headerMsg" header="true" mode="OUT"/>
+      </operation>
+    </service>
+    <namespaces target-namespace="http://org.jboss.ws/samples/handler" type-namespace="http://org.jboss.ws/samples/handler/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestService"/>
+  </java-wsdl>
+</configuration>
+
+<!--
+  Add to webservices.xml
+  
+    <handler>
+      <handler-name>HeaderTestHandler</handler-name>
+      <handler-class>org.jboss.test.ws.jaxrpc.samples.handler.HeaderTestHandler</handler-class>
+      <init-param>
+        <param-name>ServerParam1</param-name>
+        <param-value>value1</param-value>
+      </init-param>
+      <init-param>
+        <param-name>ServerParam2</param-name>
+        <param-value>value2</param-value>
+      </init-param>
+      <soap-header xmlns:ns1='http://somens'>ns1:InHeader</soap-header>
+      <soap-header xmlns:ns1='http://somens'>ns1:OutHeader</soap-header>
+      <soap-header xmlns:ns1='http://somens'>ns1:InOutHeader</soap-header>
+      <soap-role>role1</soap-role>
+    </handler>
+-->

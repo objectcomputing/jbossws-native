@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PingService10Sign" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsap10="http://www.w3.org/2005/08/addressing" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://InteropBaseAddress/interop" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/09/policy/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing">
+	
+   <wsdl:import namespace="http://InteropBaseAddress/interop" location="wsdl0.wsdl"/>
+   <wsdl:types/>
+
+   <wsdl:binding name="MutualCertificate10_IPingService"
+                 type="i0:IPingService">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="Ping">
+         <soap:operation soapAction="http://xmlsoap.org/Ping" style="document"/>
+         <wsdl:input name="PingRequest">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="PingResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+
+      <wsdl:operation name="echo">
+         <soap:operation soapAction="http://InteropBaseAddress/interop/echo" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PingService10">
+      <wsdl:port name="MutualCertificate10_IPingService" binding="tns:MutualCertificate10_IPingService">
+         <soap:address location="http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10Sign.svc/MutualCertificate10Sign"/>
+      </wsdl:port>
+   </wsdl:service></wsdl:definitions>

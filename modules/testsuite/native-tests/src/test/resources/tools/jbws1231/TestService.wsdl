@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1231' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws1231/type' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1231' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws1231/type' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws1231/type' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='CustomException'>
+    <sequence>
+     <element name='wrappedException' nillable='true' type='tns:CustomException'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDataObject'>
+    <sequence>
+     <element name='DataObject_1' nillable='true' type='tns:DataObject'/>
+    </sequence>
+   </complexType>
+   <complexType name='DataObject'>
+    <sequence>
+     <element name='message' nillable='true' type='string'/>
+     <element name='parent' nillable='true' type='tns:DataObject'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDataObjectResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='tns:DataObject'/>
+    </sequence>
+   </complexType>
+   <element name='CustomException' type='tns:CustomException'/>
+   <element name='echoDataObject' type='tns:echoDataObject'/>
+   <element name='echoDataObjectResponse' type='tns:echoDataObjectResponse'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echoDataObject'>
+  <part element='ns1:echoDataObject' name='echoDataObject'/>
+ </message>
+ <message name='TestEndpoint_echoDataObjectResponse'>
+  <part element='ns1:echoDataObjectResponse' name='echoDataObjectResponse'/>
+ </message>
+ <message name='CustomException'>
+  <part element='ns1:CustomException' name='CustomException'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echoDataObject' parameterOrder='echoDataObject'>
+   <input message='tns:TestEndpoint_echoDataObject'/>
+   <output message='tns:TestEndpoint_echoDataObjectResponse'/>
+   <fault message='tns:CustomException' name='CustomException'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoDataObject'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='CustomException'>
+    <soap:fault name='CustomException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

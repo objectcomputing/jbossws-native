@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application xmlns="http://java.sun.com/xml/ns/j2ee"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application_1_4.xsd"
+				 version="1.4">
+
+	<display-name>JBossWS Interop Endpoints</display-name>
+
+	<module>
+		<web>
+			<web-uri>jbossws-interop-root.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-BaseDataTypesDocLitB.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-BaseDataTypesDocLitW.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-BaseDataTypesRpcLit.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-wsa10.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-wsse10Encrypt.war</web-uri>
+		</web>
+	</module>
+	<module>
+		<web>
+			<web-uri>jbossws-interop-wsse10Sign.war</web-uri>
+		</web>
+	</module>
+</application>

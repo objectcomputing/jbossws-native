@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="InheritanceService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://org.jboss.ws/types"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws/types"
+			xmlns:tns="http://org.jboss.ws/types"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="DerivedDerivedObject">
+				<complexContent>
+					<extension base="tns:DerivedObject">
+						<sequence>
+							<element name="city" type="string"
+								nillable="true" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="DerivedObject">
+				<complexContent>
+					<extension base="tns:BaseObject">
+						<sequence>
+							<element name="address" type="string"
+								nillable="true" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="BaseObject">
+				<sequence>
+					<element name="amount" type="int" />
+					<element name="id" type="string" nillable="true" />
+					<element name="name" type="string" nillable="true" />
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="InheritanceSEI_doubleInheritOperation">
+		<part name="DerivedDerivedObject_1"
+			type="ns2:DerivedDerivedObject" />
+	</message>
+	<message name="InheritanceSEI_doubleInheritOperationResponse" />
+	<message name="InheritanceSEI_inheritOperation">
+		<part name="DerivedObject_1" type="ns2:DerivedObject" />
+	</message>
+	<message name="InheritanceSEI_inheritOperationResponse">
+		<part name="result" type="ns2:BaseObject" />
+	</message>
+	<portType name="InheritanceSEI">
+		<operation name="doubleInheritOperation"
+			parameterOrder="DerivedDerivedObject_1">
+			<input message="tns:InheritanceSEI_doubleInheritOperation" />
+			<output
+				message="tns:InheritanceSEI_doubleInheritOperationResponse" />
+		</operation>
+		<operation name="inheritOperation"
+			parameterOrder="DerivedObject_1">
+			<input message="tns:InheritanceSEI_inheritOperation" />
+			<output
+				message="tns:InheritanceSEI_inheritOperationResponse" />
+		</operation>
+	</portType>
+	<binding name="InheritanceSEIBinding" type="tns:InheritanceSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="doubleInheritOperation">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+		<operation name="inheritOperation">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+	</binding>
+	<service name="InheritanceService">
+		<port name="InheritanceSEIPort"
+			binding="tns:InheritanceSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

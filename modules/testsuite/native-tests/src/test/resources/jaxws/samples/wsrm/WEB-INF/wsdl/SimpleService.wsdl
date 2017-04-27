@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='SimpleService' targetNamespace='http://www.jboss.org/jbossws/ws-extensions/wsrm' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://www.jboss.org/jbossws/ws-extensions/wsrm' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy/>
+  <wsp:Policy
+    wsu:Id="wsrm11policy"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:All>
+      <wsp:ExactlyOne>
+         <wsp:All>
+            <ns1:RMAssertion xmlns:ns1="http://docs.oasis-open.org/ws-rx/wsrmp/200702"/>
+            <ns2:UsingAddressing xmlns:ns2="http://www.w3.org/2006/05/addressing/wsdl"/>
+         </wsp:All>
+      </wsp:ExactlyOne>
+    </wsp:All>
+  </wsp:Policy>
+ <types>
+  <xs:schema targetNamespace='http://www.jboss.org/jbossws/ws-extensions/wsrm' version='1.0' xmlns:tns='http://www.jboss.org/jbossws/ws-extensions/wsrm' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='echo' type='tns:echo'/>
+   <xs:element name='echoResponse' type='tns:echoResponse'/>
+   <xs:element name='ping' type='tns:ping'/>
+   <xs:complexType name='ping'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='echo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='echoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='SimpleService_echo'>
+  <part element='tns:echo' name='echo'/>
+ </message>
+ <message name='SimpleService_echoResponse'>
+  <part element='tns:echoResponse' name='echoResponse'/>
+ </message>
+ <message name='SimpleService_ping'>
+  <part element='tns:ping' name='ping'/>
+ </message>
+ <portType name='SimpleService'>
+  <operation name='echo' parameterOrder='echo'>
+   <input message='tns:SimpleService_echo'/>
+   <output message='tns:SimpleService_echoResponse'/>
+  </operation>
+  <operation name='ping'>
+   <input message='tns:SimpleService_ping'/>
+  </operation>
+ </portType>
+ <binding name='SimpleServiceBinding' type='tns:SimpleService'>
+  <wsp:PolicyReference URI="#wsrm11policy"/>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ping'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+  </operation>
+ </binding>
+ <service name='SimpleService'>
+  <port binding='tns:SimpleServiceBinding' name='SimpleServicePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

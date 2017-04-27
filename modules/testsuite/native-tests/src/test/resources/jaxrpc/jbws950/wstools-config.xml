@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../../output/classes -dest ./WEB-INF -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  
+  <java-wsdl>
+    <service name="TestService" endpoint="org.jboss.test.ws.jaxrpc.jbws950.TestEndpoint" style="rpc">
+    </service>
+    <namespaces target-namespace="http://org.jboss.test.ws/jbws950" type-namespace="http://org.jboss.test.ws/jbws950/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint"/>
+  </java-wsdl>
+  
+</configuration>
+
+<!--
+   <complexType name='UserType'>
+    <sequence>
+     <element name='string' nillable='true' type='string'/>
+    </sequence>
+    <attribute name='qname' type='QName'/>
+   </complexType>
+  
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws950.UserType</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws950/types'>typeNS:UserType</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>qname</java-variable-name>
+   <xml-attribute-name>qname</xml-attribute-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>string</java-variable-name>
+   <xml-element-name>string</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+-->

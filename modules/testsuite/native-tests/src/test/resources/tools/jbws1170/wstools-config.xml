@@ -1,0 +1,5 @@
+<configuration>
+  <wsdl-java location="${test.resources.directory}/tools/jbws1170/HyphenatedElementName.wsdl" parameter-style="bare">
+    <mapping file="wrapper-mapping.xml"/>
+  </wsdl-java>
+</configuration>

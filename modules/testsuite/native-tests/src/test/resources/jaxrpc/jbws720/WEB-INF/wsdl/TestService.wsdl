@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="TestService" targetNamespace="http://org.jboss.test.ws/jbws720" xmlns:tns="http://org.jboss.test.ws/jbws720"
+  xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.test.ws/jbws720/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.test.ws/jbws720/types" xmlns:tns="http://org.jboss.test.ws/jbws720/types"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+      <complexType name="getProperty">
+        <sequence>
+          <element name="strElement" type="string" minOccurs="0"/>
+          <any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+        </sequence>
+        <attribute name="strAttr" type="string"/>
+        <attribute ref="xml:lang"/>
+      </complexType>
+      <complexType name="getPropertyResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="getProperty" type="tns:getProperty"/>
+      <element name="getPropertyResponse" type="tns:getPropertyResponse"/>
+    </schema>
+  </types>
+  <message name="TestEndpoint_getProperty">
+    <part name="parameters" element="ns2:getProperty"/>
+  </message>
+  <message name="TestEndpoint_getPropertyResponse">
+    <part name="result" element="ns2:getPropertyResponse"/>
+  </message>
+  <portType name="TestEndpoint">
+    <operation name="getProperty">
+      <input message="tns:TestEndpoint_getProperty"/>
+      <output message="tns:TestEndpoint_getPropertyResponse"/>
+    </operation>
+  </portType>
+  <binding name="TestBinding" type="tns:TestEndpoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getProperty">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="TestPort" binding="tns:TestBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

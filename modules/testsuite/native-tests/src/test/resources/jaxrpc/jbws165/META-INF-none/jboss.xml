@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_0.dtd">
+
+<!-- contains neither a <context-root> nor <port-component-uri> --> 
+
+<jboss>
+  <enterprise-beans>
+    <session>
+      <ejb-name>HelloNone</ejb-name>
+      <jndi-name>ejb/HelloNone</jndi-name>
+    </session>
+  </enterprise-beans>
+</jboss>

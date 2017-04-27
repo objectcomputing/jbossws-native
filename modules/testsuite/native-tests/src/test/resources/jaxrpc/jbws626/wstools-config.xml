@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  <handler>
+    <handler-name>ServerHandler</handler-name>
+    <handler-class>org.jboss.test.ws.jaxrpc.jbws626.ServerHandler</handler-class>
+  </handler>
+-->
+
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="TestService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws626.DemoEndpoint"
+              style="rpc">
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.webservice/jbws626"
+                 type-namespace="http://org.jboss.test.webservice/jbws626/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  ejb-link="DemoBean"/>
+   </java-wsdl>  
+</configuration>
+

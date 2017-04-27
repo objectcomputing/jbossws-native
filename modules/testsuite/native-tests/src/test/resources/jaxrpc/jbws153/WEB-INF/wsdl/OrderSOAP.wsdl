@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Order" targetNamespace="http://www.dis-corp.com/xml/2005/ebiz/ws" xmlns:ebizws="http://www.dis-corp.com/xml/2005/ebiz/ws" xmlns:ebiz="http://www.dis-corp.com/xml/2005/ebiz" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.dis-corp.com/xml/2005/ebiz">
+    <xsd:include schemaLocation="schemas/get/Get.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOrder">
+    <wsdl:part name="GetMessage" element="ebiz:GetOrder"/>
+  </wsdl:message>
+  <wsdl:message name="ShowOrder">
+    <wsdl:part name="ShowMessage" element="ebiz:ShowOrder"/>
+  </wsdl:message>
+  <wsdl:portType name="Order">
+    <wsdl:operation name="GetOrder">
+      <wsdl:input message="ebizws:GetOrder"/>
+      <wsdl:output message="ebizws:ShowOrder"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderSOAP" type="ebizws:Order">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://www.dis-corp.com/xml/2005/ebiz/ws/GetOrderAction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderService">
+    <wsdl:port name="OrderSOAP" binding="ebizws:OrderSOAP">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

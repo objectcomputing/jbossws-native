@@ -1,0 +1,14 @@
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+
+  <java-wsdl>
+    <service name="AdditionalService"
+      endpoint="org.jboss.test.ws.tools.jbws1090.AdditionalEndpoint" style="rpc" />
+    <namespaces target-namespace="http://ws.test.jboss.org/jbws1090"
+      type-namespace="http://ws.test.jboss.org/jbws1090/type" />
+    <mapping file="additional-mapping.xml" />
+    <webservices servlet-link="AdditionalServlet" append="true" />
+  </java-wsdl>
+
+</configuration>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1"
+                   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+   <package-mapping>
+      <package-type>org.jboss.test.ws.jaxrpc.jbws434</package-type>
+      <namespaceURI>http://org.jboss.ws/jbws434</namespaceURI>
+   </package-mapping>
+   <package-mapping>
+      <package-type>org.jboss.test.ws.jaxrpc.jbws434</package-type>
+      <namespaceURI>http://org.jboss.ws/jbws434/types</namespaceURI>
+   </package-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny</java-type>
+      <root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws434/types">typeNS:ArrayOfAny</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>_any</java-variable-name>
+         <xml-wildcard/>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny2</java-type>
+      <root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws434/types">typeNS:ArrayOfAny2</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>_any</java-variable-name>
+         <xml-wildcard/>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws434.TypeOfAny3</java-type>
+      <root-type-qname xmlns:typeNS="http://org.jboss.ws/jbws434/types">typeNS:TypeOfAny3</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>_any</java-variable-name>
+         <xml-wildcard/>
+      </variable-mapping>
+   </java-xml-type-mapping>
+
+   <service-endpoint-interface-mapping>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws434.TestServiceEndpoint</service-endpoint-interface>
+      <wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws/jbws434">portTypeNS:TestService</wsdl-port-type>
+      <wsdl-binding xmlns:bindingNS="http://org.jboss.ws/jbws434">bindingNS:TestServiceBinding</wsdl-binding>
+
+      <service-endpoint-method-mapping>
+         <java-method-name>echo</java-method-name>
+         <wsdl-operation>echo</wsdl-operation>
+         <method-param-parts-mapping>
+            <param-position>0</param-position>
+            <param-type>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny</param-type>
+            <wsdl-message-mapping>
+               <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echo</wsdl-message>
+               <wsdl-message-part-name>param1</wsdl-message-part-name>
+               <parameter-mode>IN</parameter-mode>
+            </wsdl-message-mapping>
+         </method-param-parts-mapping>
+         <wsdl-return-value-mapping>
+            <method-return-value>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny</method-return-value>
+            <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echoResponse</wsdl-message>
+            <wsdl-message-part-name>result</wsdl-message-part-name>
+         </wsdl-return-value-mapping>
+      </service-endpoint-method-mapping>
+
+      <service-endpoint-method-mapping>
+         <java-method-name>echo2</java-method-name>
+         <wsdl-operation>echo2</wsdl-operation>
+         <method-param-parts-mapping>
+            <param-position>0</param-position>
+            <param-type>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny2</param-type>
+            <wsdl-message-mapping>
+               <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echo2</wsdl-message>
+               <wsdl-message-part-name>param1</wsdl-message-part-name>
+               <parameter-mode>IN</parameter-mode>
+            </wsdl-message-mapping>
+         </method-param-parts-mapping>
+         <wsdl-return-value-mapping>
+            <method-return-value>org.jboss.test.ws.jaxrpc.jbws434.ArrayOfAny2</method-return-value>
+            <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echoResponse2</wsdl-message>
+            <wsdl-message-part-name>result</wsdl-message-part-name>
+         </wsdl-return-value-mapping>
+      </service-endpoint-method-mapping>
+
+      <service-endpoint-method-mapping>
+         <java-method-name>echo3</java-method-name>
+         <wsdl-operation>echo3</wsdl-operation>
+         <method-param-parts-mapping>
+            <param-position>0</param-position>
+            <param-type>org.jboss.test.ws.jaxrpc.jbws434.TypeOfAny3</param-type>
+            <wsdl-message-mapping>
+               <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echo3</wsdl-message>
+               <wsdl-message-part-name>param1</wsdl-message-part-name>
+               <parameter-mode>IN</parameter-mode>
+            </wsdl-message-mapping>
+         </method-param-parts-mapping>
+         <wsdl-return-value-mapping>
+            <method-return-value>org.jboss.test.ws.jaxrpc.jbws434.TypeOfAny3</method-return-value>
+            <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws/jbws434">wsdlMsgNS:TestService_echoResponse3</wsdl-message>
+            <wsdl-message-part-name>result</wsdl-message-part-name>
+         </wsdl-return-value-mapping>
+      </service-endpoint-method-mapping>
+      
+   </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

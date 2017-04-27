@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE jboss-client PUBLIC "-//JBoss//DTD Application Client 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss-client_4_0.dtd">
+
+<jboss-client>
+  <jndi-name>benchmark-client</jndi-name>
+
+  <service-ref>
+    <service-ref-name>service/BenchmarkJSE</service-ref-name>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxrpc-benchmark-rpc?wsdl</wsdl-override>
+  </service-ref>
+  <service-ref>
+    <service-ref-name>service/BenchmarkEJB</service-ref-name>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxrpc-benchmark-rpc-ejb?wsdl</wsdl-override>
+  </service-ref>
+
+</jboss-client>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="LargeAttachment" targetNamespace="http://org.jboss.webservice/jbws801"
+  xmlns:tns="http://org.jboss.webservice/jbws801" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+  <types/>
+
+  <message name="LargeAttachment_sendLargeFile"/>
+  <message name="LargeAttachment_sendLargeFileResponse">
+    <part name="result" type="xsd:long"/>
+  </message>
+
+  <portType name="LargeAttachment">
+    <operation name="sendLargeFile">
+      <input message="tns:LargeAttachment_sendLargeFile"/>
+      <output message="tns:LargeAttachment_sendLargeFileResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="LargeAttachmentBinding" type="tns:LargeAttachment">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+
+    <operation name="sendLargeFile">
+      <soap:operation soapAction=""/>
+      <input>
+       <soap:body part="message" use="literal" namespace="http://org.jboss.webservice/attachment"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.webservice/attachment"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="LargeAttachment">
+    <port name="LargeAttachmentPort" binding="tns:LargeAttachmentBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

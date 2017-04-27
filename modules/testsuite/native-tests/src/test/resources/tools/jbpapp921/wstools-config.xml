@@ -1,0 +1,6 @@
+<configuration>
+  <wsdl-java location="@test.resources.directory@/tools/jbpapp921/test.wsdl">
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint" />
+  </wsdl-java>
+</configuration>

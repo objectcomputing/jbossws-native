@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -import -f:wsi -mapping jaxrpc-mapping.xml -keep config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <wsdl 
+    location="./WEB-INF/wsdl/TestService.wsdl" 
+    packageName="org.jboss.test.ws.jaxrpc.jbws720">
+  </wsdl>
+
+</configuration>
+

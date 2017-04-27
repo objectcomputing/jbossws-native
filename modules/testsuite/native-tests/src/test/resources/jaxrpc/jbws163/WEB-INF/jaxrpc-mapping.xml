@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws163</package-type>
+  <namespaceURI>http://org.jboss.test.webservice/jbws163/types</namespaceURI>
+ </package-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws163.HelloService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.webservice/jbws163'>serviceNS:HelloService</wsdl-service-name>
+  <port-mapping>
+   <port-name>HelloPort</port-name>
+   <java-port-name>HelloPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws163.Hello</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.webservice/jbws163'>portTypeNS:Hello</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.webservice/jbws163'>bindingNS:HelloBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>negativeInteger</java-method-name>
+   <wsdl-operation>negativeInteger</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_negativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_negativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_negativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>nonNegativeInteger</java-method-name>
+   <wsdl-operation>nonNegativeInteger</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonNegativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonNegativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonNegativeInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>nonPositiveInteger</java-method-name>
+   <wsdl-operation>nonPositiveInteger</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonPositiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonPositiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_nonPositiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>positiveInteger</java-method-name>
+   <wsdl-operation>positiveInteger</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_positiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_positiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_positiveInteger</wsdl-message>
+     <wsdl-message-part-name>BigInteger_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>unsignedByte</java-method-name>
+   <wsdl-operation>unsignedByte</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>short</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedByte</wsdl-message>
+     <wsdl-message-part-name>short_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>short</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedByte</wsdl-message>
+     <wsdl-message-part-name>short_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>short</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedByte</wsdl-message>
+     <wsdl-message-part-name>short_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>unsignedInt</java-method-name>
+   <wsdl-operation>unsignedInt</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>long</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedInt</wsdl-message>
+     <wsdl-message-part-name>long_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>long</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedInt</wsdl-message>
+     <wsdl-message-part-name>long_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>long</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedInt</wsdl-message>
+     <wsdl-message-part-name>long_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>unsignedLong</java-method-name>
+   <wsdl-operation>unsignedLong</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedLong</wsdl-message>
+     <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedLong</wsdl-message>
+     <wsdl-message-part-name>BigInteger_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.math.BigInteger</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedLong</wsdl-message>
+     <wsdl-message-part-name>BigInteger_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>unsignedShort</java-method-name>
+   <wsdl-operation>unsignedShort</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>int</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedShort</wsdl-message>
+     <wsdl-message-part-name>int_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>int</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedShort</wsdl-message>
+     <wsdl-message-part-name>int_2</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>int</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws163'>wsdlMsgNS:Hello_unsignedShort</wsdl-message>
+     <wsdl-message-part-name>int_3</wsdl-message-part-name>
+     <parameter-mode>INOUT</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

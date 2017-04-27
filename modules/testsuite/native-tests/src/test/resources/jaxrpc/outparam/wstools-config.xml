@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="TestService" 
+              endpoint="org.jboss.test.ws.jaxrpc.outparam.OutParamTestService">
+		 <operation name="echoBigDecimal">
+			 <parameter type="java.math.BigDecimal"/>
+			 <parameter type="javax.xml.rpc.holders.BigDecimalHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoBigInteger"> 
+			 <parameter type="java.math.BigInteger"/>
+			 <parameter type="javax.xml.rpc.holders.BigIntegerHolder" mode="OUT"/>
+                 </operation>
+		 <operation name="echoBoolean">
+			 <parameter type="boolean"/>
+			 <parameter type="javax.xml.rpc.holders.BooleanHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoBooleanWrapper">
+			 <parameter type="java.lang.Boolean"/>
+			 <parameter type="javax.xml.rpc.holders.BooleanWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoByteArray">
+			 <parameter type="byte[]"/>
+			 <parameter type="javax.xml.rpc.holders.ByteArrayHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoByte">
+			 <parameter type="byte"/>
+			 <parameter type="javax.xml.rpc.holders.ByteHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoByteWrapper">
+			 <parameter type="java.lang.Byte"/>
+			 <parameter type="javax.xml.rpc.holders.ByteWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoCalendar">
+			 <parameter type="java.util.Calendar"/>
+			 <parameter type="javax.xml.rpc.holders.CalendarHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoDouble">
+			 <parameter type="double"/>
+			 <parameter type="javax.xml.rpc.holders.DoubleHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoDoubleWrapper">
+			 <parameter type="java.lang.Double"/>
+			 <parameter type="javax.xml.rpc.holders.DoubleWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoFloat">
+			 <parameter type="float"/>
+			 <parameter type="javax.xml.rpc.holders.FloatHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoFloatWrapper">
+			 <parameter type="java.lang.Float"/>
+			 <parameter type="javax.xml.rpc.holders.FloatWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoInt">
+			 <parameter type="int"/>
+			 <parameter type="javax.xml.rpc.holders.IntHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoIntegerWrapper">
+			 <parameter type="java.lang.Integer"/>
+			 <parameter type="javax.xml.rpc.holders.IntegerWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoLong">
+			 <parameter type="long"/>
+			 <parameter type="javax.xml.rpc.holders.LongHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoLongWrapper">
+			 <parameter type="java.lang.Long"/>
+			 <parameter type="javax.xml.rpc.holders.LongWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoShort">
+			 <parameter type="short"/>
+			 <parameter type="javax.xml.rpc.holders.ShortHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoShortWrapper">
+			 <parameter type="java.lang.Short"/>
+			 <parameter type="javax.xml.rpc.holders.ShortWrapperHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoQName">
+			 <parameter type="javax.xml.namespace.QName"/>
+			 <parameter type="javax.xml.rpc.holders.QNameHolder" mode="OUT"/>
+		 </operation>
+		 <operation name="echoString"> 
+			 <parameter type="java.lang.String"/>
+			 <parameter type="javax.xml.rpc.holders.StringHolder" mode="OUT"/>
+		 </operation>
+     </service>
+     <namespaces target-namespace="http://org.jboss.ws/outparam"
+                 type-namespace="http://org.jboss.ws/outparam/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="TestService"/>
+   </java-wsdl>  
+</configuration> 

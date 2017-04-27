@@ -1,0 +1,26 @@
+<application-client xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:wscoor="http://schemas.xmlsoap.org/ws/2004/10/wscoor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application-client_1_4.xsd" version="1.4">
+
+  <display-name>JAXRPC simple tests</display-name>
+
+  <service-ref>
+    <service-ref-name>service/jbws732/wrapped</service-ref-name>
+    <service-interface>javax.xml.rpc.Service</service-interface>
+    <wsdl-file>USE_JBOSS_CLIENT_XML_OVERRIDE</wsdl-file>
+    <jaxrpc-mapping-file>META-INF/wrapped-mapping.xml</jaxrpc-mapping-file>
+
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint</service-endpoint-interface>
+    </port-component-ref>
+  </service-ref>
+
+  <service-ref>
+    <service-ref-name>service/jbws732/bare</service-ref-name>
+    <service-interface>javax.xml.rpc.Service</service-interface>
+    <wsdl-file>USE_JBOSS_CLIENT_XML_OVERRIDE</wsdl-file>
+    <jaxrpc-mapping-file>META-INF/bare-mapping.xml</jaxrpc-mapping-file>
+
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.BareEndpoint</service-endpoint-interface>
+    </port-component-ref>
+  </service-ref>
+</application-client>

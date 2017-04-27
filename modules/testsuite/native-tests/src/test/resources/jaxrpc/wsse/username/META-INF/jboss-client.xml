@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE jboss-client PUBLIC "-//JBoss//DTD Application Client 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss-client_4_0.dtd">
+
+<jboss-client>
+  <jndi-name>jbossws-client</jndi-name>
+
+  <service-ref>
+    <service-ref-name>service/TestServiceEJB</service-ref-name>
+    <config-name>Standard WSSecurity Client</config-name>
+    <port-component-ref>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.wsse.JaxRpcTestService</service-endpoint-interface>
+      <!-- Deprecated use of <call-properties> on JAXRPC stub. JBoss-4.0.x does not support <stub-properties> -->
+      <call-property>
+        <prop-name>javax.xml.rpc.security.auth.username</prop-name>
+        <prop-value>kermit</prop-value>
+      </call-property>
+      <call-property>
+        <prop-name>javax.xml.rpc.security.auth.password</prop-name>
+        <prop-value>thefrog</prop-value>
+      </call-property>
+    </port-component-ref>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxrpc-wsse-username?wsdl</wsdl-override>
+  </service-ref>
+
+</jboss-client>

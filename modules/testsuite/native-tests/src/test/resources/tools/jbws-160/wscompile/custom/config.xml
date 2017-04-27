@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -gen:client -f:rpcliteral -keep -mapping client-jaxrpc-mapping.xml config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <wsdl location="../../../jbws-161/wscompile/custom/wsdl/HelloCustomService.wsdl"
+      packageName="org.jboss.types" />
+
+</configuration>
+

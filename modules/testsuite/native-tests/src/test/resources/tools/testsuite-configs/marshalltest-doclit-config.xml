@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="MarshallDocListService" 
+              endpoint="org.jboss.test.webservice.marshalltest.MarshallEndpoint"
+              
+              
+              style="document">
+     </service>
+     <namespaces target-namespace="http://org.jboss.webservice/marshalltest-doclit"
+                 type-namespace="http://org.jboss.webservice/marshalltest-doclit/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  ejb-link="MarshallDocLitBean"/>
+   </java-wsdl>  
+</configuration>

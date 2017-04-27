@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="PrimitiveTypesService" targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://org.jboss.ws/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/types" xmlns:tns="http://org.jboss.ws/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="echoBoolean">
+        <sequence>
+          <element name="boolean_1" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoBooleanResponse">
+        <sequence>
+          <element name="result" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoByte">
+        <sequence>
+          <element name="byte_1" type="byte"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoByteResponse">
+        <sequence>
+          <element name="result" type="byte"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDouble">
+        <sequence>
+          <element name="double_1" type="double"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDoubleResponse">
+        <sequence>
+          <element name="result" type="double"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoFloat">
+        <sequence>
+          <element name="float_1" type="float"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoFloatResponse">
+        <sequence>
+          <element name="result" type="float"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoInt">
+        <sequence>
+          <element name="int_1" type="int"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoIntResponse">
+        <sequence>
+          <element name="result" type="int"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoLong">
+        <sequence>
+          <element name="long_1" type="long"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoLongResponse">
+        <sequence>
+          <element name="result" type="long"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoShort">
+        <sequence>
+          <element name="short_1" type="short"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoShortResponse">
+        <sequence>
+          <element name="result" type="short"/>
+        </sequence>
+      </complexType>
+      <element name="echoBoolean" type="tns:echoBoolean"/>
+      <element name="echoBooleanResponse" type="tns:echoBooleanResponse"/>
+      <element name="echoByte" type="tns:echoByte"/>
+      <element name="echoByteResponse" type="tns:echoByteResponse"/>
+      <element name="echoDouble" type="tns:echoDouble"/>
+      <element name="echoDoubleResponse" type="tns:echoDoubleResponse"/>
+      <element name="echoFloat" type="tns:echoFloat"/>
+      <element name="echoFloatResponse" type="tns:echoFloatResponse"/>
+      <element name="echoInt" type="tns:echoInt"/>
+      <element name="echoIntResponse" type="tns:echoIntResponse"/>
+      <element name="echoLong" type="tns:echoLong"/>
+      <element name="echoLongResponse" type="tns:echoLongResponse"/>
+      <element name="echoShort" type="tns:echoShort"/>
+      <element name="echoShortResponse" type="tns:echoShortResponse"/>
+    </schema>
+  </types>
+  <message name="PrimitiveTypes_echoBoolean">
+    <part name="parameters" element="ns2:echoBoolean"/>
+  </message>
+  <message name="PrimitiveTypes_echoBooleanResponse">
+    <part name="result" element="ns2:echoBooleanResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoByte">
+    <part name="parameters" element="ns2:echoByte"/>
+  </message>
+  <message name="PrimitiveTypes_echoByteResponse">
+    <part name="result" element="ns2:echoByteResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoDouble">
+    <part name="parameters" element="ns2:echoDouble"/>
+  </message>
+  <message name="PrimitiveTypes_echoDoubleResponse">
+    <part name="result" element="ns2:echoDoubleResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoFloat">
+    <part name="parameters" element="ns2:echoFloat"/>
+  </message>
+  <message name="PrimitiveTypes_echoFloatResponse">
+    <part name="result" element="ns2:echoFloatResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoInt">
+    <part name="parameters" element="ns2:echoInt"/>
+  </message>
+  <message name="PrimitiveTypes_echoIntResponse">
+    <part name="result" element="ns2:echoIntResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoLong">
+    <part name="parameters" element="ns2:echoLong"/>
+  </message>
+  <message name="PrimitiveTypes_echoLongResponse">
+    <part name="result" element="ns2:echoLongResponse"/>
+  </message>
+  <message name="PrimitiveTypes_echoShort">
+    <part name="parameters" element="ns2:echoShort"/>
+  </message>
+  <message name="PrimitiveTypes_echoShortResponse">
+    <part name="result" element="ns2:echoShortResponse"/>
+  </message>
+  <portType name="PrimitiveTypes">
+    <operation name="echoBoolean">
+      <input message="tns:PrimitiveTypes_echoBoolean"/>
+      <output message="tns:PrimitiveTypes_echoBooleanResponse"/>
+    </operation>
+    <operation name="echoByte">
+      <input message="tns:PrimitiveTypes_echoByte"/>
+      <output message="tns:PrimitiveTypes_echoByteResponse"/>
+    </operation>
+    <operation name="echoDouble">
+      <input message="tns:PrimitiveTypes_echoDouble"/>
+      <output message="tns:PrimitiveTypes_echoDoubleResponse"/>
+    </operation>
+    <operation name="echoFloat">
+      <input message="tns:PrimitiveTypes_echoFloat"/>
+      <output message="tns:PrimitiveTypes_echoFloatResponse"/>
+    </operation>
+    <operation name="echoInt">
+      <input message="tns:PrimitiveTypes_echoInt"/>
+      <output message="tns:PrimitiveTypes_echoIntResponse"/>
+    </operation>
+    <operation name="echoLong">
+      <input message="tns:PrimitiveTypes_echoLong"/>
+      <output message="tns:PrimitiveTypes_echoLongResponse"/>
+    </operation>
+    <operation name="echoShort">
+      <input message="tns:PrimitiveTypes_echoShort"/>
+      <output message="tns:PrimitiveTypes_echoShortResponse"/>
+    </operation>
+  </portType>
+  <binding name="PrimitiveTypesBinding" type="tns:PrimitiveTypes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="echoBoolean">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoByte">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoDouble">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoFloat">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoInt">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoLong">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoShort">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="PrimitiveTypesService">
+    <port name="PrimitiveTypesPort" binding="tns:PrimitiveTypesBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

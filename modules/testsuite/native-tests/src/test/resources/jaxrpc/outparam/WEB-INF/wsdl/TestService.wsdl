@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.ws/outparam' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/outparam' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='OutParamTestService_echoBigDecimal'>
+  <part name='BigDecimal_1' type='xsd:decimal'/>
+ </message>
+ <message name='OutParamTestService_echoBigDecimalResponse'>
+  <part name='BigDecimal_2' type='xsd:decimal'/>
+ </message>
+ <message name='OutParamTestService_echoBigInteger'>
+  <part name='BigInteger_1' type='xsd:integer'/>
+ </message>
+ <message name='OutParamTestService_echoBigIntegerResponse'>
+  <part name='BigInteger_2' type='xsd:integer'/>
+ </message>
+ <message name='OutParamTestService_echoBoolean'>
+  <part name='boolean_1' type='xsd:boolean'/>
+ </message>
+ <message name='OutParamTestService_echoBooleanResponse'>
+  <part name='boolean_2' type='xsd:boolean'/>
+ </message>
+ <message name='OutParamTestService_echoBooleanWrapper'>
+  <part name='Boolean_1' type='xsd:boolean'/>
+ </message>
+ <message name='OutParamTestService_echoBooleanWrapperResponse'>
+  <part name='Boolean_2' type='xsd:boolean'/>
+ </message>
+ <message name='OutParamTestService_echoByte'>
+  <part name='byte_1' type='xsd:byte'/>
+ </message>
+ <message name='OutParamTestService_echoByteResponse'>
+  <part name='byte_2' type='xsd:byte'/>
+ </message>
+ <message name='OutParamTestService_echoByteArray'>
+  <part name='arrayOfbyte_1' type='xsd:base64Binary'/>
+ </message>
+ <message name='OutParamTestService_echoByteArrayResponse'>
+  <part name='arrayOfbyte_2' type='xsd:base64Binary'/>
+ </message>
+ <message name='OutParamTestService_echoByteWrapper'>
+  <part name='Byte_1' type='xsd:byte'/>
+ </message>
+ <message name='OutParamTestService_echoByteWrapperResponse'>
+  <part name='Byte_2' type='xsd:byte'/>
+ </message>
+ <message name='OutParamTestService_echoCalendar'>
+  <part name='Calendar_1' type='xsd:dateTime'/>
+ </message>
+ <message name='OutParamTestService_echoCalendarResponse'>
+  <part name='Calendar_2' type='xsd:dateTime'/>
+ </message>
+ <message name='OutParamTestService_echoDouble'>
+  <part name='double_1' type='xsd:double'/>
+ </message>
+ <message name='OutParamTestService_echoDoubleResponse'>
+  <part name='double_2' type='xsd:double'/>
+ </message>
+ <message name='OutParamTestService_echoDoubleWrapper'>
+  <part name='Double_1' type='xsd:double'/>
+ </message>
+ <message name='OutParamTestService_echoDoubleWrapperResponse'>
+  <part name='Double_2' type='xsd:double'/>
+ </message>
+ <message name='OutParamTestService_echoFloat'>
+  <part name='float_1' type='xsd:float'/>
+ </message>
+ <message name='OutParamTestService_echoFloatResponse'>
+  <part name='float_2' type='xsd:float'/>
+ </message>
+ <message name='OutParamTestService_echoFloatWrapper'>
+  <part name='Float_1' type='xsd:float'/>
+ </message>
+ <message name='OutParamTestService_echoFloatWrapperResponse'>
+  <part name='Float_2' type='xsd:float'/>
+ </message>
+ <message name='OutParamTestService_echoInt'>
+  <part name='int_1' type='xsd:int'/>
+ </message>
+ <message name='OutParamTestService_echoIntResponse'>
+  <part name='int_2' type='xsd:int'/>
+ </message>
+ <message name='OutParamTestService_echoIntegerWrapper'>
+  <part name='Integer_1' type='xsd:int'/>
+ </message>
+ <message name='OutParamTestService_echoIntegerWrapperResponse'>
+  <part name='Integer_2' type='xsd:int'/>
+ </message>
+ <message name='OutParamTestService_echoLong'>
+  <part name='long_1' type='xsd:long'/>
+ </message>
+ <message name='OutParamTestService_echoLongResponse'>
+  <part name='long_2' type='xsd:long'/>
+ </message>
+ <message name='OutParamTestService_echoLongWrapper'>
+  <part name='Long_1' type='xsd:long'/>
+ </message>
+ <message name='OutParamTestService_echoLongWrapperResponse'>
+  <part name='Long_2' type='xsd:long'/>
+ </message>
+ <message name='OutParamTestService_echoQName'>
+  <part name='QName_1' type='xsd:QName'/>
+ </message>
+ <message name='OutParamTestService_echoQNameResponse'>
+  <part name='QName_2' type='xsd:QName'/>
+ </message>
+ <message name='OutParamTestService_echoShort'>
+  <part name='short_1' type='xsd:short'/>
+ </message>
+ <message name='OutParamTestService_echoShortResponse'>
+  <part name='short_2' type='xsd:short'/>
+ </message>
+ <message name='OutParamTestService_echoShortWrapper'>
+  <part name='Short_1' type='xsd:short'/>
+ </message>
+ <message name='OutParamTestService_echoShortWrapperResponse'>
+  <part name='Short_2' type='xsd:short'/>
+ </message>
+ <message name='OutParamTestService_echoString'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='OutParamTestService_echoStringResponse'>
+  <part name='String_2' type='xsd:string'/>
+ </message>
+ <portType name='OutParamTestService'>
+  <operation name='echoBigDecimal' parameterOrder='BigDecimal_1 BigDecimal_2'>
+   <input message='tns:OutParamTestService_echoBigDecimal'/>
+   <output message='tns:OutParamTestService_echoBigDecimalResponse'/>
+  </operation>
+  <operation name='echoBigInteger' parameterOrder='BigInteger_1 BigInteger_2'>
+   <input message='tns:OutParamTestService_echoBigInteger'/>
+   <output message='tns:OutParamTestService_echoBigIntegerResponse'/>
+  </operation>
+  <operation name='echoBoolean' parameterOrder='boolean_1 boolean_2'>
+   <input message='tns:OutParamTestService_echoBoolean'/>
+   <output message='tns:OutParamTestService_echoBooleanResponse'/>
+  </operation>
+  <operation name='echoBooleanWrapper' parameterOrder='Boolean_1 Boolean_2'>
+   <input message='tns:OutParamTestService_echoBooleanWrapper'/>
+   <output message='tns:OutParamTestService_echoBooleanWrapperResponse'/>
+  </operation>
+  <operation name='echoByte' parameterOrder='byte_1 byte_2'>
+   <input message='tns:OutParamTestService_echoByte'/>
+   <output message='tns:OutParamTestService_echoByteResponse'/>
+  </operation>
+  <operation name='echoByteArray' parameterOrder='arrayOfbyte_1 arrayOfbyte_2'>
+   <input message='tns:OutParamTestService_echoByteArray'/>
+   <output message='tns:OutParamTestService_echoByteArrayResponse'/>
+  </operation>
+  <operation name='echoByteWrapper' parameterOrder='Byte_1 Byte_2'>
+   <input message='tns:OutParamTestService_echoByteWrapper'/>
+   <output message='tns:OutParamTestService_echoByteWrapperResponse'/>
+  </operation>
+  <operation name='echoCalendar' parameterOrder='Calendar_1 Calendar_2'>
+   <input message='tns:OutParamTestService_echoCalendar'/>
+   <output message='tns:OutParamTestService_echoCalendarResponse'/>
+  </operation>
+  <operation name='echoDouble' parameterOrder='double_1 double_2'>
+   <input message='tns:OutParamTestService_echoDouble'/>
+   <output message='tns:OutParamTestService_echoDoubleResponse'/>
+  </operation>
+  <operation name='echoDoubleWrapper' parameterOrder='Double_1 Double_2'>
+   <input message='tns:OutParamTestService_echoDoubleWrapper'/>
+   <output message='tns:OutParamTestService_echoDoubleWrapperResponse'/>
+  </operation>
+  <operation name='echoFloat' parameterOrder='float_1 float_2'>
+   <input message='tns:OutParamTestService_echoFloat'/>
+   <output message='tns:OutParamTestService_echoFloatResponse'/>
+  </operation>
+  <operation name='echoFloatWrapper' parameterOrder='Float_1 Float_2'>
+   <input message='tns:OutParamTestService_echoFloatWrapper'/>
+   <output message='tns:OutParamTestService_echoFloatWrapperResponse'/>
+  </operation>
+  <operation name='echoInt' parameterOrder='int_1 int_2'>
+   <input message='tns:OutParamTestService_echoInt'/>
+   <output message='tns:OutParamTestService_echoIntResponse'/>
+  </operation>
+  <operation name='echoIntegerWrapper' parameterOrder='Integer_1 Integer_2'>
+   <input message='tns:OutParamTestService_echoIntegerWrapper'/>
+   <output message='tns:OutParamTestService_echoIntegerWrapperResponse'/>
+  </operation>
+  <operation name='echoLong' parameterOrder='long_1 long_2'>
+   <input message='tns:OutParamTestService_echoLong'/>
+   <output message='tns:OutParamTestService_echoLongResponse'/>
+  </operation>
+  <operation name='echoLongWrapper' parameterOrder='Long_1 Long_2'>
+   <input message='tns:OutParamTestService_echoLongWrapper'/>
+   <output message='tns:OutParamTestService_echoLongWrapperResponse'/>
+  </operation>
+  <operation name='echoQName' parameterOrder='QName_1 QName_2'>
+   <input message='tns:OutParamTestService_echoQName'/>
+   <output message='tns:OutParamTestService_echoQNameResponse'/>
+  </operation>
+  <operation name='echoShort' parameterOrder='short_1 short_2'>
+   <input message='tns:OutParamTestService_echoShort'/>
+   <output message='tns:OutParamTestService_echoShortResponse'/>
+  </operation>
+  <operation name='echoShortWrapper' parameterOrder='Short_1 Short_2'>
+   <input message='tns:OutParamTestService_echoShortWrapper'/>
+   <output message='tns:OutParamTestService_echoShortWrapperResponse'/>
+  </operation>
+  <operation name='echoString' parameterOrder='String_1 String_2'>
+   <input message='tns:OutParamTestService_echoString'/>
+   <output message='tns:OutParamTestService_echoStringResponse'/>
+  </operation>
+ </portType>
+ <binding name='OutParamTestServiceBinding' type='tns:OutParamTestService'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoBigDecimal'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoBigInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoBoolean'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoBooleanWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoByte'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoByteArray'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoByteWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoCalendar'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoDouble'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoDoubleWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoFloat'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoFloatWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoInt'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoIntegerWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoLong'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoLongWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoQName'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoShort'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoShortWrapper'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoString'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/outparam' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:OutParamTestServiceBinding' name='OutParamTestServicePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

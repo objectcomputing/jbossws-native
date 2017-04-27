@@ -1,0 +1,751 @@
+
+${project.name}
+http://www.jboss.org/jbossws/
+
+Version: jbossws-native-${project.version}
+
+Release Notes
+=============
+
+The wiki (http://labs.jboss.com/portal/jbossws/) is usally a good starting point.
+It contains the User Guide and Quick Start instructions.
+
+A list of examples that accompany the UserGuide can be found in the tests directory
+that ship with the distribution.
+
+If you have any questions, please post to the JBossWS User Forum
+http://www.jboss.org/index.html?module=bb&op=viewforum&f=200
+
+For details see the change log. 
+http://jira.jboss.com/jira/browse/JBWS?report=com.atlassian.jira.plugin.system.project:changelog-panel
+
+For issues that are scheduled for future versions see the road map.
+http://jira.jboss.com/jira/browse/JBWS?report=com.atlassian.jira.plugin.system.project:roadmap-panel
+
+What's new in jbossws-native-${project.version}
+----------------------------------
+
+Feature Request
+
+    * [JBWS-2619] - Consider DeploymentUnit's metadataLocation in ArchiveDeployment.getMetadataFileURL(..)
+
+Bug
+
+    * [JBWS-2074] - Resource injection in jaxws endpoints and handlers
+    * [JBWS-2558] - Component's resources defined in the \<env-entry\> are not available to the EJB3 JAX-WS handlers
+    * [JBWS-2616] - handlerscope testcase is (native) stack specific
+    * [JBWS-2631] - Fix resource injection in JAX-WS handlers associated with EJB3 endpoints
+    * [JBWS-2634] - Implement support for @EJB annotations in WS components
+    * [JBWS-2638] - Insufficient optimisation in JBossXSModel traversing XML schema
+
+Task
+
+    * [JBWS-2612] - Remove AS 4.2.x support from all stacks
+    * [JBWS-2618] - Update to xmlsec 1.4.2
+
+Errata
+
+    See: https://jira.jboss.org/jira/browse/JBWS-2643
+    
+Enjoy,
+The JBossWS Team
+
+Previous Releases ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new in jbossws-native-3.1.1.GA
+-------------------------------------
+
+Feature Request
+
+    * [JBWS-2405] - MTOM/XOP Interoperability - cid href URLEncode/URLDecode
+    * [JBWS-2579] - Implement property file driven JBossWS entities resolving
+
+Bug
+
+    * [JBWS-1665] - incorrect wsdl generation
+    * [JBWS-2074] - Resource injection in jaxws endpoints and handlers
+    * [JBWS-2166] - WSA client handler throws exception when installing reference parameters
+    * [JBWS-2208] - Impossible to deploy WS containing binding objects that are defined by XmlAttribute from "http://www.w3.org/XML/1998/namespace"
+    * [JBWS-2248] - RemoteConnectionFactory rejects uppercased protocol identifiers
+    * [JBWS-2409] - Fix jbws771 testcase binding customization file
+    * [JBWS-2411] - OutOfMemoryExecption in WSDL11Reader when loading xml schemas with circular references
+    * [JBWS-2433] - Fix JMS tests on AS 5.x and above
+    * [JBWS-2486] - POJO service should be shared
+    * [JBWS-2555] - Miscellaneous issues reported by FindBugs
+    * [JBWS-2564] - Use Server MBean instead of ServerConfig to get JBoss version
+    * [JBWS-2565] - Wrong WebContext authMethod or transportGuarantee annotatoin field values are not detected at deploy time
+    * [JBWS-2573] - Fix JBossWS builds with Maven 2.0.10
+    * [JBWS-2580] - NPE in JBossWS when passing only -Dcom.sun.management.jmxremote on commandline
+    * [JBWS-2585] - JBossWS commandline tools reference not existing log4j config
+    * [JBWS-2589] - Some deployment failures prevent re-deployment
+    * [JBWS-2598] - JBossWSEntityResolver don't recognize all JBossWS specific XML schemas
+
+Task
+
+    * [JBWS-2259] - Enable MTOM for incomming requests where the type of the content type is 'application/xop+xml'
+    * [JBWS-2327] - Provide tests for wsrunclient shell script
+    * [JBWS-2524] - Sort out / remove GenericSOAPHandler duplicity
+    * [JBWS-2537] - Simplify Hudson Jobs
+    * [JBWS-2559] - Correct WeakReference handling in ConfigObservable to remove cleared WeakReferences
+    * [JBWS-2566] - Add Maven Release plugin
+    * [JBWS-2568] - Remove AS 4.2 branch support (424 target)
+
+Errata
+
+    See: https://jira.jboss.org/jira/browse/JBWS-2608
+
+
+What's new in jbossws-native-3.1.0.GA
+-------------------------------------
+
+Feature Request
+
+    * [JBWS-2441] - Complete JAX-WS 2.1 implementation
+    * [JBWS-2446] - Complete support for WebServiceFeature
+    * [JBWS-2451] - Support JAXB annotations on SEI when producing wsdls
+    * [JBWS-2452] - Implement EndpointReference related methods
+    * [JBWS-2454] - Add javax.xml.ws.reference.parameters values in message context
+    * [JBWS-2477] - Support generics in wrapper classes
+    * [JBWS-2491] - Enable JAXWS 2.1 WebServiceContext methods
+
+Bug
+
+    * [JBWS-2195] - MTOM services seem to return two extra bytes at the end
+    * [JBWS-2288] - Exception handling issue in org.jboss.ws.core.CommonClient.
+    * [JBWS-2368] - JAX-WS Deployments Fail For AOP Instrumented Endpoints
+    * [JBWS-2377] - jbossws-deploy.conf in 'all' configuration links libraries in 'default' conf
+    * [JBWS-2412] - WSDL schema imports do not published successfully
+    * [JBWS-2416] - Search is not working on the mediawiki
+    * [JBWS-2419] - MTOM/XOP message use always "text/xml" for start-info regardless of content type associated with the content (SOAP message)
+    * [JBWS-2432] - NullPointerException processing headers without actor
+    * [JBWS-2437] - WSDL access url with resource suffix allows any arbitrary xml file to be viewed
+    * [JBWS-2443] - services page does not correctly update host address of endpoints
+    * [JBWS-2482] - Fix WSConsumerPlugin.testTarget() classloading issues
+    * [JBWS-2509] - dar.JMSClientTestCase contains AS4 specific code
+
+Patch
+
+    * [JBWS-2404] - Efficient string handling
+
+Task
+
+    * [JBWS-1312] - Fix JMS transport in trunk
+    * [JBWS-1999] - WS-Security Usename Token Profile JAAS Implementation for JSE based WebServices
+    * [JBWS-2150] - Migrate AddressRewritingTestCase to jaxws
+    * [JBWS-2196] - FastInfoset interoperability
+    * [JBWS-2431] - Update native deployment macros to don't publish jaxb-api.jar and stax-api.jar to JBOSS_HOME/lib directory
+    * [JBWS-2444] - Update hudson, deploy scripts, etc. for new AS repository layout
+    * [JBWS-2445] - Move jaxws 2.1 partial impl from jaxws-ext to jaxws module
+    * [JBWS-2450] - Enable target 2.1 option when using WSImport
+    * [JBWS-2455] - Conformance Requirements JAX-WS 2.1
+    * [JBWS-2483] - Add smoke tools tests to the binary distro
+    * [JBWS-2504] - Use ControllerContext instead of KernelRegistryEntry which will be deprecated
+    * [JBWS-2505] - Remove container integration layer for AS 5.1.0 and AS 6.0.0
+
+Errata
+
+    See: https://jira.jboss.org/jira/browse/JBWS-2545
+
+
+What's new in jbossws-native-3.0.5.GA
+-------------------------------------
+
+Feature Request
+
+    * [JBWS-2323] - Allow the Xerces defer-node-expansion optimisation to be disabled
+    * [JBWS-2373] - Dynamic address re-writing if the request URL does not have a port do not add a port to the generated address
+    * [JBWS-2375] - Add getChildren fuctionality to UnifiedVirtualFile
+    * [JBWS-2401] - Drop port from URL for endpoint where default port for the protocol is being used
+
+Bug
+
+    * [JBWS-1862] - RPC DII Calls Assume response parameter is called 'result' in the response message
+    * [JBWS-2266] - Schema Validation Feature Fails for Special Characters
+    * [JBWS-2268] - Implement @PostConstruct and @Predestroy annotations support for POJO based endpoints (JSR 109 conformance)
+    * [JBWS-2304] - DOMUtils ThreadLocals not cleared for client calls
+    * [JBWS-2346] - Issue with SAAJ API: SOAPBody.getElementsByTagNameNS() appears non-recursive
+    * [JBWS-2372] - Protocol not considered when re-writing address in WSDL based on request address
+    * [JBWS-2378] - Fix remoting client usage for one-way invocations
+    * [JBWS-2389] - WSDL To Java - Anonymous types nested within anonymous types generated JAX-RPC mapping does not match generated source
+    * [JBWS-2399] - Specify groupId explicitly in assembly creating deploy-artifacts directory
+
+Task
+
+    * [JBWS-2339] - Improve endpoint lifecycle management
+    * [JBWS-2340] - Refactor JAXBIntroDA
+    * [JBWS-2355] - Remove Aspect Manager support from AbstractEndpointServlet
+    * [JBWS-2366] - Restore missing images on wiki
+    * [JBWS-2371] - Fix maven build to include right woodstox artifact
+    * [JBWS-2383] - Fix JBossWS deployment macros for new JBossAS trunk directory structure
+
+Errata
+
+    See: https://jira.jboss.org/jira/browse/JBWS-2422
+
+What's new in jbossws-native-3.0.4.GA
+-------------------------------------
+
+Bug
+
+    * [JBWS-1188] - Relax requirement for wsu:id for UsernameToken
+    * [JBWS-2011] - Signature is invalid error when the message contains \r
+    * [JBWS-2245] - test cannot find temp directory
+    * [JBWS-2246] - NPE deploying web services in service archive in CR1 release
+    * [JBWS-2264] - NPE when web services are shut down
+    * [JBWS-2267] - Some Tests are Failing on Machines Without Internet Access
+    * [JBWS-2278] - JBossWS is picking the wrong binding when both Soap1.1 and Soap1.2 bindings are provided for a port
+    * [JBWS-2285] - ClassCastException: org.jboss.ws.core.soap.TextImpl in LogicalMessageImpl.getPayload
+    * [JBWS-2290] - Missing property jbossws.integration.target during ant eclipse
+    * [JBWS-2309] - PasswordType element uses wss-wssecurity-secext NS instead of wss-username-token-profile
+    * [JBWS-2322] - Commandline JBossWS Native Tests Are Not Cross Platform
+    * [JBWS-2326] - wsrunclient shell script is unfunctional due to incorrect classpath
+    * [JBWS-2319] - ClassCastException in SOAPBody.extractContentAsDocument();
+    * [JBWS-2325] - Each request results to an open file descriptor
+    * [JBWS-2336] - Fix JSE deployers ordering
+    * [JBWS-2363] - Binary distribution has ant.properties instead of ant.properties.example
+
+Task
+
+    * [JBWS-1397] - Fix <wsdl-publish-location> for jboss-5.0.x 
+    * [JBWS-2286] - Provide source distributions
+    * [JBWS-2289] - Update source code headers
+    * [JBWS-2310] - Restore hudson job cleaning maven repository
+    * [JBWS-2320] - JBossWS ant and maven targets don't work on Windows OS
+
+Errata
+
+    See: https://jira.jboss.org/jira/browse/JBWS-2352
+
+What's new in jbossws-native-3.0.3.GA
+----------------------------------------
+
+Feature Request
+
+    * [JBWS-981]  - Virtual host configuration for EJB endpoints
+    * [JBWS-2191] - Provide junit tests for the record management tools
+    * [JBWS-2207] - Allow to fully initialize the WS stack
+    * [JBWS-2270] - Re-use JAXBContext whenever possible
+
+Bug
+
+    * [JBWS-1987] - NoClassDefFoundError with testsuite against SOA-P
+    * [JBWS-2152] - @WebFault does not behave like @XmlType
+    * [JBWS-2155] - Not supporting JMS endpoints for WS-Addressing
+    * [JBWS-2186] - Transforming from SAAJ SOAPBody to StreamResult throws IndexOutOfBoundsException 
+    * [JBWS-2187] - Handler Chain Management Prevents Service Re-Use
+    * [JBWS-2189] - Attribute EncodingType is required for Nonce element
+    * [JBWS-2190] - Default encoding is used to decode responses
+    * [JBWS-2194] - Cannot get security domain declared through jboss.xml DD
+    * [JBWS-2216] - Soap address incorrect for https
+    * [JBWS-2233] - EJB3 webserviceref failure
+    * [JBWS-2234] - SOAP 1.2 Endpoint sends SOAP 1.1 messages
+    * [JBWS-2240] - PortComponent from jboss.xml descriptor is not parsed
+    * [JBWS-2242] - WSDL To Java doesn't handle hyphens in PortType properly
+    * [JBWS-2250] - Reference to JAXBElement Causes NullPointerException on deployment
+    * [JBWS-2260] - WSDL to Java, hyphen in PortType not being mapped correctly in generated descriptors
+    * [JBWS-2265] - Wrong UsernameTokenProfile namespace in Password Type attribute
+
+Task
+
+    * [JBWS-2182] - Provide a partial encryption test case
+    * [JBWS-2255] - Upgrade JAXR from 1.2.0.GA to 1.2.0.SP2
+
+Errata
+
+    See: TODO: http://jira.jboss.org/jira/browse/JBWS-2281
+    
+What's new in jbossws-native-3.0.2.GA
+----------------------------------------
+
+Feature Request
+
+    * [JBWS-652]  - Add JAAS certificate authentication support to ws-security implementation
+    * [JBWS-1278] - WSDL To Java, add a configuration option so all generated types can implement java.io.Serializable
+    * [JBWS-1316] - Add support for a configurable time tolerance value that handles clock skew
+    * [JBWS-1907] - authorization based on certificate used for wsse signature
+    * [JBWS-2156] - Allow JBossWS users to include xml declaration processing instruction in SOAP messages
+
+Bug
+
+    * [JBWS-2012] - Attachment support for JAX-WS collections
+    * [JBWS-2014] - MTOM + WS-Security not working
+    * [JBWS-2035] - Cannot determine variable name for void wrapper
+    * [JBWS-2089] - isXOPPackage() is returning an incorrect value
+    * [JBWS-2103] - JBoss tools classpath problem
+    * [JBWS-2153] - Cannot Extract Schema Definition
+    * [JBWS-2159] - Faults not handled correctly for WS-RM services
+    * [JBWS-2172] - Additional \n when restoring XOP elements
+
+Task
+
+    * [JBWS-2013] - Implement standard message context properties
+    * [JBWS-2116] - Sample for certificate authentication
+    * [JBWS-2123] - Update to jaxb-2.1.6  
+    * [JBWS-2124] - Expose http chunking through SOAPConnection
+
+Errata
+
+    See: http://jira.jboss.org/jira/browse/JBWS-2220
+
+What's new in jbossws-3.0.1-native-2.0.4
+----------------------------------------
+
+Feature Request
+
+    * [JBWS-925]  - Provide initial support for FastInfoset
+    * [JBWS-1124] - Scoped class loading domains for WS endpoints
+    * [JBWS-1165] - Provide initial support JSON data binding
+    * [JBWS-1172] - Support schema validation for incoming/outgoing messages
+    * [JBWS-1211] - Add support for @WebFault
+    * [JBWS-1296] - Add support for digest + nonces
+    * [JBWS-1814] - Dynamic Encryption based on clients input
+    * [JBWS-1820] - Using JRE from vendors other than Sun the Remoting key store and trust store algorithms are not propagated
+    * [JBWS-1844] - Implement Provider.createW3CEndpointReference()
+    * [JBWS-1850] - Documentation support for Java->WSDL
+    * [JBWS-1861] - Improve exception message on invalid @WebService usage on SEI
+    * [JBWS-1865] - Unify SOAP message trace
+    * [JBWS-1886] - Provide basic configuration for WS-enabled user projects
+    * [JBWS-1890] - Provide basic project configuration for JBossWS tests
+    * [JBWS-1893] - Provide meaningful advanced samples
+    * [JBWS-1968] - Documentation support for WSDL->Java
+    * [JBWS-1988] - Complete Username Token Profile 1.0
+    * [JBWS-1990] - Support for SOAP 1.2 in wsconsume
+    * [JBWS-2022] - Provide interface for WSSecurityDispatcher
+
+Bug
+
+    * [JBWS-1217] - WSDLtoJava Namespace to package mapping does not support multiple namespaces
+    * [JBWS-1763] - Incorrect handling of charsets when the default charset is not UTF-8
+    * [JBWS-1857] - JAXBContext created for every wrapper type
+    * [JBWS-1878] - ConcurrentModificationException in initHandlerChain()
+    * [JBWS-1905] - jaxws-samples-logicalhandler-jaxb.war produces: java.lang.ClassCastException: org.jboss.ws.core.soap.TextImpl
+    * [JBWS-1909] - RequestHandler.handlerWSDLResquest has dependency on Servlet API
+    * [JBWS-1912] - DispatcherDelegate - Bypass RMIAdaptor when used locally
+    * [JBWS-1938] - Assign message name instead of IN and OUT for Inbound/Outbound Addressing Property
+    * [JBWS-1941] - Fault handler chain is not called when user application exceptions are thrown
+    * [JBWS-1948] - Optional SOAP Header element is required by WSSecurityHandlerServer handler
+    * [JBWS-1957] - WS-Eventing extension sends incorrect HTTP content-type
+    * [JBWS-1964] - showSubscriptionTable MBean Method - NullPointerException
+    * [JBWS-1965] - subscribe method on subscription manager - NullPointerException
+    * [JBWS-1966] - No Handler execution for inbound response when using Dispatch
+    * [JBWS-1969] - Cannot publish wsdl with imported schema files, using bottom up approach
+    * [JBWS-1970] - wsrunclient doesn't work with args
+    * [JBWS-1971] - Missing clone on MemoryBufferRecorder
+    * [JBWS-1973] - MTOM/XOP attachments not inlined when using JAX-WS handlers
+    * [JBWS-1974] - Using signature as security in a webservice throws an error when loglevel not Debug
+    * [JBWS-1979] - Endpoint address prop doesn't work with Dispatch
+    * [JBWS-1985] - EntityResolver not used when reading web.xml during web serivce deployment
+    * [JBWS-2000] - MTOM: Chunked encoding transfer problem
+    * [JBWS-2009] - WSDLFilePublisher throws FileNotFoundException when schema files are not in wsdl directory
+    * [JBWS-2011] - Signature is invalid error when the message contains \r
+    * [JBWS-2018] - JavatoWSDL Package to Namespace mapping does not support multiple packages
+    * [JBWS-2019] - WSDL To Java - Case of service-interface and service-endpoint-interface in JAX-RPC mapping does not match generated interface when WSDL type begins with lower case
+    * [JBWS-2058] - 'wsa:From' header field is assigned to variable 'replyTo' instead of 'from'
+
+Task
+
+    * [JBWS-515]  - Provide an initial implementation for WS-ReliableMessaging
+    * [JBWS-1724] - wsconsume cannot use part names that are friendly to .NET
+    * [JBWS-1776] - Verify isolated classloading with WSProvide
+    * [JBWS-1978] - Evaluate (and remove) JBPM dependency from component info
+    * [JBWS-1982] - Simplify deploy/undeploy cycles for different stacks
+
+Errata
+
+    FIXME: [JBWS-751] Multiple schema imports with the same namespace
+    FIXME: [JBWS-1312] Fix JMS transport in trunk
+    FIXME: [JBWS-1397] Fix <wsdl-publish-location> for jboss-5.0.x
+    FIXME: [JBCTS-540] EJB3 proxy does not implement the Home interface
+    FIXME: [JBWS-981] Virtual host configuration for EJB endpoints
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-2044] Rewrite Server side file system based RM store    
+
+What's new in jbossws-2.0.3.GA
+------------------------------
+
+Feature Request
+
+    * [JBWS-1257] - Add configuration for token references
+    * [JBWS-1850] - Documentation support for Java->WSDL
+    * [JBWS-1874] - Allow configuration of secret key wrap algorithm
+    * [JBWS-1880] - WS-Addressing with endpoints using soap 1.2
+    * [JBWS-1897] - Enable/disable logging on every endpoint
+    * [JBWS-1898] - Statistics/logs about clients calling endpoints
+    * [JBWS-1899] - Fine grained management of statistics recording
+    * [JBWS-1904] - Explicitly set the namespace of a WebFault
+    * [JBWS-1911] - Support the JMS transport with JAX-WS
+    * [JBWS-1950] - Show collected records as html table in jmx-console
+
+Bug
+
+    * [JBWS-1217] - WSDLtoJava Namespace to package mapping does not support multiple namespaces
+    * [JBWS-1324] - JMS Endpoint - Message delivery starts before endpoint is ready.
+    * [JBWS-1762] - web.xml modified to web.xml.org - Subsequent runs fail
+    * [JBWS-1813] - context-root in jboss.xml is ignored
+    * [JBWS-1819] - wsrunclient script(s) differ and do not always function.
+    * [JBWS-1841] - WebServiceRef injection from DD doesn't work
+    * [JBWS-1873] - WSDL to Java - Incorrect case of generated type for anonymous type.
+    * [JBWS-1876] - Wrong Content-Type in SOAP 1.2 messages
+    * [JBWS-1879] - @BindingType is read from SEI instead of endpoint implementation
+    * [JBWS-1881] - WSDL To Java - All generated types have first character upper case, extends clause in base types do not take this into account.
+    * [JBWS-1906] - Stack overflow exception when reading bad wsdl files
+    * [JBWS-1924] - Verify installation script for jboss-4.2.1.GA
+    * [JBWS-1937] - Document/Literal addressing endpoint fails when retreiving Outbound Action
+    * [JBWS-1939] - URL port information of soap:address is different from import schemaLocation URL
+
+Errata
+
+    * FIXME [JBCTS-540] EJB3 proxy does not implement the Home interface
+    * FIXME [JBWS-1460] @XmlMimeType on SEI parameter declarations
+    * FIXME [JBWS-1665] incorrect wsdl generation
+    * FIXME [JBWS-1724] wsconsume cannot use part names that are friendly to .NET
+    * FIXME [JBWS-1772] WSConsume output is not correctly redirected
+    * FIXME [JBWS-1773] Verify isolated classloading with WSConsume
+    * FIXME [JBWS-1776] Verify isolated classloading with WSProvide
+    * FIXME [JBWS-751] Multiple schema imports with the same namespace
+    * FIXME [JBWS-798] Complete EventingTestCase
+    * FIXME [JBWS-981] Virtual host configuration for EJB endpoints
+
+What's new in jbossws-2.0.2.GA
+------------------------------
+
+Feature Request
+
+    * [JBWS-492] - Add support for Policy Identification
+    * [JBWS-493] - Add support for Compact Policy Expression
+    * [JBWS-494] - Add support for Policy Intersection
+    * [JBWS-895] - Provide support for policy attachments
+    * [JBWS-1644] - Process wsdl extensibility elements
+    * [JBWS-1645] - Modify WSDLGenerator to deal with policies
+    * [JBWS-1806] - Add EndpointRegistry to jmx-console
+    * [JBWS-1807] - HTTP bindings for Provider
+
+Bug
+
+    * [JBWS-700] - Update documentation for dealing with attachments
+    * [JBWS-1669] - Fix WebServiceContext.getMessageContext() for EJB endpoints
+    * [JBWS-1704] - The Use Of Remoting Causes An Additional 'datatype' Parameter To Be Sent On All Requests
+    * [JBWS-1735] - wstx.jar is missing from release, causes wsconsume to fail
+    * [JBWS-1761] - WSProvide ignores SOAPBinding declaration
+    * [JBWS-1791] - target deploy-jboss42-endorsed incomplete
+    * [JBWS-1792] - init-param for handler defined in jaxrpc-config not processed
+    * [JBWS-1795] - Type Substitution doesn't work with Schema2Java Client approach
+    * [JBWS-1796] - deploy-jboss40-no-ejb3 build fails
+    * [JBWS-1797] - Setting .NET friendly Endpoint in web.xml
+    * [JBWS-1798] - Cannot find local schema with relative urls
+    * [JBWS-1800] - Trying to monitor the JVM using -Dcom.sun.management.jmxremote prevents the jbossws 2.0.1 from coming up
+    * [JBWS-1801] - WSDL To Java - When an array if returned from a method on the SEI it is incorrectly ommitted from the generated JAX-RPC mapping.
+    * [JBWS-1808] - BackwardCompatibleURLPatternDeploymentAspect is mangling valid URLpatterns
+    * [JBWS-1809] - JAXBIntros are not taken into consideration when generating the WSDL
+    * [JBWS-1811] - Cannot access CLIENT_ADDRESSING_PROPERTIES inside client
+    * [JBWS-1815] - Missing fault detail in messages from SLSB Provider
+    * [JBWS-1843] - WSDL with custom schema imports causes java.lang.OutOfMemoryError: Java heap space when there are circular schema imports dependencies
+    * [JBWS-1852] - Failed to create a new SAX parser
+    * [JBWS-1856] - Attachment part not cleanup correctly
+    * [JBWS-1903] - DOMUtils doesn't clear thread locals
+
+Task
+
+    * [JBWS-856] - Complete WS-Policy implementation
+    * [JBWS-1330] - Fix jaxrpc wsse tests for jbossws-5.0
+    * [JBWS-1571] - Provide/Verify WS-Policy implementation
+    * [JBWS-1572] - Provide/Verify WS-PolicyAttachment implementation
+    * [JBWS-1612] - Provide an integration layer for ESB
+    * [JBWS-1614] - Provide an integration layer for JBossAS
+    * [JBWS-1748] - Improve the documentation that explains proprietary DD options
+    * [JBWS-1793] - Provide a test case for the tools scripts that reside under JBOSS_HOME/bin
+    * [JBWS-1816] - JAXWS SOAPFault inheritance
+    * [JBWS-1817] - WS-Security with JAX-WS Dispatch
+    * [JBWS-1835] - Schedule metro issues at java.net
+    * [JBWS-1842] - JAXB based ServiceRef meta data
+    * [JBWS-1846] - Release jbossws-2.0.2.GA binary
+    
+Errata
+    
+    FIXME: [JBCTS-540] EJB3 proxy does not implement the Home interface
+    FIXME: [JBWS-1460] @XmlMimeType on SEI parameter declarations
+    FIXME: [JBWS-1665] incorrect wsdl generation
+    FIXME: [JBWS-1772] WSConsume output is not correctly redirected
+    FIXME: [JBWS-1773] Verify isolated classloading with WSConsume
+    FIXME: [JBWS-1776] Verify isolated classloading with WSProvide
+    FIXME: [JBWS-1813] context-root in jboss.xml is ignored
+    FIXME: [JBWS-751] Multiple schema imports with the same namespace
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-981] Virtual host configuration for EJB endpoints
+
+What's new in jbossws-2.0.1.GA
+------------------------------
+
+Feature Request
+
+    * [JBWS-1736] - MTOM property at service-ref level
+
+Bug
+
+    * [JBWS-1453] - WSDL To Java - Invalid name for generated class if complex type name contains a period.
+    * [JBWS-1536] - NPE in WSDL to Java when webservices.xml requested but no global package mapping
+    * [JBWS-1617] - JAXRPC doc/literal trims empty string
+    * [JBWS-1702] - JAXWS type inheritance
+    * [JBWS-1723] - WSDL To Java - Anonymous Types Referenced As Bound Headers Not Handled Correctly
+    * [JBWS-1725] - WSDL-JAVA Derivation of a complex type from a Simple type: bas64Binary is not mapped to byte[]
+    * [JBWS-1732] - WSProvideTask throws IllegalArgumentException
+    * [JBWS-1733] - JAXWS client ignores BindingProvider.SESSION_MAINTAIN_PROPERTY
+    * [JBWS-1747] - org.jboss.wsf.container.jboss42.WebMetaDataAdapter doesn't check if there's a J2eeApplicationMetaData instance set on the DeploymentInfo parent
+    * [JBWS-1749] - JBossWS2.0.0.GA download does not contain updated jboss-xml-binding library
+    * [JBWS-1762] - web.xml modified to web.xml.org - Subsequent runs fail
+    * [JBWS-1763] - Incorrect handling of charsets when the default charset is not UTF-8
+    * [JBWS-1766] - UsernameToken ignores BindingProvider.USERNAME_PROPERTY
+    * [JBWS-1771] - Post-handler-chain not invoked for "Standard Client" configuration with DII client
+    * [JBWS-1780] - Context servlet throws NPE
+
+Task
+
+    * [JBWS-1729] - Create a comprehensive SPI tools test suite
+    * [JBWS-1770] - Fix Endpoint API for jboss-5.0.0.Beta3
+
+Errata
+
+    FIXME: [JBCTS-540] EJB3 proxy does not implement the Home interface
+    FIXME: [JBCTS-624] R2753 cannot parse web.xml for jsp vehicle
+    FIXME: [JBWS-1460] @XmlMimeType on SEI parameter declarations
+    FIXME: [JBWS-1665] incorrect wsdl generation
+    FIXME: [JBWS-1772] WSConsume output is not correctly redirected
+    FIXME: [JBWS-1773] Verify isolated classloading with WSConsume
+    FIXME: [JBWS-1776] Verify isolated classloading with WSProvide
+    FIXME: [JBWS-751] Multiple schema imports with the same namespace
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-981] Virtual host configuration for EJB endpoints
+    
+What's new in jbossws-2.0.0
+---------------------------
+
+Feature Request
+
+    * [JBWS-434]  - Support sequences of anys in JAXRPC
+    * [JBWS-1460] - @XmlMimeType and @XmlAttachmentRef on SEI parameter declarations
+    * [JBWS-1518] - Add support for jdk-1.6
+    * [JBWS-1597] - WSDL To Java - Add support for bound headers.
+    * [JBWS-1666] - Simplify jbosws jar dependencies
+    * [JBWS-1564] - Support swaRef with JAX-WS
+    * [JBWS-1618] - Make default context root for jaxws ejb endpoint configurable
+    * [JBWS-429]  - WSDL To Java - Create Custom Holders for Custom types that define INOUT parameters and OUT parameters
+    * [JBWS-771]  - Use part names that are friendly to .NET
+
+Bug
+
+    * [JBWS-801]  - Chunked transfer of large attachments
+    * [JBWS-805]  - Fault code is always 'Client'
+    * [JBWS-859]  - SOAPMessageUnMarshaller doesn't support HTTP server response [204] - No Content
+    * [JBWS-862]  - Return SOAP Fault for invalid soap messages
+    * [JBWS-1093] - Deploying a war that also contains normal servlets the web.xml is modified as if they are all endpoints
+    * [JBWS-1263] - Addressing does not disable the mustUnderstand attribute, which causes HandlerchainBaseImple.checkMustUnderstand to fail
+    * [JBWS-1283] - Soap attachments were dropped on server responses. Attachment is added on a handler's handleResponse method; however it mysteriously disappeared on the outgoing soap message.
+    * [JBWS-1339] - @Security domain vs. <security-domain>
+    * [JBWS-1346] - wsa:ReplyTo alwayt null
+    * [JBWS-1403] - NumberFormatException When Using StubExt.PROPERTY_CLIENT_TIMEOUT
+    * [JBWS-1422] - NPE if @WebParam.name like "mX.."
+    * [JBWS-1439] - Jdk 1.6.0 Requests get the error "setProperty must be overridden by all subclasses of SOAPMessage"
+    * [JBWS-1446] - Invalid WSDL when a parameter of type Object is part of a webmethod
+    * [JBWS-1468] - @Resource WebServiceContext for jbossas-4.x
+    * [JBWS-1472] - Address in WSDL is now always replaced regardless of 'alwaysModifySOAPAddress' value.
+    * [JBWS-1511] - MessageFactory does not preserve comments
+    * [JBWS-1520] - No server response on invalid soap request
+    * [JBWS-1553] - fails to read operations for portType from different namespace
+    * [JBWS-1556] - @WebWservice does not work with class isolation
+    * [JBWS-1563] - WSDLDefinitionsFactory doesn't resolve schema references locally
+    * [JBWS-1566] - JBossWS-1.2.0.GA invalid wsdl generated when using @XmlSchema annotations on Types inheriting from >1 java package
+    * [JBWS-1579] - @EndpointConfig ignored on SEI
+    * [JBWS-1588] - Review jar in classpath for wsrunclient.sh
+    * [JBWS-1594] - Support certificate password different from keystore
+    * [JBWS-1595] - No typemapping for xsd:anyType with soap encoding
+    * [JBWS-1607] - WSDL To Java - document/literal, IN OUT parameter incorectly used as return type.
+    * [JBWS-1609] - Address in WSDL - Port value is -1 when server is requested with default port 80
+    * [JBWS-1611] - SOAPAction is not sent in dispath requests
+    * [JBWS-1616] - Verify correct bahaviour of @WebService.wsdlLocation
+    * [JBWS-1619] - ServletEndpointContext.getHttpSession always creates HTTPSession
+    * [JBWS-1620] - Incorrect handling of MIME boundaries in MultipartRelatedDecoder
+    * [JBWS-1621] - wstools.sh contain the wrong client libs and will fail
+    * [JBWS-1622] - Multiple context root not supported
+    * [JBWS-1624] - JBossWS samples don't work with JMX authentication
+    * [JBWS-1625] - Calling SOAPPart.setContent() with a DOMSource containing an Element which is a SOAPElement the contents of the body are added twice.
+    * [JBWS-1627] - WSDL To Java - Array Unwrapping uses incorect case to reference array type.
+    * [JBWS-1647] - Text Node Preservation For Messages Sent Across The Wire
+    * [JBWS-1653] - Post-handler-chain not invoked for "Standard Client" configuration
+    * [JBWS-1657] - Error resolving swaref schema
+    * [JBWS-1658] - SwaRef fails with doclit/wrapped endpoints
+    * [JBWS-1659] - @XmlAttachmentRef ignored on method level
+    * [JBWS-1660] - Resolve swaref schema through entity resolver
+    * [JBWS-1680] - Dispatch.invoke does not throw a ProtocolException on Fault
+    * [JBWS-1690] - Review wstools scripts and jars copied to client.
+    * [JBWS-1691] - WSDL To Java - Initial Character of Service and SEI names should be upper case.
+    * [JBWS-1692] - SOAPElement.importNode() not supported
+    * [JBWS-1696] - MIssing wsdl4j.jar in scripts
+    * [JBWS-1697] - WSDL To Java - Incorrect handling of Simple types derived by restriction for holders.
+    * [JBWS-1698] - WSDL To Java - If fault name contains 'Fault' the generated Exception does not match the throws clause on the SEI
+    * [JBWS-1706] - SOAPConnection.get fails with ProtocolException
+    * [JBWS-1710] - StackOverflowError when calling SOAPDocument.createCDATASection
+    * [JBWS-1711] - NoClassDefFoundError: com/sun/xml/stream/buffer/XMLStreamBuffer
+
+Task
+
+    * [JBWS-1661] - Update to jaxb-ri-2.1
+
+Errata
+
+    FIXME: [JBAS-3595] - Tomcat allows http access with transport guarantie CONFIDENTIAL
+    FIXME: [JBWEB-68] Servlet.init(ServletConfig) not called
+    FIXME: [JBCTS-540] EJB3 proxy does not implement the Home interface
+    FIXME: [JBWS-1312] Fix JMS transport in trunk
+    FIXME: [JBWS-1330] Fix jaxrpc wsse tests for jbossws-5.0
+    FIXME: [JBWS-1397] Fix <wsdl-publish-location> for jboss-5.0.x
+    FIXME: [JBWS-1460] @XmlMimeType on SEI parameter declarations
+    FIXME: [JBWS-1617] JAXRPC doc/literal trims empty string
+    FIXME: [JBWS-751] Multiple schema imports with the same namespace
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-981] Virtual host configuration for EJB endpoints
+    
+What's new in JBossWS-1.2.1
+---------------------------
+
+Feature Request
+
+    * [JBWS-1156] - Implement injection of WebServiceRef
+    * [JBWS-1021] - Implement javax.xml.ws.Endpoint
+    * [JBWS-1022] - Implement javax.xml.ws.WebServiceContext
+    * [JBWS-1023] - Implement javax.xml.ws.Service
+    * [JBWS-1024] - Implement javax.xml.ws.BindingProvider
+    * [JBWS-1025] - Implement javax.xml.ws.Dispatch
+    * [JBWS-1070] - Add context-root in generated jboss-web.xml for Endpoint API
+    * [JBWS-1207] - Async jaxws dispatch
+    * [JBWS-1208] - Async jaxws proxy
+    * [JBWS-1020] - Implement javax.xml.ws.Provider
+    * [JBWS-1192] - Examples for JSR181 EJB Endpoints: show how to use a JavaBean as an operations's argument or return value
+    * [JBWS-1388] - Notification validation before dispatch
+    * [JBWS-1406] - WS-Eventing: event notification failure
+    * [JBWS-1438] - Implement @WebServiceRef injection for JBossAS-4.2
+    * [JBWS-1443] - getMessageContext Not Implemented
+    * [JBWS-1456] - Allow client configuration on StubExt
+    * [JBWS-1457] - Support soap attachments on StubExt
+
+Bug
+
+    * [JBWS-1079] - Incorrect WSDL to Java mapping for anonymous struct.
+    * [JBWS-1336] - JAXWSDeployerJSE throws NPE
+    * [JBWS-1389] - WebServiceProvider should be allowed on EJB3 beans
+    * [JBWS-1409] - WsdlGenerator crashes on void-methods
+    * [JBWS-1168] - JAXWS handler ordering
+    * [JBWS-1357] - JAXWSDeployerJSE is not handling jsp servlet defs correctly
+    * [JBWS-1374] - Package to namespace mapping is wrong
+    * [JBWS-1375] - JSR181MetaDataBuilder inspects java.* classes
+    * [JBWS-800]  - ClassCastException when trying to marshal a subclass of Date
+    * [JBWS-810]  - Simple type with restriction
+    * [JBWS-1184] - WSDL to Java - maps required xsd:double attribute to java.lang.Double
+    * [JBWS-1231] - wstools/java-wsdl does not handle recursive types
+    * [JBWS-1259] - WSDL To Java - StackOverflowError with self referencing element.
+    * [JBWS-1260] - WSDL To Java - Parameter unwrapping fails for a lot of scenarios.
+    * [JBWS-1285] - NPE when the soap encoded array size is 0 on the return path
+    * [JBWS-1317] - webservices.xml override does not account for namespaces
+    * [JBWS-1328] - Security configuration not correctly loaded when deployed as ear to JBoss 5.0.x
+    * [JBWS-1378] - NPE in replaceAddressLocation with SOAP1.2 WSDL
+    * [JBWS-1384] - Attachment parts with doclit message
+    * [JBWS-1386] - ComplexType with base64Binary property
+    * [JBWS-1393] - Problem interpreting messages with attachment when confronted with no <start> header
+    * [JBWS-1396] - Now jbossws-beans is exploded jbossws.sar must be exploded
+    * [JBWS-1408] - NPE when jbossws.sar is not expanded
+    * [JBWS-1410] - NumberFormatException From StubExt.PROPERTY_CLIENT_TIMEOUT
+    * [JBWS-1427] - Handling of invalid binding port type ref and doc/lit message parts
+    * [JBWS-1428] - Java to WSDL - Arrays defined with indexed properties within value type are skipped when generating the WSDL
+    * [JBWS-1441] - WSDL to Java - Complex type defined with complexContent only last element is in the generated java class if base type is empty
+    * [JBWS-1450] - WSDL To Java - Parameter unwrapping not handling nillable types correctly.
+    * [JBWS-1451] - comparison of the mime type should not be case sensitive
+    * [JBWS-1455] - WSDL To Java - Generated jaxrpc mapping contains same exception mapped multiple times if there are multiple operations.
+    * [JBWS-1468] - @Resource WebServiceContext for jbossas-4.x
+    * [JBWS-1497] - Fix failed resource lookup when offline
+    * [JBWS-1501] - wsimport RI fails when processing parameterOrder on one-way operations
+
+Task
+
+    * [JBWS-1284] - Gracefully handle invalid ImageIO mime types
+    * [JBWS-1297] - Implement JAXB Fault Marshalling
+    * [JBWS-1404] - Add support for differing namespaces on SEI and implementation bean
+    * [JBWS-644]  - JAXWS initial implementation
+    * [JBWS-1031] - Use JAXB-2.0 for JSR-181 endpoints
+    * [JBWS-1099] - Implement JAXWS Handler Framework
+    * [JBWS-1150] - Implement JAXWS Logical Handlers
+    * [JBWS-1315] - Implement WS deployers for jbossas/trunk
+    * [JBWS-1425] - Update to remoting-2.0
+    * [JBWS-723]  - Protect access to WSDL
+    * [JBWS-1077] - Improve/Complete security documentation
+    * [JBWS-1098] - Publicly available interop endpoints
+    * [JBWS-1100] - Move WS-Eventing to updated wsa schema
+    * [JBWS-1155] - Document SwA/XOP usage with JSR181 endpoints.
+    * [JBWS-1307] - JAXWS user guide and samples
+    * [JBWS-1418] - Provide JBossWS API docs
+    * [JBWS-1429] - Cleanup PortComponent annotation
+    * [JBWS-1433] - Remerge connector discovery code
+    * [JBWS-1434] - Client programming: Add property API at Service level similiar to StubExt.
+    * [JBWS-1473] - Setup soak and performance tests
+    * [JBWS-1503] - Support XOP samples in tomcat
+    * [JBWS-1504] - Resolve dependency on snapshots
+
+Errata
+
+    FIXME: [JBWS-1294] Add support for mapping async methods
+    FIXME: [JBWS-1511] MessageFactory does not preserve comments
+    FIXME: [JBWS-434] Support sequences of anys in JAXRPC
+    FIXME: [JBWS-751] Multiple schema imports with the same namespace
+
+What's new in jbossws-1.0.4
+---------------------------
+
+    * [JBWS-660]  XOP inline base64Binary and sign message  
+    * [JBWS-779]  Add webservices.xml support to wsdlTojava  
+    * [JBWS-868]  BPEL in jbossws-samples
+    * [JBWS-1113] Improve performance of Service.getPort()
+    * [JBWS-1178] Multiple virtual host and soap:address problem
+    * [JBWS-1182] Change wsdl-java@file to wsdl-java@location
+    * [JBWS-1200] Provide source download for GA release
+    * [JBWS-1261] Provide support for additional MTOM java types besides byte[]
+    * [JBWS-1299] Add support for wsdl-java@parameter-style
+    * [JBWS-1302] Use EAR name in context root for EJB endpoints
+    * [JBWS-1323] Add JBoss EULA
+    * Bug fixes
+
+Errata
+
+    FIXME: [JBWS-1291] Fix JaxrpcMappingValidator
+    FIXME: [JBWS-1292] Fix XOPElementRPCTestCase
+    FIXME: [JBWS-269] Support attachments in Web Services Tools
+    FIXME: [JBWS-269] Support attachments in Web Services Tools
+    FIXME: [JBWS-434] Support sequences of anys
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-798] Complete EventingTestCase
+    FIXME: [JBWS-940] Add wsdl-java support for jdk 1.4 typesafe enums
+
+What's new in jbossws-1.0.3
+---------------------------
+
+    * [JBWS-983]  Configure SOAPAction on the Call object  
+    * [JBWS-1090] preventing override of webservices.xml when multiple web services are processed with wstools  
+    * [JBWS-1160] XOP Inline base64 for doc/lit requests
+    * Bug fixes
+
+What's new in jbossws-1.0.2
+---------------------------
+
+    * [JBWS-855] Provide MTOM for document/literal  
+    * [JBWS-920] integrate wstools wsdl2java functionality
+    * [JBWS-921] integrate wstools java2wsdl functionality
+    * [JBWS-932] Performance bottleneck when marshalling array types
+    * Bug fixes
+
+What's new in jbossws-1.0.1
+---------------------------
+
+    * [JBWS-776] WSDLToJava Support wildcards
+    * [JBWS-852] Integration with Mikrocontainer
+    * [JBWS-865] Support security annotations for EJB3 endpoints
+    * [JBWS-871] Arrays with JSR181 endpoints  
+    * [JBWS-923] Complete MTOM for rpc/literal
+    * Bug fixes

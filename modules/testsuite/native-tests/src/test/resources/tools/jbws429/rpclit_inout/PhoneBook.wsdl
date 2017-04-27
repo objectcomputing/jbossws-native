@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PhoneBook' targetNamespace='http://test.jboss.org/ws/jbws429' 
+                              xmlns='http://schemas.xmlsoap.org/wsdl/' 
+                              xmlns:ns1='http://test.jboss.org/ws/jbws429/types' 
+                              xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+                              xmlns:tns='http://test.jboss.org/ws/jbws429' 
+                              xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+                              
+ <types xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws429/types' 
+          xmlns='http://www.w3.org/2001/XMLSchema' 
+          xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' 
+          xmlns:tns='http://test.jboss.org/ws/jbws429/types' 
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+          
+   <complexType name='Person' xmlns='http://www.w3.org/2001/XMLSchema'>
+    <sequence xmlns='http://www.w3.org/2001/XMLSchema'>
+     <element name='firstName' nillable='true' type='string' xmlns='http://www.w3.org/2001/XMLSchema'/>
+     <element name='surname' nillable='true' type='string' xmlns='http://www.w3.org/2001/XMLSchema'/>
+    </sequence>
+   </complexType>
+   
+   <complexType name='TelephoneNumber' xmlns='http://www.w3.org/2001/XMLSchema'>
+    <sequence xmlns='http://www.w3.org/2001/XMLSchema'>
+     <element name='areaCode' nillable='true' type='string' xmlns='http://www.w3.org/2001/XMLSchema'/>
+     <element name='number' nillable='true' type='string' xmlns='http://www.w3.org/2001/XMLSchema'/>
+    </sequence>
+   </complexType>
+   
+   <complexType name='Account'  xmlns='http://www.w3.org/2001/XMLSchema'>
+    <sequence xmlns='http://www.w3.org/2001/XMLSchema'>
+     <element name='accountNumber' nillable='true' type='string' xmlns='http://www.w3.org/2001/XMLSchema'/>
+    </sequence>   
+   </complexType>
+   
+  </schema>
+ </types>
+ 
+ <message name='PhoneBook_lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part name='Person_1' type='ns1:Person' xmlns='http://schemas.xmlsoap.org/wsdl/'/>
+  <part name='Account' type='ns1:Account' xmlns='http://schemas.xmlsoap.org/wsdl/'/>  
+ </message>
+ <message name='PhoneBook_lookupResponse' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part name='result' type='ns1:TelephoneNumber' xmlns='http://schemas.xmlsoap.org/wsdl/'/>
+  <part name='Account' type='ns1:Account' xmlns='http://schemas.xmlsoap.org/wsdl/'/>  
+ </message>
+ 
+ <portType name='PhoneBook' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <operation name='lookup' parameterOrder='Person_1 Account' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+   <input message='tns:PhoneBook_lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'/>
+   <output message='tns:PhoneBook_lookupResponse' xmlns='http://schemas.xmlsoap.org/wsdl/'/>
+  </operation>
+ </portType>
+ 
+ <binding name='PhoneBookBinding' type='tns:PhoneBook' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+   <soap:operation soapAction=''/>
+   <input xmlns='http://schemas.xmlsoap.org/wsdl/'>
+    <soap:body namespace='http://www.jboss.org/support/phonebook' use='literal'/>
+   </input>
+   <output xmlns='http://schemas.xmlsoap.org/wsdl/'>
+    <soap:body namespace='http://www.jboss.org/support/phonebook' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='PhoneBook' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <port binding='tns:PhoneBookBinding' name='PhoneBookPort' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

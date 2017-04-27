@@ -1,0 +1,15 @@
+<schema targetNamespace='http://org.jboss.ws/types2'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns2='http://org.jboss.ws/types2'>
+<xsd:complexType name="USAddress" >
+  <xsd:sequence>
+    <xsd:element name="name"   type="xsd:string"/>
+    <xsd:element name="street" type="xsd:string"/>
+    <xsd:element name="city"   type="xsd:string"/>
+    <xsd:element name="state"  type="xsd:string"/>
+    <xsd:element name="zip"    type="xsd:decimal"/>
+  </xsd:sequence>
+</xsd:complexType> 
+</schema>

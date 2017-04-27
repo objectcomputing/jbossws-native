@@ -1,0 +1,15 @@
+<ns1:elementA xmlns:ns1='http://org.jboss.ws/testNS'>
+  <ns1:String_1>Strawberry</ns1:String_1>
+  <ns1:elementB xmlns:ns1='http://org.jboss.ws/testNS'>
+    <ns1:String_1>Apple</ns1:String_1>
+    <ns1:elementC xmlns:ns1='http://org.jboss.ws/testNS'>
+      <ns1:String_1>Banana</ns1:String_1>
+    </ns1:elementC>
+  </ns1:elementB>
+  <ns1:elementC xmlns:ns1='http://org.jboss.ws/testNS'>
+    <ns1:String_1>Orange</ns1:String_1>
+  </ns1:elementC>
+  <ns2:elementA xmlns:ns1='http://org.jboss.ws/testNS' xmlns:ns2='http://org.jboss.ws/testNS2'>
+    <ns1:String_1>Raspberry</ns1:String_1>
+  </ns2:elementA>
+</ns1:elementA>

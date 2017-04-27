@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Header: /local/damona/repository/IPLSProvisioning/src/com/tsi/iplsprovisioning/services/meta-inf/wsdl/IPLSProvisioning.wsdl,v 1.2 2005/03/09 00:51:57 werner Exp $ -->
+
+<!-- <a href="mailto:werner.jaeger@t-systems.com">Werner Jaeger</a> on Sep 10, 2004, 11:22 AM -->
+
+<definitions
+   xmlns:tns="http://services.iplsprovisioning.tsi.com"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   targetNamespace="http://services.iplsprovisioning.tsi.com">
+
+   <import namespace="http://services.iplsprovisioning.tsi.com" location="Abstract.wsdl"/>
+
+   <binding name="ServiceActivationBinding" type="tns:IServiceActivationRemote">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="processMessage">
+         <soap:operation soapAction=""/>
+         <input><soap:body use="literal"/></input>
+         <output><soap:body use="literal"/></output>
+      </operation>
+   </binding>
+
+   <service name="IPLSProvisioning">
+      <port name="ServiceActivationPort" binding="tns:ServiceActivationBinding">
+         <soap:address location="http://localhost:8080/IPLSProvisioningEJB/sa"/>
+      </port>
+   </service>
+</definitions>

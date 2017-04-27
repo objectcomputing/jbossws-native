@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-ws-security xmlns="http://www.jboss.com/ws-security/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.com/ws-security/config http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+    <key-store-file>WEB-INF/wsse.keystore</key-store-file>
+    <key-store-type>jks</key-store-type>
+    <key-store-password>jbossws</key-store-password>
+    <trust-store-file>WEB-INF/wsse.truststore</trust-store-file>
+    <trust-store-type>jks</trust-store-type>
+    <trust-store-password>jbossws</trust-store-password>
+    <port name="HelloPort">
+        <operation name="{http://org.jboss.test.ws/wsse}echoUserType">
+            <config>
+                <sign type="x509v3" alias="wsse">
+                    <targets>
+                        <target type="qname">{http://org.jboss.test.ws/wsse}echoUserType</target>
+                    </targets>
+                </sign>
+                <encrypt type="x509v3" alias="wsse">
+                    <targets>
+                        <target type="qname">{http://org.jboss.test.ws/wsse}echoUserType</target>
+                    </targets>
+                </encrypt> 
+                <requires>
+                    <signature>
+                        <targets>
+                            <target type="qname">{http://org.jboss.test.ws/wsse}echoUserTypeResponse</target>
+                        </targets>
+                    </signature>
+                    <encryption>
+                        <targets>
+                            <target type="qname" contentOnly="true">{http://org.jboss.test.ws/wsse}echoUserTypeResponse</target>
+                        </targets>
+                    </encryption> 
+                </requires>
+            </config>
+        </operation>
+    </port>
+</jboss-ws-security>

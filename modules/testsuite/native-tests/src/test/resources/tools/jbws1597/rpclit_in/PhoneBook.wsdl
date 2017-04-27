@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PhoneBook' 
+             targetNamespace='http://test.jboss.org/ws/jbws1597' 
+             xmlns='http://schemas.xmlsoap.org/wsdl/' 
+             xmlns:ns1='http://test.jboss.org/ws/jbws1597/types' 
+             xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+             xmlns:tns='http://test.jboss.org/ws/jbws1597' 
+             xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1597/types' 
+          xmlns='http://www.w3.org/2001/XMLSchema' 
+          xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' 
+          xmlns:tns='http://test.jboss.org/ws/jbws1597/types' 
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+          
+   <complexType name='Person'>
+    <sequence>
+     <element name='firstName' nillable='true' type='string'/>
+     <element name='surname' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   
+   <complexType name='TelephoneNumber'>
+    <sequence>
+     <element name='areaCode' nillable='true' type='string'/>
+     <element name='number' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+
+
+   <complexType name='BillingAccount'>
+    <sequence>
+      <element name='sortCode' nillable='true' type='string'/>
+      <element name='accountNumber' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+      
+   <element name='billingAccount' type='tns:BillingAccount'/>      
+  </schema>
+ </types>
+ 
+ <message name='PhoneBook_lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part name='Person_1' type='ns1:Person'/>
+  <part name='Account_1' element='ns1:billingAccount'/>  
+ </message>
+ <message name='PhoneBook_lookupResponse'>
+  <part name='result' type='ns1:TelephoneNumber'/>
+ </message>
+ 
+ <portType name='PhoneBook'>
+  <operation name='lookup' parameterOrder='Person_1'>
+   <input message='tns:PhoneBook_lookup'/>
+   <output message='tns:PhoneBook_lookupResponse'/>
+  </operation>
+ </portType>
+ 
+ <binding name='PhoneBookBinding' type='tns:PhoneBook'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://www.jboss.org/support/phonebook' use='literal' parts='Person_1' />
+    <soap:header message="tns:PhoneBook_lookup" 
+              part="Account_1" use="literal" />
+   </input>
+   <output>
+    <soap:body namespace='http://www.jboss.org/support/phonebook' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ 
+ <service name='PhoneBook'>
+  <port binding='tns:PhoneBookBinding' name='PhoneBookPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   jaxrpc-mapping.xml is modified
+
+    <variable-mapping>
+      <java-variable-name>msg</java-variable-name>
+      <xml-element-name>my-msg</xml-element-name>
+    </variable-mapping>
+ 
+    WSDL is modified:
+       <complexType name="UserType">
+        <sequence>
+          <element name="my-msg" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+-->
+
+
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="HelloService" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws83.Hello"
+              style="rpc">
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.webservice/jbws83"
+                 type-namespace="http://org.jboss.test.webservice/jbws83/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="Hello"/>
+   </java-wsdl>  
+</configuration>

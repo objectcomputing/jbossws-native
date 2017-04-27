@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws83' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws83/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws83' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws83/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws83/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='UserType'>
+    <sequence>
+     <element name='my-msg' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='Hello_echoUserType'>
+  <part name='UserType_1' type='ns1:UserType'/>
+ </message>
+ <message name='Hello_echoUserTypeResponse'>
+  <part name='result' type='ns1:UserType'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='echoUserType' parameterOrder='UserType_1'>
+   <input message='tns:Hello_echoUserType'/>
+   <output message='tns:Hello_echoUserTypeResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoUserType'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws83' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws83' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

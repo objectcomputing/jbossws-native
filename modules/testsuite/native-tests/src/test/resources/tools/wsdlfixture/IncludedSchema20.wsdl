@@ -1,0 +1,41 @@
+<definitions targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2003/11/wsdl'
+  xmlns:tns='http://org.jboss.ws/types'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'>
+  <types>
+    <schema targetNamespace='http://org.jboss.ws/types'
+      xmlns='http://www.w3.org/2001/XMLSchema'
+      xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+      xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+      xmlns:tns='http://org.jboss.ws/types'>
+      <complexType name='Base'>
+        <sequence>
+          <element name='a' type='xsd:int' nillable='false'/>
+          <element name='b' type='xsd:int' nillable='false'/>
+        </sequence>
+      </complexType>
+      <complexType name='SomeException'>
+        <sequence>
+          <element name='name' type='xsd:string' nillable='true'/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <interface name='CustomInterface'>
+    <fault element='SomeExceptionError' name='SomeExceptionFault'/>
+    <operation name='customMethod'>
+      <input element='tns:Base' messageLabel='IN'/>
+      <outfault messageLabel='OUT' ref='SomeExceptionFault'/>
+    </operation>
+  </interface>
+  <binding interface='CustomInterface' name='CustomInterfaceBinding'>
+    <operation ref='customMethod'>
+      <input messageLabel='IN'/>
+      <output messageLabel='OUT'/>
+    </operation>
+  </binding>
+  <service interface='CustomInterface' name='CustomInterfaceService'>
+    <endpoint address='REPLACE_WITH_ACTUAL_ADDRESS' binding='CustomInterfaceBinding' name='CustomInterfaceEndpoint'/>
+  </service>
+</definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webservices xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:impl="http://org.jboss.ws/jbws732"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd"
+  version="1.1">
+  
+  <webservice-description>
+    <webservice-description-name>WrappedService</webservice-description-name>
+    <wsdl-file>WEB-INF/wsdl/WrappedService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/wrapped-mapping.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>WrappedEndpointPort</port-component-name>
+      <wsdl-port>impl:WrappedEndpointPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.WrappedEndpoint</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>WrappedService</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+
+  <webservice-description>
+    <webservice-description-name>BareService</webservice-description-name>
+    <wsdl-file>WEB-INF/wsdl/BareService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/bare-mapping.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>BareEndpointPort</port-component-name>
+      <wsdl-port>impl:BareEndpointPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws732.BareEndpoint</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>BareService</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+</webservices>

@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://idm.vignette.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified"
+  targetNamespace="http://idm.vignette.com/">
+  <xs:element name="testMethod" type="tns:testMethod"/>
+  <xs:complexType name="testMethod">
+    <xs:sequence>
+      <xs:element name="aFirstParam" type="xs:string"/>
+      <xs:element name="secondParam" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="testMethodResponse" type="tns:testMethodResponse"/>
+  <xs:complexType name="testMethodResponse">
+    <xs:sequence>
+      <xs:element name="result" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

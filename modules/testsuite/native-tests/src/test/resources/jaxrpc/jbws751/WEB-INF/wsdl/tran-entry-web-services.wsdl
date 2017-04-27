@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="uri:tranHistory" xmlns:ns1="urn:tranEntryService" targetNamespace="urn:tranEntryService" name="TranHistory">
+	<import namespace="urn:tranEntryService" location="tran-entry-abstract.wsdl"/>
+	<binding name="ITranHistoryBinding" type="ns1:ITranHistory">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getTransactionHistory">
+			<soap:operation/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="status">
+				<soap:fault name="status" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="TranEntryService">
+		<port name="ITranHistoryPort" binding="ns1:ITranHistoryBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+		</port>
+	</service>
+</definitions>

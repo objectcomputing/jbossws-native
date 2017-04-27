@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+   <package-mapping>
+      <package-type>org.jboss.test.ws.jaxrpc.jbws349</package-type>
+      <namespaceURI>http://siterefresh.refreshsoftware.com/wsdl/services</namespaceURI>
+   </package-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.Event</java-type>
+      <root-type-qname xmlns:typeNS='http://siterefresh.refreshsoftware.com/types'>typeNS:Event</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>id</java-variable-name>
+         <xml-element-name>id</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <!-- BEGIN MANUAL MODIFICATION -->
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetCreateResult</java-type>
+      <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetCreateResult</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>id</java-variable-name>
+         <xml-element-name>id</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetCreate</java-type>
+      <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetCreate</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <!--variable-mapping>
+         <java-variable-name>id</java-variable-name>
+         <xml-element-name>id</xml-element-name>
+      </variable-mapping-->
+      <variable-mapping>
+         <java-variable-name>nextStep</java-variable-name>
+         <xml-element-name>nextStep</xml-element-name>
+      </variable-mapping>
+      <variable-mapping>
+         <java-variable-name>template</java-variable-name>
+         <xml-element-name>template</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetRead</java-type>
+      <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetRead</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>id</java-variable-name>
+         <xml-element-name>id</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetReadResult</java-type>
+      <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetReadResult</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>id</java-variable-name>
+         <xml-element-name>id</xml-element-name>
+      </variable-mapping>
+      <variable-mapping>
+         <java-variable-name>body</java-variable-name>
+         <xml-element-name>body</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <!-- END MANUAL MODIFICATION -->
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.Result</java-type>
+      <root-type-qname xmlns:typeNS='http://siterefresh.refreshsoftware.com/types'>typeNS:Result</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+   </java-xml-type-mapping>
+   <java-xml-type-mapping>
+      <java-type>org.jboss.test.ws.jaxrpc.jbws349.EventException</java-type>
+      <root-type-qname xmlns:typeNS='http://siterefresh.refreshsoftware.com/types'>typeNS:EventException</root-type-qname>
+      <qname-scope>complexType</qname-scope>
+      <variable-mapping>
+         <java-variable-name>message</java-variable-name>
+         <xml-element-name>message</xml-element-name>
+      </variable-mapping>
+   </java-xml-type-mapping>
+   <service-interface-mapping>
+      <service-interface>org.jboss.test.ws.jaxrpc.jbws349.ServiceFacade</service-interface>
+      <wsdl-service-name xmlns:serviceNS='http://siterefresh.refreshsoftware.com/wsdl/services'>serviceNS:ServiceFacade</wsdl-service-name>
+      <port-mapping>
+         <port-name>ServiceFacadePort</port-name>
+         <java-port-name>ServiceFacadePort</java-port-name>
+      </port-mapping>
+   </service-interface-mapping>
+   <service-endpoint-interface-mapping>
+      <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws349.ServiceFacadeEndpoint</service-endpoint-interface>
+      <wsdl-port-type xmlns:portTypeNS='http://siterefresh.refreshsoftware.com/wsdl/services'>portTypeNS:ServiceFacadeEndpoint</wsdl-port-type>
+      <wsdl-binding xmlns:bindingNS='http://siterefresh.refreshsoftware.com/wsdl/services'>bindingNS:ServiceFacadeSoapBinding</wsdl-binding>
+      <service-endpoint-method-mapping>
+         <java-method-name>processEvent</java-method-name>
+         <wsdl-operation>processEvent</wsdl-operation>
+         <method-param-parts-mapping>
+            <param-position>0</param-position>
+            <param-type>org.jboss.test.ws.jaxrpc.jbws349.Event</param-type>
+            <wsdl-message-mapping>
+               <wsdl-message xmlns:wsdlMsgNS='http://siterefresh.refreshsoftware.com/wsdl/services'>wsdlMsgNS:processEventRequest</wsdl-message>
+               <wsdl-message-part-name>processEventRequest</wsdl-message-part-name>
+               <parameter-mode>IN</parameter-mode>
+            </wsdl-message-mapping>
+         </method-param-parts-mapping>
+         <wsdl-return-value-mapping>
+            <method-return-value>org.jboss.test.ws.jaxrpc.jbws349.Result</method-return-value>
+            <wsdl-message xmlns:wsdlMsgNS='http://siterefresh.refreshsoftware.com/wsdl/services'>wsdlMsgNS:processEventResponse</wsdl-message>
+            <wsdl-message-part-name>processEventResponse</wsdl-message-part-name>
+         </wsdl-return-value-mapping>
+      </service-endpoint-method-mapping>
+   </service-endpoint-interface-mapping>
+   <exception-mapping>
+      <exception-type>org.jboss.test.ws.jaxrpc.jbws349.EventException</exception-type>
+      <wsdl-message xmlns:exMsgNS='http://siterefresh.refreshsoftware.com/wsdl/services'>exMsgNS:processEventException</wsdl-message>
+      <constructor-parameter-order>
+         <element-name>message</element-name>
+      </constructor-parameter-order>
+   </exception-mapping>
+</java-wsdl-mapping>

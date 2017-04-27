@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://jbpm.org/examples/hello"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns="http://jbpm.org/examples/hello" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/ 
+                      http://schemas.xmlsoap.org/wsdl/
+                      http://schemas.xmlsoap.org/ws/2003/05/partner-link/ 
+                      http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
+  
+  <!-- characterizes the relationship between the greeter and its caller -->
+  <plt:partnerLinkType name="Greeter-Caller">
+    <plt:role name="Greeter">
+      <plt:portType name="tns:Greeter"/>
+    </plt:role>
+    <!-- the Caller does not provide services to the Greeter,
+         this is why we omit the "Caller" role -->
+  </plt:partnerLinkType>
+
+  <!-- carries the name of a person -->
+  <message name="NameMessage">
+    <part name="name" type="xsd:string"/>
+  </message>
+
+  <!-- carries the greeting -->
+  <message name="GreetingMessage">
+    <part name="greeting" type="xsd:string"/>
+  </message>
+
+  <!-- describes the interface presented to callers -->
+  <portType name="Greeter">
+    <operation name="sayHello">
+      <input message="tns:NameMessage"/>
+      <output message="tns:GreetingMessage"/>
+    </operation>
+  </portType>
+
+</definitions>

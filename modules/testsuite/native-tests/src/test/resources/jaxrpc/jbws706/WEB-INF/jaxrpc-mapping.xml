@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws706</package-type>
+  <namespaceURI>http://org.jboss.test.webservice/jbws706/tns</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws706.Descr</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws706/ns1'>typeNS:Descr</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>description</java-variable-name>
+   <xml-element-name>description</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws706.AlturaPostConditionException</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws706/ns2'>typeNS:AlturaPostConditionException</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>key</java-variable-name>
+   <xml-element-name>key</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>values</java-variable-name>
+   <xml-element-name>values</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws706.AlturaPreConditionException</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.webservice/jbws706/ns2'>typeNS:AlturaPreConditionException</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>key</java-variable-name>
+   <xml-element-name>key</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>values</java-variable-name>
+   <xml-element-name>values</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws706.DemoServiceService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.webservice/jbws706/tns'>serviceNS:DemoServiceService</wsdl-service-name>
+  <port-mapping>
+   <port-name>DemoService</port-name>
+   <java-port-name>DemoService</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws706.DemoServicePortType</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.webservice/jbws706/tns'>portTypeNS:DemoServicePortType</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.webservice/jbws706/tns'>bindingNS:DemoServiceOJBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>processDescr</java-method-name>
+   <wsdl-operation>processDescr</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws706/tns'>wsdlMsgNS:processDescr</wsdl-message>
+     <wsdl-message-part-name>p</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws706.Descr</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.webservice/jbws706/tns'>wsdlMsgNS:processDescrResponse</wsdl-message>
+    <wsdl-message-part-name>processDescrReturn</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+ <exception-mapping>
+  <exception-type>org.jboss.test.ws.jaxrpc.jbws706.AlturaPostConditionException</exception-type>
+  <wsdl-message xmlns:exMsgNS='http://org.jboss.test.webservice/jbws706/tns'>exMsgNS:alturaPostConditionException</wsdl-message>
+ </exception-mapping>
+ <exception-mapping>
+  <exception-type>org.jboss.test.ws.jaxrpc.jbws706.AlturaPreConditionException</exception-type>
+  <wsdl-message xmlns:exMsgNS='http://org.jboss.test.webservice/jbws706/tns'>exMsgNS:alturaPreConditionException</wsdl-message>
+ </exception-mapping>
+</java-wsdl-mapping>

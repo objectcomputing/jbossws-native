@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema targetNamespace="http://org.jboss.ws/types"
+  xmlns:tns="http://org.jboss.ws/types"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <complexType name="Base">
+    <sequence>
+      <element name="a" type="int"/>
+      <element name="b" type="int"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="Derived">
+    <complexContent>
+      <extension base="tns:Base">
+        <sequence>
+          <element name="x" type="int"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <complexType name="Composite">
+    <sequence>
+      <element name="composite" type="tns:Composite" nillable="true"/>
+      <element name="dateTime" type="dateTime" nillable="true"/>
+      <element name="integer" type="integer" nillable="true"/>
+      <element name="qname" type="QName" nillable="true"/>
+      <element name="string" type="string" nillable="true"/>
+    </sequence>
+  </complexType>
+
+</schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="LastMod" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  targetNamespace="http://netid.msu.edu:8080/lastmod.pl" xmlns:tns="http://netid.msu.edu:8080/lastmod.pl" xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsdl="http://netid.msu.edu:8080/lastmodified.wsdl">
+  
+  <types>
+    
+    <schema targetNamespace="http://netid.msu.edu:8080/lastmod.pl" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="lastmod">
+        <complexType>
+          <sequence>
+            <element name="lastmodRequest" nillable="false" type="xsd:string" form="qualified"/>
+          </sequence>
+        </complexType>
+      </element>
+      
+      <element name="lastmodResponse">
+        <complexType>
+          <sequence>
+            <element name="TimeChanged" nillable="false" type="xsd:string" form="qualified"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  
+  <message name="lastmodInput">
+    <part element="tns:lastmod" name="parameters"/>
+  </message>
+  
+  <message name="lastmodOutput">
+    <part element="tns:lastmodResponse" name="result"/>
+  </message>
+  
+  <portType name="LastModPortType">
+    <operation name="lastmod">
+      <input message="tns:lastmodInput"/>
+      <output message="tns:lastmodOutput"/>
+    </operation>
+  </portType>
+  
+  <binding name="LastModBinding" type="tns:LastModPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="lastmod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="LastMod">
+    <documentation> Gets the last password change time when fed a netid </documentation>
+    <port name="LastModPort" binding="tns:LastModBinding">
+      <soap:address location="http://netid.msu.edu:8080/lastmod.pl"/>
+    </port>
+  </service>
+  
+</definitions>

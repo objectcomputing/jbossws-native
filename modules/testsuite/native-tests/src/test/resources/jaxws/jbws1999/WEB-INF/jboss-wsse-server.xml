@@ -1,0 +1,34 @@
+<jboss-ws-security xmlns="http://www.jboss.com/ws-security/config"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.jboss.com/ws-security/config
+                   http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+
+  <port name="EndpointPort">
+    <operation name="{http://ws.jboss.org/jbws1999}echoUnchecked">
+      <config>
+        <authorize>
+          <unchecked/>
+        </authorize>
+      </config>    
+    </operation>
+    
+    <operation name="{http://ws.jboss.org/jbws1999}echoFriendRequired">
+      <config>
+        <authorize>
+          <role>friend</role>
+        </authorize>
+      </config>    
+    </operation>
+    
+    <operation name="{http://ws.jboss.org/jbws1999}echoEnemyRequired">
+      <config>
+        <authorize>
+          <role>enemy</role>
+        </authorize>
+      </config>    
+    </operation>        
+  </port>
+
+
+   	
+</jboss-ws-security>

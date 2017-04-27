@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:jboss:jaxrpc-config:2.0" xmlns:tns="urn:jboss:jaxrpc-config:2.0"
+  xmlns:jbxb="http://www.jboss.org/xml/ns/jbxb" xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  attributeFormDefault="unqualified" version="1.1">
+  
+  <xsd:annotation>
+    <xsd:documentation>
+      <![CDATA[
+      This is the schema definition for JBossWS configurations JAXRPC.
+      It relies on the handler definitions that are part of the standard J2EE-1.4 deployment descriptors.
+      ]]>
+    </xsd:documentation>
+  </xsd:annotation>
+  
+  <xsd:import namespace="http://java.sun.com/xml/ns/j2ee" schemaLocation="j2ee_web_services_1_1.xsd"/>
+  
+  <xsd:complexType name="jaxrpcConfigType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <jbxb:class impl="org.jboss.ws.metadata.config.WSConfig"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:choice>
+      <xsd:element name="endpoint-config" type="tns:endpointConfigType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="client-config" type="tns:clientConfigType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:choice>
+  </xsd:complexType>
+  
+  <xsd:element name="jaxrpc-config" type="tns:jaxrpcConfigType"/>
+  
+  <xsd:complexType name="endpointConfigType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <jbxb:class impl="org.jboss.ws.metadata.config.WSEndpointConfig"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonConfigType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="clientConfigType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <jbxb:class impl="org.jboss.ws.metadata.config.WSClientConfig"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="tns:commonConfigType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="commonConfigType">
+    <xsd:sequence>
+      <xsd:element name="config-name" type="xsd:string"/>
+      <xsd:element name="pre-handler-chain" type="tns:handlerChainType" minOccurs="0"/>
+      <xsd:element name="post-handler-chain" type="tns:handlerChainType" minOccurs="0"/>
+      <xsd:element name="feature" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="property" type="tns:propertyType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="handlerChainType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <jbxb:class impl="org.jboss.ws.metadata.config.WSHandlerChainConfig"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="handler-chain-name" type="xsd:string"/>
+      <xsd:element name="handler" type="j2ee:port-component_handlerType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="propertyType">
+    <xsd:sequence>
+      <xsd:element name="property-name" type="xsd:string"/>
+      <xsd:element name="property-value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+</xsd:schema>

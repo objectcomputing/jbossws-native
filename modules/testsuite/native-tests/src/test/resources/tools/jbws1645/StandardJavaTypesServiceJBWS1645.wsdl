@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='StandardJavaTypesService' targetNamespace='http://org.jboss.ws'
+	xmlns='http://schemas.xmlsoap.org/wsdl/'
+	xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+	xmlns:tns='http://org.jboss.ws'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+	xmlns:wsp='http://schemas.xmlsoap.org/ws/2004/09/policy'>
+ <wsp:Policy wsu:Id='RmPolicy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd'>
+    <rmp:RMAssertion xmlns:rmp='http://schemas.xmlsoap.org/ws/2005/02/rm/policy'>
+      <rmp:InactivityTimeout Milliseconds='600000' />
+      <rmp:BaseRetransmissionInterval Milliseconds='3000' />
+      <rmp:ExponentialBackoff />
+      <rmp:AcknowledgementInterval Milliseconds='200' />
+    </rmp:RMAssertion>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id='uselessPortPolicy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd'>
+    <fab:useless xmlns:fab='http://www.fabrikam123.example.com/stock'>nothing again</fab:useless>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id='X509EndpointPolicy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd'>
+    <sp:AsymmetricBinding xmlns:sp='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy'>
+      <wsp:Policy>
+        <!-- Details omitted for readability -->
+        <sp:IncludeTimestamp />
+        <sp:OnlySignEntireHeadersAndBody />
+      </wsp:Policy>
+    </sp:AsymmetricBinding>
+  </wsp:Policy>
+ <types>
+  <schema targetNamespace='http://org.jboss.ws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.ws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='echoCalendar'>
+    <sequence>
+     <element name='Calendar_1' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoCalendarResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDate'>
+    <sequence>
+     <element name='Date_1' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDateResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDecimal'>
+    <sequence>
+     <element name='BigDecimal_1' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoDecimalResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='decimal'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoInteger'>
+    <sequence>
+     <element name='BigInteger_1' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoIntegerResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='integer'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoQName'>
+    <sequence>
+     <element name='QName_1' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoQNameResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='QName'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoString'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoStringResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoURI'>
+    <sequence>
+     <element name='URI_1' nillable='true' type='anyURI'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoURIResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='anyURI'/>
+    </sequence>
+   </complexType>
+   <element name='echoCalendar' type='tns:echoCalendar'/>
+   <element name='echoCalendarResponse' type='tns:echoCalendarResponse'/>
+   <element name='echoDate' type='tns:echoDate'/>
+   <element name='echoDateResponse' type='tns:echoDateResponse'/>
+   <element name='echoDecimal' type='tns:echoDecimal'/>
+   <element name='echoDecimalResponse' type='tns:echoDecimalResponse'/>
+   <element name='echoInteger' type='tns:echoInteger'/>
+   <element name='echoIntegerResponse' type='tns:echoIntegerResponse'/>
+   <element name='echoQName' type='tns:echoQName'/>
+   <element name='echoQNameResponse' type='tns:echoQNameResponse'/>
+   <element name='echoString' type='tns:echoString'/>
+   <element name='echoStringResponse' type='tns:echoStringResponse'/>
+   <element name='echoURI' type='tns:echoURI'/>
+   <element name='echoURIResponse' type='tns:echoURIResponse'/>
+  </schema>
+ </types>
+ <message name='StandardJavaTypes_echoCalendar' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part element='tns:echoCalendar' name='echoCalendar'/>
+ </message>
+ <message name='StandardJavaTypes_echoCalendarResponse'>
+  <part element='tns:echoCalendarResponse' name='echoCalendarResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoDate'>
+  <part element='tns:echoDate' name='echoDate'/>
+ </message>
+ <message name='StandardJavaTypes_echoDateResponse'>
+  <part element='tns:echoDateResponse' name='echoDateResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoDecimal'>
+  <part element='tns:echoDecimal' name='echoDecimal'/>
+ </message>
+ <message name='StandardJavaTypes_echoDecimalResponse'>
+  <part element='tns:echoDecimalResponse' name='echoDecimalResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoInteger'>
+  <part element='tns:echoInteger' name='echoInteger'/>
+ </message>
+ <message name='StandardJavaTypes_echoIntegerResponse'>
+  <part element='tns:echoIntegerResponse' name='echoIntegerResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoQName'>
+  <part element='tns:echoQName' name='echoQName'/>
+ </message>
+ <message name='StandardJavaTypes_echoQNameResponse'>
+  <part element='tns:echoQNameResponse' name='echoQNameResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoString'>
+  <part element='tns:echoString' name='echoString'/>
+ </message>
+ <message name='StandardJavaTypes_echoStringResponse'>
+  <part element='tns:echoStringResponse' name='echoStringResponse'/>
+ </message>
+ <message name='StandardJavaTypes_echoURI'>
+  <part element='tns:echoURI' name='echoURI'/>
+ </message>
+ <message name='StandardJavaTypes_echoURIResponse'>
+  <part element='tns:echoURIResponse' name='echoURIResponse'/>
+ </message>
+ <portType name='StandardJavaTypes' wsp:PolicyURIs='#RmPolicy'>
+  <operation name='echoCalendar' parameterOrder='echoCalendar'>
+   <input message='tns:StandardJavaTypes_echoCalendar'/>
+   <output message='tns:StandardJavaTypes_echoCalendarResponse'/>
+  </operation>
+  <operation name='echoDate' parameterOrder='echoDate'>
+   <input message='tns:StandardJavaTypes_echoDate'/>
+   <output message='tns:StandardJavaTypes_echoDateResponse'/>
+  </operation>
+  <operation name='echoDecimal' parameterOrder='echoDecimal'>
+   <input message='tns:StandardJavaTypes_echoDecimal'/>
+   <output message='tns:StandardJavaTypes_echoDecimalResponse'/>
+  </operation>
+  <operation name='echoInteger' parameterOrder='echoInteger'>
+   <input message='tns:StandardJavaTypes_echoInteger'/>
+   <output message='tns:StandardJavaTypes_echoIntegerResponse'/>
+  </operation>
+  <operation name='echoQName' parameterOrder='echoQName'>
+   <input message='tns:StandardJavaTypes_echoQName'/>
+   <output message='tns:StandardJavaTypes_echoQNameResponse'/>
+  </operation>
+  <operation name='echoString' parameterOrder='echoString'>
+   <input message='tns:StandardJavaTypes_echoString'/>
+   <output message='tns:StandardJavaTypes_echoStringResponse'/>
+  </operation>
+  <operation name='echoURI' parameterOrder='echoURI'>
+   <input message='tns:StandardJavaTypes_echoURI'/>
+   <output message='tns:StandardJavaTypes_echoURIResponse'/>
+  </operation>
+ </portType>
+ <binding name='StandardJavaTypesBinding' type='tns:StandardJavaTypes'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <wsp:PolicyReference URI='#X509EndpointPolicy' />
+  <operation name='echoCalendar'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoDate'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoDecimal'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoQName'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoString'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoURI'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='StandardJavaTypesService'>
+  <port binding='tns:StandardJavaTypesBinding' name='StandardJavaTypesPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+   <wsp:PolicyReference URI='#uselessPortPolicy' />
+  </port>
+ </service>
+</definitions>

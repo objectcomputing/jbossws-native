@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions
+      targetNamespace="http://www.jboss.org/sysmon"
+      xmlns:tns="http://www.jboss.org/sysmon"
+      xmlns:wse='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+      xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+      xmlns:wsa10='http://www.w3.org/2005/08/addressing'
+      xmlns:xs='http://www.w3.org/2001/XMLSchema'
+      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+   <wsdl:import
+           namespace='http://schemas.xmlsoap.org/ws/2004/08/eventing'
+           location='ws-eventing.wsdl' />
+
+   <wsdl:types>
+
+      <xs:schema targetNamespace='http://schemas.xmlsoap.org/ws/2004/08/eventing'>
+         <xs:include schemaLocation='ws-eventing.xsd'/>
+      </xs:schema>
+
+     <!--
+      Take a look at the WSDL from EventSink enedpoint, that get's deployed.
+      The schema is taken from there.
+     -->
+     <xs:schema targetNamespace='http://www.jboss.org/sysmon' version='1.0' xmlns:tns='http://www.jboss.org/sysmon' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+       <xs:element name='SystemStatus' type='tns:systemStatus'/>
+       <xs:element name='newNotification' type='tns:newNotification'/>
+
+       <xs:complexType name='newNotification'>
+         <xs:sequence>
+           <xs:element minOccurs='0' name='arg0' type='tns:systemStatus'/>
+
+         </xs:sequence>
+       </xs:complexType>
+       <xs:complexType name='systemStatus'>
+         <xs:sequence>
+           <xs:element name='activeThreadCount' type='xs:int'/>
+           <xs:element minOccurs='0' name='freeMemory' type='xs:string'/>
+           <xs:element minOccurs='0' name='hostAddress' type='xs:string'/>
+           <xs:element minOccurs='0' name='hostname' type='xs:string'/>
+           <xs:element minOccurs='0' name='maxMemory' type='xs:string'/>
+
+           <xs:element minOccurs='0' name='time' type='xs:dateTime'/>
+         </xs:sequence>
+       </xs:complexType>
+     </xs:schema>
+
+   </wsdl:types>
+
+   <wsdl:message name='SystemInfoMsg'>
+      <wsdl:part name='body' element='tns:newNotification'/>
+   </wsdl:message>
+
+   <wsdl:portType name='SystemInfo' wse:EventSource='true'>
+      <wsdl:operation name='SysmonOp'>
+         <wsdl:output message='tns:SystemInfoMsg'/>
+      </wsdl:operation>
+   </wsdl:portType>
+
+   <wsdl:binding name="SystemInfoBinding" type="tns:SystemInfo">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="SysmonOp">
+         <soap:operation soapAction=""/>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+
+</wsdl:definitions>

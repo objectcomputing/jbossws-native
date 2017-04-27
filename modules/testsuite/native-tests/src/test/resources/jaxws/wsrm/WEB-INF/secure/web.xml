@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <servlet>
+    <servlet-name>SecuredOneWayService</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxws.wsrm.services.SecuredOneWayServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SecuredOneWayService</servlet-name>
+    <url-pattern>/SecuredOneWayService</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SecuredReqResService</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxws.wsrm.services.SecuredReqResServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SecuredReqResService</servlet-name>
+    <url-pattern>/SecuredReqResService</url-pattern>
+  </servlet-mapping>
+
+</web-app>

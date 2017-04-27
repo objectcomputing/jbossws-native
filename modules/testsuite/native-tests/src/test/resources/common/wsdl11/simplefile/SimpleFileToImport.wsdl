@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="Simple1FilePTSvc"
+  targetNamespace="http://Simple1FileSvc.org/wsdl/PortTypeDef"
+  xmlns:tns="http://Simple1FileSvc.org/wsdl/PortTypeDef"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <types/>
+
+  <message name="InvokeOneWayTest1">
+    <part name="Boolean_1" type="xsd:boolean"/>
+    <part name="Byte_2" type="xsd:byte"/>
+    <part name="Short_3" type="xsd:short"/>
+    <part name="Integer_4" type="xsd:int"/>
+    <part name="Long_5" type="xsd:long"/>
+    <part name="Float_6" type="xsd:float"/>
+    <part name="Double_7" type="xsd:double"/>
+  </message>
+  <message name="InvokeOneWayTest1Response"/>
+  <message name="InvokeOneWayTest2">
+    <part name="BigInteger_1" type="xsd:integer"/>
+    <part name="BigDecimal_2" type="xsd:decimal"/>
+    <part name="QName_3" type="xsd:QName"/>
+    <part name="String_4" type="xsd:string"/>
+  </message>
+  <message name="InvokeOneWayTest2Response"/>
+  <message name="InvokeOneWayTest3"/>
+  <message name="InvokeOneWayTest3Response"/>
+  <message name="InvokeTest1">
+    <part name="Boolean_1" type="xsd:boolean"/>
+    <part name="Byte_2" type="xsd:byte"/>
+    <part name="Short_3" type="xsd:short"/>
+    <part name="Integer_4" type="xsd:int"/>
+    <part name="Long_5" type="xsd:long"/>
+    <part name="Float_6" type="xsd:float"/>
+    <part name="Double_7" type="xsd:double"/>
+  </message>
+  <message name="InvokeTest1Response">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="InvokeTest2">
+    <part name="BigInteger_1" type="xsd:integer"/>
+    <part name="BigDecimal_2" type="xsd:decimal"/>
+    <part name="QName_3" type="xsd:QName"/>
+    <part name="String_4" type="xsd:string"/>
+  </message>
+  <message name="InvokeTest2Response">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="InvokeTest3"/>
+  <message name="InvokeTest3Response">
+    <part name="result" type="xsd:string"/>
+  </message>
+
+  <portType name="Tests">
+    <operation name="invokeOneWayTest1" parameterOrder="Boolean_1 Byte_2 Short_3 Integer_4 Long_5 Float_6 Double_7">
+      <input message="tns:InvokeOneWayTest1"/>
+      <output message="tns:InvokeOneWayTest1Response"/>
+    </operation>
+    <operation name="invokeOneWayTest2" parameterOrder="BigInteger_1 BigDecimal_2 QName_3 String_4">
+      <input message="tns:InvokeOneWayTest2"/>
+      <output message="tns:InvokeOneWayTest2Response"/>
+    </operation>
+    <operation name="invokeOneWayTest3">
+      <input message="tns:InvokeOneWayTest3"/>
+      <output message="tns:InvokeOneWayTest3Response"/>
+    </operation>
+    <operation name="invokeTest1" parameterOrder="Boolean_1 Byte_2 Short_3 Integer_4 Long_5 Float_6 Double_7">
+      <input message="tns:InvokeTest1"/>
+      <output message="tns:InvokeTest1Response"/>
+    </operation>
+    <operation name="invokeTest2" parameterOrder="BigInteger_1 BigDecimal_2 QName_3 String_4">
+      <input message="tns:InvokeTest2"/>
+      <output message="tns:InvokeTest2Response"/>
+    </operation>
+    <operation name="invokeTest3">
+      <input message="tns:InvokeTest3"/>
+      <output message="tns:InvokeTest3Response"/>
+    </operation>
+  </portType>
+  
+</definitions>

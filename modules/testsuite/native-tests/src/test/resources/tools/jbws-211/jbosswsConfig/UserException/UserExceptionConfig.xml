@@ -1,0 +1,12 @@
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+	<java-wsdl>
+		<service name="UserExceptionService"
+			endpoint="org.jboss.test.ws.tools.jbws_211.sei.UserException.UserExceptionSEI"
+                        style="rpc"
+                        />
+		<namespaces target-namespace="http://org.jboss.ws"
+			type-namespace="http://org.jboss.ws/types"/>
+	</java-wsdl> 
+</configuration>

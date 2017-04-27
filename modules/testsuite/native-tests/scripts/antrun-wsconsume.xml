@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================ -->
+<!--  JBoss, the OpenSource J2EE webOS                            -->
+<!--  Distributable under LGPL license.                           -->
+<!--  See terms of license at http://www.gnu.org.                 -->
+<!-- ============================================================ -->
+
+<project>
+  
+  <!-- ================================================================== -->
+  <!-- Generating sources                                                 -->
+  <!-- ================================================================== -->
+  
+  <target name="wsconsume" depends="prepend-jars" description="Consume JAX-WS contracts">
+    
+    <!-- Define the JAX-WS wsconsume task -->
+    <taskdef name="wsconsume" classname="org.jboss.wsf.spi.tools.ant.WSConsumeTask">
+      <classpath>
+        <pathelement path="${wsconsume.classpath}"/>
+      </classpath>
+    </taskdef>
+    
+    <wsconsume wsdl="${tests.resources.dir}/benchmark/jaxws/doclit/WEB-INF/wsdl/BenchmarkWebService.wsdl" package="org.jboss.test.ws.benchmark.jaxws.doclit" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/interop/soapwsdl/BaseDataTypesDocLitB/WEB-INF/wsdl/service.wsdl" package="org.jboss.test.ws.interop.soapwsdl.basedoclitb" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/interop/soapwsdl/BaseDataTypesDocLitW/WEB-INF/wsdl/service.wsdl" package="org.jboss.test.ws.interop.soapwsdl.basedoclitw" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/interop/soapwsdl/BaseDataTypesRpcLit/WEB-INF/wsdl/service.wsdl" package="org.jboss.test.ws.interop.soapwsdl.baserpclit" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/jaxws/samples/wssecuritypolicy/WEB-INF/wsdl/HelloService.wsdl" package="org.jboss.test.ws.jaxws.samples.wssecuritypolicy" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/jaxws/samples/wssecurityAnnotatedpolicy/META-INF/wsdl/HelloService.wsdl" package="org.jboss.test.ws.jaxws.samples.wssecurityAnnotatedpolicy" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+    <wsconsume wsdl="${tests.resources.dir}/jaxws/samples/wssecurity/META-INF/wsdl/HelloService.wsdl" package="org.jboss.test.ws.jaxws.samples.wssecurity" sourcedestdir="${tests.output.dir}/wsconsume/java" destdir="${tests.output.dir}" nocompile="true" keep="true" verbose="false"/>
+  </target>
+  
+  <!-- 
+  wsconsume cannot run with jaxws-api from build output
+  http://jira.jboss.org/jira/browse/JBWS-2175 
+  -->
+  <target name="available-jars">
+    <property name="jaxws.ext.jar" value="${basedir}/../../jaxws-ext/target/jbossws-native-jaxws-ext-${project.version}.jar"/>
+    <available property="jaxws.ext.jar.available" file="${jaxws.ext.jar}"/>
+    <echo message="jaxws.ext.jar.available=${jaxws.ext.jar.available}"/>
+  </target>
+  
+  <target name="prepend-jars" depends="available-jars,prepend-jaxws-ext">
+    <property name="wsconsume.classpath" value="${maven.test.classpath}"/>
+  </target>
+  
+  <target name="prepend-jaxws-ext" if="jaxws.ext.jar.available">
+    <property name="wsconsume.classpath" value="${jaxws.ext.jar}:${maven.test.classpath}"/>
+  </target>
+  
+</project>

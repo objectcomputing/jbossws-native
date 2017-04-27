@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_0.dtd">
+
+<jboss>
+  <security-domain>java:/jaas/JBossWS</security-domain>
+  
+  <webservices>
+    <context-root>/jaxrpc-wsse-username</context-root>
+    <webservice-description>
+      <webservice-description-name>TestService</webservice-description-name>
+      <config-name>Standard WSSecurity Endpoint</config-name>
+    </webservice-description>
+  </webservices>
+  
+  <enterprise-beans>
+    <session>
+      <ejb-name>TestService</ejb-name>
+      <port-component>
+        <port-component-name>TestServicePort</port-component-name>
+        <port-component-uri>/*</port-component-uri>
+      </port-component>
+    </session>
+  </enterprise-beans>
+</jboss>

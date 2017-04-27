@@ -1,0 +1,80 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+
+  <!--Define a simple type, an integer-->
+  <xsd:simpleType name="WSInteger">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="100"/>
+      <xsd:maxInclusive value="999"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!--Define a simple type, a String -->
+  <xsd:simpleType name="WSString">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\d{3}-[A-Z]{2}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!--Define a simple type, an enumerated type-->
+  <xsd:simpleType name="USMidwest">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="IN"/>
+      <xsd:enumeration value="IL"/>
+      <xsd:enumeration value="OH"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!--Define a simple type, a list-->
+  <xsd:simpleType name="WSIntegerList">
+    <xsd:list itemType="tns:WSInteger"/>
+  </xsd:simpleType>
+
+  <!--Define a simple type, an union-->
+  <xsd:simpleType name="WSUnion">
+    <xsd:union memberTypes="tns:USMidwest tns:WSIntegerList"/>
+  </xsd:simpleType>
+
+  <xsd:complexType name="WSType">
+    <xsd:sequence>
+      <xsd:element name="union" type="tns:WSUnion"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!--Defines a complex type consisting of Simple Types
+  with various restrictions -->
+  <xsd:complexType name="TypicalPerson">
+    <xsd:sequence>
+      <xsd:element name="name" type="tns:WSString"/>
+      <xsd:element name="age">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="userId">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="password">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="5"/>
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <!-- Based on Simple Type and Enumeration -->
+      <xsd:element name="state" type="tns:USMidwest" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</schema>

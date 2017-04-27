@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="OneWayService" targetNamespace="http://org.jboss.ws"
+	xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types />
+	<message name="TestOneWaySEI_oneWayOperation">
+		<part name="String_1" type="xsd:string" />
+	</message>
+	<portType name="TestOneWaySEI">
+		<operation name="oneWayOperation" parameterOrder="String_1">
+			<input message="tns:TestOneWaySEI_oneWayOperation" /> 
+		</operation>
+	</portType>
+	<binding name="TestOneWaySEIBinding" type="tns:TestOneWaySEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="oneWayOperation">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+		</operation>
+	</binding>
+	<service name="OneWayService">
+		<port name="TestOneWaySEIPort"
+			binding="tns:TestOneWaySEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

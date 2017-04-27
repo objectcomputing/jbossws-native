@@ -1,0 +1,961 @@
+<definitions name="MarshallService" targetNamespace="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://types.rpclit.marshall.ws.test.jboss.org/jaws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://org.jboss.ws" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<types>
+		<schema targetNamespace="http://types.rpclit.marshall.ws.test.jboss.org/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://types.rpclit.marshall.ws.test.jboss.org/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<complexType name="JavaBean">
+				<sequence>
+					<element name="myBigDecimal" nillable="true" type="decimal"/>
+					<element name="myBigInteger" nillable="true" type="integer"/>
+					<element name="myBoolean" type="boolean"/>
+					<element name="myByte" type="byte"/>
+					<element name="myCalendar" nillable="true" type="dateTime"/>
+					<element name="myDouble" type="double"/>
+					<element name="myFloat" type="float"/>
+					<element name="myInt" type="int"/>
+					<element name="myJavaBean" type="tns:JavaBean2"/>
+					<element name="myLong" type="long"/>
+					<element name="myShort" type="short"/>
+					<element name="myString" nillable="true" type="string"/>
+				</sequence>
+			</complexType>
+			<complexType name="JavaBean2">
+				<sequence>
+					<element name="myBigDecimal" nillable="true" type="decimal"/>
+					<element name="myBigInteger" nillable="true" type="integer"/>
+					<element name="myBoolean" type="boolean"/>
+					<element name="myByte" type="byte"/>
+					<element name="myCalendar" nillable="true" type="dateTime"/>
+					<element name="myDouble" type="double"/>
+					<element name="myFloat" type="float"/>
+					<element name="myInt" type="int"/>
+					<element name="myLong" type="long"/>
+					<element name="myShort" type="short"/>
+					<element name="myString" nillable="true" type="string"/>
+				</sequence>
+			</complexType>
+		</schema>
+		<schema targetNamespace="http://org.jboss.ws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://types.rpclit.marshall.ws.test.jboss.org/jaws"  xmlns:tns="http://org.jboss.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<import namespace="http://types.rpclit.marshall.ws.test.jboss.org/jaws"/>
+			<complexType name="BigDecimalArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="decimal"/>
+				</sequence>
+			</complexType>
+			<complexType name="BigIntegerArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="integer"/>
+				</sequence>
+			</complexType>
+			<complexType name="BooleanArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="boolean"/>
+				</sequence>
+			</complexType>
+			<complexType name="ByteArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="base64Binary"/>
+				</sequence>
+			</complexType>
+			<complexType name="CalendarArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="dateTime"/>
+				</sequence>
+			</complexType>
+			<complexType name="DoubleArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="double"/>
+				</sequence>
+			</complexType>
+			<complexType name="FloatArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="float"/>
+				</sequence>
+			</complexType>
+			<complexType name="IntegerArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="int"/>
+				</sequence>
+			</complexType> 
+			 
+			<complexType name="JavaBeanArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="ns2:JavaBean"/>
+				</sequence>
+			</complexType>
+			<complexType name="LongArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="long"/>
+				</sequence>
+			</complexType>
+			<complexType name="QNameArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="QName"/>
+				</sequence>
+			</complexType>
+			<complexType name="ShortArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="short"/>
+				</sequence>
+			</complexType>
+			<complexType name="StringArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="NMTOKENS"/>
+				</sequence>
+			</complexType>
+			<complexType name="booleanArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="boolean"/>
+				</sequence>
+			</complexType>
+			<complexType name="byteArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="base64Binary"/>
+				</sequence>
+			</complexType>
+			<complexType name="doubleArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="double"/>
+				</sequence>
+			</complexType>
+			<complexType name="floatArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="float"/>
+				</sequence>
+			</complexType>
+			<complexType name="intArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="int"/>
+				</sequence>
+			</complexType>
+			<complexType name="longArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="long"/>
+				</sequence>
+			</complexType>
+			<complexType name="shortArray">
+				<sequence>
+					<element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="short"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="StandardTypes_base64BinaryTest">
+		<part name="ByteArray_1" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_base64BinaryTestResponse">
+		<part name="result" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_bigDecimalArrayTest">
+		<part name="BigDecimalArray_1" type="tns:BigDecimalArray"/>
+	</message>
+	<message name="StandardTypes_bigDecimalArrayTestResponse">
+		<part name="result" type="tns:BigDecimalArray"/>
+	</message>
+	<message name="StandardTypes_bigDecimalTest">
+		<part name="BigDecimal_1" type="xsd:decimal"/>
+	</message>
+	<message name="StandardTypes_bigDecimalTestResponse">
+		<part name="result" type="xsd:decimal"/>
+	</message>
+	<message name="StandardTypes_bigIntegerArrayTest">
+		<part name="BigIntegerArray_1" type="tns:BigIntegerArray"/>
+	</message>
+	<message name="StandardTypes_bigIntegerArrayTestResponse">
+		<part name="result" type="tns:BigIntegerArray"/>
+	</message>
+	<message name="StandardTypes_bigIntegerTest">
+		<part name="BigInteger_1" type="xsd:integer"/>
+	</message>
+	<message name="StandardTypes_bigIntegerTestResponse">
+		<part name="result" type="xsd:integer"/>
+	</message>
+	<message name="StandardTypes_booleanArrayTest">
+		<part name="BooleanArray_1" type="tns:booleanArray"/>
+	</message>
+	<message name="StandardTypes_booleanArrayTestResponse">
+		<part name="result" type="tns:booleanArray"/>
+	</message>
+	<message name="StandardTypes_booleanTest">
+		<part name="boolean_1" type="xsd:boolean"/>
+	</message>
+	<message name="StandardTypes_booleanTestResponse">
+		<part name="result" type="xsd:boolean"/>
+	</message>
+	<message name="StandardTypes_booleanWrapperArrayTest">
+		<part name="BooleanArray_1" type="tns:BooleanArray"/>
+	</message>
+	<message name="StandardTypes_booleanWrapperArrayTestResponse">
+		<part name="result" type="tns:BooleanArray"/>
+	</message>
+	<message name="StandardTypes_booleanWrapperTest">
+		<part name="boolean_1" type="xsd:boolean"/>
+	</message>
+	<message name="StandardTypes_booleanWrapperTestResponse">
+		<part name="result" type="xsd:boolean"/>
+	</message>
+	<message name="StandardTypes_byteArrayTest">
+		<part name="ByteArray_1" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_byteArrayTestResponse">
+		<part name="result" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_byteTest">
+		<part name="byte_1" type="xsd:byte"/>
+	</message>
+	<message name="StandardTypes_byteTestResponse">
+		<part name="result" type="xsd:byte"/>
+	</message>
+	<message name="StandardTypes_byteWrapperArrayTest">
+		<part name="ByteArray_1" type="tns:ByteArray"/>
+	</message>
+	<message name="StandardTypes_byteWrapperArrayTestResponse">
+		<part name="result" type="tns:ByteArray"/>
+	</message>
+	<message name="StandardTypes_byteWrapperTest">
+		<part name="byte_1" type="xsd:byte"/>
+	</message>
+	<message name="StandardTypes_byteWrapperTestResponse">
+		<part name="result" type="xsd:byte"/>
+	</message>
+	<message name="StandardTypes_calendarArrayTest">
+		<part name="CalendarArray_1" type="tns:CalendarArray"/>
+	</message>
+	<message name="StandardTypes_calendarArrayTestResponse">
+		<part name="result" type="tns:CalendarArray"/>
+	</message>
+	<message name="StandardTypes_calendarTest">
+		<part name="Calendar_1" type="xsd:dateTime"/>
+	</message>
+	<message name="StandardTypes_calendarTestResponse">
+		<part name="result" type="xsd:dateTime"/>
+	</message>
+	<message name="StandardTypes_doubleArrayTest">
+		<part name="DoubleArray_1" type="tns:doubleArray"/>
+	</message>
+	<message name="StandardTypes_doubleArrayTestResponse">
+		<part name="result" type="tns:doubleArray"/>
+	</message>
+	<message name="StandardTypes_doubleTest">
+		<part name="double_1" type="xsd:double"/>
+	</message>
+	<message name="StandardTypes_doubleTestResponse">
+		<part name="result" type="xsd:double"/>
+	</message>
+	<message name="StandardTypes_doubleWrapperArrayTest">
+		<part name="DoubleArray_1" type="tns:DoubleArray"/>
+	</message>
+	<message name="StandardTypes_doubleWrapperArrayTestResponse">
+		<part name="result" type="tns:DoubleArray"/>
+	</message>
+	<message name="StandardTypes_doubleWrapperTest">
+		<part name="double_1" type="xsd:double"/>
+	</message>
+	<message name="StandardTypes_doubleWrapperTestResponse">
+		<part name="result" type="xsd:double"/>
+	</message>
+	<message name="StandardTypes_floatArrayTest">
+		<part name="FloatArray_1" type="tns:floatArray"/>
+	</message>
+	<message name="StandardTypes_floatArrayTestResponse">
+		<part name="result" type="tns:floatArray"/>
+	</message>
+	<message name="StandardTypes_floatTest">
+		<part name="float_1" type="xsd:float"/>
+	</message>
+	<message name="StandardTypes_floatTestResponse">
+		<part name="result" type="xsd:float"/>
+	</message>
+	<message name="StandardTypes_floatWrapperArrayTest">
+		<part name="FloatArray_1" type="tns:FloatArray"/>
+	</message>
+	<message name="StandardTypes_floatWrapperArrayTestResponse">
+		<part name="result" type="tns:FloatArray"/>
+	</message>
+	<message name="StandardTypes_floatWrapperTest">
+		<part name="float_1" type="xsd:float"/>
+	</message>
+	<message name="StandardTypes_floatWrapperTestResponse">
+		<part name="result" type="xsd:float"/>
+	</message>
+	<message name="StandardTypes_hexBinaryTest">
+		<part name="ByteArray_1" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_hexBinaryTestResponse">
+		<part name="result" type="tns:byteArray"/>
+	</message>
+	<message name="StandardTypes_intArrayTest">
+		<part name="IntArray_1" type="tns:intArray"/>
+	</message>
+	<message name="StandardTypes_intArrayTestResponse">
+		<part name="result" type="tns:intArray"/>
+	</message>
+	<message name="StandardTypes_intTest">
+		<part name="int_1" type="xsd:int"/>
+	</message>
+	<message name="StandardTypes_intTestResponse">
+		<part name="result" type="xsd:int"/>
+	</message>
+	<message name="StandardTypes_intWrapperArrayTest">
+		<part name="IntegerArray_1" type="tns:IntegerArray"/>
+	</message>
+	<message name="StandardTypes_intWrapperArrayTestResponse">
+		<part name="result" type="tns:IntegerArray"/>
+	</message>
+	<message name="StandardTypes_intWrapperTest">
+		<part name="int_1" type="xsd:int"/>
+	</message>
+	<message name="StandardTypes_intWrapperTestResponse">
+		<part name="result" type="xsd:int"/>
+	</message>
+	<message name="StandardTypes_javaBeanArrayTest">
+		<part name="JavaBeanArray_1" type="tns:JavaBeanArray"/>
+	</message>
+	<message name="StandardTypes_javaBeanArrayTestResponse">
+		<part name="result" type="tns:JavaBeanArray"/>
+	</message>
+	<message name="StandardTypes_javaBeanTest">
+		<part name="JavaBean_1" type="tns:JavaBean"/>
+	</message>
+	<message name="StandardTypes_javaBeanTestResponse">
+		<part name="result" type="tns:JavaBean"/>
+	</message>
+	<message name="StandardTypes_longArrayTest">
+		<part name="LongArray_1" type="tns:longArray"/>
+	</message>
+	<message name="StandardTypes_longArrayTestResponse">
+		<part name="result" type="tns:longArray"/>
+	</message>
+	<message name="StandardTypes_longTest">
+		<part name="long_1" type="xsd:long"/>
+	</message>
+	<message name="StandardTypes_longTestResponse">
+		<part name="result" type="xsd:long"/>
+	</message>
+	<message name="StandardTypes_longWrapperArrayTest">
+		<part name="LongArray_1" type="tns:LongArray"/>
+	</message>
+	<message name="StandardTypes_longWrapperArrayTestResponse">
+		<part name="result" type="tns:LongArray"/>
+	</message>
+	<message name="StandardTypes_longWrapperTest">
+		<part name="long_1" type="xsd:long"/>
+	</message>
+	<message name="StandardTypes_longWrapperTestResponse">
+		<part name="result" type="xsd:long"/>
+	</message>
+	<message name="StandardTypes_qnameArrayTest">
+		<part name="QNameArray_1" type="tns:QNameArray"/>
+	</message>
+	<message name="StandardTypes_qnameArrayTestResponse">
+		<part name="result" type="tns:QNameArray"/>
+	</message>
+	<message name="StandardTypes_qnameTest">
+		<part name="QName_1" type="xsd:QName"/>
+	</message>
+	<message name="StandardTypes_qnameTestResponse">
+		<part name="result" type="xsd:QName"/>
+	</message>
+	<message name="StandardTypes_shortArrayTest">
+		<part name="ShortArray_1" type="tns:shortArray"/>
+	</message>
+	<message name="StandardTypes_shortArrayTestResponse">
+		<part name="result" type="tns:shortArray"/>
+	</message>
+	<message name="StandardTypes_shortTest">
+		<part name="short_1" type="xsd:short"/>
+	</message>
+	<message name="StandardTypes_shortTestResponse">
+		<part name="result" type="xsd:short"/>
+	</message>
+	<message name="StandardTypes_shortWrapperArrayTest">
+		<part name="ShortArray_1" type="tns:ShortArray"/>
+	</message>
+	<message name="StandardTypes_shortWrapperArrayTestResponse">
+		<part name="result" type="tns:ShortArray"/>
+	</message>
+	<message name="StandardTypes_shortWrapperTest">
+		<part name="short_1" type="xsd:short"/>
+	</message>
+	<message name="StandardTypes_shortWrapperTestResponse">
+		<part name="result" type="xsd:short"/>
+	</message>
+	<message name="StandardTypes_stringArrayTest">
+		<part name="StringArray_1" type="tns:StringArray"/>
+	</message>
+	<message name="StandardTypes_stringArrayTestResponse">
+		<part name="result" type="tns:StringArray"/>
+	</message>
+	<message name="StandardTypes_stringTest">
+		<part name="String_1" type="xsd:string"/>
+	</message>
+	<message name="StandardTypes_stringTestResponse">
+		<part name="result" type="xsd:string"/>
+	</message>
+	<message name="StandardTypes_voidTest"/>
+	<message name="StandardTypes_voidTestResponse"/>
+	<portType name="StandardTypes">
+		<operation name="base64BinaryTest" parameterOrder="ByteArray_1">
+			<input message="tns:StandardTypes_base64BinaryTest"/>
+			<output message="tns:StandardTypes_base64BinaryTestResponse"/>
+		</operation>
+		<operation name="bigDecimalArrayTest" parameterOrder="BigDecimalArray_1">
+			<input message="tns:StandardTypes_bigDecimalArrayTest"/>
+			<output message="tns:StandardTypes_bigDecimalArrayTestResponse"/>
+		</operation>
+		<operation name="bigDecimalTest" parameterOrder="BigDecimal_1">
+			<input message="tns:StandardTypes_bigDecimalTest"/>
+			<output message="tns:StandardTypes_bigDecimalTestResponse"/>
+		</operation>
+		<operation name="bigIntegerArrayTest" parameterOrder="BigIntegerArray_1">
+			<input message="tns:StandardTypes_bigIntegerArrayTest"/>
+			<output message="tns:StandardTypes_bigIntegerArrayTestResponse"/>
+		</operation>
+		<operation name="bigIntegerTest" parameterOrder="BigInteger_1">
+			<input message="tns:StandardTypes_bigIntegerTest"/>
+			<output message="tns:StandardTypes_bigIntegerTestResponse"/>
+		</operation>
+		<operation name="booleanArrayTest" parameterOrder="BooleanArray_1">
+			<input message="tns:StandardTypes_booleanArrayTest"/>
+			<output message="tns:StandardTypes_booleanArrayTestResponse"/>
+		</operation>
+		<operation name="booleanTest" parameterOrder="boolean_1">
+			<input message="tns:StandardTypes_booleanTest"/>
+			<output message="tns:StandardTypes_booleanTestResponse"/>
+		</operation>
+		<operation name="booleanWrapperArrayTest" parameterOrder="BooleanArray_1">
+			<input message="tns:StandardTypes_booleanWrapperArrayTest"/>
+			<output message="tns:StandardTypes_booleanWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="booleanWrapperTest" parameterOrder="boolean_1">
+			<input message="tns:StandardTypes_booleanWrapperTest"/>
+			<output message="tns:StandardTypes_booleanWrapperTestResponse"/>
+		</operation>
+		<operation name="byteArrayTest" parameterOrder="ByteArray_1">
+			<input message="tns:StandardTypes_byteArrayTest"/>
+			<output message="tns:StandardTypes_byteArrayTestResponse"/>
+		</operation>
+		<operation name="byteTest" parameterOrder="byte_1">
+			<input message="tns:StandardTypes_byteTest"/>
+			<output message="tns:StandardTypes_byteTestResponse"/>
+		</operation>
+		<operation name="byteWrapperArrayTest" parameterOrder="ByteArray_1">
+			<input message="tns:StandardTypes_byteWrapperArrayTest"/>
+			<output message="tns:StandardTypes_byteWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="byteWrapperTest" parameterOrder="byte_1">
+			<input message="tns:StandardTypes_byteWrapperTest"/>
+			<output message="tns:StandardTypes_byteWrapperTestResponse"/>
+		</operation>
+		<operation name="calendarArrayTest" parameterOrder="CalendarArray_1">
+			<input message="tns:StandardTypes_calendarArrayTest"/>
+			<output message="tns:StandardTypes_calendarArrayTestResponse"/>
+		</operation>
+		<operation name="calendarTest" parameterOrder="Calendar_1">
+			<input message="tns:StandardTypes_calendarTest"/>
+			<output message="tns:StandardTypes_calendarTestResponse"/>
+		</operation>
+		<operation name="doubleArrayTest" parameterOrder="DoubleArray_1">
+			<input message="tns:StandardTypes_doubleArrayTest"/>
+			<output message="tns:StandardTypes_doubleArrayTestResponse"/>
+		</operation>
+		<operation name="doubleTest" parameterOrder="double_1">
+			<input message="tns:StandardTypes_doubleTest"/>
+			<output message="tns:StandardTypes_doubleTestResponse"/>
+		</operation>
+		<operation name="doubleWrapperArrayTest" parameterOrder="DoubleArray_1">
+			<input message="tns:StandardTypes_doubleWrapperArrayTest"/>
+			<output message="tns:StandardTypes_doubleWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="doubleWrapperTest" parameterOrder="double_1">
+			<input message="tns:StandardTypes_doubleWrapperTest"/>
+			<output message="tns:StandardTypes_doubleWrapperTestResponse"/>
+		</operation>
+		<operation name="floatArrayTest" parameterOrder="FloatArray_1">
+			<input message="tns:StandardTypes_floatArrayTest"/>
+			<output message="tns:StandardTypes_floatArrayTestResponse"/>
+		</operation>
+		<operation name="floatTest" parameterOrder="float_1">
+			<input message="tns:StandardTypes_floatTest"/>
+			<output message="tns:StandardTypes_floatTestResponse"/>
+		</operation>
+		<operation name="floatWrapperArrayTest" parameterOrder="FloatArray_1">
+			<input message="tns:StandardTypes_floatWrapperArrayTest"/>
+			<output message="tns:StandardTypes_floatWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="floatWrapperTest" parameterOrder="float_1">
+			<input message="tns:StandardTypes_floatWrapperTest"/>
+			<output message="tns:StandardTypes_floatWrapperTestResponse"/>
+		</operation>
+		<operation name="hexBinaryTest" parameterOrder="ByteArray_1">
+			<input message="tns:StandardTypes_hexBinaryTest"/>
+			<output message="tns:StandardTypes_hexBinaryTestResponse"/>
+		</operation>
+		<operation name="intArrayTest" parameterOrder="IntArray_1">
+			<input message="tns:StandardTypes_intArrayTest"/>
+			<output message="tns:StandardTypes_intArrayTestResponse"/>
+		</operation>
+		<operation name="intTest" parameterOrder="int_1">
+			<input message="tns:StandardTypes_intTest"/>
+			<output message="tns:StandardTypes_intTestResponse"/>
+		</operation>
+		<operation name="intWrapperArrayTest" parameterOrder="IntegerArray_1">
+			<input message="tns:StandardTypes_intWrapperArrayTest"/>
+			<output message="tns:StandardTypes_intWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="intWrapperTest" parameterOrder="int_1">
+			<input message="tns:StandardTypes_intWrapperTest"/>
+			<output message="tns:StandardTypes_intWrapperTestResponse"/>
+		</operation>
+		<operation name="javaBeanArrayTest" parameterOrder="JavaBeanArray_1">
+			<input message="tns:StandardTypes_javaBeanArrayTest"/>
+			<output message="tns:StandardTypes_javaBeanArrayTestResponse"/>
+		</operation>
+		<operation name="javaBeanTest" parameterOrder="JavaBean_1">
+			<input message="tns:StandardTypes_javaBeanTest"/>
+			<output message="tns:StandardTypes_javaBeanTestResponse"/>
+		</operation>
+		<operation name="longArrayTest" parameterOrder="LongArray_1">
+			<input message="tns:StandardTypes_longArrayTest"/>
+			<output message="tns:StandardTypes_longArrayTestResponse"/>
+		</operation>
+		<operation name="longTest" parameterOrder="long_1">
+			<input message="tns:StandardTypes_longTest"/>
+			<output message="tns:StandardTypes_longTestResponse"/>
+		</operation>
+		<operation name="longWrapperArrayTest" parameterOrder="LongArray_1">
+			<input message="tns:StandardTypes_longWrapperArrayTest"/>
+			<output message="tns:StandardTypes_longWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="longWrapperTest" parameterOrder="long_1">
+			<input message="tns:StandardTypes_longWrapperTest"/>
+			<output message="tns:StandardTypes_longWrapperTestResponse"/>
+		</operation>
+		<operation name="qnameArrayTest" parameterOrder="QNameArray_1">
+			<input message="tns:StandardTypes_qnameArrayTest"/>
+			<output message="tns:StandardTypes_qnameArrayTestResponse"/>
+		</operation>
+		<operation name="qnameTest" parameterOrder="QName_1">
+			<input message="tns:StandardTypes_qnameTest"/>
+			<output message="tns:StandardTypes_qnameTestResponse"/>
+		</operation>
+		<operation name="shortArrayTest" parameterOrder="ShortArray_1">
+			<input message="tns:StandardTypes_shortArrayTest"/>
+			<output message="tns:StandardTypes_shortArrayTestResponse"/>
+		</operation>
+		<operation name="shortTest" parameterOrder="short_1">
+			<input message="tns:StandardTypes_shortTest"/>
+			<output message="tns:StandardTypes_shortTestResponse"/>
+		</operation>
+		<operation name="shortWrapperArrayTest" parameterOrder="ShortArray_1">
+			<input message="tns:StandardTypes_shortWrapperArrayTest"/>
+			<output message="tns:StandardTypes_shortWrapperArrayTestResponse"/>
+		</operation>
+		<operation name="shortWrapperTest" parameterOrder="short_1">
+			<input message="tns:StandardTypes_shortWrapperTest"/>
+			<output message="tns:StandardTypes_shortWrapperTestResponse"/>
+		</operation>
+		<operation name="stringArrayTest" parameterOrder="StringArray_1">
+			<input message="tns:StandardTypes_stringArrayTest"/>
+			<output message="tns:StandardTypes_stringArrayTestResponse"/>
+		</operation>
+		<operation name="stringTest" parameterOrder="String_1">
+			<input message="tns:StandardTypes_stringTest"/>
+			<output message="tns:StandardTypes_stringTestResponse"/>
+		</operation>
+		<operation name="voidTest" parameterOrder="StandardTypes_1">
+			<input message="tns:StandardTypes_voidTest"/>
+			<output message="tns:StandardTypes_voidTestResponse"/>
+		</operation>
+	</portType>
+	<binding name="StandardTypesBinding" type="tns:StandardTypes">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="base64BinaryTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="bigDecimalArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="bigDecimalTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="bigIntegerArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="bigIntegerTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="booleanArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="booleanTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="booleanWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="booleanWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="byteArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="byteTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="byteWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="byteWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="calendarArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="calendarTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="doubleArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="doubleTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="doubleWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="doubleWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="floatArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="floatTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="floatWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="floatWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="hexBinaryTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="intArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="intTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="intWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="intWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="javaBeanArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="javaBeanTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="longArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="longTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="longWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="longWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="qnameArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="qnameTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="shortArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="shortTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="shortWrapperArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="shortWrapperTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="stringArrayTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="stringTest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</input>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+		<operation name="voidTest">
+			<soap:operation soapAction=""/>
+			<output>
+				<soap:body namespace="http://org.jboss.ws" use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="MarshallService">
+		<port binding="tns:StandardTypesBinding" name="StandardTypesPort">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+		</port>
+	</service>
+</definitions>

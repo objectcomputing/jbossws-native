@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/j2ee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application_1_4.xsd"
+   version="1.4">
+   <module>
+      <ejb>jaxrpc-jbws1762-exploded.jar</ejb>
+   </module>
+   <module>
+      <web>
+         <web-uri>jaxrpc-jbws1762-exploded.war</web-uri>
+         <context-root>jaxrpc-jbws1762</context-root>
+      </web>
+   </module>
+</application>

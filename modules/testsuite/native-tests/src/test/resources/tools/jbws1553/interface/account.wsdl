@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:samples:account" xmlns:tns="urn:samples:account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:typ="urn:samples:account" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="urn:samples:account" xmlns="http://www.w3.org/2001/XMLSchema">
+      
+      <!-- account data transfer type -->
+      <complexType name="AccountOperation">
+        <sequence>
+          <element name="customerName" type="xsd:string"/>
+          <element name="amount" type="xsd:double"/>
+        </sequence>
+      </complexType>
+      
+    </schema>
+  </types>
+  <message name="accessMessage">
+    <part name="granted" type="xsd:boolean"/>
+  </message>
+  <message name="customerMessage">
+    <part name="customerName" type="xsd:string"/>
+  </message>
+  <message name="accountOperation">
+    <part name="body" type="tns:AccountOperation"/>
+  </message>
+  <message name="balanceMessage">
+    <part name="balance" type="xsd:double"/>
+  </message>
+  <portType name="AccountSystem">
+    <operation name="checkAccess">
+      <input message="tns:customerMessage"/>
+      <output message="tns:accessMessage"/>
+    </operation>
+    <operation name="queryBalance">
+      <input message="tns:customerMessage"/>
+      <output message="tns:balanceMessage"/>
+    </operation>
+    <operation name="updateBalance">
+      <input message="tns:accountOperation"/>
+      <output message="tns:balanceMessage"/>
+    </operation>
+  </portType>
+</definitions>

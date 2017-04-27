@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webservices version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:impl="http://example.com/translator"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		http://java.sun.com/xml/ns/j2ee/j2ee_web_services_1_1.xsd">
+  
+  <webservice-description>
+    <webservice-description-name>TranslatorService</webservice-description-name>
+    <wsdl-file>WEB-INF/wsdl/translator.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+    
+    <port-component>
+      <port-component-name>textTranslatorPort</port-component-name>
+      <wsdl-port>impl:textTranslatorPort</wsdl-port>
+      <service-endpoint-interface> org.jboss.test.ws.jaxrpc.jbws775.TextTranslator </service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>textTranslator</servlet-link>
+      </service-impl-bean>
+    </port-component>
+    
+    <port-component>
+      <port-component-name>documentTranslatorPort</port-component-name>
+      <wsdl-port>impl:documentTranslatorPort</wsdl-port>
+      <service-endpoint-interface> org.jboss.test.ws.jaxrpc.jbws775.DocumentTranslator </service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>documentTranslator</servlet-link>
+      </service-impl-bean>
+    </port-component>
+    
+  </webservice-description>
+</webservices>

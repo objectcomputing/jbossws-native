@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="StandardJavaTypesService" targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types/>
+  <message name="StandardJavaTypes_echoCalendar">
+    <part name="Calendar_1" type="xsd:dateTime"/>
+  </message>
+  <message name="StandardJavaTypes_echoCalendarResponse">
+    <part name="result" type="xsd:dateTime"/>
+  </message>
+  <message name="StandardJavaTypes_echoDate">
+    <part name="Date_1" type="xsd:dateTime"/>
+  </message>
+  <message name="StandardJavaTypes_echoDateResponse">
+    <part name="result" type="xsd:dateTime"/>
+  </message>
+  <message name="StandardJavaTypes_echoDecimal">
+    <part name="BigDecimal_1" type="xsd:decimal"/>
+  </message>
+  <message name="StandardJavaTypes_echoDecimalResponse">
+    <part name="result" type="xsd:decimal"/>
+  </message>
+  <message name="StandardJavaTypes_echoInteger">
+    <part name="BigInteger_1" type="xsd:integer"/>
+  </message>
+  <message name="StandardJavaTypes_echoIntegerResponse">
+    <part name="result" type="xsd:integer"/>
+  </message>
+  <message name="StandardJavaTypes_echoQName">
+    <part name="QName_1" type="xsd:QName"/>
+  </message>
+  <message name="StandardJavaTypes_echoQNameResponse">
+    <part name="result" type="xsd:QName"/>
+  </message>
+  <message name="StandardJavaTypes_echoString">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="StandardJavaTypes_echoStringResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="StandardJavaTypes_echoURI">
+    <part name="URI_1" type="xsd:anyURI"/>
+  </message>
+  <message name="StandardJavaTypes_echoURIResponse">
+    <part name="result" type="xsd:anyURI"/>
+  </message>
+  <portType name="StandardJavaTypes">
+    <operation name="echoCalendar" parameterOrder="Calendar_1">
+      <input message="tns:StandardJavaTypes_echoCalendar"/>
+      <output message="tns:StandardJavaTypes_echoCalendarResponse"/>
+    </operation>
+    <operation name="echoDate" parameterOrder="Date_1">
+      <input message="tns:StandardJavaTypes_echoDate"/>
+      <output message="tns:StandardJavaTypes_echoDateResponse"/>
+    </operation>
+    <operation name="echoDecimal" parameterOrder="BigDecimal_1">
+      <input message="tns:StandardJavaTypes_echoDecimal"/>
+      <output message="tns:StandardJavaTypes_echoDecimalResponse"/>
+    </operation>
+    <operation name="echoInteger" parameterOrder="BigInteger_1">
+      <input message="tns:StandardJavaTypes_echoInteger"/>
+      <output message="tns:StandardJavaTypes_echoIntegerResponse"/>
+    </operation>
+    <operation name="echoQName" parameterOrder="QName_1">
+      <input message="tns:StandardJavaTypes_echoQName"/>
+      <output message="tns:StandardJavaTypes_echoQNameResponse"/>
+    </operation>
+    <operation name="echoString" parameterOrder="String_1">
+      <input message="tns:StandardJavaTypes_echoString"/>
+      <output message="tns:StandardJavaTypes_echoStringResponse"/>
+    </operation>
+    <operation name="echoURI" parameterOrder="URI_1">
+      <input message="tns:StandardJavaTypes_echoURI"/>
+      <output message="tns:StandardJavaTypes_echoURIResponse"/>
+    </operation>
+  </portType>
+  <binding name="StandardJavaTypesBinding" type="tns:StandardJavaTypes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="echoCalendar">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoDecimal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoInteger">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoQName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoString">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+    <operation name="echoURI">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://org.jboss.ws"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StandardJavaTypesService">
+    <port name="StandardJavaTypesPort" binding="tns:StandardJavaTypesBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

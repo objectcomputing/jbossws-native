@@ -1,0 +1,18 @@
+<!--This is the config file used by jbossws-->
+<configuration>
+  <javatowsdl>
+     <service name="MultiXSDSEI" 
+                     interface="org.jboss.test.ws.tools.jbws_161.multixsd.MultiXSDSEI"
+                     packagename="org.jboss.test.ws.tools.jbws_161.multixsd" 
+                     wsdlstyle="rpc"
+                     wsdldest="output/resources/tools/jbws-161/jbossws/multixsd/wsdl"
+                     wsdlversion="1.1"
+                     includetypesinwsdl="true"/>
+     <namespaces  targetns="http://org.jboss.ws" 
+                              typens="http://org.jboss.ws"  /> 
+     <mapping directory="output/resources/tools/jbws-161/jbossws/multixsd/mapping" 
+                       filename="jaxrpc-mapping.xml" />
+      <wsxml directory="output/resources/tools/jbws-161/jbossws/multixsd"  
+                     isJSE="true" />
+  </javatowsdl>
+</configuration>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestEndpoint' targetNamespace='http://test.jboss.org/ws/jbws1450' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://test.jboss.org/ws/jbws1450/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://test.jboss.org/ws/jbws1450' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1450/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://test.jboss.org/ws/jbws1450/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='testBoolean'>
+    <sequence>
+     <element name='Boolean_1' minOccurs='0' maxOccurs='1' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='testBooleanResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='boolean'/>
+    </sequence>
+   </complexType>
+   <complexType name='testByte'>
+    <sequence>
+     <element name='Byte_1' minOccurs='0' maxOccurs='1' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='testByteResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='byte'/>
+    </sequence>
+   </complexType>
+   <complexType name='testFloat'>
+    <sequence>
+     <element name='Float_1' minOccurs='0' maxOccurs='1' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='testFloatResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='float'/>
+    </sequence>
+   </complexType>
+   <complexType name='testInteger'>
+    <sequence>
+     <element name='Integer_1' minOccurs='0' maxOccurs='1' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='testIntegerResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='int'/>
+    </sequence>
+   </complexType>
+   <complexType name='testLong'>
+    <sequence>
+     <element name='Long_1' minOccurs='0' maxOccurs='1' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='testLongResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='long'/>
+    </sequence>
+   </complexType>
+   <complexType name='testShort'>
+    <sequence>
+     <element name='Short_1' minOccurs='0' maxOccurs='1' type='short'/>
+    </sequence>
+   </complexType>
+   <complexType name='testShortResponse'>
+    <sequence>
+     <element name='result' minOccurs='0' maxOccurs='1' type='short'/>
+    </sequence>
+   </complexType>
+   <element name='testBoolean' type='tns:testBoolean'/>
+   <element name='testBooleanResponse' type='tns:testBooleanResponse'/>
+   <element name='testByte' type='tns:testByte'/>
+   <element name='testByteResponse' type='tns:testByteResponse'/>
+   <element name='testFloat' type='tns:testFloat'/>
+   <element name='testFloatResponse' type='tns:testFloatResponse'/>
+   <element name='testInteger' type='tns:testInteger'/>
+   <element name='testIntegerResponse' type='tns:testIntegerResponse'/>
+   <element name='testLong' type='tns:testLong'/>
+   <element name='testLongResponse' type='tns:testLongResponse'/>
+   <element name='testShort' type='tns:testShort'/>
+   <element name='testShortResponse' type='tns:testShortResponse'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_testBoolean'>
+  <part element='ns1:testBoolean' name='testBoolean'/>
+ </message>
+ <message name='TestEndpoint_testBooleanResponse'>
+  <part element='ns1:testBooleanResponse' name='testBooleanResponse'/>
+ </message>
+ <message name='TestEndpoint_testByte'>
+  <part element='ns1:testByte' name='testByte'/>
+ </message>
+ <message name='TestEndpoint_testByteResponse'>
+  <part element='ns1:testByteResponse' name='testByteResponse'/>
+ </message>
+ <message name='TestEndpoint_testFloat'>
+  <part element='ns1:testFloat' name='testFloat'/>
+ </message>
+ <message name='TestEndpoint_testFloatResponse'>
+  <part element='ns1:testFloatResponse' name='testFloatResponse'/>
+ </message>
+ <message name='TestEndpoint_testInteger'>
+  <part element='ns1:testInteger' name='testInteger'/>
+ </message>
+ <message name='TestEndpoint_testIntegerResponse'>
+  <part element='ns1:testIntegerResponse' name='testIntegerResponse'/>
+ </message>
+ <message name='TestEndpoint_testLong'>
+  <part element='ns1:testLong' name='testLong'/>
+ </message>
+ <message name='TestEndpoint_testLongResponse'>
+  <part element='ns1:testLongResponse' name='testLongResponse'/>
+ </message>
+ <message name='TestEndpoint_testShort'>
+  <part element='ns1:testShort' name='testShort'/>
+ </message>
+ <message name='TestEndpoint_testShortResponse'>
+  <part element='ns1:testShortResponse' name='testShortResponse'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='testBoolean' parameterOrder='testBoolean'>
+   <input message='tns:TestEndpoint_testBoolean'/>
+   <output message='tns:TestEndpoint_testBooleanResponse'/>
+  </operation>
+  <operation name='testByte' parameterOrder='testByte'>
+   <input message='tns:TestEndpoint_testByte'/>
+   <output message='tns:TestEndpoint_testByteResponse'/>
+  </operation>
+  <operation name='testFloat' parameterOrder='testFloat'>
+   <input message='tns:TestEndpoint_testFloat'/>
+   <output message='tns:TestEndpoint_testFloatResponse'/>
+  </operation>
+  <operation name='testInteger' parameterOrder='testInteger'>
+   <input message='tns:TestEndpoint_testInteger'/>
+   <output message='tns:TestEndpoint_testIntegerResponse'/>
+  </operation>
+  <operation name='testLong' parameterOrder='testLong'>
+   <input message='tns:TestEndpoint_testLong'/>
+   <output message='tns:TestEndpoint_testLongResponse'/>
+  </operation>
+  <operation name='testShort' parameterOrder='testShort'>
+   <input message='tns:TestEndpoint_testShort'/>
+   <output message='tns:TestEndpoint_testShortResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='testBoolean'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testByte'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testFloat'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testInteger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testLong'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testShort'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestEndpoint'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

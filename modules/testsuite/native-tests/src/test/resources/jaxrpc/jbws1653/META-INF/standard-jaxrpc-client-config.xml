@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jaxrpc-config xmlns="urn:jboss:jaxrpc-config:2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:j2ee="http://java.sun.com/xml/ns/j2ee"
+               xsi:schemaLocation="urn:jboss:jaxrpc-config:2.0 jaxrpc-config_2_0.xsd">
+  
+  <client-config>
+    <config-name>Standard Client</config-name>
+    <post-handler-chain>
+      <handler-chain-name>Handlers</handler-chain-name>
+      <handler>
+        <j2ee:handler-name>ClientHandler</j2ee:handler-name>
+        <j2ee:handler-class>org.jboss.test.ws.jaxrpc.jbws1653.ClientHandler</j2ee:handler-class>
+      </handler>
+    </post-handler-chain>
+  </client-config>
+  
+</jaxrpc-config>

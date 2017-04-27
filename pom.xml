@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--  JBoss, the OpenSource J2EE webOS                                      -->
+<!--                                                                        -->
+<!--  Distributable under LGPL license.                                     -->
+<!--  See terms of license at http://www.gnu.org.                           -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>JBoss Web Services - Stack Native</name>
+  <groupId>org.jboss.ws.native</groupId>
+  <artifactId>jbossws-native</artifactId>
+  <packaging>pom</packaging>
+
+  <version>3.1.2.GA</version>
+
+  <!-- Parent -->
+  <parent>
+    <groupId>org.jboss.ws</groupId>
+    <artifactId>jbossws-parent</artifactId>
+    <version>1.0.2.GA</version>
+  </parent>
+
+  <!-- Source Control Management -->
+  <scm>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossws/stack/native/tags/jbossws-native-3.1.2.GA</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossws/stack/native/tags/jbossws-native-3.1.2.GA</developerConnection>
+    <url>http://fisheye.jboss.com/viewrep/JBossWS/stack/native/tags/jbossws-native-3.1.2.GA</url>
+  </scm>
+
+  <!-- Modules -->
+  <modules>
+    <module>modules/saaj</module>
+    <module>modules/jaxrpc</module>
+    <module>modules/jaxws</module>
+    <module>modules/jaxws-ext</module>
+    <module>modules/core</module>
+    <module>modules/client</module>
+    <module>modules/management</module>
+    <module>modules/resources</module>
+  </modules>
+
+  <!-- Properties -->
+  <properties>
+    <jbossws.common.version>1.1.0.GA</jbossws.common.version>
+    <jbossws.framework.version>3.1.2.GA</jbossws.framework.version>
+    <jbossws.spi.version>1.1.2.GA</jbossws.spi.version>
+    <jbossws.jboss500.version>3.1.2.GA</jbossws.jboss500.version>
+    <jbossws.jboss501.version>3.1.2.GA</jbossws.jboss501.version>
+    <!-- [JBWS-2505] -->
+    <!-- START -->
+    <!--
+    <jbossws.jboss510.version>3.1.2-SNAPSHOT</jbossws.jboss510.version>
+    <jbossws.jboss600.version>3.1.2-SNAPSHOT</jbossws.jboss600.version>
+    -->
+    <!-- END -->
+    <codehaus.jettison.version>1.0-RC2</codehaus.jettison.version>
+    <commons.logging.version>1.1.1</commons.logging.version>
+    <javassist.version>3.6.0.GA</javassist.version>
+    <jaxb.api.version>2.1</jaxb.api.version>
+    <jaxb.impl.version>2.1.6</jaxb.impl.version>
+    <jboss.common.version>1.2.1.GA</jboss.common.version>
+    <jboss.jaxbintros.version>1.0.0.GA</jboss.jaxbintros.version>
+    <jboss.logging.version>2.0.5.GA</jboss.logging.version>
+    <jboss.remoting.version>2.5.0.SP2</jboss.remoting.version>
+    <jboss.jaxr.version>1.2.1.GA</jboss.jaxr.version>
+    <apache.scout.version>0.7rc2</apache.scout.version>
+    <juddi.version>0.9RC4</juddi.version>
+    <sun.fastinfoset.version>1.2.2</sun.fastinfoset.version>
+    <sun.jaxws.version>2.1.3</sun.jaxws.version>
+    <woodstox.version>3.2.6</woodstox.version>
+    <wscommons.policy.version>1.0</wscommons.policy.version>
+    <wsdl4j.version>1.6.1</wsdl4j.version>
+    <xmlsec.version>1.4.2</xmlsec.version>
+    <xalan.version>2.7.0</xalan.version>
+    <xerces.version>2.8.1</xerces.version>
+  </properties>
+
+  <!-- DependencyManagement -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- jbossws dependencies -->
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-common</artifactId>
+        <version>${jbossws.common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-spi</artifactId>
+        <version>${jbossws.spi.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-framework</artifactId>
+        <version>${jbossws.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-framework</artifactId>
+        <version>${jbossws.framework.version}</version>
+        <classifier>testsuite</classifier>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss500</artifactId>
+        <version>${jbossws.jboss500.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss500</artifactId>
+        <version>${jbossws.jboss500.version}</version>
+        <classifier>resources</classifier>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss501</artifactId>
+        <version>${jbossws.jboss501.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss501</artifactId>
+        <version>${jbossws.jboss501.version}</version>
+        <classifier>resources</classifier>
+        <type>zip</type>
+      </dependency>
+      <!-- [JBWS-2505] -->
+      <!-- START -->
+      <!--
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss510x</artifactId>
+        <version>${jbossws.jboss510.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss510x</artifactId>
+        <version>${jbossws.jboss510.version}</version>
+        <classifier>resources</classifier>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss600x</artifactId>
+        <version>${jbossws.jboss600.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.ws</groupId>
+        <artifactId>jbossws-jboss600x</artifactId>
+        <version>${jbossws.jboss600.version}</version>
+        <classifier>resources</classifier>
+        <type>zip</type>
+      </dependency>
+      -->
+      <!-- END -->
+      <!-- provided apis -->
+      <dependency>
+        <groupId>javax.activation</groupId>
+        <artifactId>activation</artifactId>
+        <version>1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>jsr250-api</artifactId>
+        <version>1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.ejb</groupId>
+        <artifactId>ejb-api</artifactId>
+        <version>3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.jms</groupId>
+        <artifactId>jms</artifactId>
+        <version>1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>mail</artifactId>
+        <version>1.4</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+      </dependency>
+      <!-- jboss provided -->
+      <dependency>
+        <groupId>javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>${javassist.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jboss.common</groupId>
+        <artifactId>jboss-common</artifactId>
+        <version>${jboss.common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.remoting</groupId>
+        <artifactId>jboss-remoting</artifactId>
+        <version>${jboss.remoting.version}</version>
+      </dependency>
+      <!-- transitive dependencies -->
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commons.logging.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.fastinfoset</groupId>
+        <artifactId>FastInfoset</artifactId>
+        <version>${sun.fastinfoset.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-tools</artifactId>
+        <version>${sun.jaxws.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>com.sun.xml.stream</groupId>
+            <artifactId>sjsxp</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>${sun.jaxws.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>javax.xml.ws</groupId>
+            <artifactId>jaxws-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.sun.xml.messaging.saaj</groupId>
+            <artifactId>saaj-impl</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.sun.xml.stream</groupId>
+            <artifactId>sjsxp</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>${jaxb.api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${jaxb.impl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-xjc</artifactId>
+        <version>${jaxb.impl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jboss.jaxbintros</groupId>
+        <artifactId>jboss-jaxb-intros</artifactId>
+        <version>${jboss.jaxbintros.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.jaxr</groupId>
+        <artifactId>juddi-service</artifactId>
+        <version>${jboss.jaxr.version}</version>
+        <type>sar</type>
+      </dependency>
+      <dependency>
+        <groupId>apache-scout</groupId>
+        <artifactId>scout</artifactId>
+        <version>${apache.scout.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>juddi</groupId>
+        <artifactId>juddi</artifactId>
+        <version>${juddi.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.jettison</groupId>
+        <artifactId>jettison</artifactId>
+        <version>${codehaus.jettison.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging-log4j</artifactId>
+        <version>${jboss.logging.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>wscommons-policy</groupId>
+        <artifactId>policy</artifactId>
+        <version>${wscommons.policy.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.woodstox</groupId>
+        <artifactId>wstx-lgpl</artifactId>
+        <version>${woodstox.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>wsdl4j</groupId>
+        <artifactId>wsdl4j</artifactId>
+        <version>${wsdl4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xalan</groupId>
+        <artifactId>xalan</artifactId>
+        <version>${xalan.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xerces</groupId>
+        <artifactId>xercesImpl</artifactId>
+        <version>${xerces.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache</groupId>
+        <artifactId>xmlsec</artifactId>
+        <version>${xmlsec.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- Plugins -->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>validate-jboss-home</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <echo />
+                <echo message="profile=${jbossws.integration.target}" />
+                <echo message="jboss.home=${jboss.home}" />
+                <echo />
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <finalName>deploy-artifacts</finalName>
+          <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
+          <appendAssemblyId>false</appendAssemblyId>
+          <!--
+          Cannot bind to lifecycle with multiple modules
+          http://jira.codehaus.org/browse/MASSEMBLY-319
+          <executions>
+          <execution>
+          <id>build-deploy-artifacts</id>
+          <phase>package</phase>
+          <goals>
+          <goal>directory-inline</goal>
+          </goals>
+          </execution>
+          </executions-->
+          <descriptors>
+            <descriptor>src/main/scripts/assembly-deploy-artifacts.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.0-beta-8</version>
+        <configuration>
+          <scmCommentPrefix>[${jira.issue}] :</scmCommentPrefix>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Repositories -->
+  <repositories>
+    <repository>
+      <id>repository.jboss.org</id>
+      <url>http://repository.jboss.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>snapshots.jboss.org</id>
+      <url>http://snapshots.jboss.org/maven2</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  
+  <!-- Profiles -->
+  <profiles>
+
+    <!--
+    Name:  bindist
+    Descr: Build the binary distribution
+    -->
+    <profile>
+      <id>bindist</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <finalName>jbossws-native-bin-dist</finalName>
+              <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptors>
+                <descriptor>src/main/scripts/assembly-bin-dist.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+    Name:  srcdist
+    Descr: Build the source distribution
+    -->
+    <profile>
+      <id>srcdist</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <finalName>jbossws-native-src-dist</finalName>
+              <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptors>
+                <descriptor>src/main/scripts/assembly-src-dist.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+    Name:  jboss500
+    Descr: JBoss-5.0.0 specific options
+    -->
+    <profile>
+      <id>jboss500</id>
+      <properties>
+        <jbossws.integration.target>jboss500</jbossws.integration.target>
+        <jboss.home>${jboss500.home}</jboss.home>
+      </properties>
+    </profile>
+
+    <!--
+    Name:  jboss501
+    Descr: JBoss-5.0.1 specific options
+    -->
+    <profile>
+      <id>jboss501</id>
+      <properties>
+        <jbossws.integration.target>jboss501</jbossws.integration.target>
+        <jboss.home>${jboss501.home}</jboss.home>
+      </properties>
+    </profile>
+
+    <!--
+    Name:  jboss510
+    Descr: JBoss-5.1.0 specific options
+    -->
+    <profile>
+      <id>jboss510</id>
+      <properties>
+        <jbossws.integration.target>jboss510</jbossws.integration.target>
+        <jboss.home>${jboss510.home}</jboss.home>
+      </properties>
+    </profile>
+
+    <!--
+    Name:  jboss600
+    Descr: JBoss-6.0.0 specific options
+    -->
+    <profile>
+      <id>jboss600</id>
+      <properties>
+        <jbossws.integration.target>jboss600</jbossws.integration.target>
+        <jboss.home>${jboss600.home}</jboss.home>
+      </properties>
+    </profile>
+
+    <!--
+    Name:  jdk16
+    Descr: Compile with jdk1.6
+    -->
+    <profile>
+      <id>jdk16</id>
+      <activation>
+        <jdk>1.6</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <compilerVersion>1.5</compilerVersion>
+              <executable>${java.jdk15.home}/bin/javac</executable>
+              <fork>true</fork>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+    Name:  smoketest
+    Descr: Executes the smoke tests
+    -->
+    <profile>
+      <id>smoketest</id>
+      <modules>
+        <module>modules/testsuite</module>
+      </modules>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>org/jboss/test/ws/jaxws/samples/**/*TestCase.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+    Name:  testsuite
+    Descr: Executes the testsuite
+    -->
+    <profile>
+      <id>testsuite</id>
+      <modules>
+        <module>modules/testsuite</module>
+      </modules>
+    </profile>
+  </profiles>
+
+</project>

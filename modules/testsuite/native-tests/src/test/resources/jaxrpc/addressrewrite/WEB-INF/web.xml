@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4">
+
+  <servlet>
+    <servlet-name>ValidURL</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxrpc.addressrewrite.HelloJavaBean</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InvalidURL</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxrpc.addressrewrite.HelloJavaBean</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ValidSecureURL</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxrpc.addressrewrite.HelloJavaBean</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InvalidSecureURL</servlet-name>
+    <servlet-class>org.jboss.test.ws.jaxrpc.addressrewrite.HelloJavaBean</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ValidURL</servlet-name>
+    <url-pattern>/ValidURL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InvalidURL</servlet-name>
+    <url-pattern>/InvalidURL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValidSecureURL</servlet-name>
+    <url-pattern>/ValidSecureURL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InvalidSecureURL</servlet-name>
+    <url-pattern>/InvalidSecureURL</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+

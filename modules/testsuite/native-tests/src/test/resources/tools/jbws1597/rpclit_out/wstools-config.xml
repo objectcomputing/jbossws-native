@@ -1,0 +1,6 @@
+<configuration>
+  <wsdl-java location="${test.resources.directory}/tools/jbws1597/rpclit_out/PhoneBook.wsdl"
+             parameter-style="bare">
+    <mapping file="jaxrpc-mapping.xml"/>
+  </wsdl-java>
+</configuration>

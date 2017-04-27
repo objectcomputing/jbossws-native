@@ -1,0 +1,14 @@
+# UsernameTokenHTTPSTestCase requires keystore & trustore in jboss-web tomcat configuration
+org/jboss/test/ws/interop/nov2007/wsse/UsernameTokenHTTPSTestCase.*
+
+# [EJBTHREE-1152] service-ref in ejb-jar.xml is ignored
+org/jboss/test/ws/jaxws/samples/serviceref/ServiceRefEJBTestCase.*
+
+# [JBWS-1967] Implement in memory webapp deployment
+org/jboss/test/ws/jaxws/endpoint/**
+
+# [JBWS-2217] Fix BPEL jaxrpc samples
+org/jboss/test/ws/jaxrpc/samples/wsbpel/hello/*TestCase.*
+
+# [JBWS-2634] Implement support for @EJB annotations in WS components (fixed in AS 501 and above)
+org/jboss/test/ws/jaxws/jbws2634/**

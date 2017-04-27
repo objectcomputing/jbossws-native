@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -cp ../../../../output/classes -gen:server -f:rpcliteral -mapping jaxrpc-mapping.xml config.xml
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <service name="TestService"
+    targetNamespace="http://org.jboss.test.webservice/jbws414"
+    typeNamespace="http://org.jboss.test.webservice/jbws414/types"
+    packageName="org.jboss.test.ws.jaxrpc.jbws414">
+    <interface name="org.jboss.test.ws.jaxrpc.jbws414.TestSEI"/>
+  </service>
+
+</configuration>
+
+<!-- In the generated jacrpc-mapping.xml modify this
+Explicitly map typeNS:Interface to RefType
+<java-type>org.jboss.test.ws.jaxrpc.jbws414.RefType</java-type>
+-->

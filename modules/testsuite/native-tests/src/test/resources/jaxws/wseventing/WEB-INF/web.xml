@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+   <display-name>Eventing Service App</display-name>
+
+   <servlet>
+      <servlet-name>EventSinkServlet</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.wseventing.EventSinkServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>EventSinkServlet</servlet-name>
+      <url-pattern>/eventSink</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>EventSource</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.wseventing.CustomEventSource</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>EventSource</servlet-name>
+      <url-pattern>/subscribe</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>SubscriptionManager</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.wseventing.CustomSubscriptionManager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>SubscriptionManager</servlet-name>
+      <url-pattern>/manage</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>inVM</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.wseventing.InVMServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>inVM</servlet-name>
+      <url-pattern>/inVM</url-pattern>
+   </servlet-mapping>
+
+
+   <session-config>
+      <session-timeout>54</session-timeout>
+   </session-config>
+</web-app>

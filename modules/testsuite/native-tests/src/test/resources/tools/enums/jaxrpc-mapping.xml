@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.tools.enums</package-type>
+  <namespaceURI>http://org.jboss.ws/enum/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.enums.EyeColor</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/enum/types'>typeNS:EyeColor</root-type-qname>
+  <qname-scope>simpleType</qname-scope>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.enums.PlanetMass</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/enum/types'>typeNS:PlanetMass</root-type-qname>
+  <qname-scope>simpleType</qname-scope>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.enums.PlanetRadius</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.ws/enum/types'>typeNS:PlanetRadius</root-type-qname>
+  <qname-scope>simpleType</qname-scope>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.tools.enums.EnumService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.ws/enum'>serviceNS:EnumService</wsdl-service-name>
+  <port-mapping>
+   <port-name>EnumEndpointPort</port-name>
+   <java-port-name>EnumEndpointPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.tools.enums.EnumEndpoint</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.ws/enum'>portTypeNS:EnumEndpoint</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.ws/enum'>bindingNS:EnumEndpointBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoEnum</java-method-name>
+   <wsdl-operation>echoEnum</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.enums.EyeColor</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoEnum</wsdl-message>
+     <wsdl-message-part-name>EyeColor_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.enums.EyeColor</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoEnumResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoPlanetMass</java-method-name>
+   <wsdl-operation>echoPlanetMass</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.enums.PlanetMass</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoPlanetMass</wsdl-message>
+     <wsdl-message-part-name>PlanetMass_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.enums.PlanetMass</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoPlanetMassResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+  <service-endpoint-method-mapping>
+   <java-method-name>echoPlanetRadius</java-method-name>
+   <wsdl-operation>echoPlanetRadius</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.enums.PlanetRadius</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoPlanetRadius</wsdl-message>
+     <wsdl-message-part-name>PlanetRadius_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.enums.PlanetMass</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.ws/enum'>wsdlMsgNS:EnumEndpoint_echoPlanetRadiusResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

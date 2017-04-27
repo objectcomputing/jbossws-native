@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <wsdl-java location="c:/devel/jboss-head/testsuite/src/resources/webservice/samples/server-ejb-sec/META-INF/wsdl/OrganizationService.wsdl">
+     <mapping file="jaxrpc-mapping.xml"/>
+   </wsdl-java>  
+</configuration>

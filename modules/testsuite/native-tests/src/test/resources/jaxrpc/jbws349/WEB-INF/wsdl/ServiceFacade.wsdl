@@ -1,0 +1,52 @@
+<definitions targetNamespace="http://siterefresh.refreshsoftware.com/wsdl/services" xmlns:tns="http://siterefresh.refreshsoftware.com/wsdl/services"
+  xmlns:srt="http://siterefresh.refreshsoftware.com/types" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SiteRefreshSoapServices">
+  
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://siterefresh.refreshsoftware.com/types" schemaLocation="ServiceFacade.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="processEventResponse">
+    <part name="processEventResponse" element="srt:result"/>
+  </message>
+  <message name="processEventRequest">
+    <part name="processEventRequest" element="srt:event"/>
+  </message>
+  <message name="processEventException">
+    <part name="processEventException" element="srt:eventException"/>
+  </message>
+  
+  <portType name="ServiceFacadeEndpoint">
+    <operation name="processEvent">
+      <input message="tns:processEventRequest" name="processEventRequest"/>
+      <output message="tns:processEventResponse" name="processEventResponse"/>
+      <fault message="tns:processEventException" name="processEventException"/>
+    </operation>
+  </portType>
+  
+  <binding name="ServiceFacadeSoapBinding" type="tns:ServiceFacadeEndpoint">
+    <soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    
+    <operation name="processEvent">
+      <soapbind:operation soapAction=""/>
+      <input name="processEventRequest">
+        <soapbind:body use="literal"/>
+      </input>
+      <output name="processEventResponse">
+        <soapbind:body use="literal"/>
+      </output>
+      <fault name="processEventException">
+        <soapbind:fault name="processEventException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  
+  <service name="ServiceFacade">
+    <port binding="tns:ServiceFacadeSoapBinding" name="ServiceFacadePort">
+      <soapbind:address location="http://dummy-location"/>
+    </port>
+  </service>
+  
+</definitions>

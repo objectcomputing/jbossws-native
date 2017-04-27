@@ -1,0 +1,11 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+   <env:Header xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+      <wsa:To>http://www.jboss.org/sysmon/SystemInfo</wsa:To>
+      <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/eventing/Unsubscribe</wsa:Action>
+      <wsa:MessageID>urn:uuid:69eb1744-c779-49b7-88f8-d58d0b01c85c</wsa:MessageID>
+      <wse:Identifier wsa:IsReferenceParameter='true' xmlns:wse='http://schemas.xmlsoap.org/ws/2004/08/eventing'>urn:jbwse:6eda352-a0de-4260-b804-1a9623e50b82</wse:Identifier>
+   </env:Header>
+   <env:Body>
+      <ns1:Unsubscribe xmlns:ns1='http://schemas.xmlsoap.org/ws/2004/08/eventing' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'/>
+   </env:Body>
+</env:Envelope>

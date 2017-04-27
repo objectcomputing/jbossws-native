@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+Change creditCardInfo to use form=qualified like so:
+
+<element name='creditCardInfo' form="qualified" nillable='true' type='tns:CreditCardInfo'/>
+
+-->
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="AccountSignupService" 
+              endpoint="org.jboss.test.ws.jaxrpc.wsse.signup.AccountSignup"
+              style="document">
+       <operation name="signup">
+         <parameter xml-name="accountInfo" type="org.jboss.test.ws.jaxrpc.wsse.signup.AccountInfo"/>
+         <parameter xml-name="discountAmount" type="float"/>
+         <parameter xml-name="signupTime" type="java.util.Date"/>
+       </operation>
+     </service>
+     <namespaces target-namespace="http://org.jboss.test.ws/wsse"
+                 type-namespace="http://org.jboss.test.ws/wsse/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="AccountSignup"/>
+   </java-wsdl>  
+</configuration>

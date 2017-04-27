@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws64' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws64' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types/>
+ <message name='Hello_publish'>
+  <part name='String_1' type='xsd:string'/>
+  <part name='String_2' type='xsd:string'/>
+  <part name='String_3' type='xsd:string'/>
+  <part name='String_4' type='xsd:string'/>
+  <part name='String_5' type='xsd:string'/>
+ </message>
+ <message name='Hello_publishResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='publish' parameterOrder='String_1 String_2 String_3 String_4 String_5'>
+   <input message='tns:Hello_publish'/>
+   <output message='tns:Hello_publishResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='publish'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws64' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws64' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='PhoneBook' 
+             targetNamespace='http://test.jboss.org/ws/jbws1691' 
+             xmlns='http://schemas.xmlsoap.org/wsdl/' 
+             xmlns:ns1='http://test.jboss.org/ws/jbws1691/types' 
+             xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+             xmlns:tns='http://test.jboss.org/ws/jbws1691' 
+             xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+             
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1691/types' 
+          xmlns='http://www.w3.org/2001/XMLSchema' 
+          xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' 
+          xmlns:tns='http://test.jboss.org/ws/jbws1691/types' 
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>             
+   <element name='lookup' type='string'/>
+   <element name='lookupResponse' type='string'/>
+  </schema>
+ </types>
+ 
+ <message name='PhoneBook_lookup' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part element='ns1:lookup' name='lookup'/>
+ </message>
+ <message name='PhoneBook_lookupResponse'>
+  <part element='ns1:lookupResponse' name='lookupResponse'/>
+ </message>
+ <portType name='phoneBook'>
+  <operation name='lookup' parameterOrder='lookup'>
+   <input message='tns:PhoneBook_lookup'/>
+   <output message='tns:PhoneBook_lookupResponse'/>
+  </operation>
+ </portType>
+ <binding name='PhoneBookBinding' type='tns:phoneBook'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='lookup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='phoneBook'>
+  <port binding='tns:PhoneBookBinding' name='PhoneBookPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

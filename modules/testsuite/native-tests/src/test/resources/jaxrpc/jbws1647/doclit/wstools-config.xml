@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools.sh -cp ../../../../../output/classes -config wstools-config.xml
+-->
+
+<!-- Add the following handler to the generated webservices.xml
+
+   <handler>
+    <handler-name>TestHandler</handler-name>
+    <handler-class>org.jboss.test.ws.jaxrpc.jbws1647.DocumentHandler</handler-class>
+   </handler>   
+
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+               
+  <java-wsdl>
+    <service name="TestService" endpoint="org.jboss.test.ws.jaxrpc.jbws1647.TestEndpoint" style="document">
+    </service>
+    <namespaces target-namespace="http://org.jboss.test.ws/jbws1647" type-namespace="http://org.jboss.test.ws/jbws1647/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint"/>
+  </java-wsdl>
+  
+</configuration>

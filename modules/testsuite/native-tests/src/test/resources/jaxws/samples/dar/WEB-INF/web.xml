@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+   <display-name>Dar client app</display-name>
+   <servlet>
+      <servlet-name>ReplyService</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.samples.dar.DarReplyEndpointImpl</servlet-class>      
+   </servlet>
+   <servlet>
+      <servlet-name>ReplyToSink</servlet-name>
+      <servlet-class>org.jboss.test.ws.jaxws.samples.dar.ReplyToServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ReplyService</servlet-name>
+      <url-pattern>/replyService</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>ReplyToSink</servlet-name>
+      <url-pattern>/replyTo</url-pattern>
+   </servlet-mapping>
+</web-app>

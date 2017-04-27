@@ -1,0 +1,5 @@
+<configuration>
+  <wsdl-java location="${test.resources.directory}/tools/jbws1260/scenario_H/Wrapped.wsdl" parameter-style="wrapped">
+    <mapping file="wrapped-mapping.xml"/>
+  </wsdl-java>
+</configuration>

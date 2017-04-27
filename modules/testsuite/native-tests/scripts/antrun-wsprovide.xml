@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================ -->
+<!--  JBoss, the OpenSource J2EE webOS                            -->
+<!--  Distributable under LGPL license.                           -->
+<!--  See terms of license at http://www.gnu.org.                 -->
+<!-- ============================================================ -->
+
+<project>
+  
+  <!-- ================================================================== -->
+  <!-- Generating sources                                                 -->
+  <!-- ================================================================== -->
+
+  <target name="wsprovide" description="Provide the JAX-WS contracts.">
+
+    <!-- Define the JAX-WS wsprovide task -->
+    <taskdef name="wsprovide" classname="org.jboss.wsf.spi.tools.ant.WSProvideTask">
+      <classpath>
+        <pathelement path="${maven.test.classpath}"/>
+      </classpath>
+      <classpath location="${tests.output.dir}/test-resources/jaxws/samples/wssecurityAnnotatedpolicy"/>
+    </taskdef>
+
+    <wsprovide
+      resourcedestdir="${tests.output.dir}/test-resources/wsprovide/jaxws/samples/wssecurity"
+      genwsdl="true"
+      sei="org.jboss.test.ws.jaxws.samples.wssecurity.HelloJavaBean"
+      destdir="${tests.output.dir}/test-classes"
+      verbose="false"/>
+
+    <wsprovide
+      resourcedestdir="${tests.output.dir}/test-resources/wsprovide/jaxws/samples/wssecurityAnnotatedpolicy"
+      genwsdl="true"
+      sei="org.jboss.test.ws.jaxws.samples.wssecurityAnnotatedpolicy.HelloJavaBean"
+      destdir="${tests.output.dir}/test-classes"
+      verbose="false"/>
+
+  </target>
+
+</project>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1184</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1184</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1184</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1184/types</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1184.DataObject</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1184/types">typeNS:DataObject</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>booleanValue</java-variable-name>
+      <xml-attribute-name>booleanValue</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>byteValue</java-variable-name>
+      <xml-attribute-name>byteValue</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>floatValue</java-variable-name>
+      <xml-attribute-name>floatValue</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>integerValue</java-variable-name>
+      <xml-attribute-name>integerValue</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>longValue</java-variable-name>
+      <xml-attribute-name>longValue</xml-attribute-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>shortValue</java-variable-name>
+      <xml-attribute-name>shortValue</xml-attribute-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.jbws1184.TestEndpoint_Service</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://test.jboss.org/ws/jbws1184">serviceNS:TestEndpoint</wsdl-service-name>
+    <port-mapping>
+      <port-name>TestEndpointPort</port-name>
+      <java-port-name>TestEndpointPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jbws1184.TestEndpoint_PortType</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://test.jboss.org/ws/jbws1184">portTypeNS:TestEndpoint</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://test.jboss.org/ws/jbws1184">bindingNS:TestEndpointBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoDataObject</java-method-name>
+      <wsdl-operation>echoDataObject</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>org.jboss.test.ws.jbws1184.DataObject</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1184">wsdlMsgNS:TestEndpoint_echoDataObject</wsdl-message>
+          <wsdl-message-part-name>echoDataObject</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>org.jboss.test.ws.jbws1184.DataObject</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1184">wsdlMsgNS:TestEndpoint_echoDataObjectResponse</wsdl-message>
+        <wsdl-message-part-name>echoDataObjectResponse</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

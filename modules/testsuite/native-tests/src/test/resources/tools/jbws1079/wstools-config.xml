@@ -1,0 +1,5 @@
+<configuration>
+  <wsdl-java location="${test.resources.directory}/tools/jbws1079/Anonymous.wsdl" parameter-style="bare">
+    <mapping file="anonymous-mapping.xml"/>
+  </wsdl-java>
+</configuration>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="PRPA_AR201102UV01"
+	targetNamespace="urn:hl7-org:v3"
+	xmlns:hl7="urn:hl7-org:v3" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<documentation>
+		WSDL Implementation of ...
+	</documentation>
+	<types>
+		<xsd:schema targetNamespace="urn:hl7-org:v3" 
+			elementFormDefault="qualified" 
+			xmlns:tns="urn:hl7-org:v3">
+			<xsd:include schemaLocation="../schemas/PRPA_IN201101UV01.xsd"/>
+			
+			<xsd:element name="PRPA_AR201102UV01_New_PatientLivingSubject_Added_PRPA_IN201101UV01.Message"
+				type="tns:PRPA_IN201101UV01.MCCI_MT000100UV01.Message"/>		
+		</xsd:schema>	
+	</types>	
+	<message name="PRPA_IN201101UV01_Message">
+		<documentation>PRPA_IN201101UV01 New PatientLivingSubject Added </documentation>
+		<part name="body" element="hl7:PRPA_IN201101UV01"></part>
+	</message>
+	
+	<portType name="PRPA_AR201102UV01_PortType">
+		<operation name="PRPA_AR201102UV01_PRPA_IN201101UV01">
+			<input message="hl7:PRPA_IN201101UV01_Message"/>
+		</operation>
+	</portType>
+	
+	<binding name="PRPA_AR201102UV01_Binding" type="hl7:PRPA_AR201102UV01_PortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="PRPA_AR201102UV01_PRPA_IN201101UV01">
+			<soap:operation soapAction="urn:hl7-org:v3:PRPA_IN201101UV01"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+	
+	<service name="PRPA_AR201102UV01_Service">
+		<port name="PRPA_AR201102UV01_Port" binding="hl7:PRPA_AR201102UV01_Binding">
+			<soap:address location="http://localhost:8080/PRPA_AR201102UV01"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="XOPTest" targetNamespace="http://org.jboss.ws/samples/mtom"
+             xmlns:tns="http://org.jboss.ws/samples/mtom"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+   <types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema"
+              targetNamespace="http://org.jboss.ws/samples/mtom"
+              xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+
+         <import schemaLocation="http://www.w3.org/2005/05/xmlmime" namespace="http://www.w3.org/2005/05/xmlmime"/>
+
+         <element name="Employee">
+            <complexType>
+               <sequence>
+                  <element name="firstname" type="xsd:string"/>
+                  <element name="lastname" type="xsd:string"/>
+                  <element name="legacyData" xmime:expectedContentTypes="text/xml" type="xmime:base64Binary"/>
+               </sequence>
+            </complexType>
+         </element>
+
+         <element name="Status">
+            <complexType>
+               <sequence>
+                  <element name="code" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+
+         <element name="Query">
+            <complexType>
+               <sequence>
+                  <element name="firstname" type="xsd:string"/>
+                  <element name="lastname" type="xsd:string"/>
+               </sequence>
+            </complexType>
+         </element>
+      </schema>
+   </types>
+
+   <message name="UpdateRequest">
+      <part name="parameters" element="tns:Employee"/>
+   </message>
+
+   <message name="UpdateResponse">
+      <part name="result" element="tns:Status"/>
+   </message>
+
+   <message name="QueryRequest">
+      <part name="parameters" element="tns:Query"/>
+   </message>
+
+   <message name="QueryResponse">
+      <part name="result" element="tns:Employee"/>
+   </message>
+
+   <portType name="EmployeeRecords">
+      <operation name="updateEmployee">
+         <input message="tns:UpdateRequest"/>
+         <output message="tns:UpdateResponse"/>
+      </operation>
+      <operation name="queryEmployee">
+         <input message="tns:QueryRequest"/>
+         <output message="tns:QueryResponse"/>
+      </operation>
+   </portType>
+
+   <binding name="EmployeeRecordsBinding" type="tns:EmployeeRecords">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <operation name="updateEmployee">
+         <soap:operation soapAction=""/>
+         <input>
+            <soap:body use="literal" namespace="http://org.jboss.ws/samples/mtom"/>
+         </input>
+         <output>
+            <soap:body use="literal" namespace="http://org.jboss.ws/samples/mtom"/>
+         </output>
+      </operation>
+      <operation name="queryEmployee">
+         <soap:operation soapAction=""/>
+         <input>
+            <soap:body use="literal" namespace="http://org.jboss.ws/samples/mtom"/>
+         </input>
+         <output>
+            <soap:body use="literal" namespace="http://org.jboss.ws/samples/mtom"/>
+         </output>
+      </operation>
+   </binding>
+
+   <service name="EmployeeService">
+      <port name="EmployeeRecordsPort" binding="tns:EmployeeRecordsBinding">
+         <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+      </port>
+   </service>
+</definitions>

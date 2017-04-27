@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1386' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws1386/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1386' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws1386/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws1386/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <complexType name='Message'>
+    <sequence>
+     <element name='data' nillable='true' type='base64Binary'/>
+     <element name='name' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+ </types>
+ <message name='RequestService_processClaim'>
+  <part name='Message_1' type='ns1:Message'/>
+ </message>
+ <message name='RequestService_processClaimResponse'>
+  <part name='result' type='ns1:Message'/>
+ </message>
+ <portType name='RequestService'>
+  <operation name='processClaim' parameterOrder='Message_1'>
+   <input message='tns:RequestService_processClaim'/>
+   <output message='tns:RequestService_processClaimResponse'/>
+  </operation>
+ </portType>
+ <binding name='RequestServiceBinding' type='tns:RequestService'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='processClaim'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1386' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws1386' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:RequestServiceBinding' name='RequestServicePort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

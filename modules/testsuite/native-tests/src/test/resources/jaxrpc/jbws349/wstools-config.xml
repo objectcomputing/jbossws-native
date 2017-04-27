@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+1. Create types for all subclass types
+
+2. Change throws clause to throw EventException
+
+3. Add the following to jaxrpc-mapping.xml
+
+ <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetCreateResult</java-type>
+    <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetCreateResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>id</java-variable-name>
+      <xml-element-name>id</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetCreate</java-type>
+    <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetCreate</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>id</java-variable-name>
+      <xml-element-name>id</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>nextStep</java-variable-name>
+      <xml-element-name>nextStep</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>template</java-variable-name>
+      <xml-element-name>template</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+ <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetRead</java-type>
+    <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetRead</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>id</java-variable-name>
+      <xml-element-name>id</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+ <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws349.AssetReadResult</java-type>
+    <root-type-qname xmlns:typeNS="http://siterefresh.refreshsoftware.com/types">typeNS:AssetReadResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>id</java-variable-name>
+      <xml-element-name>id</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>body</java-variable-name>
+      <xml-element-name>body</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <global>
+     <package-namespace package="org.jboss.test.ws.jaxrpc.jbws349" namespace="http://siterefresh.refreshsoftware.com/wsdl/services"/>
+   </global>
+   <wsdl-java file="WEB-INF/wsdl/ServiceFacade.wsdl">
+     <mapping file="jaxrpc-mapping.xml"/>
+   </wsdl-java>  
+</configuration>

@@ -1,0 +1,17 @@
+<schema targetNamespace='http://org.jboss.ws/types'
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:tns='http://org.jboss.ws/types'>
+  <complexType name='Base'>
+    <sequence>
+      <element name='a' type='xsd:int'/>
+      <element name='b' type='xsd:int'/>
+    </sequence>
+  </complexType>
+  <complexType name='SomeException'>
+    <sequence>
+      <element name='name' type='xsd:string' nillable='true'/>
+    </sequence> 
+  </complexType>
+</schema>

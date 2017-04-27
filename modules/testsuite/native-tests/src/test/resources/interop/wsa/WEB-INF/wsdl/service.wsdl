@@ -1,0 +1,54 @@
+<wsdl:definitions name='WSAddressingCR' targetNamespace='http://tempuri.org/' xmlns:i0='http://example.org/' xmlns:msc='http://schemas.microsoft.com/ws/2005/12/wsdl/contract' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:soap12='http://schemas.xmlsoap.org/wsdl/soap12/' xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://tempuri.org/' xmlns:wsa='http://schemas.xmlsoap.org/ws/2004/08/addressing' xmlns:wsa10='http://www.w3.org/2005/08/addressing' xmlns:wsap='http://schemas.xmlsoap.org/ws/2004/09/policy/addressing' xmlns:wsap10='http://www.w3.org/2005/08/addressing' xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/' xmlns:wsp='http://schemas.xmlsoap.org/ws/2004/09/policy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd' xmlns:wsx='http://schemas.xmlsoap.org/ws/2004/09/mex' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <wsdl:import location='wsdl1.wsdl' namespace='http://example.org/'/>
+ <wsdl:types/>
+ <wsdl:service name='WSAddressingCR'>
+  <wsdl:port binding='i0:CustomBinding_Notify' name='NotifyPort'>
+   <soap:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port>
+  <!--wsdl:port binding='i0:CustomBinding_Notify1' name='CustomBinding_Notify1'>
+   <soap12:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port-->
+  <wsdl:port binding='i0:CustomBinding_Echo' name='EchoPort'>
+   <soap:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port>
+  <!--wsdl:port binding='i0:CustomBinding_Echo1' name='CustomBinding_Echo1'>
+   <soap12:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port-->
+  <wsdl:port binding='i0:CustomBinding_Echo2' name='EchoPort2'>
+   <soap:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11/Manual'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11/Manual</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port>
+  <!--wsdl:port binding='i0:CustomBinding_Echo3' name='CustomBinding_Echo3'>
+   <soap12:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12/Manual'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12/Manual</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port-->
+  <wsdl:port binding='i0:CustomBinding_Echo4' name='EchoPort4'>
+   <soap:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11/Duplex'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap11/Duplex</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port>
+  <!--wsdl:port binding='i0:CustomBinding_Echo5' name='CustomBinding_Echo5'>
+   <soap12:address location='http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12/Duplex'/>
+   <wsa10:EndpointReference>
+    <wsa10:Address>http://131.107.72.15/WSAddressingCR_Service_WCF/WSAddressing10.svc/Soap12/Duplex</wsa10:Address>
+   </wsa10:EndpointReference>
+  </wsdl:port-->
+ </wsdl:service>
+</wsdl:definitions>

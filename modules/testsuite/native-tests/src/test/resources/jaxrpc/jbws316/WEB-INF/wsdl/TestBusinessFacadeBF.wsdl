@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestBusinessFacadeBF' targetNamespace='http://aeb.de/xnsg/testBusinessFacade/bf' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://aeb.de/xnsg/testBusinessFacade/bf' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://aeb.de/xnsg/testBusinessFacade/bf' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://aeb.de/xnsg/testBusinessFacade/bf' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <complexType name='BinDataDTO'>
+    <sequence>
+<!--
+     <element name='fieldProp' nillable='true' type='base64Binary'/>
+-->
+     <element name='methodProp' nillable='true' type='base64Binary'/>
+    </sequence>
+   </complexType>
+   <complexType name='getTestBinData'>
+    <sequence>
+     <element name='BinDataDTO_1' nillable='true' type='tns:BinDataDTO'/>
+    </sequence>
+   </complexType>
+   <complexType name='getTestBinDataResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='tns:BinDataDTO'/>
+    </sequence>
+   </complexType>
+   <element name='getTestBinData' type='tns:getTestBinData'/>
+   <element name='getTestBinDataResponse' type='tns:getTestBinDataResponse'/>
+  </schema>
+ </types>
+ <message name='TestBusinessFacadeBF_WS_getTestBinData'>
+  <part element='tns:getTestBinData' name='parameters'/>
+ </message>
+ <message name='TestBusinessFacadeBF_WS_getTestBinDataResponse'>
+  <part element='tns:getTestBinDataResponse' name='result'/>
+ </message>
+ <portType name='TestBusinessFacadeBF_WS'>
+  <operation name='getTestBinData'>
+   <input message='tns:TestBusinessFacadeBF_WS_getTestBinData'/>
+   <output message='tns:TestBusinessFacadeBF_WS_getTestBinDataResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestBusinessFacadeBF_WSBinding' type='tns:TestBusinessFacadeBF_WS'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getTestBinData'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestBusinessFacadeBF'>
+  <port binding='tns:TestBusinessFacadeBF_WSBinding' name='TestBusinessFacadeBF_WSPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

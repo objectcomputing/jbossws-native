@@ -1,0 +1,47 @@
+<definitions targetNamespace='http://org.jboss.ws/types' xmlns='http://www.w3.org/2003/11/wsdl' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/types' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+ <types>
+  <xsd:import namespace='http://org.jboss.ws/types' schemaLocation='StandardJavaTypes20.xsd'/>
+ </types>
+ <interface name='StandardJavaTypes'>
+  <operation name='echoString'>
+   <input element='xsd:string' messageLabel='IN'/>
+   <output element='xsd:string' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoDate'>
+   <input element='xsd:dateTime' messageLabel='IN'/>
+   <output element='xsd:dateTime' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoCalendar'>
+   <input element='xsd:dateTime' messageLabel='IN'/>
+   <output element='xsd:dateTime' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoInteger'>
+   <input element='xsd:integer' messageLabel='IN'/>
+   <output element='xsd:integer' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoDecimal'>
+   <input element='xsd:decimal' messageLabel='IN'/>
+   <output element='xsd:decimal' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoQName'>
+   <input element='xsd:QName' messageLabel='IN'/>
+   <output element='xsd:QName' messageLabel='OUT'/>
+  </operation>
+  <operation name='echoURI'>
+   <input element='xsd:anyURI' messageLabel='IN'/>
+   <output element='xsd:anyURI' messageLabel='OUT'/>
+  </operation>
+ </interface>
+ <binding interface='tns:StandardJavaTypes' name='StandardJavaTypesBinding'>
+  <operation ref='tns:echoString'/>
+  <operation ref='tns:echoDate'/>
+  <operation ref='tns:echoCalendar'/>
+  <operation ref='tns:echoInteger'/>
+  <operation ref='tns:echoDecimal'/>
+  <operation ref='tns:echoQName'/>
+  <operation ref='tns:echoURI'/>
+ </binding>
+ <service interface='tns:StandardJavaTypes' name='StandardJavaTypesService'>
+  <endpoint address='REPLACE_WITH_ACTUAL_ADDRESS' binding='tns:StandardJavaTypesBinding' name='StandardJavaTypesEndpoint'/>
+ </service>
+</definitions>

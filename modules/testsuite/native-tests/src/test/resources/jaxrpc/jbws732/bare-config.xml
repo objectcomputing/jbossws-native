@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <global>
+    <package-namespace package="org.jboss.test.ws.jaxrpc.jbws732" namespace="http://org.jboss.ws/jbws732"/>
+  </global> 
+  <wsdlToJava wsdlLocation="WEB-INF/wsdl/BareService.wsdl">
+    <mapping fileName="jaxrpc-mapping.xml" />
+  </wsdlToJava>
+</configuration>

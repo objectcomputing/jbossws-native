@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="ServiceExceptionService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws"
+			xmlns:tns="http://org.jboss.ws"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="SomeException">
+				<sequence />
+			</complexType>
+			<element name="SomeException" type="tns:SomeException" />
+		</schema>
+	</types>
+	<message name="ServiceException_echoString">
+		<part name="String_1" type="xsd:string" />
+	</message>
+	<message name="ServiceException_echoStringResponse">
+		<part name="result" type="xsd:string" />
+	</message>
+	<message name="SomeException">
+		<part name="SomeException" element="tns:SomeException" />
+	</message>
+	<portType name="ServiceException">
+		<operation name="echoString" parameterOrder="String_1">
+			<input message="tns:ServiceException_echoString" />
+			<output message="tns:ServiceException_echoStringResponse" />
+			<fault name="SomeException" message="tns:SomeException" />
+		</operation>
+	</portType>
+	<binding name="ServiceExceptionBinding"
+		type="tns:ServiceException">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="echoString">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+			<fault name="SomeException">
+				<soap:fault name="SomeException" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+	<service name="ServiceExceptionService">
+		<port name="ServiceExceptionPort"
+			binding="tns:ServiceExceptionBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,1 @@
+mvn compile requires " -Djava.jdk15.home=<jdk15 location>" be passed to complete

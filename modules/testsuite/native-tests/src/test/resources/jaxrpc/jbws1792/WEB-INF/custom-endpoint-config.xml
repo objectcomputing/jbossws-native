@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jaxrpc-config xmlns="urn:jboss:jaxrpc-config:2.0"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:j2ee="http://java.sun.com/xml/ns/j2ee"
+  xsi:schemaLocation="urn:jboss:jaxrpc-config:2.0 jaxrpc-config_2_0.xsd">
+ 
+   <endpoint-config>
+    <config-name>Custom Endpoint Config</config-name>
+    <pre-handler-chain>
+      <handler-chain-name>Custom Handlers</handler-chain-name>
+      <handler>
+        <j2ee:handler-name>Custom Handler</j2ee:handler-name>
+        <j2ee:handler-class>org.jboss.test.ws.jaxrpc.jbws1792.TestHandler</j2ee:handler-class>
+		<j2ee:init-param>
+			<j2ee:param-name>TestParameter</j2ee:param-name>
+			<j2ee:param-value>TestValue</j2ee:param-value>
+		</j2ee:init-param>
+      </handler>
+    </pre-handler-chain>
+  </endpoint-config>
+  
+</jaxrpc-config>

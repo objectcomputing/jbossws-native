@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions
+        xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:s="http://www.w3.org/2001/XMLSchema"
+        xmlns:s0="http://jboss.org/test/ws/jbws807"
+        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+        targetNamespace="http://jboss.org/test/ws/jbws807"
+        xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://jboss.org/test/ws/jbws807">
+            <s:element name="PingMsg">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PingMsgResponse">
+                <s:complexType />
+            </s:element>
+        </s:schema>
+    </types>
+
+    <message name="PingIn">
+        <part name="parameters" element="s0:PingMsg" />
+    </message>
+    <message name="PingOut">
+        <part name="parameters" element="s0:PingMsgResponse" />
+    </message>
+
+    <portType name="TestService">
+        <operation name="ping">
+            <input message="s0:PingIn" />
+            <output message="s0:PingOut" />
+        </operation>
+    </portType>
+
+    <binding name="TestServiceBinding" type="s0:TestService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <operation name="ping">
+            <soap:operation soapAction="http://jboss.org/test/ws/jbws807/Ping" style="document" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+
+    <service name="TestService">
+        <port name="TestServicePort" binding="s0:TestServiceBinding">
+            <soap:address location="REPLACE_WITH_ACTUAL_URL" />
+        </port>
+    </service>
+</definitions>

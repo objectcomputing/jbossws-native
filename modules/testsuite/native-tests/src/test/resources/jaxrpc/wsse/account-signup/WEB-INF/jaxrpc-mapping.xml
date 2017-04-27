@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.wsse.signup</package-type>
+  <namespaceURI>http://org.jboss.test.ws/wsse/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.wsse.signup.Address</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/wsse/types'>typeNS:Address</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>city</java-variable-name>
+   <xml-element-name>city</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>state</java-variable-name>
+   <xml-element-name>state</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>street</java-variable-name>
+   <xml-element-name>street</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>zip</java-variable-name>
+   <xml-element-name>zip</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.wsse.signup.CreditCardInfo</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/wsse/types'>typeNS:CreditCardInfo</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>creditCardNumber</java-variable-name>
+   <xml-element-name>creditCardNumber</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>expiration</java-variable-name>
+   <xml-element-name>expiration</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>securityCode</java-variable-name>
+   <xml-element-name>securityCode</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.wsse.signup.AccountInfo</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/wsse/types'>typeNS:AccountInfo</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>address</java-variable-name>
+   <xml-element-name>address</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>creditCardInfo</java-variable-name>
+   <xml-element-name>creditCardInfo</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>firstName</java-variable-name>
+   <xml-element-name>firstName</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>lastName</java-variable-name>
+   <xml-element-name>lastName</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.wsse.signup.AccountSignup_signup_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/wsse/types'>typeNS:signup</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>accountInfo</java-variable-name>
+   <xml-element-name>accountInfo</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>discountAmount</java-variable-name>
+   <xml-element-name>discountAmount</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>signupTime</java-variable-name>
+   <xml-element-name>signupTime</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.wsse.signup.AccountSignup_signup_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/wsse/types'>typeNS:signupResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.wsse.signup.AccountSignupService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.ws/wsse'>serviceNS:AccountSignupService</wsdl-service-name>
+  <port-mapping>
+   <port-name>AccountSignupPort</port-name>
+   <java-port-name>AccountSignupPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.wsse.signup.AccountSignup</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.ws/wsse'>portTypeNS:AccountSignup</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.ws/wsse'>bindingNS:AccountSignupBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>signup</java-method-name>
+   <wsdl-operation>signup</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.wsse.signup.AccountInfo</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/wsse'>wsdlMsgNS:AccountSignup_signup</wsdl-message>
+     <wsdl-message-part-name>accountInfo</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>1</param-position>
+    <param-type>float</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/wsse'>wsdlMsgNS:AccountSignup_signup</wsdl-message>
+     <wsdl-message-part-name>discountAmount</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <method-param-parts-mapping>
+    <param-position>2</param-position>
+    <param-type>java.util.Date</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/wsse'>wsdlMsgNS:AccountSignup_signup</wsdl-message>
+     <wsdl-message-part-name>signupTime</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>int</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/wsse'>wsdlMsgNS:AccountSignup_signupResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

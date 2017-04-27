@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1450</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1450</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.jbws1450</package-type>
+    <namespaceURI>http://test.jboss.org/ws/jbws1450/types</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestLong</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testLong</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>long_1</java-variable-name>
+      <xml-element-name>Long_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestInteger</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testInteger</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>integer_1</java-variable-name>
+      <xml-element-name>Integer_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestLongResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testLongResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestShortResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testShortResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestFloatResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testFloatResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestFloat</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testFloat</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>float_1</java-variable-name>
+      <xml-element-name>Float_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestBoolean</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testBoolean</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>boolean_1</java-variable-name>
+      <xml-element-name>Boolean_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestBooleanResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testBooleanResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestByte</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testByte</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>byte_1</java-variable-name>
+      <xml-element-name>Byte_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestByteResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testByteResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestIntegerResponse</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testIntegerResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jbws1450.TestShort</java-type>
+    <root-type-qname xmlns:typeNS="http://test.jboss.org/ws/jbws1450/types">typeNS:testShort</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>short_1</java-variable-name>
+      <xml-element-name>Short_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.jbws1450.TestEndpoint_Service</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://test.jboss.org/ws/jbws1450">serviceNS:TestEndpoint</wsdl-service-name>
+    <port-mapping>
+      <port-name>TestEndpointPort</port-name>
+      <java-port-name>TestEndpointPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.jbws1450.TestEndpoint_PortType</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://test.jboss.org/ws/jbws1450">portTypeNS:TestEndpoint</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://test.jboss.org/ws/jbws1450">bindingNS:TestEndpointBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>testBoolean</java-method-name>
+      <wsdl-operation>testBoolean</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testBoolean</wsdl-message>
+          <wsdl-message-part-name>Boolean_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Boolean</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testBooleanResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testByte</java-method-name>
+      <wsdl-operation>testByte</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Byte</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testByte</wsdl-message>
+          <wsdl-message-part-name>Byte_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Byte</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testByteResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testFloat</java-method-name>
+      <wsdl-operation>testFloat</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Float</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testFloat</wsdl-message>
+          <wsdl-message-part-name>Float_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Float</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testFloatResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testInteger</java-method-name>
+      <wsdl-operation>testInteger</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Integer</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testInteger</wsdl-message>
+          <wsdl-message-part-name>Integer_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Integer</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testIntegerResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testLong</java-method-name>
+      <wsdl-operation>testLong</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Long</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testLong</wsdl-message>
+          <wsdl-message-part-name>Long_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Long</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testLongResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>testShort</java-method-name>
+      <wsdl-operation>testShort</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.Short</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testShort</wsdl-message>
+          <wsdl-message-part-name>Short_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.Short</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://test.jboss.org/ws/jbws1450">wsdlMsgNS:TestEndpoint_testShortResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

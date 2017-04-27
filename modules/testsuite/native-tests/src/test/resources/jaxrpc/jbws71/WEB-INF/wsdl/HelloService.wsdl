@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws71' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws71/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws71' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws71/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws71/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='UserType'>
+    <sequence>
+     <element name='msg' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoUserType'>
+    <sequence>
+     <element name='UserType_1' nillable='true' type='tns:UserType'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoUserTypeResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='tns:UserType'/>
+    </sequence>
+   </complexType>
+   <element name='echoUserType' type='tns:echoUserType'/>
+   <element name='echoUserTypeResponse' type='tns:echoUserTypeResponse'/>
+  </schema>
+ </types>
+ <message name='Hello_echoUserType'>
+  <part element='ns1:echoUserType' name='parameters'/>
+ </message>
+ <message name='Hello_echoUserTypeResponse'>
+  <part element='ns1:echoUserTypeResponse' name='result'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='echoUserType'>
+   <input message='tns:Hello_echoUserType'/>
+   <output message='tns:Hello_echoUserTypeResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoUserType'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

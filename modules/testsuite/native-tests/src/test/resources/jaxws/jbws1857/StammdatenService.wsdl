@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='StammdatenService' targetNamespace='http://example.com' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://example.com' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://example.com' version='1.0' xmlns:tns='http://example.com' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='deleteGlaeubiger' type='tns:deleteGlaeubiger'/>
+   <xs:element name='deleteGlaeubigerResponse' type='tns:deleteGlaeubigerResponse'/>
+   <xs:element name='deleteMandant' type='tns:deleteMandant'/>
+   <xs:element name='deleteMandantResponse' type='tns:deleteMandantResponse'/>
+   <xs:element name='deleteMandantUser' type='tns:deleteMandantUser'/>
+   <xs:element name='deleteMandantUserResponse' type='tns:deleteMandantUserResponse'/>
+   <xs:element name='deleteNatPerson' type='tns:deleteNatPerson'/>
+   <xs:element name='deleteNatPersonResponse' type='tns:deleteNatPersonResponse'/>
+   <xs:element name='deleteUser' type='tns:deleteUser'/>
+   <xs:element name='deleteUserResponse' type='tns:deleteUserResponse'/>
+   <xs:element name='fetchGlaeubiger' type='tns:fetchGlaeubiger'/>
+   <xs:element name='fetchGlaeubigerResponse' type='tns:fetchGlaeubigerResponse'/>
+   <xs:element name='fetchMandant' type='tns:fetchMandant'/>
+   <xs:element name='fetchMandantResponse' type='tns:fetchMandantResponse'/>
+   <xs:element name='fetchMandantUser' type='tns:fetchMandantUser'/>
+   <xs:element name='fetchMandantUserResponse' type='tns:fetchMandantUserResponse'/>
+   <xs:element name='fetchNatPerson' type='tns:fetchNatPerson'/>
+   <xs:element name='fetchNatPersonResponse' type='tns:fetchNatPersonResponse'/>
+   <xs:element name='fetchUser' type='tns:fetchUser'/>
+   <xs:element name='fetchUserResponse' type='tns:fetchUserResponse'/>
+   <xs:element name='insertGlaeubiger' type='tns:insertGlaeubiger'/>
+   <xs:element name='insertGlaeubigerResponse' type='tns:insertGlaeubigerResponse'/>
+   <xs:element name='insertMandant' type='tns:insertMandant'/>
+   <xs:element name='insertMandantResponse' type='tns:insertMandantResponse'/>
+   <xs:element name='insertMandantUser' type='tns:insertMandantUser'/>
+   <xs:element name='insertMandantUserResponse' type='tns:insertMandantUserResponse'/>
+   <xs:element name='insertNatPerson' type='tns:insertNatPerson'/>
+   <xs:element name='insertNatPersonResponse' type='tns:insertNatPersonResponse'/>
+   <xs:element name='insertUser' type='tns:insertUser'/>
+   <xs:element name='insertUserResponse' type='tns:insertUserResponse'/>
+   <xs:element name='updateGlaeubiger' type='tns:updateGlaeubiger'/>
+   <xs:element name='updateGlaeubigerResponse' type='tns:updateGlaeubigerResponse'/>
+   <xs:element name='updateMandant' type='tns:updateMandant'/>
+   <xs:element name='updateMandantResponse' type='tns:updateMandantResponse'/>
+   <xs:element name='updateMandantUser' type='tns:updateMandantUser'/>
+   <xs:element name='updateMandantUserResponse' type='tns:updateMandantUserResponse'/>
+   <xs:element name='updateNatPerson' type='tns:updateNatPerson'/>
+   <xs:element name='updateNatPersonResponse' type='tns:updateNatPersonResponse'/>
+   <xs:element name='updateUser' type='tns:updateUser'/>
+   <xs:element name='updateUserResponse' type='tns:updateUserResponse'/>
+   <xs:complexType name='fetchNatPerson'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:natuerlichePerson'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='natuerlichePerson'>
+    <xs:complexContent>
+     <xs:extension base='tns:person'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='aliasName' type='xs:string'/>
+       <xs:element minOccurs='0' name='allianzName' type='xs:string'/>
+       <xs:element minOccurs='0' name='amtlicherName' type='xs:string'/>
+       <xs:element minOccurs='0' name='anredeCode' type='tns:anredeCode'/>
+       <xs:element minOccurs='0' name='geburtsDatum' type='xs:string'/>
+       <xs:element minOccurs='0' name='gesetzlicherVertreter' type='xs:boolean'/>
+       <xs:element minOccurs='0' name='heimatOrt' type='xs:string'/>
+       <xs:element minOccurs='0' name='kanton' type='tns:kantonType'/>
+       <xs:element minOccurs='0' name='landKurzname' type='xs:string'/>
+       <xs:element minOccurs='0' name='ledigenName' type='xs:string'/>
+       <xs:element minOccurs='0' name='nationalitaet' type='tns:nationalitaet'/>
+       <xs:element minOccurs='0' name='nationalitaetStatus' type='tns:nationalitaetStatus'/>
+       <xs:element minOccurs='0' name='rufname' type='xs:string'/>
+       <xs:element minOccurs='0' name='sexType' type='tns:statusType'/>
+       <xs:element minOccurs='0' name='titel' type='xs:string'/>
+       <xs:element minOccurs='0' name='todesDatum' type='xs:dateTime'/>
+       <xs:element minOccurs='0' name='vorname' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType abstract='true' name='person'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='personAdressen' nillable='true' type='tns:personAdresse'/>
+     <xs:element minOccurs='0' name='personId' type='xs:long'/>
+     <xs:element minOccurs='0' name='personInterface' type='tns:personInterface'/>
+     <xs:element minOccurs='0' name='personenArt' type='tns:personenArt'/>
+     <xs:element minOccurs='0' name='sprache' type='tns:languageType'/>
+     <xs:element minOccurs='0' name='umzugDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+     <xs:element minOccurs='0' name='wegzugDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='zuzugDatum' type='xs:dateTime'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='nationalitaet'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='iso2' type='xs:string'/>
+     <xs:element minOccurs='0' name='iso3' type='xs:string'/>
+     <xs:element minOccurs='0' name='landName' type='xs:string'/>
+     <xs:element minOccurs='0' name='nationalitaetId' type='xs:string'/>
+     <xs:element minOccurs='0' name='tcsCode' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandant'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adminEmail' type='xs:string'/>
+     <xs:element minOccurs='0' name='adresse' type='tns:adresse'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='ekFachApplikation' type='xs:string'/>
+     <xs:element minOccurs='0' name='ekKundenNr' type='xs:string'/>
+     <xs:element minOccurs='0' name='ekTeilnehmer' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrAnschrift1' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrAnschrift2' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrAnschrift3' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrAnschrift4' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrBankAnschrift1' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrBankAnschrift2' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrBankAnschrift3' type='xs:string'/>
+     <xs:element minOccurs='0' name='esrKonto' type='xs:string'/>
+     <xs:element minOccurs='0' name='ibanNr' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_0' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_1' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_2' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_3' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_4' type='xs:string'/>
+     <xs:element minOccurs='0' name='level_5' type='xs:string'/>
+     <xs:element minOccurs='0' name='logo' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandantId' type='xs:long'/>
+     <xs:element minOccurs='0' name='mandantName' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandantName1' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandantName2' type='xs:string'/>
+     <xs:element minOccurs='0' name='sprache' type='tns:languageType'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='statusDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='topMandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='adresse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adressArt' type='tns:adressArt'/>
+     <xs:element minOccurs='0' name='adressTyp' type='tns:adressTyp'/>
+     <xs:element minOccurs='0' name='adressZeile1' type='xs:string'/>
+     <xs:element minOccurs='0' name='adressZeile2' type='xs:string'/>
+     <xs:element minOccurs='0' name='adresseId' type='xs:long'/>
+     <xs:element minOccurs='0' name='bezeichnung1' type='xs:string'/>
+     <xs:element minOccurs='0' name='bezeichnung2' type='xs:string'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='email' type='xs:string'/>
+     <xs:element minOccurs='0' name='fax' type='xs:string'/>
+     <xs:element minOccurs='0' name='gebiet' type='xs:string'/>
+     <xs:element minOccurs='0' name='hausnummer' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandantId' type='xs:long'/>
+     <xs:element minOccurs='0' name='ort' type='xs:string'/>
+     <xs:element minOccurs='0' name='plz' type='xs:string'/>
+     <xs:element minOccurs='0' name='plzAusland' type='xs:string'/>
+     <xs:element minOccurs='0' name='plzZusatz' type='xs:string'/>
+     <xs:element name='postfachNr' type='xs:int'/>
+     <xs:element minOccurs='0' name='postfachText' type='xs:string'/>
+     <xs:element minOccurs='0' name='strasse' type='xs:string'/>
+     <xs:element minOccurs='0' name='telefonGeschaeft' type='xs:string'/>
+     <xs:element minOccurs='0' name='telefonHandy' type='xs:string'/>
+     <xs:element minOccurs='0' name='telefonPrivat' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='personAdresse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adresse' type='tns:adresse'/>
+     <xs:element minOccurs='0' name='person' type='tns:person'/>
+     <xs:element minOccurs='0' name='verbindungsTyp' type='tns:verbindungsTyp'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='personInterface'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='fremdAnwendung' type='xs:string'/>
+     <xs:element minOccurs='0' name='fremdKey' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='person' type='tns:person'/>
+     <xs:element minOccurs='0' name='personId' type='xs:long'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchNatPersonResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:natPersonResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='natPersonResult'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='errorList' nillable='true' type='xs:anyType'/>
+     <xs:element minOccurs='0' name='natPerson' type='tns:natuerlichePerson'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='serviceStatus'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='correlationId' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorCode' type='tns:errorCode'/>
+     <xs:element minOccurs='0' name='errorScope' type='tns:errorScope'/>
+     <xs:element name='ok' type='xs:boolean'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='parameters' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchMandant'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandant'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchMandantResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantArrayResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandantArrayResult'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='mandantArray' nillable='true' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateMandant'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandant'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateMandantResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandantResult'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='errorList' nillable='true' type='xs:anyType'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertMandant'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandant'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertMandantResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteMandant'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandant'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteMandantResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='user'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='gueltigBis' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='gueltigVon' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='kurzzeichen' type='xs:string'/>
+     <xs:element minOccurs='0' name='name' type='xs:string'/>
+     <xs:element minOccurs='0' name='passwort' type='xs:string'/>
+     <xs:element minOccurs='0' name='sprache' type='tns:languageType'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='statusDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='userId' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+     <xs:element minOccurs='0' name='vorname' type='xs:string'/>
+     <xs:element minOccurs='0' name='zbBenutzerId' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:userArrayResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='userArrayResult'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='userArray' nillable='true' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:userResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='userResult'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+     <xs:element minOccurs='0' name='user' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:userResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:user'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:userResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchGlaeubiger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:glaeubiger'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='glaeubiger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adresse' type='tns:adresse'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='glaeubigerId' type='xs:long'/>
+     <xs:element minOccurs='0' name='glaeubigerName' type='xs:string'/>
+     <xs:element minOccurs='0' name='glaeubigerName1' type='xs:string'/>
+     <xs:element minOccurs='0' name='glaeubigerName2' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='glaeubigerVerbindung' nillable='true' type='tns:glaeubigerVerbindung'/>
+     <xs:element minOccurs='0' name='gueltigBis' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='gueltigVon' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='sprache' type='tns:languageType'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='statusDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='glaeubigerVerbindung'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='glaeubiger' type='tns:glaeubiger'/>
+     <xs:element minOccurs='0' name='quote' type='xs:decimal'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+     <xs:element minOccurs='0' name='verlustschein' type='tns:verlustschein'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='verlustschein'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='ausstellDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='ausstellendeBehoerde' type='tns:ausstellendeBehoerde'/>
+     <xs:element minOccurs='0' name='bemerkung1' type='xs:string'/>
+     <xs:element minOccurs='0' name='bemerkung2' type='xs:string'/>
+     <xs:element minOccurs='0' name='betreibungsNr' type='xs:string'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='eresetztVerlustschein' type='tns:verlustschein'/>
+     <xs:element minOccurs='0' name='forderungsgrund' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='glaeubigerVerbindung' nillable='true' type='tns:glaeubigerVerbindung'/>
+     <xs:element minOccurs='0' name='glaeubigerVertreter' type='tns:glaeubigerVertreter'/>
+     <xs:element minOccurs='0' name='haftung' type='tns:haftungArt'/>
+     <xs:element minOccurs='0' name='herkunftReferenz' type='tns:herkunftReferenz'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='schuldner' type='tns:personInterface'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+     <xs:element minOccurs='0' name='verjaehrungsfrist' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='verlustscheinArt' type='tns:verlustscheinArt'/>
+     <xs:element minOccurs='0' name='verlustscheinId' type='xs:long'/>
+     <xs:element minOccurs='0' name='vsNummer' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ausstellendeBehoerde'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adresse' type='tns:adresse'/>
+     <xs:element minOccurs='0' name='amtArt' type='tns:amtArt'/>
+     <xs:element minOccurs='0' name='amtsId' type='xs:long'/>
+     <xs:element minOccurs='0' name='ausstellendeBehoerdeId' type='xs:long'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='glaeubigerVertreter'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adresse' type='tns:adresse'/>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='glaeubigerVertreterId' type='xs:long'/>
+     <xs:element minOccurs='0' name='glaeubigerVertreterName' type='xs:string'/>
+     <xs:element minOccurs='0' name='glaeubigerVertreterName1' type='xs:string'/>
+     <xs:element minOccurs='0' name='glaeubigerVertreterName2' type='xs:string'/>
+     <xs:element minOccurs='0' name='gueltigBis' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='gueltigVon' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='ibanNr' type='xs:string'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='pcKonto' type='xs:string'/>
+     <xs:element minOccurs='0' name='sprache' type='tns:languageType'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='statusDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='herkunftReferenz'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='ausloesendeAnwendung' type='xs:string'/>
+     <xs:element minOccurs='0' name='ausloesendeStelleAutomatisch' type='xs:string'/>
+     <xs:element minOccurs='0' name='ausloesendeStelleManuell' type='xs:string'/>
+     <xs:element minOccurs='0' name='ausloesenderSachbearbManuell' type='xs:string'/>
+     <xs:element minOccurs='0' name='ausloesenderSachbearbeiterautomatisch' type='xs:string'/>
+     <xs:element minOccurs='0' name='glaeubigervertreter' type='tns:glaeubigerVertreter'/>
+     <xs:element minOccurs='0' name='herkunftReferenzId' type='xs:long'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='referenzAutomatisch' type='xs:string'/>
+     <xs:element minOccurs='0' name='referenzManuell' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchGlaeubigerResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:glaeubigerArrayResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='glaeubigerArrayResult'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='glaeubigerArray' nillable='true' type='tns:glaeubiger'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateGlaeubiger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:glaeubiger'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateGlaeubigerResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:glaeubigerResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='glaeubigerResult'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='glaeubiger' type='tns:glaeubiger'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertGlaeubiger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:glaeubiger'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertGlaeubigerResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:glaeubigerResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteGlaeubiger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:glaeubiger'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteGlaeubigerResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:glaeubigerResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchMandantUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandantUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandantUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='dateCreated' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='dateModified' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='EMail' type='xs:string'/>
+     <xs:element minOccurs='0' name='fax' type='xs:string'/>
+     <xs:element minOccurs='0' name='funktion' type='xs:string'/>
+     <xs:element minOccurs='0' name='gueltigBis' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='gueltigVon' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='mandant' type='tns:mandant'/>
+     <xs:element minOccurs='0' name='status' type='tns:statusType'/>
+     <xs:element minOccurs='0' name='statusDatum' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='telefon' type='xs:string'/>
+     <xs:element minOccurs='0' name='unterschrift' type='xs:string'/>
+     <xs:element minOccurs='0' name='user' type='tns:user'/>
+     <xs:element minOccurs='0' name='userIdCreated' type='xs:string'/>
+     <xs:element minOccurs='0' name='userIdModified' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='fetchMandantUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantUserArrayResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandantUserArrayResult'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='mandantUser' nillable='true' type='tns:mandantUser'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteMandantUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandantUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteMandantUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantUserResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mandantUserResult'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='mandantUser' type='tns:mandantUser'/>
+     <xs:element minOccurs='0' name='serviceStatus' type='tns:serviceStatus'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertMandantUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandantUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertMandantUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantUserResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateMandantUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:mandantUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateMandantUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:mandantUserResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertNatPerson'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:natuerlichePerson'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insertNatPersonResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:natPersonResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateNatPerson'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:natuerlichePerson'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='updateNatPersonResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:natPersonResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteNatPerson'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='tns:natuerlichePerson'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteNatPersonResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:natPersonResult'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name='anredeCode'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='FRAEULEIN'/>
+     <xs:enumeration value='FRAU'/>
+     <xs:enumeration value='HERR'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='kantonType'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='JU'/>
+     <xs:enumeration value='GE'/>
+     <xs:enumeration value='NE'/>
+     <xs:enumeration value='VS'/>
+     <xs:enumeration value='VD'/>
+     <xs:enumeration value='TI'/>
+     <xs:enumeration value='TG'/>
+     <xs:enumeration value='AG'/>
+     <xs:enumeration value='GR'/>
+     <xs:enumeration value='SG'/>
+     <xs:enumeration value='AI'/>
+     <xs:enumeration value='AR'/>
+     <xs:enumeration value='SH'/>
+     <xs:enumeration value='BL'/>
+     <xs:enumeration value='BS'/>
+     <xs:enumeration value='SO'/>
+     <xs:enumeration value='FR'/>
+     <xs:enumeration value='ZG'/>
+     <xs:enumeration value='GL'/>
+     <xs:enumeration value='NW'/>
+     <xs:enumeration value='OW'/>
+     <xs:enumeration value='SZ'/>
+     <xs:enumeration value='UR'/>
+     <xs:enumeration value='LU'/>
+     <xs:enumeration value='BE'/>
+     <xs:enumeration value='ZH'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='nationalitaetStatus'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='INAKTIV'/>
+     <xs:enumeration value='AKTIV'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='statusType'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='INAKTIV'/>
+     <xs:enumeration value='AKTIV'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='adressArt'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='KORRESPONDENZADRESSE'/>
+     <xs:enumeration value='WOHNADRESSE'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='adressTyp'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='SCHULDNER'/>
+     <xs:enumeration value='AUSSTELLENDE_BEHOERDE'/>
+     <xs:enumeration value='BETREIBUNGS_KONKURSAMT'/>
+     <xs:enumeration value='GLAEUBIGER_VERTRETER'/>
+     <xs:enumeration value='GLAEUBIGER'/>
+     <xs:enumeration value='MANDANT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='languageType'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='IT'/>
+     <xs:enumeration value='FR'/>
+     <xs:enumeration value='DE'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='verbindungsTyp'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='VERLUSTSCHEIN'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='personenArt'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='NATUERLICH'/>
+     <xs:enumeration value='JURISTISCH'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='errorCode'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='VALIDATION_EXCEPTION'/>
+     <xs:enumeration value='BUSINESS_WARNING'/>
+     <xs:enumeration value='HOST_BUSINESS_EXCEPTION_1'/>
+     <xs:enumeration value='DEFAULT_TECHNICAL_EXCEPTION'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='errorScope'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='VICLIENT'/>
+     <xs:enumeration value='HOST'/>
+     <xs:enumeration value='VIAPP'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='amtArt'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='KONKURSAMT'/>
+     <xs:enumeration value='BETREIBUNGSAMT'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='haftungArt'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='SOLIDARHAFTUNG'/>
+     <xs:enumeration value='EINZELHAFTUNG'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='verlustscheinArt'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='BETREIBUNG'/>
+     <xs:enumeration value='KONKURS'/>
+     <xs:enumeration value='UNBEKANNT'/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name='Stammdaten_deleteGlaeubiger'>
+  <part element='tns:deleteGlaeubiger' name='deleteGlaeubiger'/>
+ </message>
+ <message name='Stammdaten_deleteGlaeubigerResponse'>
+  <part element='tns:deleteGlaeubigerResponse' name='deleteGlaeubigerResponse'/>
+ </message>
+ <message name='Stammdaten_deleteMandant'>
+  <part element='tns:deleteMandant' name='deleteMandant'/>
+ </message>
+ <message name='Stammdaten_deleteMandantResponse'>
+  <part element='tns:deleteMandantResponse' name='deleteMandantResponse'/>
+ </message>
+ <message name='Stammdaten_deleteMandantUser'>
+  <part element='tns:deleteMandantUser' name='deleteMandantUser'/>
+ </message>
+ <message name='Stammdaten_deleteMandantUserResponse'>
+  <part element='tns:deleteMandantUserResponse' name='deleteMandantUserResponse'/>
+ </message>
+ <message name='Stammdaten_deleteNatPerson'>
+  <part element='tns:deleteNatPerson' name='deleteNatPerson'/>
+ </message>
+ <message name='Stammdaten_deleteNatPersonResponse'>
+  <part element='tns:deleteNatPersonResponse' name='deleteNatPersonResponse'/>
+ </message>
+ <message name='Stammdaten_deleteUser'>
+  <part element='tns:deleteUser' name='deleteUser'/>
+ </message>
+ <message name='Stammdaten_deleteUserResponse'>
+  <part element='tns:deleteUserResponse' name='deleteUserResponse'/>
+ </message>
+ <message name='Stammdaten_fetchGlaeubiger'>
+  <part element='tns:fetchGlaeubiger' name='fetchGlaeubiger'/>
+ </message>
+ <message name='Stammdaten_fetchGlaeubigerResponse'>
+  <part element='tns:fetchGlaeubigerResponse' name='fetchGlaeubigerResponse'/>
+ </message>
+ <message name='Stammdaten_fetchMandant'>
+  <part element='tns:fetchMandant' name='fetchMandant'/>
+ </message>
+ <message name='Stammdaten_fetchMandantResponse'>
+  <part element='tns:fetchMandantResponse' name='fetchMandantResponse'/>
+ </message>
+ <message name='Stammdaten_fetchMandantUser'>
+  <part element='tns:fetchMandantUser' name='fetchMandantUser'/>
+ </message>
+ <message name='Stammdaten_fetchMandantUserResponse'>
+  <part element='tns:fetchMandantUserResponse' name='fetchMandantUserResponse'/>
+ </message>
+ <message name='Stammdaten_fetchNatPerson'>
+  <part element='tns:fetchNatPerson' name='fetchNatPerson'/>
+ </message>
+ <message name='Stammdaten_fetchNatPersonResponse'>
+  <part element='tns:fetchNatPersonResponse' name='fetchNatPersonResponse'/>
+ </message>
+ <message name='Stammdaten_fetchUser'>
+  <part element='tns:fetchUser' name='fetchUser'/>
+ </message>
+ <message name='Stammdaten_fetchUserResponse'>
+  <part element='tns:fetchUserResponse' name='fetchUserResponse'/>
+ </message>
+ <message name='Stammdaten_insertGlaeubiger'>
+  <part element='tns:insertGlaeubiger' name='insertGlaeubiger'/>
+ </message>
+ <message name='Stammdaten_insertGlaeubigerResponse'>
+  <part element='tns:insertGlaeubigerResponse' name='insertGlaeubigerResponse'/>
+ </message>
+ <message name='Stammdaten_insertMandant'>
+  <part element='tns:insertMandant' name='insertMandant'/>
+ </message>
+ <message name='Stammdaten_insertMandantResponse'>
+  <part element='tns:insertMandantResponse' name='insertMandantResponse'/>
+ </message>
+ <message name='Stammdaten_insertMandantUser'>
+  <part element='tns:insertMandantUser' name='insertMandantUser'/>
+ </message>
+ <message name='Stammdaten_insertMandantUserResponse'>
+  <part element='tns:insertMandantUserResponse' name='insertMandantUserResponse'/>
+ </message>
+ <message name='Stammdaten_insertNatPerson'>
+  <part element='tns:insertNatPerson' name='insertNatPerson'/>
+ </message>
+ <message name='Stammdaten_insertNatPersonResponse'>
+  <part element='tns:insertNatPersonResponse' name='insertNatPersonResponse'/>
+ </message>
+ <message name='Stammdaten_insertUser'>
+  <part element='tns:insertUser' name='insertUser'/>
+ </message>
+ <message name='Stammdaten_insertUserResponse'>
+  <part element='tns:insertUserResponse' name='insertUserResponse'/>
+ </message>
+ <message name='Stammdaten_updateGlaeubiger'>
+  <part element='tns:updateGlaeubiger' name='updateGlaeubiger'/>
+ </message>
+ <message name='Stammdaten_updateGlaeubigerResponse'>
+  <part element='tns:updateGlaeubigerResponse' name='updateGlaeubigerResponse'/>
+ </message>
+ <message name='Stammdaten_updateMandant'>
+  <part element='tns:updateMandant' name='updateMandant'/>
+ </message>
+ <message name='Stammdaten_updateMandantResponse'>
+  <part element='tns:updateMandantResponse' name='updateMandantResponse'/>
+ </message>
+ <message name='Stammdaten_updateMandantUser'>
+  <part element='tns:updateMandantUser' name='updateMandantUser'/>
+ </message>
+ <message name='Stammdaten_updateMandantUserResponse'>
+  <part element='tns:updateMandantUserResponse' name='updateMandantUserResponse'/>
+ </message>
+ <message name='Stammdaten_updateNatPerson'>
+  <part element='tns:updateNatPerson' name='updateNatPerson'/>
+ </message>
+ <message name='Stammdaten_updateNatPersonResponse'>
+  <part element='tns:updateNatPersonResponse' name='updateNatPersonResponse'/>
+ </message>
+ <message name='Stammdaten_updateUser'>
+  <part element='tns:updateUser' name='updateUser'/>
+ </message>
+ <message name='Stammdaten_updateUserResponse'>
+  <part element='tns:updateUserResponse' name='updateUserResponse'/>
+ </message>
+ <portType name='Stammdaten'>
+  <operation name='deleteGlaeubiger' parameterOrder='deleteGlaeubiger'>
+   <input message='tns:Stammdaten_deleteGlaeubiger'/>
+   <output message='tns:Stammdaten_deleteGlaeubigerResponse'/>
+  </operation>
+  <operation name='deleteMandant' parameterOrder='deleteMandant'>
+   <input message='tns:Stammdaten_deleteMandant'/>
+   <output message='tns:Stammdaten_deleteMandantResponse'/>
+  </operation>
+  <operation name='deleteMandantUser' parameterOrder='deleteMandantUser'>
+   <input message='tns:Stammdaten_deleteMandantUser'/>
+   <output message='tns:Stammdaten_deleteMandantUserResponse'/>
+  </operation>
+  <operation name='deleteNatPerson' parameterOrder='deleteNatPerson'>
+   <input message='tns:Stammdaten_deleteNatPerson'/>
+   <output message='tns:Stammdaten_deleteNatPersonResponse'/>
+  </operation>
+  <operation name='deleteUser' parameterOrder='deleteUser'>
+   <input message='tns:Stammdaten_deleteUser'/>
+   <output message='tns:Stammdaten_deleteUserResponse'/>
+  </operation>
+  <operation name='fetchGlaeubiger' parameterOrder='fetchGlaeubiger'>
+   <input message='tns:Stammdaten_fetchGlaeubiger'/>
+   <output message='tns:Stammdaten_fetchGlaeubigerResponse'/>
+  </operation>
+  <operation name='fetchMandant' parameterOrder='fetchMandant'>
+   <input message='tns:Stammdaten_fetchMandant'/>
+   <output message='tns:Stammdaten_fetchMandantResponse'/>
+  </operation>
+  <operation name='fetchMandantUser' parameterOrder='fetchMandantUser'>
+   <input message='tns:Stammdaten_fetchMandantUser'/>
+   <output message='tns:Stammdaten_fetchMandantUserResponse'/>
+  </operation>
+  <operation name='fetchNatPerson' parameterOrder='fetchNatPerson'>
+   <input message='tns:Stammdaten_fetchNatPerson'/>
+   <output message='tns:Stammdaten_fetchNatPersonResponse'/>
+  </operation>
+  <operation name='fetchUser' parameterOrder='fetchUser'>
+   <input message='tns:Stammdaten_fetchUser'/>
+   <output message='tns:Stammdaten_fetchUserResponse'/>
+  </operation>
+  <operation name='insertGlaeubiger' parameterOrder='insertGlaeubiger'>
+   <input message='tns:Stammdaten_insertGlaeubiger'/>
+   <output message='tns:Stammdaten_insertGlaeubigerResponse'/>
+  </operation>
+  <operation name='insertMandant' parameterOrder='insertMandant'>
+   <input message='tns:Stammdaten_insertMandant'/>
+   <output message='tns:Stammdaten_insertMandantResponse'/>
+  </operation>
+  <operation name='insertMandantUser' parameterOrder='insertMandantUser'>
+   <input message='tns:Stammdaten_insertMandantUser'/>
+   <output message='tns:Stammdaten_insertMandantUserResponse'/>
+  </operation>
+  <operation name='insertNatPerson' parameterOrder='insertNatPerson'>
+   <input message='tns:Stammdaten_insertNatPerson'/>
+   <output message='tns:Stammdaten_insertNatPersonResponse'/>
+  </operation>
+  <operation name='insertUser' parameterOrder='insertUser'>
+   <input message='tns:Stammdaten_insertUser'/>
+   <output message='tns:Stammdaten_insertUserResponse'/>
+  </operation>
+  <operation name='updateGlaeubiger' parameterOrder='updateGlaeubiger'>
+   <input message='tns:Stammdaten_updateGlaeubiger'/>
+   <output message='tns:Stammdaten_updateGlaeubigerResponse'/>
+  </operation>
+  <operation name='updateMandant' parameterOrder='updateMandant'>
+   <input message='tns:Stammdaten_updateMandant'/>
+   <output message='tns:Stammdaten_updateMandantResponse'/>
+  </operation>
+  <operation name='updateMandantUser' parameterOrder='updateMandantUser'>
+   <input message='tns:Stammdaten_updateMandantUser'/>
+   <output message='tns:Stammdaten_updateMandantUserResponse'/>
+  </operation>
+  <operation name='updateNatPerson' parameterOrder='updateNatPerson'>
+   <input message='tns:Stammdaten_updateNatPerson'/>
+   <output message='tns:Stammdaten_updateNatPersonResponse'/>
+  </operation>
+  <operation name='updateUser' parameterOrder='updateUser'>
+   <input message='tns:Stammdaten_updateUser'/>
+   <output message='tns:Stammdaten_updateUserResponse'/>
+  </operation>
+ </portType>
+ <binding name='StammdatenBinding' type='tns:Stammdaten'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='deleteGlaeubiger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='deleteMandant'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='deleteMandantUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='deleteNatPerson'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='deleteUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='fetchGlaeubiger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='fetchMandant'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='fetchMandantUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='fetchNatPerson'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='fetchUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='insertGlaeubiger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='insertMandant'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='insertMandantUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='insertNatPerson'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='insertUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateGlaeubiger'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateMandant'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateMandantUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateNatPerson'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='StammdatenService'>
+  <port binding='tns:StammdatenBinding' name='StammdatenPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

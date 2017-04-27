@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<webservices xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:impl="http://org.jboss/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd" version="1.1">
+<webservice-description>
+  <webservice-description-name>HelloWsService</webservice-description-name> 
+  <wsdl-file>WEB-INF/wsdl/HelloWsService.wsdl</wsdl-file> 
+  <jaxrpc-mapping-file>WEB-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file> 
+<port-component>
+  <port-component-name>HelloWsServicePort</port-component-name> 
+  <wsdl-port>impl:HelloWsServicePort</wsdl-port> 
+  <service-endpoint-interface>org.jboss.test.ws.tools.jbws_161.simple.HelloWs</service-endpoint-interface> 
+<service-impl-bean>
+  <servlet-link>HelloWsService</servlet-link> 
+  </service-impl-bean>
+  </port-component>
+  </webservice-description>
+  </webservices>

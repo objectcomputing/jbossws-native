@@ -1,0 +1,41 @@
+<s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema"
+          targetNamespace="http://jboss.org/test/ws/xop/doclit"
+          xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+          xmlns:tns="http://jboss.org/test/ws/xop/doclit">
+
+   <s:import schemaLocation="xml-media-types.xsd" namespace="http://www.w3.org/2005/05/xmlmime"/>
+
+   <s:element name="PingMsg">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="message" minOccurs="0" maxOccurs="1" type="s:string" />
+            <s:element name="xopContent" xmime:contentType="image/jpeg" type="tns:XOPBinary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <s:element name="PingMsgResponse">
+      <s:complexType>
+         <s:sequence>
+            <s:element name="xopContent" xmime:contentType="image/jpeg" type="xmime:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+   <s:complexType name="XOPBinary" >
+      <s:simpleContent>
+         <s:extension base="s:base64Binary" >
+            <s:attribute ref="xmime:contentType" use="optional"/>
+         </s:extension>
+      </s:simpleContent>
+   </s:complexType>
+
+   <s:element name="MSFTBinary">
+      <s:complexType>
+         <s:sequence>
+            <s:element minOccurs="0" name="xopContent" nillable="true" type="s:base64Binary"/>
+         </s:sequence>
+      </s:complexType>
+   </s:element>
+
+</s:schema>

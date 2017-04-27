@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+ <webservice-description>
+  <webservice-description-name>HelloServicePcURI</webservice-description-name>
+  <wsdl-file>META-INF/wsdl/HelloServicePcURI.wsdl</wsdl-file>
+  <jaxrpc-mapping-file>META-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+  <port-component>
+   <port-component-name>HelloPortOne</port-component-name>
+   <wsdl-port>impl:HelloPortOne</wsdl-port>
+   <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws165.Hello</service-endpoint-interface>
+   <service-impl-bean>
+    <ejb-link>HelloPCOne</ejb-link>
+   </service-impl-bean>
+  </port-component>
+ </webservice-description>
+ <webservice-description>
+  <webservice-description-name>HelloServicePcURI</webservice-description-name>
+  <wsdl-file>META-INF/wsdl/HelloServicePcURI.wsdl</wsdl-file>
+  <jaxrpc-mapping-file>META-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+  <port-component>
+   <port-component-name>HelloPorTwo</port-component-name>
+   <wsdl-port>impl:HelloPortTwo</wsdl-port>
+   <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws165.Hello</service-endpoint-interface>
+   <service-impl-bean>
+    <ejb-link>HelloPCTwo</ejb-link>
+   </service-impl-bean>
+  </port-component>
+ </webservice-description>
+
+
+  <port binding='tns:HelloBinding' name='HelloPortOne'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+  <port binding='tns:HelloBinding' name='HelloPortTwo'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+
+-->
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <javaToWSDL>
+     <service name="HelloServicePcURI" 
+              endpoint="org.jboss.test.ws.jaxrpc.jbws165.Hello"
+              wsdlStyle="rpc">
+     </service>
+     <namespaces targetNamespace="http://org.jboss.test.webservice/jbws165"
+                 typeNamespace="http://org.jboss.test.webservice/jbws165/types" />
+     <mapping fileName="jaxrpc-mapping.xml"/>
+     <wsxml  ejbLink="HelloPCOne"/>
+   </javaToWSDL>  
+</configuration>

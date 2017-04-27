@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.webservice/jbws424' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws424/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws424' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws424/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws424/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='Exception2'>
+    <complexContent>
+     <extension base='tns:PrivateException'>
+      <sequence>
+       <element name='shortDescr' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PrivateException'>
+    <sequence>
+     <element name='description' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='Exception2' type='tns:Exception2'/>
+   <element name='PrivateException' type='tns:PrivateException'/>
+  </schema>
+ </types>
+ <message name='TestSEI_doStuff'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='TestSEI_doStuffResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+ <message name='Exception2'>
+  <part element='ns1:Exception2' name='Exception2'/>
+ </message>
+ <portType name='TestSEI'>
+  <operation name='doStuff' parameterOrder='String_1'>
+   <input message='tns:TestSEI_doStuff'/>
+   <output message='tns:TestSEI_doStuffResponse'/>
+   <fault message='tns:Exception2' name='Exception2'/>
+  </operation>
+ </portType>
+ <binding name='TestSEIBinding' type='tns:TestSEI'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='doStuff'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws424' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.webservice/jbws424' use='literal'/>
+   </output>
+   <fault name='Exception2'>
+    <soap:fault name='Exception2' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestSEIBinding' name='TestSEIPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

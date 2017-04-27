@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.ws/samples/wssecurity' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.ws/samples/wssecurity' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://org.jboss.ws/samples/wssecurity' version='1.0' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:complexType name='UserType'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='msg' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='Hello_echoUserType'>
+  <part name='user' type='tns:UserType'/>
+ </message>
+ <message name='Hello_echoUserTypeResponse'>
+  <part name='return' type='tns:UserType'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='echoUserType' parameterOrder='user'>
+   <input message='tns:Hello_echoUserType'/>
+   <output message='tns:Hello_echoUserTypeResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoUserType'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.ws/samples/wssecurity' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.ws/samples/wssecurity' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

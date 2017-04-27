@@ -1,0 +1,9 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+    <env:Header/>
+    <env:Body>
+        <ns1:getOrder xmlns:ns1='http://org.jboss.ws/benchmark'>
+            <int_1>1</int_1>
+            <int_2>1</int_2>
+        </ns1:getOrder>
+    </env:Body>
+</env:Envelope>

@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://www.jboss.org/support/phonebook/types">
+   <soapenv:Body>
+      <typ:lookup>
+         <firstName>Darran</firstName>
+         <surname>Lofthouse</surname>
+      </typ:lookup>
+   </soapenv:Body>
+</soapenv:Envelope> 

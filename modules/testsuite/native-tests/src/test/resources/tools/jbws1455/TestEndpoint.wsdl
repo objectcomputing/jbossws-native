@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestEndpoint' targetNamespace='http://test.jboss.org/ws/jbws1455' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://test.jboss.org/ws/jbws1455/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://test.jboss.org/ws/jbws1455' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1455/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://test.jboss.org/ws/jbws1455/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='MyException'>
+    <sequence>
+     <element name='comment' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='methodOne' type='string'/>
+   <element name='methodOneResponse' type='string'/>
+   <element name='MyException' type='tns:MyException'/>
+   <element name='methodTwo' type='string'/>
+   <element name='methodTwoResponse' type='string'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_methodOne'>
+  <part element='ns1:methodOne' name='parameters'/>
+ </message>
+ <message name='TestEndpoint_methodOneResponse'>
+  <part element='ns1:methodOneResponse' name='result'/>
+ </message>
+ <message name='TestEndpoint_methodTwo'>
+  <part element='ns1:methodTwo' name='parameters'/>
+ </message>
+ <message name='TestEndpoint_methodTwoResponse'>
+  <part element='ns1:methodTwoResponse' name='result'/>
+ </message>
+ <message name='MyException'>
+  <part element='ns1:MyException' name='MyException'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='methodOne'>
+   <input message='tns:TestEndpoint_methodOne'/>
+   <output message='tns:TestEndpoint_methodOneResponse'/>
+  </operation>
+  <operation name='methodTwo'>
+   <input message='tns:TestEndpoint_methodTwo'/>
+   <output message='tns:TestEndpoint_methodTwoResponse'/>
+   <fault message='tns:MyException' name='MyException'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='methodOne'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='methodTwo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='MyException'>
+    <soap:fault name='MyException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TestEndpoint'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

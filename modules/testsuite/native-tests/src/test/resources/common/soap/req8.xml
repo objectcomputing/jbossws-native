@@ -1,0 +1,12 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <env:Header/>
+   <env:Body>
+      <publish xmlns='http://webservices.est.useme.etish.com'>
+         <in0 xmlns=''>joel</in0>
+         <in1 xmlns=''>secret</in1>
+         <in2 xmlns=''>1</in2>
+         <in3 xmlns=''>6</in3>
+         <in4 xmlns=''>2</in4>
+      </publish>
+   </env:Body>
+</env:Envelope>

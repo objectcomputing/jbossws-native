@@ -1,0 +1,19 @@
+<webservices version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:impl='http://netid.msu.edu:8080/lastmod.pl' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd'>
+ <webservice-description>
+  <webservice-description-name>LastMod</webservice-description-name>
+  <wsdl-file>WEB-INF/wsdl/lastmodified.wsdl</wsdl-file>
+  <jaxrpc-mapping-file>WEB-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+  <port-component>
+   <port-component-name>LastModPort</port-component-name>
+   <wsdl-port>impl:LastModPort</wsdl-port>
+   <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws1303.LastMod_PortType</service-endpoint-interface>
+   <service-impl-bean>
+    <servlet-link>LastMod</servlet-link>
+   </service-impl-bean>
+   <handler>
+    <handler-name>ServerHandler</handler-name>
+    <handler-class>org.jboss.test.ws.jaxrpc.jbws1303.ServerHandler</handler-class>
+   </handler>
+  </port-component>
+ </webservice-description>
+</webservices>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws950' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws950/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws950' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws950/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws950/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='UserType'>
+    <sequence>
+     <element name='string' nillable='true' type='string'/>
+    </sequence>
+    <attribute name='qname' type='QName'/>
+   </complexType>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echoElement'>
+  <part name='QName_1' type='xsd:QName'/>
+ </message>
+ <message name='TestEndpoint_echoElementResponse'>
+  <part name='result' type='xsd:QName'/>
+ </message>
+ <message name='TestEndpoint_echoUserType'>
+  <part name='UserType_1' type='ns1:UserType'/>
+ </message>
+ <message name='TestEndpoint_echoUserTypeResponse'>
+  <part name='result' type='ns1:UserType'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echoElement' parameterOrder='QName_1'>
+   <input message='tns:TestEndpoint_echoElement'/>
+   <output message='tns:TestEndpoint_echoElementResponse'/>
+  </operation>
+  <operation name='echoUserType' parameterOrder='UserType_1'>
+   <input message='tns:TestEndpoint_echoUserType'/>
+   <output message='tns:TestEndpoint_echoUserTypeResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoElement'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws950' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws950' use='literal'/>
+   </output>
+  </operation>
+  <operation name='echoUserType'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws/jbws950' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws/jbws950' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='http://@jboss.bind.address@:8080/jaxrpc-jbws950/TestEndpoint'/>
+  </port>
+ </service>
+</definitions>

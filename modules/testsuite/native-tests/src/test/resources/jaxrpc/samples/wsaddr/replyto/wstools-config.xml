@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../output/classes -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="ReplyToService" style="document" parameter-style="wrapped" endpoint="org.jboss.test.ws.jaxrpc.samples.wsaddr.replyto.ReplyTo">
+      <operation name="sayHelloResponse" one-way="true">
+        <parameter type="java.lang.String" xml-name="result"/>
+      </operation>
+      <operation name="getLastMessage" one-way="false" return-xml-name="result"/>
+    </service>
+    <namespaces target-namespace="http://org.jboss.ws/jaxrpc/samples/wsaddr/replyto" type-namespace="http://org.jboss.ws/jaxrpc/samples/wsaddr/replyto/types"/>
+    <mapping file="replyto-jaxrpc-mapping.xml"/>
+    <webservices servlet-link="ReplyToService"/>
+  </java-wsdl>
+</configuration>

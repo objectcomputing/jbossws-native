@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestServicePortType' targetNamespace='http://org.jboss.test.ws/wsdlpublish' xmlns='http://schemas.xmlsoap.org/wsdl/' 
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/wsdlpublish' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  
+ <types/>
+  
+ <message name='TestEndpoint_echoSimple'>
+  <part name='String_1' type='xsd:string'/>
+ </message>
+ <message name='TestEndpoint_echoSimpleResponse'>
+  <part name='result' type='xsd:string'/>
+ </message>
+  
+ <portType name='TestEndpoint'>
+  <operation name='echoSimple' parameterOrder='String_1'>
+   <input message='tns:TestEndpoint_echoSimple'/>
+   <output message='tns:TestEndpoint_echoSimpleResponse'/>
+  </operation>
+ </portType>
+  
+</definitions>

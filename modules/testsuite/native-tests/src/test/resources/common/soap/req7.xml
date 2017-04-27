@@ -1,0 +1,8 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+ <env:Header/>
+ <env:Body>
+  <ns1:stringTest xmlns:ns1='http://org.jboss.ws/marshall/doclit/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <String_1>&amp;Test &amp; this &amp;</String_1>
+  </ns1:stringTest>
+ </env:Body>
+</env:Envelope>

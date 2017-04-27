@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws.jbws2018' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://com.other.base' xmlns:ns2='http://com.other.exception' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws.jbws2018' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://com.other.exception' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://com.other.base' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://com.other.exception' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://com.other.base'/>
+   <complexType name='TestException'>
+    <complexContent>
+     <extension base='ns2:BaseException'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name='TestException' type='tns:TestException'/>
+  </schema>
+  <schema targetNamespace='http://com.other.base' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='http://com.other.exception' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://com.other.base' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://com.other.exception'/>
+   <complexType name='BaseException'>
+    <sequence/>
+   </complexType>
+   <complexType name='BaseException.Array'>
+    <sequence>
+     <element maxOccurs='unbounded' minOccurs='0' name='value' nillable='true' type='tns:BaseException'/>
+    </sequence>
+   </complexType>
+   <element name='BaseException' type='tns:BaseException'/>
+  </schema>
+ </types>
+ <message name='Test_getException' xmlns='http://schemas.xmlsoap.org/wsdl/'/>
+ <message name='Test_getExceptionResponse'>
+  <part name='result' type='ns1:BaseException'/>
+ </message>
+ <message name='TestException'>
+  <part element='ns2:TestException' name='TestException'/>
+ </message>
+ <message name='Test_getExceptions'/>
+ <message name='Test_getExceptionsResponse'>
+  <part name='result' type='ns1:BaseException.Array'/>
+ </message>
+ <message name='Test_setException'>
+  <part name='BaseException_1' type='ns1:BaseException'/>
+ </message>
+ <message name='Test_setExceptionResponse'/>
+ <message name='Test_setExceptions'>
+  <part name='arrayOfBaseException_1' type='ns1:BaseException.Array'/>
+ </message>
+ <message name='Test_setExceptionsResponse'/>
+ <message name='Test_testException'/>
+ <message name='Test_testExceptionResponse'/>
+ <portType name='Test'>
+  <operation name='getException'>
+   <input message='tns:Test_getException'/>
+   <output message='tns:Test_getExceptionResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+  <operation name='getExceptions'>
+   <input message='tns:Test_getExceptions'/>
+   <output message='tns:Test_getExceptionsResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+  <operation name='setException' parameterOrder='BaseException_1'>
+   <input message='tns:Test_setException'/>
+   <output message='tns:Test_setExceptionResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+  <operation name='setExceptions' parameterOrder='arrayOfBaseException_1'>
+   <input message='tns:Test_setExceptions'/>
+   <output message='tns:Test_setExceptionsResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+  <operation name='testException'>
+   <input message='tns:Test_testException'/>
+   <output message='tns:Test_testExceptionResponse'/>
+   <fault message='tns:TestException' name='TestException'/>
+  </operation>
+ </portType>
+ <binding name='TestBinding' type='tns:Test'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getException'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='getExceptions'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='setException'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='setExceptions'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='testException'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://org.jboss.test.ws.jbws2018' use='literal'/>
+   </output>
+   <fault name='TestException'>
+    <soap:fault name='TestException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestBinding' name='TestPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

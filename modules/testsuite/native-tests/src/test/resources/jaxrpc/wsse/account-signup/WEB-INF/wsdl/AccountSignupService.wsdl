@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='AccountSignupService' targetNamespace='http://org.jboss.test.ws/wsse' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/wsse/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/wsse' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/wsse/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/wsse/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='AccountInfo'>
+    <sequence>
+     <element name='address' nillable='true' type='tns:Address'/>
+     <element name='creditCardInfo' form="qualified" nillable='true' type='tns:CreditCardInfo'/>
+     <element name='firstName' nillable='true' type='string'/>
+     <element name='lastName' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='Address'>
+    <sequence>
+     <element name='city' nillable='true' type='string'/>
+     <element name='state' nillable='true' type='string'/>
+     <element name='street' nillable='true' type='string'/>
+     <element name='zip' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='CreditCardInfo'>
+    <sequence>
+     <element name='creditCardNumber' nillable='true' type='string'/>
+     <element name='expiration' nillable='true' type='dateTime'/>
+     <element name='securityCode' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='signup'>
+    <sequence>
+     <element name='accountInfo' nillable='true' type='tns:AccountInfo'/>
+     <element name='discountAmount' type='float'/>
+     <element name='signupTime' nillable='true' type='dateTime'/>
+    </sequence>
+   </complexType>
+   <complexType name='signupResponse'>
+    <sequence>
+     <element name='result' type='int'/>
+    </sequence>
+   </complexType>
+   <element name='signup' type='tns:signup'/>
+   <element name='signupResponse' type='tns:signupResponse'/>
+  </schema>
+ </types>
+ <message name='AccountSignup_signup'>
+  <part element='ns1:signup' name='parameters'/>
+ </message>
+ <message name='AccountSignup_signupResponse'>
+  <part element='ns1:signupResponse' name='result'/>
+ </message>
+ <portType name='AccountSignup'>
+  <operation name='signup'>
+   <input message='tns:AccountSignup_signup'/>
+   <output message='tns:AccountSignup_signupResponse'/>
+  </operation>
+ </portType>
+ <binding name='AccountSignupBinding' type='tns:AccountSignup'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='signup'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='AccountSignupService'>
+  <port binding='tns:AccountSignupBinding' name='AccountSignupPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

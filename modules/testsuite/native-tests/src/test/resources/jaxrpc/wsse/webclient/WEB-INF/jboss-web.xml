@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 2.4//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_0.dtd">
+
+<jboss-web>
+  <context-root>jaxrpc-wsse-rpc</context-root>
+  
+  <webservice-description>
+    <webservice-description-name>HelloService</webservice-description-name>
+    <config-name>Standard WSSecurity Endpoint</config-name>
+  </webservice-description>
+  
+  <service-ref>
+    <service-ref-name>service/HelloService</service-ref-name>
+    <config-name>Standard WSSecurity Client</config-name>
+    <wsdl-override>http://@jboss.bind.address@:8080/jaxrpc-wsse-rpc/Hello?wsdl</wsdl-override>
+  </service-ref>
+  
+</jboss-web>

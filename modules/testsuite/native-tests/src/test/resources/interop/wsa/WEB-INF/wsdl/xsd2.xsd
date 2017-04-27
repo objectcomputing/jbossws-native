@@ -1,0 +1,16 @@
+<xs:schema elementFormDefault='qualified' targetNamespace='http://example.org/echo' xmlns:tns='http://example.org/echo' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+ <xs:element name='EchoInMessage'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element minOccurs='0' name='echoIn' nillable='true' type='xs:string'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name='EchoOutMessage'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element minOccurs='0' name='echoOut' nillable='true' type='xs:string'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>

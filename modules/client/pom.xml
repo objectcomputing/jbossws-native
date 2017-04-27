@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <name>JBoss Web Services - Stack Native Client</name>
+  <artifactId>jbossws-native-client</artifactId>
+  <packaging>jar</packaging>
+  
+  <!-- Parent -->
+  <parent>
+    <groupId>org.jboss.ws.native</groupId>
+    <artifactId>jbossws-native</artifactId>
+    <version>3.1.2.GA</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  
+  <!-- Dependencies -->
+  <dependencies>
+    <!-- This shortens the path to the JAX-WS impl. Otherwise jaxws-rt.jar might be seen first -->
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-jaxws-ext</artifactId>
+      <version>${version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-jaxws</artifactId>
+      <version>${version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-jaxrpc</artifactId>
+      <version>${version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-core</artifactId>
+      <version>${version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging-log4j</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Class-Path>jbossws-spi.jar jbossws-common.jar jbossws-framework.jar jbossws-native-core.jar jbossws-native-jaxrpc.jar jbossws-native-jaxws.jar jbossws-native-jaxws-ext.jar jbossws-native-saaj.jar activation.jar commons-logging.jar concurrent.jar javassist.jar jaxb-api.jar jaxb-impl.jar mail.jar jboss-remoting.jar jboss-xml-binding.jar policy.jar stax-api.jar wsdl4j.jar</Class-Path>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

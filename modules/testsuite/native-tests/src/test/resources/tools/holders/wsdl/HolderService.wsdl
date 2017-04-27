@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="HolderService" targetNamespace="http://jboss.org/test" xmlns:tns="http://jboss.org/test" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types/>
+  <message name="HoldersServiceInterface_processHolder">
+    <part name="Calendar_1" type="xsd:dateTime"/>
+    <part name="int_2" type="xsd:int"/></message>
+  <message name="HoldersServiceInterface_processHolderResponse">
+    <part name="result" type="xsd:float"/>
+    <part name="Calendar_1" type="xsd:dateTime"/>
+    <part name="int_2" type="xsd:int"/></message>
+  <portType name="HoldersServiceInterface">
+    <operation name="processHolder" parameterOrder="Calendar_1 int_2">
+      <input message="tns:HoldersServiceInterface_processHolder"/>
+      <output message="tns:HoldersServiceInterface_processHolderResponse"/></operation></portType>
+  <binding name="HoldersServiceInterfaceBinding" type="tns:HoldersServiceInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="processHolder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://jboss.org/test"/></input>
+      <output>
+        <soap:body use="literal" namespace="http://jboss.org/test"/></output></operation></binding>
+  <service name="HolderService">
+    <port name="HoldersServiceInterfacePort" binding="tns:HoldersServiceInterfaceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

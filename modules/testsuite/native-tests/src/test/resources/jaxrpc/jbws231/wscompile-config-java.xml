@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   wscompile -cp ../../../../output/classes -gen:server -f:rpcliteral -mapping jaxrpc-mapping.xml wscompile-config-java.xml
+  
+   error: class org.jboss.test.ws.jaxrpc.jbws231.EyeColorType does not have a public accessible empty constructor
+-->
+
+<configuration
+  xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+  <service name="TestService"
+    targetNamespace="http://org.jboss.test.ws/jbws231"
+    typeNamespace="http://org.jboss.test.ws/jbws231/types"
+    packageName="org.jboss.test.ws.jaxrpc.jbws231">
+    <interface name="org.jboss.test.ws.jaxrpc.jbws231.TestEndpoint"/>
+  </service>
+
+</configuration>
+

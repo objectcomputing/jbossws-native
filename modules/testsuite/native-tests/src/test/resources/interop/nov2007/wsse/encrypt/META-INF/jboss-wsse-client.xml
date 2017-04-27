@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-ws-security xmlns="http://www.jboss.com/ws-security/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.com/ws-security/config http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+  <config>
+  	<timestamp ttl="300"/>
+  	<sign type="x509v3" alias="1" includeTimestamp="true"/>
+    <encrypt type="x509v3" alias="bob" algorithm="aes-256" keyWrapAlgorithm="rsa_oaep" tokenReference="keyIdentifier"/>
+    <requires>
+      <signature/>
+      <encryption/>
+    </requires>
+  </config>
+</jboss-ws-security>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace='http://org.jboss.ws/types' xmlns='http://www.w3.org/2003/11/wsdl' xmlns:xsi='http://www.w3.org/2000/10/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:tns='http://org.jboss.ws/types'>
+<types>
+<xsd:import namespace='http://org.jboss.ws/types' schemaLocation='UniqueBindingName.xsd'/>
+</types>
+
+<interface name='StandardJavaTypes'>
+<operation name='echoString'>
+<input messageLabel='IN' element='xsd:string'></input>
+<output messageLabel='OUT' element='xsd:string'></output>
+</operation>
+</interface>
+
+<binding name='StandardJavaTypesBinding' interface='StandardJavaTypes'>
+<operation ref='echoString'>
+<input messageLabel='echoString'></input>
+<output messageLabel='echoStringResponse'></output>
+</operation>
+</binding>
+
+<binding name='StandardJavaTypesBinding' interface='StandardJavaTypes'>
+<operation ref='echoString'>
+<input messageLabel='echoString'></input>
+<output messageLabel='echoStringResponse'></output>
+</operation>
+</binding>
+
+
+<service name='StandardJavaTypesService' interface='StandardJavaTypes'>
+<endpoint name='StandardJavaTypesEndpoint' binding='StandardJavaTypesBinding'></endpoint>
+</service>
+</definitions>

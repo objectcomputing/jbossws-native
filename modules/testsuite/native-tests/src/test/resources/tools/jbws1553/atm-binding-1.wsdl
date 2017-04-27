@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:samples:atm2" xmlns:tns="urn:samples:atm2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <import namespace="urn:samples:atm" location="atm.wsdl"/>
+  <binding name="FrontEndBinding" type="tns:FrontEnd">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="connect">
+      <soap:operation soapAction="urn:samples:atm2:connect"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+    </operation>
+    <operation name="disconnect">
+      <soap:operation soapAction="urn:samples:atm2:disconnect"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+    </operation>
+    <operation name="status">
+      <soap:operation soapAction="urn:samples:atm2:status"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+    </operation>
+    <operation name="logOn">
+      <soap:operation soapAction="urn:samples:atm2:logOn"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+      <fault name="unauthorizedAccess">
+        <soap:fault name="unauthorizedAccess" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="logOff">
+      <soap:operation soapAction="urn:samples:atm2:logOff"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+    </operation>
+    <operation name="getBalance">
+      <soap:operation soapAction="urn:samples:atm2:getBalance"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+    </operation>
+    <operation name="deposit">
+      <soap:operation soapAction="urn:samples:atm2:deposit"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+    </operation>
+    <operation name="withdraw">
+      <soap:operation soapAction="urn:samples:atm2:withdraw"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </output>
+      <fault name="insufficientFunds">
+        <soap:fault name="insufficientFunds" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="myop">
+      <soap:operation soapAction="urn:samples:atm2:myop"/>
+      <input>
+        <soap:body use="literal" namespace="urn:samples:atm2"/>
+      </input>
+    </operation>
+  </binding>
+</definitions>

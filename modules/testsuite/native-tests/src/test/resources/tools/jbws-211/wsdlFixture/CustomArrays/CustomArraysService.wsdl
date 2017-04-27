@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="CustomArraysService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://org.jboss.ws/types"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws/types"
+			xmlns:tns="http://org.jboss.ws/types"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="CustomObject.Array">
+				<sequence>
+					<element name="value"
+						type="tns:CustomObject" nillable="true" minOccurs="0"
+						maxOccurs="unbounded" />
+				</sequence>
+			</complexType>
+			<complexType name="CustomObject">
+				<sequence>
+					<element name="name" type="string" nillable="true" />
+				</sequence>
+			</complexType> 
+		</schema>
+	</types>
+	<message name="CustomArraysSEI_customOp">
+		<part name="arrayOfCustomObject_1" type="ns2:CustomObject.Array" />
+	</message>
+	<message name="CustomArraysSEI_customOpResponse"/>
+ 	<portType name="CustomArraysSEI">
+		<operation name="customOp">
+			<input message="tns:CustomArraysSEI_customOp" />
+			<output message="tns:CustomArraysSEI_customOpResponse" />
+		</operation>
+	</portType>
+	<binding name="CustomArraysSEIBinding" type="tns:CustomArraysSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="customOp">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="CustomArraysService">
+		<port name="CustomArraysSEIPort"
+			binding="tns:CustomArraysSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

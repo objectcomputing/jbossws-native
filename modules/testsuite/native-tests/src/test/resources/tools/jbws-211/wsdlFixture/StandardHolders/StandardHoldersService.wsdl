@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="StandardHoldersService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types />
+	<message name="HoldersSEI_processHolder">
+		<part name="Calendar_1" type="xsd:dateTime" />
+		<part name="int_2" type="xsd:int" />
+		<part name="float_3" type="xsd:float" />
+	</message>
+	<message name="HoldersSEI_processHolderResponse">
+		<part name="Calendar_1" type="xsd:dateTime" />
+		<part name="int_2" type="xsd:int" />
+		<part name="float_3" type="xsd:float" />
+	</message>
+	<portType name="HoldersSEI">
+		<operation name="processHolder"
+			parameterOrder="Calendar_1 int_2 float_3">
+			<input message="tns:HoldersSEI_processHolder" />
+			<output message="tns:HoldersSEI_processHolderResponse" />
+		</operation>
+	</portType>
+	<binding name="HoldersSEIBinding" type="tns:HoldersSEI">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="processHolder">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+		</operation>
+	</binding>
+	<service name="StandardHoldersService">
+		<port name="HoldersSEIPort" binding="tns:HoldersSEIBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

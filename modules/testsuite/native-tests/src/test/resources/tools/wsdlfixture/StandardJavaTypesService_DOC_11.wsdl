@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="StandardJavaTypesService" targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://org.jboss.ws/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/types" xmlns:tns="http://org.jboss.ws/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="echoCalendar">
+        <sequence>
+          <element name="Calendar_1" type="dateTime" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoCalendarResponse">
+        <sequence>
+          <element name="result" type="dateTime" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDate">
+        <sequence>
+          <element name="Date_1" type="dateTime" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDateResponse">
+        <sequence>
+          <element name="result" type="dateTime" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDecimal">
+        <sequence>
+          <element name="BigDecimal_1" type="decimal" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoDecimalResponse">
+        <sequence>
+          <element name="result" type="decimal" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoInteger">
+        <sequence>
+          <element name="BigInteger_1" type="integer" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoIntegerResponse">
+        <sequence>
+          <element name="result" type="integer" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoQName">
+        <sequence>
+          <element name="QName_1" type="QName" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoQNameResponse">
+        <sequence>
+          <element name="result" type="QName" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoString">
+        <sequence>
+          <element name="String_1" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoStringResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoURI">
+        <sequence>
+          <element name="URI_1" type="anyURI" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoURIResponse">
+        <sequence>
+          <element name="result" type="anyURI" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="echoCalendar" type="tns:echoCalendar"/>
+      <element name="echoCalendarResponse" type="tns:echoCalendarResponse"/>
+      <element name="echoDate" type="tns:echoDate"/>
+      <element name="echoDateResponse" type="tns:echoDateResponse"/>
+      <element name="echoDecimal" type="tns:echoDecimal"/>
+      <element name="echoDecimalResponse" type="tns:echoDecimalResponse"/>
+      <element name="echoInteger" type="tns:echoInteger"/>
+      <element name="echoIntegerResponse" type="tns:echoIntegerResponse"/>
+      <element name="echoQName" type="tns:echoQName"/>
+      <element name="echoQNameResponse" type="tns:echoQNameResponse"/>
+      <element name="echoString" type="tns:echoString"/>
+      <element name="echoStringResponse" type="tns:echoStringResponse"/>
+      <element name="echoURI" type="tns:echoURI"/>
+      <element name="echoURIResponse" type="tns:echoURIResponse"/>
+    </schema>
+  </types>
+  <message name="StandardJavaTypes_echoCalendar">
+    <part name="parameters" element="ns2:echoCalendar"/>
+  </message>
+  <message name="StandardJavaTypes_echoCalendarResponse">
+    <part name="result" element="ns2:echoCalendarResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoDate">
+    <part name="parameters" element="ns2:echoDate"/>
+  </message>
+  <message name="StandardJavaTypes_echoDateResponse">
+    <part name="result" element="ns2:echoDateResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoDecimal">
+    <part name="parameters" element="ns2:echoDecimal"/>
+  </message>
+  <message name="StandardJavaTypes_echoDecimalResponse">
+    <part name="result" element="ns2:echoDecimalResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoInteger">
+    <part name="parameters" element="ns2:echoInteger"/>
+  </message>
+  <message name="StandardJavaTypes_echoIntegerResponse">
+    <part name="result" element="ns2:echoIntegerResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoQName">
+    <part name="parameters" element="ns2:echoQName"/>
+  </message>
+  <message name="StandardJavaTypes_echoQNameResponse">
+    <part name="result" element="ns2:echoQNameResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoString">
+    <part name="parameters" element="ns2:echoString"/>
+  </message>
+  <message name="StandardJavaTypes_echoStringResponse">
+    <part name="result" element="ns2:echoStringResponse"/>
+  </message>
+  <message name="StandardJavaTypes_echoURI">
+    <part name="parameters" element="ns2:echoURI"/>
+  </message>
+  <message name="StandardJavaTypes_echoURIResponse">
+    <part name="result" element="ns2:echoURIResponse"/>
+  </message>
+  <portType name="StandardJavaTypes">
+    <operation name="echoCalendar">
+      <input message="tns:StandardJavaTypes_echoCalendar"/>
+      <output message="tns:StandardJavaTypes_echoCalendarResponse"/>
+    </operation>
+    <operation name="echoDate">
+      <input message="tns:StandardJavaTypes_echoDate"/>
+      <output message="tns:StandardJavaTypes_echoDateResponse"/>
+    </operation>
+    <operation name="echoDecimal">
+      <input message="tns:StandardJavaTypes_echoDecimal"/>
+      <output message="tns:StandardJavaTypes_echoDecimalResponse"/>
+    </operation>
+    <operation name="echoInteger">
+      <input message="tns:StandardJavaTypes_echoInteger"/>
+      <output message="tns:StandardJavaTypes_echoIntegerResponse"/>
+    </operation>
+    <operation name="echoQName">
+      <input message="tns:StandardJavaTypes_echoQName"/>
+      <output message="tns:StandardJavaTypes_echoQNameResponse"/>
+    </operation>
+    <operation name="echoString">
+      <input message="tns:StandardJavaTypes_echoString"/>
+      <output message="tns:StandardJavaTypes_echoStringResponse"/>
+    </operation>
+    <operation name="echoURI">
+      <input message="tns:StandardJavaTypes_echoURI"/>
+      <output message="tns:StandardJavaTypes_echoURIResponse"/>
+    </operation>
+  </portType>
+  <binding name="StandardJavaTypesBinding" type="tns:StandardJavaTypes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="echoCalendar">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoDecimal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoInteger">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoQName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoString">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoURI">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StandardJavaTypesService">
+    <port name="StandardJavaTypesPort" binding="tns:StandardJavaTypesBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

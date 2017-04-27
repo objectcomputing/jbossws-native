@@ -1,0 +1,7 @@
+<!--This is the config file used by jbossws-->
+<configuration> 
+  <wsdltojava wsdllocation="@test.resources.directory@/tools/jbws-160/wscompile/simple/wsdl/HelloWsService.wsdl" packagename="org.jboss.types"
+    seidir="output/somedir" servicename="SomeService">
+    <mapping directory="output/someMappingDir" filename="jaxrpc-mapping.xml"/>
+  </wsdltojava>
+</configuration>

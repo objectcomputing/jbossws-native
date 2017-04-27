@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws153</package-type>
+  <namespaceURI>http://www.dis-corp.com/xml/2005/ebiz/ws</namespaceURI>
+ </package-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws153.OrderService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://www.dis-corp.com/xml/2005/ebiz/ws'>serviceNS:OrderService</wsdl-service-name>
+  <port-mapping>
+   <port-name>OrderSOAP</port-name>
+   <java-port-name>OrderSOAP</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws153.Order</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://www.dis-corp.com/xml/2005/ebiz/ws'>portTypeNS:Order</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://www.dis-corp.com/xml/2005/ebiz/ws'>bindingNS:OrderSOAP</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>getOrder</java-method-name>
+   <wsdl-operation>GetOrder</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>java.lang.String</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://www.dis-corp.com/xml/2005/ebiz/ws'>wsdlMsgNS:GetOrder</wsdl-message>
+     <wsdl-message-part-name>GetMessage</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>java.lang.String</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://www.dis-corp.com/xml/2005/ebiz/ws'>wsdlMsgNS:ShowOrder</wsdl-message>
+    <wsdl-message-part-name>ShowMessage</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

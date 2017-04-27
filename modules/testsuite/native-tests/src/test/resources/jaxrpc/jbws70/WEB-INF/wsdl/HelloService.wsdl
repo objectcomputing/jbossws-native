@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws70' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws70/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws70' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws70/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws70/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='getVersion'>
+    <sequence/>
+   </complexType>
+   <complexType name='getVersionResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='setVersion'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='setVersionResponse'>
+    <sequence/>
+   </complexType>
+   <element name='getVersion' type='tns:getVersion'/>
+   <element name='getVersionResponse' type='tns:getVersionResponse'/>
+   <element name='setVersion' type='tns:setVersion'/>
+   <element name='setVersionResponse' type='tns:setVersionResponse'/>
+  </schema>
+ </types>
+ <message name='Hello_getVersion'>
+  <part element='ns1:getVersion' name='parameters'/>
+ </message>
+ <message name='Hello_getVersionResponse'>
+  <part element='ns1:getVersionResponse' name='result'/>
+ </message>
+ <message name='Hello_setVersion'>
+  <part element='ns1:setVersion' name='parameters'/>
+ </message>
+ <message name='Hello_setVersionResponse'>
+  <part element='ns1:setVersionResponse' name='result'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='getVersion'>
+   <input message='tns:Hello_getVersion'/>
+   <output message='tns:Hello_getVersionResponse'/>
+  </operation>
+  <operation name='setVersion'>
+   <input message='tns:Hello_setVersion'/>
+   <output message='tns:Hello_setVersionResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='setVersion'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

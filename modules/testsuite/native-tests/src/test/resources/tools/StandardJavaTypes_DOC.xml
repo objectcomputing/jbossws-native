@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java-wsdl-mapping version="1.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>org.jboss.test.ws.tools.sei</package-type>
+    <namespaceURI>http://org.jboss.ws/types</namespaceURI>
+  </package-mapping>
+  <package-mapping>
+    <package-type>org.jboss.test.ws.tools.sei</package-type>
+    <namespaceURI>http://org.jboss.ws</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoQName_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoQNameResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoCalendar_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoCalendar</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>Calendar_1</java-variable-name>
+      <xml-element-name>Calendar_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoString_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoStringResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoCalendar_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoCalendarResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoDecimal_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoDecimalResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoString_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoString</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>String_1</java-variable-name>
+      <xml-element-name>String_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoDecimal_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoDecimal</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>BigDecimal_1</java-variable-name>
+      <xml-element-name>BigDecimal_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoDate_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoDate</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>Date_1</java-variable-name>
+      <xml-element-name>Date_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoURI_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoURI</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>URI_1</java-variable-name>
+      <xml-element-name>URI_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoDate_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoDateResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoURI_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoURIResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoInteger_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoInteger</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>BigInteger_1</java-variable-name>
+      <xml-element-name>BigInteger_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoInteger_ResponseStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoIntegerResponse</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>result</java-variable-name>
+      <xml-element-name>result</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.tools.sei.StandardJavaTypes_echoQName_RequestStruct</java-type>
+    <root-type-qname xmlns:typeNS="http://org.jboss.ws/types">typeNS:echoQName</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>QName_1</java-variable-name>
+      <xml-element-name>QName_1</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>org.jboss.test.ws.tools.sei.StandardJavaTypesService</service-interface>
+    <wsdl-service-name xmlns:serviceNS="http://org.jboss.ws">serviceNS:StandardJavaTypesService</wsdl-service-name>
+    <port-mapping>
+      <port-name>StandardJavaTypesPort</port-name>
+      <java-port-name>StandardJavaTypesPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>org.jboss.test.ws.tools.sei.StandardJavaTypes</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="http://org.jboss.ws">portTypeNS:StandardJavaTypes</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="http://org.jboss.ws">bindingNS:StandardJavaTypesBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoCalendar</java-method-name>
+      <wsdl-operation>echoCalendar</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.util.Calendar</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoCalendar</wsdl-message>
+          <wsdl-message-part-name>Calendar_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.util.Calendar</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoCalendarResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoDate</java-method-name>
+      <wsdl-operation>echoDate</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.util.Date</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoDate</wsdl-message>
+          <wsdl-message-part-name>Date_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.util.Date</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoDateResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoDecimal</java-method-name>
+      <wsdl-operation>echoDecimal</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.math.BigDecimal</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoDecimal</wsdl-message>
+          <wsdl-message-part-name>BigDecimal_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.math.BigDecimal</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoDecimalResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoInteger</java-method-name>
+      <wsdl-operation>echoInteger</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.math.BigInteger</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoInteger</wsdl-message>
+          <wsdl-message-part-name>BigInteger_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.math.BigInteger</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoIntegerResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoQName</java-method-name>
+      <wsdl-operation>echoQName</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>javax.xml.namespace.QName</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoQName</wsdl-message>
+          <wsdl-message-part-name>QName_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>javax.xml.namespace.QName</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoQNameResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoString</java-method-name>
+      <wsdl-operation>echoString</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoString</wsdl-message>
+          <wsdl-message-part-name>String_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.String</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoStringResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>echoURI</java-method-name>
+      <wsdl-operation>echoURI</wsdl-operation>
+      <wrapped-element/>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.net.URI</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoURI</wsdl-message>
+          <wsdl-message-part-name>URI_1</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.net.URI</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="http://org.jboss.ws">wsdlMsgNS:StandardJavaTypes_echoURIResponse</wsdl-message>
+        <wsdl-message-part-name>result</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

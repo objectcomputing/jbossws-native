@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+  name="ReqResService"
+  targetNamespace="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+  xmlns:ns1="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy/>
+  <wsp:Policy
+    wsu:Id="wsrm11policy"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsp:All>
+      <wsp:ExactlyOne>
+         <wsp:All>
+            <ns1:RMAssertion xmlns:ns1="http://docs.oasis-open.org/ws-rx/wsrmp/200702"/>
+            <ns2:UsingAddressing xmlns:ns2="http://www.w3.org/2006/05/addressing/wsdl"/>
+         </wsp:All>
+      </wsp:ExactlyOne>
+    </wsp:All>
+  </wsp:Policy>
+  <types>
+    <xs:schema
+       version="1.0"
+       targetNamespace="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+       xmlns:tns="http://www.jboss.org/jbossws/ws-extensions/wsrm"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="echo" type="tns:echo"/>
+      <xs:element name="echoResponse" type="tns:echoResponse"/>
+      <xs:complexType name="echo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="echoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="ReqResServiceIface_echo">
+    <part name="echo" element="ns1:echo">
+    </part>
+  </message>
+  <message name="ReqResServiceIface_echoResponse">
+    <part name="echoResponse" element="ns1:echoResponse">
+    </part>
+  </message>
+  <portType name="ReqResServiceIface">
+    <operation name="echo" parameterOrder="echo">
+      <input message="ns1:ReqResServiceIface_echo">
+    </input>
+      <output message="ns1:ReqResServiceIface_echoResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ReqResServiceIfaceBinding" type="ns1:ReqResServiceIface">
+    <wsp:PolicyReference URI="#wsrm11policy"/>
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="echo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ReqResService">
+    <port name="ReqResPort" binding="ns1:ReqResServiceIfaceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='HelloService' targetNamespace='http://org.jboss.test.webservice/jbws377' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.webservice/jbws377/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.webservice/jbws377' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.webservice/jbws377/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.webservice/jbws377/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='UserType'>
+    <sequence>
+     <element name='value' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoStrings'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+     <element name='String_2' nillable='true' type='string'/>
+     <element name='UserType_3' nillable='true' type='tns:UserType'/>
+    </sequence>
+   </complexType>
+   <complexType name='echoStringsResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <element name='echoStrings' type='tns:echoStrings'/>
+   <element name='echoStringsResponse' type='tns:echoStringsResponse'/>
+  </schema>
+ </types>
+ <message name='Hello_echoStrings'>
+  <part element='ns1:echoStrings' name='parameters'/>
+ </message>
+ <message name='Hello_echoStringsResponse'>
+  <part element='ns1:echoStringsResponse' name='result'/>
+ </message>
+ <portType name='Hello'>
+  <operation name='echoStrings'>
+   <input message='tns:Hello_echoStrings'/>
+   <output message='tns:Hello_echoStringsResponse'/>
+  </operation>
+ </portType>
+ <binding name='HelloBinding' type='tns:Hello'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoStrings'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='HelloService'>
+  <port binding='tns:HelloBinding' name='HelloPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

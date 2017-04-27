@@ -1,0 +1,14 @@
+<client-scenarios>
+   <scenario name="default" description="Testing local endpoint">
+      <target-endpoint>http://REPLACE_WITH_ACTUAL_HOST:8080/nov2007/wsseEncrypt/endpoint</target-endpoint>
+   </scenario>
+   <scenario name="default-munich" description="Testing Munich endpoint">
+      <target-endpoint>http://jbossws.demo.jboss.com:8080/nov2007/wsseEncrypt/endpoint</target-endpoint>      
+   </scenario>
+   <scenario name="microsoft" description="Microsoft public endpoint">
+      <target-endpoint>http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncrypt</target-endpoint>
+   </scenario>
+   <scenario name="microsoft-local" description="Microsoft public endpoint">
+      <target-endpoint>http://10.10.34.2/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncrypt</target-endpoint>
+   </scenario>
+</client-scenarios>

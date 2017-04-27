@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="TestService" targetNamespace="http://org.jboss.ws/jaxrpc" xmlns:tns="http://org.jboss.ws/jaxrpc" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://org.jboss.ws/jaxrpc/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://org.jboss.ws/jaxrpc/types" xmlns:tns="http://org.jboss.ws/jaxrpc/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="echoSimpleUserType">
+        <sequence>
+          <element name="String_1" type="string" nillable="true"/>
+          <element name="SimpleUserType_2" type="tns:SimpleUserType" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="SimpleUserType">
+        <sequence>
+          <element name="a" type="int"/>
+          <element name="b" type="int"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoSimpleUserTypeResponse">
+        <sequence>
+          <element name="result" type="tns:SimpleUserType" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoString">
+        <sequence>
+          <element name="String_1" type="string" nillable="true"/>
+          <element name="String_2" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <complexType name="echoStringResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="echoSimpleUserType" type="tns:echoSimpleUserType"/>
+      <element name="echoSimpleUserTypeResponse" type="tns:echoSimpleUserTypeResponse"/>
+      <element name="echoString" type="tns:echoString"/>
+      <element name="echoStringResponse" type="tns:echoStringResponse"/>
+    </schema>
+  </types>
+  <message name="JaxRpcTestService_echoSimpleUserType">
+    <part name="parameters" element="ns2:echoSimpleUserType"/>
+  </message>
+  <message name="JaxRpcTestService_echoSimpleUserTypeResponse">
+    <part name="result" element="ns2:echoSimpleUserTypeResponse"/>
+  </message>
+  <message name="JaxRpcTestService_echoString">
+    <part name="parameters" element="ns2:echoString"/>
+  </message>
+  <message name="JaxRpcTestService_echoStringResponse">
+    <part name="result" element="ns2:echoStringResponse"/>
+  </message>
+  <portType name="JaxRpcTestService">
+    <operation name="echoSimpleUserType">
+      <input message="tns:JaxRpcTestService_echoSimpleUserType"/>
+      <output message="tns:JaxRpcTestService_echoSimpleUserTypeResponse"/>
+    </operation>
+    <operation name="echoString">
+      <input message="tns:JaxRpcTestService_echoString"/>
+      <output message="tns:JaxRpcTestService_echoStringResponse"/>
+    </operation>
+  </portType>
+  <binding name="JaxRpcTestServiceBinding" type="tns:JaxRpcTestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="echoSimpleUserType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="echoString">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestService">
+    <port name="JaxRpcTestServicePort" binding="tns:JaxRpcTestServiceBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,14 @@
+<client-scenarios>
+   <scenario name="default" description="Testing local endpoint">
+      <target-endpoint>https://REPLACE_WITH_ACTUAL_HOST:8443/nov2007/wsseUsernameTokenHTTPS/endpoint</target-endpoint>
+   </scenario>
+   <scenario name="default-munich" description="Testing Munich endpoint">
+      <target-endpoint>https://jbossws.demo.jboss.com:8443/nov2007/wsseUsernameTokenHTTPS/endpoint</target-endpoint>      
+   </scenario>
+   <scenario name="microsoft" description="Microsoft public endpoint">
+      <target-endpoint>https://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/UserNameOverTransport</target-endpoint>
+   </scenario>
+   <scenario name="microsoft-local" description="Microsoft public endpoint">
+      <target-endpoint>https://10.10.34.2/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/UserNameOverTransport</target-endpoint>
+   </scenario>
+</client-scenarios>

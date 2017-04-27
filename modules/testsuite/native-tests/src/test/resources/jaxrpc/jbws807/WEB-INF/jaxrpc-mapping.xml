@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.jaxrpc.jbws807</package-type>
+  <namespaceURI>http://jboss.org/test/ws/jbws807</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws807.PingMsg</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://jboss.org/test/ws/jbws807'>typeNS:&gt;PingMsg</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>message</java-variable-name>
+   <xml-element-name>message</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.jaxrpc.jbws807.PingMsgResponse</java-type>
+  <anonymous-type-qname xmlns:typeNS='http://jboss.org/test/ws/jbws807'>typeNS:&gt;PingMsgResponse</anonymous-type-qname>
+  <qname-scope>complexType</qname-scope>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.jaxrpc.jbws807.TestService_Service</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://jboss.org/test/ws/jbws807'>serviceNS:TestService</wsdl-service-name>
+  <port-mapping>
+   <port-name>TestServicePort</port-name>
+   <java-port-name>TestServicePort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.jaxrpc.jbws807.TestService_PortType</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://jboss.org/test/ws/jbws807'>portTypeNS:TestService</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://jboss.org/test/ws/jbws807'>bindingNS:TestServiceBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>ping</java-method-name>
+   <wsdl-operation>ping</wsdl-operation>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.jaxrpc.jbws807.PingMsg</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://jboss.org/test/ws/jbws807'>wsdlMsgNS:PingIn</wsdl-message>
+     <wsdl-message-part-name>parameters</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.jaxrpc.jbws807.PingMsgResponse</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://jboss.org/test/ws/jbws807'>wsdlMsgNS:PingOut</wsdl-message>
+    <wsdl-message-part-name>parameters</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

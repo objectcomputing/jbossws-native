@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jaxws-config
+  xmlns="urn:jboss:jaxws-config:2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+  xsi:schemaLocation="urn:jboss:jaxws-config:2.0 jaxws-config_2_0.xsd">
+
+  <client-config>
+    <config-name>Standard Anonymous WSRM Client</config-name>
+    <reliable-messaging>
+      <message-retransmission attempts="10" interval="5" timeout="3"/>
+    </reliable-messaging>	
+    <post-handler-chains>
+      <javaee:handler-chain>
+        <javaee:protocol-bindings>##SOAP11_HTTP</javaee:protocol-bindings>
+        <javaee:handler>
+          <javaee:handler-name>WSAddressing Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.addressing.jaxws.WSAddressingClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSRM Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.wsrm.jaxws.RMClientHandler</javaee:handler-class>
+        </javaee:handler>
+      </javaee:handler-chain>
+    </post-handler-chains>
+  </client-config>
+
+  <client-config>
+    <config-name>Standard Addressable WSRM Client</config-name>
+    <reliable-messaging>
+      <backports-server port="8888"/>
+      <message-retransmission attempts="10" interval="5" timeout="3"/>
+    </reliable-messaging>	
+    <post-handler-chains>
+      <javaee:handler-chain>
+        <javaee:protocol-bindings>##SOAP11_HTTP</javaee:protocol-bindings>
+        <javaee:handler>
+          <javaee:handler-name>WSAddressing Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.addressing.jaxws.WSAddressingClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSRM Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.wsrm.jaxws.RMClientHandler</javaee:handler-class>
+        </javaee:handler>
+      </javaee:handler-chain>
+    </post-handler-chains>
+  </client-config>
+
+  <client-config>
+    <config-name>Secured Anonymous WSRM Client</config-name>
+    <reliable-messaging>
+      <message-retransmission attempts="10" interval="5" timeout="3"/>
+    </reliable-messaging>	
+    <post-handler-chains>
+      <javaee:handler-chain>
+        <javaee:protocol-bindings>##SOAP11_HTTP</javaee:protocol-bindings>
+        <javaee:handler>
+          <javaee:handler-name>WSAddressing Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.addressing.jaxws.WSAddressingClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSRM Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.wsrm.jaxws.RMClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSSecurity Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.security.jaxws.WSSecurityHandlerClient</javaee:handler-class>
+        </javaee:handler>
+      </javaee:handler-chain>
+    </post-handler-chains>
+  </client-config>
+
+  <client-config>
+    <config-name>Secured Addressable WSRM Client</config-name>
+    <reliable-messaging>
+      <backports-server port="8888"/>
+      <message-retransmission attempts="10" interval="5" timeout="3"/>
+    </reliable-messaging>	
+    <post-handler-chains>
+      <javaee:handler-chain>
+        <javaee:protocol-bindings>##SOAP11_HTTP</javaee:protocol-bindings>
+        <javaee:handler>
+          <javaee:handler-name>WSAddressing Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.addressing.jaxws.WSAddressingClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSRM Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.wsrm.jaxws.RMClientHandler</javaee:handler-class>
+        </javaee:handler>
+        <javaee:handler>
+          <javaee:handler-name>WSSecurity Handler</javaee:handler-name>
+          <javaee:handler-class>org.jboss.ws.extensions.security.jaxws.WSSecurityHandlerClient</javaee:handler-class>
+        </javaee:handler>
+      </javaee:handler-chain>
+    </post-handler-chains>
+  </client-config>
+
+</jaxws-config>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+  targetNamespace="http://org.jboss.test.webservice/jbws706/ns1"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:tns="http://org.jboss.test.webservice/jbws706/ns1">
+  <xsd:complexType name="Descr">
+    <xsd:all>
+      <xsd:element name="description" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+</xsd:schema>

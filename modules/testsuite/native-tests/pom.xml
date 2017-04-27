@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <name>JBoss Web Services - Stack Native Specific Tests</name>
+  <artifactId>jbossws-native-specific-tests</artifactId>
+  <packaging>jar</packaging>
+  
+  <!-- Parent -->
+  <parent>
+    <groupId>org.jboss.ws.native</groupId>
+    <artifactId>jbossws-native-testsuite</artifactId>
+    <version>3.1.2.GA</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <!-- Dependencies -->
+  <dependencies>
+    <dependency>
+      <groupId>qdox</groupId>
+      <artifactId>qdox</artifactId>
+      <version>1.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jboss.jbpm</groupId>
+      <artifactId>bpel</artifactId>
+      <version>1.1.0.Beta5</version>
+      <scope>test</scope>
+      <type>sar</type>
+    </dependency>   
+  </dependencies>
+  
+  <!-- Profiles -->
+  <profiles>
+    
+    <!-- 
+    Name:  noprepare
+    Descr: Skip test preparation with -Dnoprepare  
+    -->
+    <profile>
+      <id>noprepare</id>
+      <activation>
+        <property>
+          <name>!noprepare</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <finalName>bpel-artifacts</finalName>
+              <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
+              <appendAssemblyId>false</appendAssemblyId>
+              <descriptors>
+                <descriptor>scripts/assembly-bpel-artifacts.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>directory-inline</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>bpel</id>
+                <phase>generate-sources</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <property name="maven.test.classpath" refid="maven.test.classpath" />
+                    <property name="tests.resources.dir" value="${basedir}/src/test/resources" />
+                    <property name="tests.output.dir" value="${project.build.directory}" />
+                    <ant antfile="scripts/antrun-bpel.xml" target="bpel" />
+                  </tasks>
+                </configuration>
+              </execution>
+              <execution>
+                <id>wsconsume</id>
+                <phase>generate-sources</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <property name="maven.test.classpath" refid="maven.test.classpath" />
+                    <property name="tests.resources.dir" value="${basedir}/src/test/resources" />
+                    <property name="tests.output.dir" value="${project.build.directory}" />
+                    <property name="project.version" value="${project.version}" />
+                    <ant antfile="scripts/antrun-wsconsume.xml" target="wsconsume" />
+                  </tasks>
+                </configuration>
+              </execution>
+              <execution>
+                <id>wstools</id>
+                <phase>test-compile</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <property name="maven.test.classpath" refid="maven.test.classpath" />
+                    <property name="tests.resources.dir" value="${test.resources.directory}" />
+                    <property name="tests.output.dir" value="${project.build.directory}" />
+                    <property name="jboss.bind.address" value="${jboss.bind.address}" />
+                    <property name="java.jdk15.home" value="${java.jdk15.home}" />
+                    <ant antfile="scripts/antrun-wstools.xml" target="wstools" />
+                  </tasks>
+                </configuration>
+              </execution>
+              <execution>
+                <id>wsprovide</id>
+                <phase>test-compile</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <property name="maven.test.classpath" refid="maven.test.classpath" />
+                    <property name="tests.resources.dir" value="${basedir}/src/test/resources" />
+                    <property name="tests.output.dir" value="${project.build.directory}" />
+                    <ant antfile="scripts/antrun-wsprovide.xml" target="wsprovide" />
+                  </tasks>
+                </configuration>
+              </execution>
+              <execution>
+                <id>build-jars</id>
+                <phase>test-compile</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <property name="tests.output.dir" value="${project.build.directory}" />
+                    <property name="tests.resources.dir" value="${basedir}/src/test/resources" />
+                    <ant antfile="scripts/build-jars-jaxrpc.xml" target="build-jars-jaxrpc" />
+                    <ant antfile="scripts/build-samples-jaxrpc.xml" target="build-samples-jaxrpc" />
+                    <ant antfile="scripts/build-jars-jaxws.xml" target="build-jars-jaxws" />
+                    <ant antfile="scripts/build-samples-jaxws.xml" target="build-samples-jaxws" />
+                    <ant antfile="scripts/build-jars-interop.xml" target="build-jars-interop" />
+                  </tasks>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    
+  </profiles>
+  
+</project>

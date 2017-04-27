@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?><java-wsdl-mapping version='1.1' xmlns='http://java.sun.com/xml/ns/j2ee' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd'>
+ <package-mapping>
+  <package-type>org.jboss.test.ws.tools.jbws1538</package-type>
+  <namespaceURI>http://org.jboss.test.ws/jbws1538/types</namespaceURI>
+ </package-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.LevelOne</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:LevelOne</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>fieldOne</java-variable-name>
+   <xml-element-name>fieldOne</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.LevelTwo</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:LevelTwo</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>fieldOne</java-variable-name>
+   <xml-element-name>fieldOne</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldTwo</java-variable-name>
+   <xml-element-name>fieldTwo</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.LevelThree</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:LevelThree</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>fieldOne</java-variable-name>
+   <xml-element-name>fieldOne</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldTwo</java-variable-name>
+   <xml-element-name>fieldTwo</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldThree</java-variable-name>
+   <xml-element-name>fieldThree</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.LevelFour</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:LevelFour</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>fieldOne</java-variable-name>
+   <xml-element-name>fieldOne</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldTwo</java-variable-name>
+   <xml-element-name>fieldTwo</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldThree</java-variable-name>
+   <xml-element-name>fieldThree</xml-element-name>
+  </variable-mapping>
+  <variable-mapping>
+   <java-variable-name>fieldFour</java-variable-name>
+   <xml-element-name>fieldFour</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.TestEndpoint_echo_RequestStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:echo</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>levelFour_1</java-variable-name>
+   <xml-element-name>LevelFour_1</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <java-xml-type-mapping>
+  <java-type>org.jboss.test.ws.tools.jbws1538.TestEndpoint_echo_ResponseStruct</java-type>
+  <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws1538/types'>typeNS:echoResponse</root-type-qname>
+  <qname-scope>complexType</qname-scope>
+  <variable-mapping>
+   <java-variable-name>result</java-variable-name>
+   <xml-element-name>result</xml-element-name>
+  </variable-mapping>
+ </java-xml-type-mapping>
+ <service-interface-mapping>
+  <service-interface>org.jboss.test.ws.tools.jbws1538.TestService</service-interface>
+  <wsdl-service-name xmlns:serviceNS='http://org.jboss.test.ws/jbws1538'>serviceNS:TestService</wsdl-service-name>
+  <port-mapping>
+   <port-name>TestEndpointPort</port-name>
+   <java-port-name>TestEndpointPort</java-port-name>
+  </port-mapping>
+ </service-interface-mapping>
+ <service-endpoint-interface-mapping>
+  <service-endpoint-interface>org.jboss.test.ws.tools.jbws1538.TestEndpoint</service-endpoint-interface>
+  <wsdl-port-type xmlns:portTypeNS='http://org.jboss.test.ws/jbws1538'>portTypeNS:TestEndpoint</wsdl-port-type>
+  <wsdl-binding xmlns:bindingNS='http://org.jboss.test.ws/jbws1538'>bindingNS:TestEndpointBinding</wsdl-binding>
+  <service-endpoint-method-mapping>
+   <java-method-name>echo</java-method-name>
+   <wsdl-operation>echo</wsdl-operation>
+   <wrapped-element/>
+   <method-param-parts-mapping>
+    <param-position>0</param-position>
+    <param-type>org.jboss.test.ws.tools.jbws1538.LevelFour</param-type>
+    <wsdl-message-mapping>
+     <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws1538'>wsdlMsgNS:TestEndpoint_echo</wsdl-message>
+     <wsdl-message-part-name>LevelFour_1</wsdl-message-part-name>
+     <parameter-mode>IN</parameter-mode>
+    </wsdl-message-mapping>
+   </method-param-parts-mapping>
+   <wsdl-return-value-mapping>
+    <method-return-value>org.jboss.test.ws.tools.jbws1538.LevelFour</method-return-value>
+    <wsdl-message xmlns:wsdlMsgNS='http://org.jboss.test.ws/jbws1538'>wsdlMsgNS:TestEndpoint_echoResponse</wsdl-message>
+    <wsdl-message-part-name>result</wsdl-message-part-name>
+   </wsdl-return-value-mapping>
+  </service-endpoint-method-mapping>
+ </service-endpoint-interface-mapping>
+</java-wsdl-mapping>

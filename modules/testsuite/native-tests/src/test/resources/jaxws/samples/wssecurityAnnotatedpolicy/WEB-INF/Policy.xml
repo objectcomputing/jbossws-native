@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsp:Policy wsu:Id="X509EndpointPolicy"  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+	     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+ 	<wsp:ExactlyOne>
+		<wsp:All>
+  			<sp:jboss-ws-security xmlns:sp="http://www.jboss.com/ws-security/schema/jboss-ws-security_1_0.xsd">
+                <sp:key-store-file>WEB-INF/wsse.keystore</sp:key-store-file>
+                <sp:key-store-password>jbossws</sp:key-store-password>
+                <sp:trust-store-file>WEB-INF/wsse.truststore</sp:trust-store-file>
+                <sp:trust-store-password>jbossws</sp:trust-store-password>
+                <sp:config>
+                <sp:encrypt type="x509v3" alias="wsse"/>
+                <sp:requires>
+                        <sp:encryption/>
+                </sp:requires>
+                </sp:config>
+  			</sp:jboss-ws-security>
+  		</wsp:All>
+	</wsp:ExactlyOne>  		
+ </wsp:Policy>
+ 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jaxws-config xmlns="urn:jboss:jaxws-config:2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+              xsi:schemaLocation="urn:jboss:jaxws-config:2.0 jaxws-config_2_0.xsd">
+
+   <client-config>
+      <config-name> Custom Client Config </config-name>
+      <pre-handler-chains>
+         <javaee:handler-chain>
+            <javaee:handler>
+               <javaee:handler-name> PreClientHandler1 </javaee:handler-name>
+               <javaee:handler-class>org.jboss.test.ws.jaxws.handlerlifecycle.PreClientHandler1</javaee:handler-class>
+            </javaee:handler>
+            <javaee:handler>
+               <javaee:handler-name> PreClientHandler2 </javaee:handler-name>
+               <javaee:handler-class>org.jboss.test.ws.jaxws.handlerlifecycle.PreClientHandler2</javaee:handler-class>
+            </javaee:handler>
+         </javaee:handler-chain>
+      </pre-handler-chains>
+      <post-handler-chains>
+         <javaee:handler-chain>
+            <javaee:handler>
+               <javaee:handler-name> PostClientHandler1 </javaee:handler-name>
+               <javaee:handler-class>org.jboss.test.ws.jaxws.handlerlifecycle.PostClientHandler1</javaee:handler-class>
+            </javaee:handler>
+            <javaee:handler>
+               <javaee:handler-name> PostClientHandler2 </javaee:handler-name>
+               <javaee:handler-class>org.jboss.test.ws.jaxws.handlerlifecycle.PostClientHandler2</javaee:handler-class>
+            </javaee:handler>
+         </javaee:handler-chain>
+      </post-handler-chains>
+   </client-config>
+
+</jaxws-config>

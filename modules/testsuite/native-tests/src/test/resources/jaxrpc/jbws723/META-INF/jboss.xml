@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss_4_2.dtd">
+
+<jboss>
+
+  <security-domain>java:/jaas/JBossWS</security-domain>
+
+  <enterprise-beans>
+    <session>
+      <ejb-name>JBWS723RoleSecuredSLSB</ejb-name>
+      <jndi-name>ejb/JBWS723RoleSecuredSLSB</jndi-name>
+      <port-component>
+        <port-component-name>RoleSecured</port-component-name>
+        <port-component-uri>/jaxrpc-jbws723/RoleSecured</port-component-uri>
+        <auth-method>BASIC</auth-method>
+        <transport-guarantee>NONE</transport-guarantee>
+        <!-- default secure-wsdl-access (false for jaxrpc) -->
+      </port-component>
+    </session>
+    <session>
+      <ejb-name>JBWS723BasicSecuredSLSB</ejb-name>
+      <jndi-name>ejb/JBWS723BasicSecuredSLSB</jndi-name>
+      <port-component>
+        <port-component-name>BasicSecured</port-component-name>
+        <port-component-uri>/jaxrpc-jbws723/BasicSecured</port-component-uri>
+        <auth-method>BASIC</auth-method>
+        <transport-guarantee>NONE</transport-guarantee>
+        <secure-wsdl-access>true</secure-wsdl-access>
+      </port-component>
+    </session>
+    <session>
+      <ejb-name>JBWS723ConfidentialSLSB</ejb-name>
+      <jndi-name>ejb/JBWS723ConfidentialSLSB</jndi-name>
+      <port-component>
+        <port-component-name>ConfidentialSecured</port-component-name>
+        <port-component-uri>/jaxrpc-jbws723/ConfidentialSecured</port-component-uri>
+        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        <secure-wsdl-access>false</secure-wsdl-access>
+      </port-component>
+    </session>
+  </enterprise-beans>
+</jboss>

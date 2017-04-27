@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PingService10" targetNamespace="http://InteropBaseAddress/interop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://InteropBaseAddress/interop" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+  <wsdl:import namespace="http://tempuri.org/" location="wsdl0"/>
+  <wsdl:types>
+      <xsd:schema targetNamespace="http://InteropBaseAddress/interop/Imports">
+        <xsd:import schemaLocation="xsd0" namespace="http://InteropBaseAddress/interop"/>
+        <xsd:import schemaLocation="xsd1" namespace="http://xmlsoap.org/Ping"/>
+        <xsd:import schemaLocation="xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+        <!-- <xsd:import schemaLocation="xsd3"/> -->
+      </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PingRequest">
+    <wsdl:part name="parameters" element="tns:PingRequest"/>
+  </wsdl:message>
+  <wsdl:message name="PingResponse">
+    <wsdl:part name="parameters" element="tns:PingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echo_InputMessage">
+    <wsdl:part name="parameters" element="tns:echo"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:echoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echoXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:echoXml"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echoXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:echoXmlResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echoDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:echoDataSet"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_echoDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:echoDataSetResponse"/>
+  </wsdl:message>
+  <wsdl:message name="headerRequest">
+    <wsdl:part name="parameters" element="tns:header"/>
+  </wsdl:message>
+  <wsdl:message name="headerRequest_Headers">
+    <wsdl:part name="CustomHeader" element="tns:CustomHeader"/>
+  </wsdl:message>
+  <wsdl:message name="headerResponse">
+    <wsdl:part name="parameters" element="tns:headerResponse"/>
+  </wsdl:message>
+  <wsdl:message name="headerResponse_Headers">
+    <wsdl:part name="CustomHeader" element="tns:CustomHeader"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_fault_InputMessage">
+    <wsdl:part name="parameters" element="tns:fault"/>
+  </wsdl:message>
+  <wsdl:message name="IPingService_fault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:faultResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IPingService">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://xmlsoap.org/Ping" name="PingRequest" message="tns:PingRequest"/>
+      <wsdl:output wsaw:Action="http://xmlsoap.org/Ping" name="PingResponse" message="tns:PingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdl:input wsaw:Action="http://InteropBaseAddress/interop/echo" message="tns:IPingService_echo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://InteropBaseAddress/interop/echo" message="tns:IPingService_echo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="echoXml">
+      <wsdl:input wsaw:Action="http://InteropBaseAddress/interop/echoXml" message="tns:IPingService_echoXml_InputMessage"/>
+      <wsdl:output wsaw:Action="http://InteropBaseAddress/interop/echoXml" message="tns:IPingService_echoXml_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="echoDataSet">
+      <wsdl:input wsaw:Action="http://InteropBaseAddress/interop/echoDataSet" message="tns:IPingService_echoDataSet_InputMessage"/>
+      <wsdl:output wsaw:Action="http://InteropBaseAddress/interop/echoDataSet" message="tns:IPingService_echoDataSet_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="header">
+      <wsdl:input wsaw:Action="http://InteropBaseAddress/interop/header" name="headerRequest" message="tns:headerRequest"/>
+      <wsdl:output wsaw:Action="http://InteropBaseAddress/interop/headerResponse" name="headerResponse" message="tns:headerResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="fault">
+      <wsdl:input wsaw:Action="http://InteropBaseAddress/interop/fault" message="tns:IPingService_fault_InputMessage"/>
+      <wsdl:output wsaw:Action="http://InteropBaseAddress/interop/faultResponse" message="tns:IPingService_fault_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="PingService10">
+    <wsdl:port name="UserNameOverTransport_IPingService" binding="i0:UserNameOverTransport_IPingService">
+        <soap:address location="https://kirillgdev04/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/UserNameOverTransport"/>
+    </wsdl:port>
+    <wsdl:port name="MutualCertificate10SignEncrypt_IPingService" binding="i0:MutualCertificate10SignEncrypt_IPingService">
+        <soap:address location="http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncrypt"/>
+    </wsdl:port>
+    <wsdl:port name="MutualCertificate10SignEncryptRsa15TripleDes_IPingService" binding="i0:MutualCertificate10SignEncryptRsa15TripleDes_IPingService">
+        <soap:address location="http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncryptRsa15TripleDes"/>
+    </wsdl:port>
+    <wsdl:port name="X10_IPingService" binding="i0:X10_IPingService">
+        <soap12:address location="http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/X10"/>
+		<wsa:EndpointReference>
+		<wsa:Address>http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/X10</wsa:Address>
+		<Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+		<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<X509Data>
+		<X509Certificate>MIIDCjCCAfKgAwIBAgIQYDju2/6sm77InYfTq65x+DANBgkqhkiG9w0BAQUFADAwMQ4wDAYDVQQKDAVPQVNJUzEeMBwGA1UEAwwVT0FTSVMgSW50ZXJvcCBUZXN0IENBMB4XDTA1MDMxOTAwMDAwMFoXDTE4MDMxOTIzNTk1OVowQDEOMAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF09BU0lTIEludGVyb3AgVGVzdCBDZXJ0MQwwCgYDVQQDDANCb2IwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMCquMva4lFDrv3fXQnKK8CkSU7HvVZ0USyJtlL/yhmHH/FQXHyYY+fTcSyWYItWJYiTZ99PAbD+6EKBGbdfuJNUJCGaTWc5ZDUISqM/SGtacYe/PD/4+g3swNPzTUQAIBLRY1pkr2cm3s5Ch/f+mYVNBR41HnBeIxybw25kkoM7AgMBAAGjgZMwgZAwCQYDVR0TBAIwADAzBgNVHR8ELDAqMCiiJoYkaHR0cDovL2ludGVyb3AuYmJ0ZXN0Lm5ldC9jcmwvY2EuY3JsMA4GA1UdDwEB/wQEAwIEsDAdBgNVHQ4EFgQUXeg55vRyK3ZhAEhEf+YT0z986L0wHwYDVR0jBBgwFoAUwJ0o/MHrNaEd1qqqoBwaTcJJDw8wDQYJKoZIhvcNAQEFBQADggEBAIiVGv2lGLhRvmMAHSlY7rKLVkv+zEUtSyg08FBT8z/RepUbtUQShcIqwWsemDU8JVtsucQLc+g6GCQXgkCkMiC8qhcLAt3BXzFmLxuCEAQeeFe8IATr4wACmEQE37TEqAuWEIanPYIplbxYgwP0OBWBSjcRpKRAxjEzuwObYjbll6vKdFHYIweWhhWPrefquFp7TefTkF4D3rcctTfWJ76I5NrEVld+7PBnnJNpdDEuGsoaiJrwTW3Ixm40RXvG3fYS4hIAPeTCUk3RkYfUkqlaaLQnUrF2hZSgiBNLPe8gGkYORccRIlZCGQDEpcWl1Uf9OHw6fC+3hkqolFd5CVI=</X509Certificate>
+		</X509Data>
+		</KeyInfo>
+		</Identity>
+		</wsa:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="X10-NoTimestamp_IPingService" binding="i0:X10-NoTimestamp_IPingService">
+        <soap12:address location="http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/X10-NoTimestamp"/>
+		<wsa:EndpointReference>
+		<wsa:Address>http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/X10-NoTimestamp</wsa:Address>
+		<Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+		<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<X509Data>
+		<X509Certificate>MIIDCjCCAfKgAwIBAgIQYDju2/6sm77InYfTq65x+DANBgkqhkiG9w0BAQUFADAwMQ4wDAYDVQQKDAVPQVNJUzEeMBwGA1UEAwwVT0FTSVMgSW50ZXJvcCBUZXN0IENBMB4XDTA1MDMxOTAwMDAwMFoXDTE4MDMxOTIzNTk1OVowQDEOMAwGA1UECgwFT0FTSVMxIDAeBgNVBAsMF09BU0lTIEludGVyb3AgVGVzdCBDZXJ0MQwwCgYDVQQDDANCb2IwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMCquMva4lFDrv3fXQnKK8CkSU7HvVZ0USyJtlL/yhmHH/FQXHyYY+fTcSyWYItWJYiTZ99PAbD+6EKBGbdfuJNUJCGaTWc5ZDUISqM/SGtacYe/PD/4+g3swNPzTUQAIBLRY1pkr2cm3s5Ch/f+mYVNBR41HnBeIxybw25kkoM7AgMBAAGjgZMwgZAwCQYDVR0TBAIwADAzBgNVHR8ELDAqMCiiJoYkaHR0cDovL2ludGVyb3AuYmJ0ZXN0Lm5ldC9jcmwvY2EuY3JsMA4GA1UdDwEB/wQEAwIEsDAdBgNVHQ4EFgQUXeg55vRyK3ZhAEhEf+YT0z986L0wHwYDVR0jBBgwFoAUwJ0o/MHrNaEd1qqqoBwaTcJJDw8wDQYJKoZIhvcNAQEFBQADggEBAIiVGv2lGLhRvmMAHSlY7rKLVkv+zEUtSyg08FBT8z/RepUbtUQShcIqwWsemDU8JVtsucQLc+g6GCQXgkCkMiC8qhcLAt3BXzFmLxuCEAQeeFe8IATr4wACmEQE37TEqAuWEIanPYIplbxYgwP0OBWBSjcRpKRAxjEzuwObYjbll6vKdFHYIweWhhWPrefquFp7TefTkF4D3rcctTfWJ76I5NrEVld+7PBnnJNpdDEuGsoaiJrwTW3Ixm40RXvG3fYS4hIAPeTCUk3RkYfUkqlaaLQnUrF2hZSgiBNLPe8gGkYORccRIlZCGQDEpcWl1Uf9OHw6fC+3hkqolFd5CVI=</X509Certificate>
+		</X509Data>
+		</KeyInfo>
+		</Identity>
+		</wsa:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

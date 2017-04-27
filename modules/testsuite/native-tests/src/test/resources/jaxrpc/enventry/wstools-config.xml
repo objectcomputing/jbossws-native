@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../output/classes -config wstools-config.xml
+
+  Add: 
+   <handler>
+     <handler-name>ServerSideHandler</handler-name>
+     <handler-class>org.jboss.test.ws.jaxrpc.enventry.ServerSideHandler</handler-class>
+   </handler>
+ 
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" style="rpc" 
+             endpoint="org.jboss.test.ws.jaxrpc.enventry.EnvEntryTestService"/>
+    <namespaces target-namespace="http://org.jboss.ws/enventry" 
+                type-namespace="http://org.jboss.ws/enventry/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestService"/>
+  </java-wsdl>
+</configuration>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://jbws1125.jaxrpc.ws.test.jboss.org/jaws' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://jbws1125.jaxrpc.ws.test.jboss.org/jaws/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://jbws1125.jaxrpc.ws.test.jboss.org/jaws' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://jbws1125.jaxrpc.ws.test.jboss.org/jaws/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://jbws1125.jaxrpc.ws.test.jboss.org/jaws/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <element name='noParamPartResponse' type='string'/>
+   <element name='noReturnPart' type='string'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_noParamPart'/>
+ <message name='TestEndpoint_noParamPartResponse'>
+  <part element='ns1:noParamPartResponse' name='noParamPartResponse'/>
+ </message>
+ <message name='TestEndpoint_noReturnPart'>
+  <part element='ns1:noReturnPart' name='noReturnPart'/>
+ </message>
+ <message name='TestEndpoint_noReturnPartResponse'/>
+ <portType name='TestEndpoint'>
+  <operation name='noParamPart'>
+   <input message='tns:TestEndpoint_noParamPart'/>
+   <output message='tns:TestEndpoint_noParamPartResponse'/>
+  </operation>
+  <operation name='noReturnPart' parameterOrder='noReturnPart'>
+   <input message='tns:TestEndpoint_noReturnPart'/>
+   <output message='tns:TestEndpoint_noReturnPartResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='noParamPart'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='noReturnPart'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

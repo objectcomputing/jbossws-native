@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="CustomInterfaceService"
+	targetNamespace="http://org.jboss.ws" xmlns:tns="http://org.jboss.ws"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types>
+		<schema targetNamespace="http://org.jboss.ws"
+			xmlns:tns="http://org.jboss.ws"
+			xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="Base">
+				<sequence>
+					<element name="a" type="int" />
+					<element name="b" type="int" />
+				</sequence>
+			</complexType>
+			<complexType name="SomeException">
+				<sequence />
+			</complexType>
+			<element name="SomeException" type="tns:SomeException" />
+		</schema>
+	</types>
+	<message name="CustomInterface_customMethod">
+		<part name="Base_1" type="tns:Base" />
+	</message>
+	<message name="CustomInterface_customMethodResponse" />
+	<message name="SomeException">
+		<part name="SomeException" element="tns:SomeException" />
+	</message>
+	<portType name="CustomInterface">
+		<operation name="customMethod" parameterOrder="Base_1">
+			<input message="tns:CustomInterface_customMethod" />
+			<output message="tns:CustomInterface_customMethodResponse" />
+			<fault name="SomeException" message="tns:SomeException" />
+		</operation>
+	</portType>
+	<binding name="CustomInterfaceBinding" type="tns:CustomInterface">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="customMethod">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws" />
+			</output>
+			<fault name="SomeException">
+				<soap:fault name="SomeException" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+	<service name="CustomInterfaceService">
+		<port name="CustomInterfacePort"
+			binding="tns:CustomInterfaceBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,58 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:cwmp="urn:dslforum-org:cwmp-1-0" xmlns="urn:dslforum-org:cwmp-1-0">
+<SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0">
+<cwmp:Inform>
+  <DeviceId xsi:type="cwmp:DeviceIdStruct">
+    <Manufacturer xsi:type="xsd:string">Somebody</Manufacturer>
+    <OUI xsi:type="xsd:string">9999</OUI>
+    <ProductClass xsi:type="xsd:string">Somebody</ProductClass>
+    <SerialNumber xsi:type="xsd:string">1234567890</SerialNumber>
+  </DeviceId>
+  <Event xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="cwmp:EventStruct[2]">
+    <EventStruct xsi:type="cwmp:EventStruct">
+      <EventCode xsi:type="xsd:string">1 BOOT</EventCode>
+      <CommandKey xsi:type="xsd:string"></CommandKey>
+    </EventStruct>
+    <EventStruct xsi:type="cwmp:EventStruct">
+      <EventCode xsi:type="xsd:string">4 VALUE CHANGE</EventCode>
+      <CommandKey xsi:type="xsd:string"></CommandKey>
+    </EventStruct>
+  </Event>
+  <MaxEnvelopes xsi:type="xsd:unsignedInt">1</MaxEnvelopes>
+  <CurrentTime xsi:type="xsd:dateTime">0000-00-00T00:04:49</CurrentTime>
+  <RetryCount xsi:type="xsd:unsignedInt">1</RetryCount>
+  <ParameterList xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="cwmp:ParameterValueStruct[7]">
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+     <Name xsi:type="xsd:string">InternetGatewayDevice.DeviceInfo.SpecVersion</Name>
+      <Value xsi:type="xsd:string">1.0</Value>
+    </ParameterValueStruct>
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.DeviceInfo.HardwareVersion</Name>
+      <Value xsi:type="xsd:string">1.0002.0</Value>
+    </ParameterValueStruct>
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.DeviceInfo.SoftwareVersion</Name>
+      <Value xsi:type="xsd:string">1.01.38</Value>
+    </ParameterValueStruct><ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.DeviceInfo.ProvisioningCode</Name>
+      <Value xsi:type="xsd:string"></Value>
+    </ParameterValueStruct>
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.ConnectionRequestURL</Name>
+      <Value xsi:type="xsd:string">http://123.123.123.123:12345/</Value>
+    </ParameterValueStruct>
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.ManagementServer.ParameterKey</Name>
+      <Value xsi:type="xsd:string">parameterkey</Value>
+    </ParameterValueStruct>
+    <ParameterValueStruct xsi:type="cwmp:ParameterValueStruct">
+      <Name xsi:type="xsd:string">InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress</Name>
+      <Value xsi:type="xsd:string">192.168.0.101</Value>
+    </ParameterValueStruct>
+  </ParameterList>
+</cwmp:Inform>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

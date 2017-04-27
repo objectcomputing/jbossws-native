@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="OutParametersService"
+	targetNamespace="http://org.jboss.ws/holder"
+	xmlns:tns="http://org.jboss.ws/holder"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<types />
+	<message name="OutParametersService_echoOut">
+		<part name="BigDecimal_1" type="xsd:decimal" />
+		<part name="Calendar_2" type="xsd:dateTime" />
+	</message>
+	<message name="OutParametersService_echoOutResponse">
+		<part name="BigDecimal_1" type="xsd:decimal" /> 
+		<part name="Calendar_2" type="xsd:dateTime" /> 
+		<part name="String_3" type="xsd:string" />
+	</message> 
+	<portType name="OutParametersService">
+		<operation name="echoOut"
+			parameterOrder="BigDecimal_1 Calendar_2 String_3">
+			<input message="tns:OutParametersService_echoOut" />
+			<output
+				message="tns:OutParametersService_echoOutResponse" />
+		</operation> 
+	</portType>
+	<binding name="OutParametersServiceBinding"
+		type="tns:OutParametersService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="rpc" />
+		<operation name="echoOut">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws/holder" />
+			</input>
+			<output>
+				<soap:body use="literal"
+					namespace="http://org.jboss.ws/holder" />
+			</output>
+		</operation> 
+	</binding>
+	<service name="OutParametersService">
+		<port name="OutParametersServicePort"
+			binding="tns:OutParametersServiceBinding">
+			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
+		</port>
+	</service>
+</definitions>

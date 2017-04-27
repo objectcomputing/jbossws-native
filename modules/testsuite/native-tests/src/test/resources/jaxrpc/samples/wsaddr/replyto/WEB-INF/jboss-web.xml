@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<jboss-web>
+   <context-root>/jaxrpc-samples-wsaddr-replyto</context-root>
+</jboss-web>

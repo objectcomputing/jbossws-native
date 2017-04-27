@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<webservices xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd"
+  version="1.1">
+
+  <webservice-description>
+    <webservice-description-name>HelloWsService</webservice-description-name>
+    <wsdl-file>WEB-INF/wsdl/HelloService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/jaxrpc-mapping.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>ValidURL</port-component-name>
+      <wsdl-port xmlns:impl="http://test.jboss.org/ws4eesimple">impl:ValidURLPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.webservice.ws4eesimple.HelloWs</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>HelloJavaBean</servlet-link>
+      </service-impl-bean>
+    </port-component>
+    <port-component>
+      <port-component-name>InvalidURL</port-component-name>
+      <wsdl-port xmlns:impl="http://test.jboss.org/ws4eesimple">impl:InvalidURLPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.webservice.ws4eesimple.HelloWs</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>HelloJavaBean</servlet-link>
+      </service-impl-bean>
+    </port-component>
+    <port-component>
+      <port-component-name>ValidSecureURL</port-component-name>
+      <wsdl-port xmlns:impl="http://test.jboss.org/ws4eesimple">impl:ValidSecureURLPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.webservice.ws4eesimple.HelloWs</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>HelloJavaBean</servlet-link>
+      </service-impl-bean>
+    </port-component>
+    <port-component>
+      <port-component-name>InvalidSecureURL</port-component-name>
+      <wsdl-port xmlns:impl="http://test.jboss.org/ws4eesimple">impl:InvalidSecureURLPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.webservice.ws4eesimple.HelloWs</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>HelloJavaBean</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+
+  <webservice-description>
+    <webservice-description-name>AdditionalService</webservice-description-name>
+    <wsdl-file>WEB-INF/wsdl/AdditionalService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/additional-mapping.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>AdditionalEndpointPort</port-component-name>
+      <wsdl-port xmlns:portNS="http://ws.test.jboss.org/jbws1090">portNS:AdditionalEndpointPort</wsdl-port>
+      <service-endpoint-interface>org.jboss.test.ws.tools.jbws1090.AdditionalEndpoint</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>AdditionalServlet</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+
+</webservices>

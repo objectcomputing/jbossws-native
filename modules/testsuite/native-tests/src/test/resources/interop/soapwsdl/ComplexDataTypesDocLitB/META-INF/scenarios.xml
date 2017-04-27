@@ -1,0 +1,12 @@
+<client-scenarios>
+   <scenario name="default" description="Testing local WSA endpoints">
+      <target-endpoint>http://localhost:8080/ComplexDataTypesDocLitB_Service/endpoint</target-endpoint>
+      <detour/>
+   </scenario>
+   <scenario name="msft-public" decsription="Testing MSFT public interop endpoints">
+      <target-endpoint>http://131.107.72.15/SoapWsdl_BaseDataTypes_XmlFormatter_Service_Indigo/ComplexDataTypesDocLitB.svc</target-endpoint>
+   </scenario>
+   <scenario name="msft-private" decsription="Testing MSFT private interop endpoints">
+      <target-endpoint>http://10.10.32.186/SoapWsdl_BaseDataTypes_XmlFormatter_Service_Indigo/ComplexDataTypesDocLitB.svc</target-endpoint>
+   </scenario>
+</client-scenarios>

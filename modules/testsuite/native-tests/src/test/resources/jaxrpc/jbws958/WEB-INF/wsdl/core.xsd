@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Herr Speer (T-Systems Nova GmbH) -->
+<!-- Last changes 05.07.2005 -->
+<xsd:schema targetNamespace="http://www.t-systems.com/core" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.t-systems.com/core" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.8.0">
+	<xsd:complexType name="Address">
+		<xsd:sequence>
+			<xsd:element name="COUNTRY_CODE" type="CountryCode"/>
+			<xsd:element name="REGION_CODE" type="RegionCode"/>
+			<xsd:element name="POST_CODE" type="PostCode"/>
+			<xsd:element name="CITY" type="xsd:string"/>
+			<xsd:element name="STREET" type="xsd:string"/>
+			<xsd:element name="STREET_NO" type="xsd:string"/>
+			<xsd:element name="TIME_ZONE" type="TimeZone" default="UTC+1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AlienOnkzBsz">
+		<xsd:sequence>
+			<xsd:element name="BSZ" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommunicationData">
+		<xsd:sequence>
+			<xsd:element name="PHONE" type="xsd:string"/>
+			<xsd:element name="MOBILE" type="xsd:string"/>
+			<xsd:element name="FAX" type="xsd:string"/>
+			<xsd:element name="EMAIL" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Customer">
+		<xsd:complexContent>
+			<xsd:extension base="Organisation">
+				<xsd:sequence>
+					<xsd:element name="URI" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DateAndTime">
+		<xsd:sequence>
+			<xsd:element name="DATE" type="xsd:date" nillable="true"/>
+			<xsd:element name="TIME" type="xsd:time" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Error">
+		<xsd:sequence>
+			<xsd:element name="ERROR_ID" type="ErrorId"/>
+			<xsd:element name="ERROR_MESSAGE" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ExtendedLocation">
+		<xsd:complexContent>
+			<xsd:extension base="Location">
+				<xsd:sequence>
+					<xsd:element name="BUILDING" type="xsd:string"/>
+					<xsd:element name="FLOOR" type="xsd:string"/>
+					<xsd:element name="ROOM" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="File">
+		<xsd:sequence>
+			<xsd:element name="FILE_NAME" type="NonEmptyString"/>
+			<xsd:element name="FILE_CONTENT" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="IpAddressRange2">
+		<xsd:sequence>
+			<xsd:element name="IP_ADDRESS_START" type="IpAddress"/>
+			<xsd:element name="IP_ADDRESS_END" type="IpAddress"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Location">
+		<xsd:sequence>
+			<xsd:element name="NAME" type="xsd:string"/>
+			<xsd:element name="ADDRESS" type="Address"/>
+			<xsd:element name="SITE_ID" type="SiteID" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Organisation">
+		<xsd:sequence>
+			<xsd:element name="NAME1" type="NonEmptyString"/>
+			<xsd:element name="NAME2" type="xsd:string"/>
+			<xsd:element name="ADDRESS" type="Address"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Person">
+		<xsd:sequence>
+			<xsd:element name="LASTNAME" type="NonEmptyString"/>
+			<xsd:element name="FIRSTNAME" type="xsd:string"/>
+			<xsd:element name="SALUTATION" type="xsd:string"/>
+			<xsd:element name="TITLE" type="xsd:string"/>
+			<xsd:element name="GENDER" type="Gender" nillable="true"/>
+			<xsd:element name="ADDRESS" type="Address" nillable="true"/>
+			<xsd:element name="COMMUNICATION_DATA" type="CommunicationData" nillable="true"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OnkzBsz">
+		<xsd:all>
+			<xsd:element name="DOMESTIC" type="OwnOnkzBsz" minOccurs="0"/>
+			<xsd:element name="ABROAD" type="AlienOnkzBsz" minOccurs="0"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="OwnOnkzBsz">
+		<xsd:sequence>
+			<xsd:element name="ONKZ" type="xsd:string"/>
+			<xsd:element name="ASB" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CountryCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Datum">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="20[0-9]{2}-[0-1][0-9]-[0-3][0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EMailAddress">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ErrorId">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{1,4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Gender">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="female"/>
+			<xsd:enumeration value="male"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IpAddress">
+		<xsd:annotation>
+			<xsd:documentation>
+	IP-Address can be of IPv4 or IPv6.
+	Three types of typing are allowed.
+	1.   d.d.d.d                    (IPv4)
+	2.   x:x:x:x:x:x:x:x            (IPv6)
+	3.   x:x:x:x:x:x:d.d.d.d      (Combination of IPv4 and IPv6)
+	Where  
+	x    0...FFFF
+	d    0...255
+	</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-F\.:]{7,45}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IpAddressRange">
+		<xsd:annotation>
+			<xsd:documentation>IP-Address Range can be of IPv4, IPv6</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-F\.:\-,/]{7,100}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NonEmptyString">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PostCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RegionCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SiteID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Z]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeZone">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="UTC-12"/>
+			<xsd:enumeration value="UTC-11"/>
+			<xsd:enumeration value="UTC-10"/>
+			<xsd:enumeration value="UTC-9"/>
+			<xsd:enumeration value="UTC-8"/>
+			<xsd:enumeration value="UTC-7"/>
+			<xsd:enumeration value="UTC-6"/>
+			<xsd:enumeration value="UTC-5"/>
+			<xsd:enumeration value="UTC-4"/>
+			<xsd:enumeration value="UTC-3"/>
+			<xsd:enumeration value="UTC-2"/>
+			<xsd:enumeration value="UTC-1"/>
+			<xsd:enumeration value="UTC"/>
+			<xsd:enumeration value="UTC+1"/>
+			<xsd:enumeration value="UTC+2"/>
+			<xsd:enumeration value="UTC+3"/>
+			<xsd:enumeration value="UTC+4"/>
+			<xsd:enumeration value="UTC+5"/>
+			<xsd:enumeration value="UTC+6"/>
+			<xsd:enumeration value="UTC+7"/>
+			<xsd:enumeration value="UTC+8"/>
+			<xsd:enumeration value="UTC+9"/>
+			<xsd:enumeration value="UTC+10"/>
+			<xsd:enumeration value="UTC+11"/>
+			<xsd:enumeration value="UTC+12"/>
+			<xsd:enumeration value="UTC+13"/>
+			<xsd:enumeration value="UTC+14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="YesNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

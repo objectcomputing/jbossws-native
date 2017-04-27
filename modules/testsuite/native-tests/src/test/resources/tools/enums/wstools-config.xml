@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.jboss.org/jbossws-tools" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+   <java-wsdl>
+     <service name="EnumService" 
+              endpoint="org.jboss.test.ws.tools.enums.EnumEndpoint">
+     </service>
+     <namespaces target-namespace="http://org.jboss.ws/enum"
+                 type-namespace="http://org.jboss.ws/enum/types" />
+     <mapping file="jaxrpc-mapping.xml"/>
+     <webservices  servlet-link="EnumService"/>
+   </java-wsdl>  
+</configuration>

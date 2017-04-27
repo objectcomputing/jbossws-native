@@ -1,0 +1,8 @@
+<wsp:Policy wsu:Id='RmPolicy' xmlns:wsu='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd' xmlns:rmp='http://schemas.xmlsoap.org/ws/2005/02/rm/policy' xmlns:wsp='http://schemas.xmlsoap.org/ws/2004/09/policy'>
+ <rmp:RMAssertion>
+  <rmp:InactivityTimeout Milliseconds='600000'/>
+  <rmp:BaseRetransmissionInterval Milliseconds='3000'/>
+  <rmp:ExponentialBackoff/>
+  <rmp:AcknowledgementInterval Milliseconds='200'/>
+ </rmp:RMAssertion>
+</wsp:Policy>

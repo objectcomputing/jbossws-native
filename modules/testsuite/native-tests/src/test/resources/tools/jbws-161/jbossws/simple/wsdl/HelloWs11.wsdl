@@ -1,0 +1,34 @@
+<definitions name="HelloWsService" targetNamespace="http://org.jboss/types" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://org.jboss/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <schema targetNamespace="http://org.jboss/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://org.jboss/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></schema>
+  </types>
+  <message name="HelloWs_sayHello">
+    <part name="string_1" type="xsd:string"></part>
+  </message>
+  <message name="HelloWs_sayHelloResponse">
+    <part name="result" type="xsd:string"></part>
+  </message>
+  <portType name="HelloWs">
+    <operation name="sayHello" parameterOrder="string_1">
+      <input message="tns:HelloWs_sayHello"></input>
+      <output message="tns:HelloWs_sayHelloResponse"></output>
+    </operation>
+  </portType>
+  <binding name="HelloWsBinding" type="tns:HelloWs">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <operation name="sayHello">
+      <soap:operation soapAction=""></soap:operation>
+      <input>
+        <soap:body namespace="http://org.jboss/types" use="literal"></soap:body>
+      </input>
+      <output>
+        <soap:body namespace="http://org.jboss/types" use="literal"></soap:body>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloWsService">
+    <port binding="tns:HelloWsBinding" name="HelloWsPort">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"></soap:address>
+    </port>
+  </service>
+</definitions>

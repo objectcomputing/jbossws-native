@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestEndpoint' targetNamespace='http://test.jboss.org/ws/jbws1184' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://test.jboss.org/ws/jbws1184/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://test.jboss.org/ws/jbws1184' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://test.jboss.org/ws/jbws1184/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://test.jboss.org/ws/jbws1184/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='DataObject'>
+     <attribute name='booleanValue' use='optional' type='boolean'/>
+     <attribute name='byteValue' use='optional' type='byte'/>
+     <attribute name='floatValue' use='optional' type='float'/>
+     <attribute name='integerValue' use='optional' type='int'/>
+     <attribute name='longValue' use='optional' type='long'/>
+     <attribute name='shortValue' use='optional' type='short'/>        
+   </complexType>
+   <element name='echoDataObject' type='tns:DataObject'/>
+   <element name='echoDataObjectResponse' type='tns:DataObject'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echoDataObject'>
+  <part element='ns1:echoDataObject' name='echoDataObject'/>
+ </message>
+ <message name='TestEndpoint_echoDataObjectResponse'>
+  <part element='ns1:echoDataObjectResponse' name='echoDataObjectResponse'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echoDataObject' parameterOrder='echoDataObject'>
+   <input message='tns:TestEndpoint_echoDataObject'/>
+   <output message='tns:TestEndpoint_echoDataObjectResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echoDataObject'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestEndpoint'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

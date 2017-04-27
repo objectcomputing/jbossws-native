@@ -1,0 +1,9 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+   <env:Header xmlns:wsa='http://www.w3.org/2005/08/addressing'>
+      <wsa:To>http://business456.example/client1</wsa:To>
+      <wsa:Action>http://fabrikam123.example/ReplyPO</wsa:Action>
+      <wsa:RelatesTo>uuid:6B29FC40-CA47-1067-B31D-00DD010662DA</wsa:RelatesTo>
+      <ns1:sessionid wsa:IsReferenceParameter='true' xmlns:ns1='http://somens'>someuniqueid</ns1:sessionid>
+   </env:Header>
+   <env:Body/>
+</env:Envelope>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="Simple1FileSvc"
+  targetNamespace="http://Simple1FileSvc.org/wsdl"
+  xmlns:tns="http://Simple1FileSvc.org/wsdl"
+  xmlns:ptdef="http://Simple1FileSvc.org/wsdl/PortTypeDef"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+  <import namespace="http://Simple1FileSvc.org/wsdl/PortTypeDef" location="SimpleFileToImport.wsdl"/>
+
+  <binding name="TestsBinding" type="ptdef:Tests">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="invokeOneWayTest1">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+    <operation name="invokeOneWayTest2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+    <operation name="invokeOneWayTest3">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+    <operation name="invokeTest1">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+    <operation name="invokeTest2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+    <operation name="invokeTest3">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://Simple1FileSvc.org/wsdl"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Simple1FileSvc">
+    <port name="TestsPort" binding="tns:TestsBinding">
+      <soap:address location="http://somehost/somepath"/>
+    </port>
+  </service>
+</definitions>

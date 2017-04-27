@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='TestService' targetNamespace='http://org.jboss.test.ws/jbws1538' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://org.jboss.test.ws/jbws1538/types' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://org.jboss.test.ws/jbws1538' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://org.jboss.test.ws/jbws1538/types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://org.jboss.test.ws/jbws1538/types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <complexType name='echoResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='tns:LevelFour'/>
+    </sequence>
+   </complexType>
+   <complexType name='LevelFour'>
+    <complexContent>
+     <extension base='tns:LevelThree'>
+      <sequence>
+       <element name='fieldFour' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='LevelOne'>
+    <sequence>
+     <element name='fieldOne' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='LevelThree'>
+    <complexContent>
+     <extension base='tns:LevelTwo'>
+      <sequence>
+       <element name='fieldThree' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='echo'>
+    <sequence>
+     <element name='LevelFour_1' nillable='true' type='tns:LevelFour'/>
+    </sequence>
+   </complexType>
+   <complexType name='LevelTwo'>
+    <complexContent>
+     <extension base='tns:LevelOne'>
+      <sequence>
+       <element name='fieldTwo' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name='echo' type='tns:echo'/>
+   <element name='echoResponse' type='tns:echoResponse'/>
+  </schema>
+ </types>
+ <message name='TestEndpoint_echo'>
+  <part element='ns1:echo' name='echo'/>
+ </message>
+ <message name='TestEndpoint_echoResponse'>
+  <part element='ns1:echoResponse' name='echoResponse'/>
+ </message>
+ <portType name='TestEndpoint'>
+  <operation name='echo' parameterOrder='echo'>
+   <input message='tns:TestEndpoint_echo'/>
+   <output message='tns:TestEndpoint_echoResponse'/>
+  </operation>
+ </portType>
+ <binding name='TestEndpointBinding' type='tns:TestEndpoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='echo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TestService'>
+  <port binding='tns:TestEndpointBinding' name='TestEndpointPort'>
+   <soap:address location='REPLACE_WITH_ACTUAL_URL'/>
+  </port>
+ </service>
+</definitions>

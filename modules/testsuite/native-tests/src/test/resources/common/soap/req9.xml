@@ -1,0 +1,16 @@
+<env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+ <env:Header/>
+ <env:Body>
+  <businessInfos xmlns='urn:uddi-org:api_v2'>
+   <businessInfo businessKey='892ac280-c16b-11d5-85ad-801eef211111' xmlns='urn:uddi-org:api_v2'>
+    <name xml:lang='en'>Demi Credit</name>
+    <description xml:lang='en'>A smaller demo app used for illustrating UDDI inquiry.</description>
+    <serviceInfos>
+     <serviceInfo businessKey='9a26b6e0-c15f-11d5-85a3-801eef208714' serviceKey='860eca90-c16d-11d5-85ad-801eef208714'>
+      <name xml:lang='en'>DCAmail</name>
+     </serviceInfo>
+    </serviceInfos>
+   </businessInfo>
+  </businessInfos>
+ </env:Body>
+</env:Envelope>

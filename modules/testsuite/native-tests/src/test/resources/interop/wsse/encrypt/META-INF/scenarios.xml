@@ -1,0 +1,14 @@
+<client-scenarios>
+   <scenario name="default" description="Testing local WSSE endpoints">
+      <target-endpoint>http://jbossws.demo.jboss.com:8080/wsse10Encrypt/endpoint</target-endpoint>
+   </scenario>
+    <scenario name="debug-local" decsription="Testing local WSSE endpoints through packet logger">
+      <target-endpoint>http://localhost:8081/wsse10Encrypt/endpoint</target-endpoint>
+   </scenario>
+   <scenario name="msft-public" decsription="Testing MSFT public interop endpoints">
+      <target-endpoint>http://131.107.72.15/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncrypt</target-endpoint>
+   </scenario>
+   <scenario name="msft-private" decsription="Testing MSFT public interop endpoints">
+      <target-endpoint>http://10.10.32.186/Security_WsSecurity_Service_Indigo/WsSecurity10.svc/MutualCertificate10SignEncrypt</target-endpoint>
+   </scenario>
+</client-scenarios>

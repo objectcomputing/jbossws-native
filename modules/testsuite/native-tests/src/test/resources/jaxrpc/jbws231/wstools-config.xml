@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  wstools -cp ../../../../output/classes -dest ./WEB-INF -config wstools-config.xml
+-->
+
+<configuration xmlns="http://www.jboss.org/jbossws-tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.jboss.org/jbossws-tools http://www.jboss.org/jbossws-tools/schema/jbossws-tool_1_0.xsd">
+  <java-wsdl>
+    <service name="TestService" endpoint="org.jboss.test.ws.jaxrpc.jbws231.TestEndpoint" style="rpc">
+    </service>
+    <namespaces target-namespace="http://org.jboss.test.ws/jbws231" type-namespace="http://org.jboss.test.ws/jbws231/types"/>
+    <mapping file="jaxrpc-mapping.xml"/>
+    <webservices servlet-link="TestEndpoint"/>
+  </java-wsdl>
+</configuration>
+
+<!--
+    <simpleType name="EyeColorType">
+      <restriction base="xsd:string">
+        <enumeration value="green"/>
+        <enumeration value="blue"/>
+      </restriction>
+    </simpleType>
+    
+    <element name="EyeColor">
+      <simpleType>
+        <restriction base="xsd:string">
+          <enumeration value="green"/>
+          <enumeration value="blue"/>
+        </restriction>
+      </simpleType>
+    </element>
+  
+ <message name='TestEndpoint_echoAnonymous'>
+  <part name='EyeColorType_1' element='ns1:EyeColor'/>
+ </message>
+-->
+
+<!--
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws231.EyeColorType</java-type>
+    <root-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws231/types'>typeNS:EyeColorType</root-type-qname>
+    <qname-scope>simpleType</qname-scope>
+  </java-xml-type-mapping>
+  
+  <java-xml-type-mapping>
+    <java-type>org.jboss.test.ws.jaxrpc.jbws231.EyeColorType</java-type>
+    <anonymous-type-qname xmlns:typeNS='http://org.jboss.test.ws/jbws231/types'>typeNS:&gt;EyeColor</anonymous-type-qname>
+    <qname-scope>simpleType</qname-scope>
+  </java-xml-type-mapping>
+-->
