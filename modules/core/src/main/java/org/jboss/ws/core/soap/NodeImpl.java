@@ -614,8 +614,7 @@ public class NodeImpl implements javax.xml.soap.Node
 
    public String getTextContent() throws DOMException
    {
-      // FIXME getTextContent
-      throw new NotImplementedException("getTextContent");
+      return domNode.getTextContent();
    }
 
    public Object getUserData(String key)
