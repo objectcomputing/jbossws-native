@@ -78,7 +78,7 @@
     <wsdl4j.version>1.6.1</wsdl4j.version>
     <xmlsec.version>1.4.2</xmlsec.version>
     <xalan.version>2.7.0</xalan.version>
-    <xerces.version>2.8.1</xerces.version>
+    <xerces.version>2.12.0</xerces.version>
   </properties>
 
   <!-- DependencyManagement -->
