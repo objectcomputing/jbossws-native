@@ -67,7 +67,7 @@
     <jboss.common.version>1.2.1.GA</jboss.common.version>
     <jboss.jaxbintros.version>1.0.0.GA</jboss.jaxbintros.version>
     <jboss.logging.version>2.0.5.GA</jboss.logging.version>
-    <jboss.remoting.version>2.5.0.SP2</jboss.remoting.version>
+    <jboss.remoting.version>5.0.20.Final</jboss.remoting.version>
     <jboss.jaxr.version>1.2.1.GA</jboss.jaxr.version>
     <apache.scout.version>0.7rc2</apache.scout.version>
     <juddi.version>0.9RC4</juddi.version>
