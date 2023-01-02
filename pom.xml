@@ -59,7 +59,7 @@
     <jbossws.jboss600.version>3.1.2-SNAPSHOT</jbossws.jboss600.version>
     -->
     <!-- END -->
-    <codehaus.jettison.version>1.0-RC2</codehaus.jettison.version>
+    <codehaus.jettison.version>1.5.2</codehaus.jettison.version>
     <commons.logging.version>1.1.1</commons.logging.version>
     <javassist.version>3.6.0.GA</javassist.version>
     <jaxb.api.version>2.1</jaxb.api.version>
